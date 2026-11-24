@@ -1,6 +1,6 @@
 ---
 title: "How to Take Care of a Snake Plant"
-description: "Learn how to take care of a snake plant with the right light, watering, soil, and pot. A complete beginner-friendly guide to keeping Sansevieria healthy."
+description: "Most snake plants die from the same five mistakes — too much water, no drainage, a pot far too big. Here's the routine that avoids all of them."
 keyword: "how to take care of a snake plant"
 category: "plant-care"
 hero: "/images/how-to-take-care-of-a-snake-plant.webp"
@@ -10,38 +10,33 @@ updated: "2026-11-24"
 related: ["how-to-water-snake-plants", "snake-plant-light-needs", "snake-plant-low-light", "snake-plant-for-beginners"]
 ---
 
-A snake plant is one of the easiest houseplants you can own, and it is also one of the most forgiving. With tall, upright leaves that store water, it can go weeks without attention and still look good. That said, "hard to kill" is not "impossible to kill" — the plants that do die usually die from too much water.
+A snake plant can go six weeks without water and look exactly the same. That is the whole appeal, and also the whole trap. People hear "hard to kill", buy one, and then kill it with kindness — a little water every weekend, a pretty pot with no holes, a bigger pot "so it has room to grow". The plant rots quietly, and by the time the leaves flop, the roots are gone.
 
-The short version is this: give your snake plant bright, indirect light, water it only when the soil has dried out completely, plant it in fast-draining soil in a pot with a drainage hole, and leave it alone the rest of the time. The rest of this guide explains how to get each of those details right, what to do when something looks wrong, and the mistakes that catch out even experienced plant owners.
+**The verdict, in three lines: water only when the soil is dry all the way through. Give it bright, indirect light and a pot that drains. Do nothing else, and do it less often than you think.**
 
-## At a glance
+That is genuinely most of it. The rest of this guide starts with the mistakes, because avoiding them matters more than any clever technique, and then sets out the routine that keeps one healthy for years.
 
-| Need | What a snake plant wants |
-|---|---|
-| Light | Bright, indirect light is best; tolerates low light and some direct sun |
-| Water | Only when soil is fully dry, every 2–6 weeks depending on conditions |
-| Soil | Very free-draining cactus or succulent mix |
-| Pot | A pot with drainage holes, only slightly larger than the root ball |
-| Temperature | 15–29°C (59–85°F); keep away from frost and cold draughts |
-| Humidity | Average indoor humidity is fine |
-| Feeding | Light feeding in spring and summer only |
-| Difficulty | Easy — a good first houseplant |
+## The mistakes that kill snake plants
 
-## Light: where to put it
+Watering on a schedule is the big one. Every Saturday, rain or shine, soil wet or dry — that habit rots more snake plants than anything else. A plant in a cool, dim room might take six weeks for its soil to dry; the same plant near a sunny window in July might need water after two. The calendar knows nothing about either. Check the soil. Push a finger or a wooden skewer right down to the bottom of the pot. Dry? Water. Damp? Walk away.
 
-Snake plants are famous for tolerating low light, but tolerating is not the same as thriving. In bright, indirect light — a few feet from a sunny window, or beside an east-facing window — a snake plant grows faster, keeps its leaf colour strong, and produces new leaves regularly. In a dim corner it will survive, but growth slows to almost nothing and variegated types can gradually lose their yellow edges and turn plain green.
+Then there is the pot with no drainage hole. It looks great on a shelf. It also turns the bottom few centimetres of soil into a swamp, because water has nowhere to go and the roots sit in it for days. Drill a hole, or keep the plant in a plastic nursery pot inside the decorative one and tip the excess out after every watering. A saucer full of standing water is the same problem in a smaller package — empty it.
 
-A little gentle morning sun is fine. Harsh midday sun through a south-facing window can scorch the leaves, leaving pale, dry patches. If you move a plant from a dark spot into strong sun, do it gradually over a week or two so the leaves can adjust.
+A pot far too big does the same damage more slowly. The roots can only drink from the soil they touch, and a big pot holds a big volume of wet soil that stays damp for weeks. Snake plants prefer to be snug. A pot a couple of centimetres wider than the root ball is right; a pot twice the size is a slow drowning.
 
-Rotate the pot every few weeks so the leaves grow straight.
+Feeding in winter is a quieter mistake. The plant is barely growing between October and March, so it cannot use fertiliser, and the salts build up in dry soil and burn the roots. Skip it. The plant will not miss it.
 
-## Watering: less is more
+And cold. A snake plant left against freezing glass in January, or in the path of a draughty door, will sulk and then collapse. It comes from warm climates and wants to stay above about 10°C. A few feet back from a cold window is enough.
 
-This is the one area where snake plants punish mistakes. Their thick leaves hold a reserve of water, so the plant is built to cope with drought — but it has almost no defence against sitting in wet soil. Waterlogged roots rot quickly, and root rot is the most common reason snake plants die.
+None of these mistakes is dramatic on its own. Together they are how a "hard to kill" plant dies in its first year.
 
-The rule is simple: water thoroughly, then wait until the soil is completely dry before watering again. "Thoroughly" means watering until it runs out of the drainage holes, then emptying the saucer so the pot is never left standing in water. How long the soil takes to dry depends on pot size, light, season, and the soil mix — which is why a fixed weekly schedule is a bad idea. Use the estimator below to find a starting interval for your plant, then always check the soil before you water.
+## Water: the one rule that matters
 
-In winter, growth slows and the soil dries even more slowly, so watering may drop to once a month or less. If in doubt, wait another few days. A thirsty snake plant will show wrinkled, slightly soft leaves; an overwatered one will show mushy, yellow leaves at the base, and that is much harder to reverse.
+Thick leaves are water tanks. That is why the plant survives drought so well, and why it has almost no defence against wet roots. Root rot is the single most common cause of death, and once the roots turn black and mushy, the plant rarely recovers.
+
+So the rule is simple, even if it feels wrong at first: soak it, then leave it alone. Water until it runs out of the drainage holes. Empty the saucer. Then do not water again until the soil is dry all the way through — not just the top centimetre, which can feel dry while the bottom is still damp. How long that takes depends on the pot, the light, the season, and the soil. Two weeks in summer, six in winter, sometimes longer in a dim room. Use the estimator below as a starting point, then trust the finger test over the number it gives you.
+
+Winter changes the rhythm. Growth slows, the soil dries even more slowly, and watering can drop to once a month or less. If you are unsure, wait another few days. A thirsty snake plant shows wrinkled, slightly soft leaves and perks up after a drink. An overwatered one shows mushy yellow leaves at the base, and those never recover.
 
 <div class="widget" id="how-to-take-care-of-a-snake-plant-widget">
   <h3>Snake plant watering estimator</h3>
@@ -91,51 +86,39 @@ In winter, growth slows and the soil dries even more slowly, so watering may dro
 })();
 </script>
 
-## Soil and potting
+## Light: bright beats dim, every time
 
-Snake plants need soil that drains fast. A cactus or succulent mix works well, and you can improve ordinary potting soil by mixing in roughly one part perlite or coarse sand to two parts soil. Heavy, moisture-holding soil stays wet around the roots and invites rot.
+Snake plants are famous for tolerating low light. Tolerating is not thriving, though. Put one a few feet from a sunny window, or beside an east-facing window, and it grows faster, keeps its leaf colour strong, and pushes out new leaves through the growing season. Park it in a dim corner and it survives — but growth slows to almost nothing, and variegated types gradually lose their yellow edges and turn plain green. The plant is not being dramatic. It is simply not making enough food to grow.
 
-The pot matters as much as the soil. Always use a pot with drainage holes, and never let the plant sit in a saucer of water. Snake plants actually like being slightly snug — a pot only a couple of centimetres wider than the root ball is ideal. A pot that is far too large holds a lot of wet soil the roots cannot reach, which stays damp for too long.
+A little gentle morning sun suits it. Harsh midday sun through a south-facing window can scorch the leaves, leaving pale, dry patches that do not heal. If you move a plant from a dark spot into strong sun, give it a week or two to adjust rather than shifting it in one go. And rotate the pot every few weeks, or the leaves will lean towards the window and grow crooked.
 
-Repot only when the plant is clearly outgrowing its pot — roots from the drainage holes, or a bulging pot — usually every two to three years in spring. Go up just one pot size, use fresh dry mix, and wait a few days before watering so damaged roots can heal.
+## Soil, pot, and when to repot
 
-## Feeding and cleaning
+Fast-draining soil is non-negotiable. A cactus or succulent mix works straight from the bag, and ordinary potting soil can be fixed by mixing in roughly one part perlite or coarse sand to two parts soil. Heavy, moisture-holding compost stays wet around the roots and invites rot — the exact problem everything else in this guide is trying to avoid.
 
-Snake plants are light feeders. A half-strength balanced liquid houseplant fertiliser once a month in spring and summer is plenty. Do not feed in autumn or winter, and do not feed a plant that is stressed, newly repotted, or sitting in wet soil — fertiliser will not fix those problems and can make them worse.
+The pot matters as much as what is in it. Drainage holes, always. Slightly snug, always. And terracotta has a small advantage: it breathes, so the soil dries a little faster than it does in glazed ceramic or plastic.
 
-Wipe the leaves with a damp cloth every few weeks to remove dust.
+Repot only when the plant tells you to — roots poking out of the drainage holes, or a pot visibly bulging from the pressure of the roots inside. That is usually every two to three years, in spring. Go up one pot size only, use fresh dry mix, and wait a few days before watering so any damaged roots can heal over before they meet moisture.
 
-## Propagation
+## Feeding, dusting, and free plants
 
-The easiest way to make new plants is division: when repotting, gently separate a cluster of leaves with its own roots and pot it up on its own. Leaf cuttings also work — cut a healthy leaf into sections, let the cut ends dry for a day or two, then push them a few centimetres into dry soil. Cuttings are slower, and variegated varieties grown from them usually come back plain green.
+Snake plants are light feeders, and light is the operative word. A half-strength balanced liquid houseplant fertiliser once a month in spring and summer is plenty. Never feed a stressed plant, a newly repotted one, or one sitting in wet soil — fertiliser does not fix those problems, and it can make them worse. When in doubt, skip a month. The plant will not notice.
 
-## Common mistakes
+Dust is a smaller job with a real payoff. Wipe the leaves with a damp cloth every few weeks. Dust blocks light, and on a plant that already gets less light than it would like, that matters.
 
-- **Watering on a schedule.** Watering every Saturday regardless of soil moisture is the fastest way to rot a snake plant. Check the soil, not the calendar.
-- **No drainage hole.** A decorative pot without holes traps water at the bottom. Either drill a hole or use a nursery pot inside the decorative one and empty it after watering.
-- **A pot far too big.** Extra soil stays wet. Keep the pot snug.
-- **Feeding in winter.** The plant is barely growing and cannot use the fertiliser; salts can build up and burn roots.
-- **Putting it right against a freezing window.** Snake plants dislike cold. Keep them away from frosty glass and cold draughts.
+Want another plant? Division is the easy route. When you repot, gently separate a cluster of leaves that has its own roots and pot it up on its own. Leaf cuttings work too — cut a healthy leaf into sections, let the cut ends dry for a day or two, then push them a few centimetres into dry soil — but they are slower, and cuttings from a variegated plant usually grow back plain green. Division keeps the pattern.
 
-## Troubleshooting
+## If it looks unhappy
 
-### Leaves turning yellow and soft at the base
+**Yellow, soft leaves at the base.** Overwatering, almost every time. Stop watering, let the soil dry out fully, and check the roots if the plant feels loose in its pot. Black, mushy roots need cutting away with clean scissors, and the plant needs fresh dry mix. Remove any leaves that are soft and translucent; they will not firm up again.
 
-This is usually overwatering. Stop watering, let the soil dry out fully, and check the roots if the plant feels loose — black, mushy roots need to be cut away with clean scissors, and the plant repotted into dry mix. Remove any leaves that are soft and translucent.
+**Leaves wrinkled or curling inwards.** The plant is genuinely thirsty, or its roots are damaged and cannot take up water. Bone-dry soil means a thorough watering. Wet soil with thirsty-looking leaves means check the roots for rot.
 
-### Leaves wrinkled or curling inwards
+**Brown, dry tips.** Usually inconsistent watering, a build-up of salts from tap water or fertiliser, or very dry air. Trim the brown tip following the leaf's natural shape, water more evenly, and try rainwater or tap water left out overnight.
 
-This usually means the plant is genuinely thirsty, or the roots have been damaged and cannot take up water. If the soil is bone dry, give it a thorough watering. If the soil is wet but the leaves still look thirsty, check the roots for rot.
+**Leaves flopping over.** Tall leaves flop when the plant is not getting enough light, or when the roots are weak from overwatering. Move it brighter, make sure the soil is drying between waterings, and stake the leaf while it recovers. The stake is a crutch, though — the cause still needs fixing.
 
-### Brown, dry tips
-
-Brown tips can come from inconsistent watering, a build-up of salts from tap water or fertiliser, or very dry air. Trim the brown tip following the natural leaf shape, water more evenly, and try watering with rainwater or water left out overnight.
-
-### Leaves flopping over
-
-Tall leaves that flop usually mean the plant is not getting enough light, or the roots are weak from overwatering. Move it to a brighter spot and check that the soil is drying out between waterings. A stake can support a flopping leaf while it recovers, but the underlying cause still needs fixing.
-
-## Frequently asked questions
+## Questions people ask
 
 ### How often should I water a snake plant?
 
@@ -153,19 +136,11 @@ Yellow, soft leaves at the base almost always point to overwatering or soil that
 
 It depends on the variety. Common types grow to around 60–120 cm (2–4 ft) tall indoors, while dwarf varieties stay under 30 cm (12 in). Growth is slow in low light and faster in bright, indirect light, so the same plant can take years to reach full size in a dim room.
 
-## Conclusion
-
-Taking care of a snake plant comes down to restraint: bright, indirect light, fast-draining soil, a pot with holes, and water only when the soil is fully dry. Get those four things right and the plant largely looks after itself. If something goes wrong, the cause is almost always water — and the fix is to water less, improve drainage, and give it more light.
-
-## Related guides
+## Keep reading
 
 - [How to Water Snake Plants](/guides/how-to-water-snake-plants/)
 - [Snake Plant Light Needs](/guides/snake-plant-light-needs/)
 - [Snake Plant Low Light: Will It Thrive?](/guides/snake-plant-low-light/)
 - [Snake Plant for Beginners](/guides/snake-plant-for-beginners/)
 
-## Sources and further reading
-
-- Royal Horticultural Society plant guides
-- Missouri Botanical Garden Plant Finder
-- University extension horticulture publications
+Further reading: Royal Horticultural Society plant guides, Missouri Botanical Garden Plant Finder, and university extension horticulture publications.

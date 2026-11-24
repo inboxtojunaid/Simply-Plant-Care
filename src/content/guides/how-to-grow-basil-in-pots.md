@@ -1,6 +1,6 @@
 ---
 title: "How to Grow Basil in Pots"
-description: "How to grow basil in pots from seed or seedlings: choosing a pot, soil, spacing, and moving plants outdoors for a summer of fresh leaves at home."
+description: "A pot at least 20 cm wide, rich loose mix, seeds on the surface — basil in pots works when the setup is right, and this guide takes the decisions in order."
 keyword: "how to grow basil in pots"
 category: "growing"
 hero: "/images/how-to-grow-basil-in-pots.svg"
@@ -10,56 +10,23 @@ updated: "2026-11-24"
 related: ["how-do-you-care-for-a-basil-plant", "how-do-you-take-care-of-a-rosemary-plant", "how-do-you-take-care-of-plants"]
 ---
 
-Growing basil in pots is one of the easiest ways to start a kitchen garden: sow seeds or plant seedlings in a pot with drainage holes, fill it with loose, fertile potting mix, and set it in the sunniest spot you have. Basil is a warm-weather herb that grows fast — from seed to first harvest in about six to eight weeks — and a few pots can supply fresh leaves all summer.
+Six to eight weeks. That is the gap between sowing basil seed and picking the first leaves, if the pot is big enough and the nights are warm enough.
 
-This guide is about getting basil started and growing in containers, from choosing the pot to moving plants outdoors. Once your plants are established and you want to know how to keep harvesting them through the season, the companion guide on caring for an established basil plant picks up where this one leaves off.
+Two conditions. Both are decisions you make before a seed touches soil, and both are where potted basil usually fails — a pot too small, or plants put outside too early. Everything else is maintenance. So this guide takes the decisions in order: when you want leaves, what pot to use, what goes in it, whether to start from seed or buy a seedling, and how the first two weeks shape the plant you end up with.
 
-## At a glance
+Basil is a tender annual. It cannot tolerate frost, and a single cold night can kill it. It also grows fast, drinks hard in summer, and forgives a lot once it is established. The companion guide on caring for an established basil plant picks up where this one leaves off — harvest, pinching, and keeping a plant going through the season.
 
-| Need | What potted basil wants |
-| --- | --- |
-| Light | 6–8 hours of direct sun a day |
-| Water | Keep soil evenly moist, never soggy |
-| Soil | Rich, loose, well-draining potting mix |
-| Pot | At least 20 cm wide and deep, with drainage holes |
-| Temperature | 18–30°C; no frost, and no nights below 10°C |
-| Feeding | Light feeding every 3–4 weeks once established |
-| Spacing | About 20–25 cm between plants |
-| Difficulty | Easy — one of the best herbs to start with |
+## Start with the end in mind: when do you want leaves?
 
-## When to start basil
+Work backwards. Want leaves in July? Sow indoors six to eight weeks before your last expected frost, or buy seedlings after the frosts have passed. Growing purely indoors on a sunny windowsill? You can start any time of year, though plants grow strongest in spring and summer when the days are long.
 
-Basil is a tender annual that cannot tolerate frost, so timing matters. Start seeds indoors six to eight weeks before your last expected frost, or wait and buy seedlings after the frosts have passed. If you are growing basil purely indoors on a sunny windowsill, you can start at any time of year, though plants grow strongest in spring and summer when the days are long.
+Outdoors, do not move pots outside until night temperatures are reliably above 10°C and the days are warm. A basil plant put out too early will sulk. Growth stalls, leaves can turn dark, and one cold night can finish it.
 
-Outdoors, do not move pots outside until night temperatures are reliably above 10°C and the days are warm. A basil plant put out too early will sulk — growth stalls, leaves can turn dark, and a single cold night can kill it.
+## Pick the pot first — size decides everything else
 
-## Choosing the pot
+The pot matters more than most beginners expect. Basil grows a substantial root system and drinks a lot of water in summer, so a small pot dries out in hours and the plant wilts daily. Choose a pot at least 20 cm wide and 20 cm deep for a single plant, or wider for several plants together. No pot is too big for basil, only too small.
 
-The pot matters more than most beginners expect. Basil grows a substantial root system and drinks a lot of water in summer, so a small pot dries out in hours and the plant wilts daily. Choose a pot at least 20 cm wide and 20 cm deep for a single plant, or wider for several plants together.
-
-Drainage holes are essential. Basil likes moist soil, not wet soil, and water sitting at the bottom of a pot without holes will rot the roots. Terracotta pots are a good choice because they breathe and help the soil dry evenly, but they dry out faster than plastic, so check the soil more often in hot weather. Whatever the material, always use a saucer and empty it after watering.
-
-## Soil and filling the pot
-
-Fill the pot with a good-quality, multi-purpose potting mix — basil likes soil that is rich and loose, not heavy garden soil, which compacts in a pot and drains poorly. Mix in a handful of perlite or coarse grit if your mix feels dense, and a scoop of compost for extra fertility.
-
-Leave about 2–3 cm of space between the soil surface and the rim of the pot so water does not run straight off when you water. Water the mix before sowing or planting so it is evenly damp, not dry or soaking.
-
-## Starting from seed
-
-Sow basil seeds on the surface of the damp mix and cover them with just a thin dusting of mix — about 3 mm. Basil seeds need light to germinate, so burying them deeply is the most common reason seeds fail. Mist the surface gently, cover the pot with a clear lid or cling film to hold in humidity, and keep it somewhere warm, around 20–25°C.
-
-Seeds usually germinate in five to ten days. As soon as you see green, remove the cover and move the pot to the brightest spot you have. Seedlings grown in dim light stretch tall and weak, so light matters from day one.
-
-## Starting from seedlings
-
-Bought seedlings are the fastest route to a harvest. Plant them at the same depth they were growing in their nursery pot — burying the stem deeper can cause it to rot. Space plants about 20–25 cm apart, firm the soil gently around the roots, and water them in well.
-
-If you are planting several seedlings in one large pot or trough, give each plant room to bush out. Overcrowded basil competes for light and air, grows leggy, and is more prone to disease.
-
-## Interactive: pot-size and spacing calculator
-
-Use the calculator below to work out how many basil plants fit in your pot.
+Drainage holes are essential. Basil likes moist soil, not wet soil, and water sitting at the bottom of a pot without holes will rot the roots. Always use a saucer and empty it after watering — a saucer full of water is the same as no drainage at all, just hidden.
 
 <div class="widget" id="how-to-grow-basil-in-pots-calc" style="border:1px solid #d8e2d4;border-radius:12px;padding:20px;background:#f7f9f4;max-width:640px;">
   <h3 style="margin-top:0;">How many basil plants fit in my pot?</h3>
@@ -94,41 +61,59 @@ Use the calculator below to work out how many basil plants fit in your pot.
 })();
 </script>
 
-## Moving basil outdoors
+That number is a starting point, not a law. A plant in a big pot with good light will outgrow the spacing; a plant in shade will never fill it. Watch the plant, not the arithmetic.
 
-Harden seedlings off before they live outside full time. Over seven to ten days, put the pots outside in a sheltered, partly shaded spot for a few hours a day, bringing them in at night, and gradually increase the time and the sun. Plants moved straight from a windowsill into full sun and wind will wilt and scorch.
+## Soil: rich, loose, and damp before anything goes in
 
-Once hardened off, set the pots in the sunniest spot you have — a south-facing patio, balcony, or windowsill that gets at least six hours of direct sun. Basil in full sun grows compact and flavoursome; in shade it grows leggy and the leaves taste milder.
+Fill the pot with a good-quality, multi-purpose potting mix. Basil likes soil that is rich and loose, not heavy garden soil, which compacts in a pot and drains poorly. Mix in a handful of perlite or coarse grit if your mix feels dense, and a scoop of compost for extra fertility. The mix should feel like a wrung-out sponge when you squeeze it — damp, not dripping, and it should spring back instead of clumping into a brick.
 
-## Watering potted basil
+Leave about 2–3 cm of space between the soil surface and the rim of the pot so water does not run straight off when you water. Then water the mix before sowing or planting, so it is evenly damp. Dry pockets in the middle of a pot are a quiet killer: seed sown over a dry patch germinates patchily, and a seedling planted into dry mix wilts before its roots can reach the damp soil around it.
 
-Basil in pots needs regular watering because containers dry out fast, especially in sun and wind. Check the soil daily in summer: water when the top 2–3 cm feels dry, and water thoroughly until it runs from the drainage holes.
+## Seed or seedling?
 
-## Feeding
+Both work. They just buy you different things.
 
-Basil is a fast grower and a moderate feeder. Once plants are established, feed every three to four weeks with a balanced liquid fertiliser at half strength, or a liquid seaweed feed. Too much fertiliser produces lots of soft leafy growth with less flavour, so keep it light.
+Seed is cheap, and you get varieties the garden centre never stocks — lemon basil, purple basil, Thai basil, the small-leafed types that make the best pesto. Sow on the surface of the damp mix and cover with just a thin dusting, about 3 mm. Basil seeds need light to germinate, so burying them deeply is the most common reason seeds fail. Mist the surface gently, cover the pot with a clear lid or cling film to hold in humidity, and keep it somewhere warm, around 20–25°C. Seeds usually germinate in five to ten days. As soon as you see green, remove the cover and move the pot to the brightest spot you have. Seedlings grown in dim light stretch tall and weak, so light matters from day one.
 
-## Common mistakes
+Seedlings are the fastest route to a harvest. You skip the fragile first weeks and buy a plant that already has roots and several pairs of leaves. Plant them at the same depth they were growing in their nursery pot — burying the stem deeper can cause it to rot. Space plants about 20–25 cm apart, firm the soil gently around the roots, and water them in well.
 
-- **Sowing seeds too deep.** Basil seeds need light to germinate. A thin covering of mix is all they need.
-- **Using a pot that is too small.** A tiny pot dries out in hours on a hot day and the plant wilts constantly. Go bigger than you think.
-- **Putting plants outside too early.** One cold night can finish basil. Wait until nights are reliably above 10°C.
-- **Skipping hardening off.** Seedlings moved straight outdoors scorch and wilt. Give them a week of gradual exposure.
-- **Crowding too many plants in one pot.** Overcrowded basil grows leggy and disease-prone. Give each plant about 20–25 cm.
+Which should you choose? If you have a sunny windowsill and six weeks to spare, seed gives you more plants for less money. If you want leaves soon, or your windowsill is dim, buy seedlings. If you are unsure, do both: sow a pot of seed and buy one seedling, and compare them. You will learn more in a month than any guide can teach you, and you will have basil either way.
 
-## Troubleshooting
+## The first two weeks are the fragile part
 
-**Seedlings are tall, pale, and floppy.** Not enough light. Move them to the sunniest spot available or under a grow light, and sow the next batch where the light is stronger.
+This is where basil is lost, quietly, on a windowsill.
 
-**Leaves wilt every afternoon even though the soil is damp.** The pot may be too small for the plant's roots, or the plant is in a very hot, windy spot. Move up a pot size or move the pot somewhere slightly sheltered.
+Light first. Seedlings need the brightest spot you have from the day they germinate. A south-facing windowsill, or a grow light a few centimetres above them, is ideal. Tall, pale, floppy seedlings are not a variety trait. They are a light complaint, and they rarely recover their strength — the stem stays weak even if the plant survives.
 
-**Lower leaves turn yellow.** Often overwatering, or the plant sitting in a saucer of water. Let the soil dry a little between waterings and always empty the saucer.
+Water second. Keep the soil evenly moist, never soggy, and never bone dry. Check daily in the first two weeks, because a small pot in sun can dry out in a day. Water at the base, not over the leaves, and always empty the saucer. Cold, wet soil is the other killer: it causes damping off, where seedlings keel over at the soil line and die. Warmth and drainage prevent it; there is no cure once it starts.
 
-**Black spots on the leaves.** A sign of fungal disease, encouraged by wet leaves and poor air circulation. Remove affected leaves, water at the base only, and space plants so air moves between them.
+Warmth third. Basil wants 18–30°C and no nights below 10°C. A cold windowsill at night can stall a seedling for days. Move the pot away from the glass on cold nights, or put it somewhere warmer until the weather turns.
 
-**Seeds never germinated.** The most likely causes are seeds buried too deep, cold soil, or old seed. Sow on the surface, keep the pot warm, and check the seed packet's date.
+## Moving outside without shocking it
 
-## Frequently asked questions
+Harden seedlings off before they live outside full time. Over seven to ten days, put the pots outside in a sheltered, partly shaded spot for a few hours a day, bringing them in at night, and gradually increase the time and the sun. Plants moved straight from a windowsill into full sun and wind will wilt and scorch. The leaves go white at the edges, the plant droops, and it takes a week to recover — if it does.
+
+Once hardened off, set the pots in the sunniest spot you have: a south-facing patio, balcony, or windowsill that gets at least six hours of direct sun. Basil in full sun grows compact and flavoursome. In shade it grows leggy and the leaves taste milder. That flavour difference is real, and it is the best reason to chase the sun rather than settle for a shady corner that is merely convenient.
+
+## Water, feed, and the pinch that makes it bushy
+
+Basil in pots needs regular watering because containers dry out fast, especially in sun and wind. Check the soil daily in summer: water when the top 2–3 cm feels dry, and water thoroughly until it runs from the drainage holes. Leaves wilting every afternoon even though the soil is damp usually mean the pot is too small for the roots, or the plant is in a very hot, windy spot. Move up a pot size or move the pot somewhere slightly sheltered.
+
+Feed lightly once plants are established — every three to four weeks with a balanced liquid fertiliser at half strength, or a liquid seaweed feed. Too much fertiliser produces lots of soft leafy growth with less flavour, so keep it light. Basil is a fast grower and a moderate feeder, and overfeeding is the more common mistake.
+
+Pinching is the habit that turns a tall thin plant into a bushy one. Once a plant has several pairs of leaves, pinch the growing tip — the topmost pair of small leaves — off with your fingers. Two new shoots grow from the leaf joints below, and each of those can be pinched again. Do it every week or two through the season, and one plant fills a pot instead of bolting upward and flowering. Flowering is not a disaster, but it changes the flavour and slows leaf growth, so pinch flower buds off when they appear. The leaves you pinch are the harvest. Eat them.
+
+## If it looks unhappy
+
+Tall, pale, floppy seedlings mean not enough light. Move them to the sunniest spot available or under a grow light, and sow the next batch where the light is stronger.
+
+Lower leaves turning yellow often mean overwatering, or the plant sitting in a saucer of water. Let the soil dry a little between waterings and always empty the saucer.
+
+Black spots on the leaves signal a fungal disease, encouraged by wet leaves and poor air circulation. Remove affected leaves, water at the base only, and space plants so air moves between them.
+
+Seeds that never germinated were most likely buried too deep, kept in cold soil, or simply old. Sow on the surface, keep the pot warm, and check the seed packet's date before you blame yourself.
+
+## Questions people ask
 
 ### How many basil plants can I grow in one pot?
 
@@ -142,21 +127,9 @@ Seeds germinate in five to ten days in warm soil. Plants are usually ready for a
 
 Yes, on a bright, sunny windowsill. Indoor plants grow more slowly in winter when the days are short, and a grow light helps a lot in the darker months.
 
-### What size pot does basil need?
-
-At least 20 cm wide and 20 cm deep for a single plant, with drainage holes. Bigger pots are better in hot weather because they dry out more slowly.
-
 ### When can I move potted basil outside?
 
 After the last frost, when night temperatures stay above 10°C. Harden plants off over seven to ten days first, and give them the sunniest spot you have.
-
-### Why did my basil seedlings die?
-
-The most common causes are damping off from cold, wet soil; seeds sown too deep; or seedlings moved outside before the weather was warm enough.
-
-## Conclusion
-
-Basil in pots is a forgiving first project: a pot with drainage, rich loose mix, seeds sown on the surface, and a sunny spot. Give it room — about 20 cm per plant — water it at the base, and don't rush it outside before the nights are warm. Within two months you will be picking fresh leaves from a plant you grew yourself.
 
 ## Related guides
 
@@ -164,8 +137,4 @@ Basil in pots is a forgiving first project: a pot with drainage, rich loose mix,
 - [How Do You Take Care of a Rosemary Plant?](/guides/how-do-you-take-care-of-a-rosemary-plant/)
 - [How Do You Take Care of Plants? Beginner Guide](/guides/how-do-you-take-care-of-plants/)
 
-## Sources and further reading
-
-- Royal Horticultural Society plant guides
-- Missouri Botanical Garden Plant Finder
-- University extension horticulture publications
+Further reading: Royal Horticultural Society plant guides; Missouri Botanical Garden Plant Finder; university extension horticulture publications.

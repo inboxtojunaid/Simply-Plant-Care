@@ -1,6 +1,6 @@
 ---
 title: "How Do You Take Care of a Rosemary Plant?"
-description: "Rosemary thrives with sun, sharp drainage, and a light hand on water. Learn how to care for it indoors and outdoors, and how to keep it alive through winter."
+description: "A rosemary on a sunny wall and one on a kitchen windowsill live by different rules — sun, water, soil and winter care for both, compared side by side."
 keyword: "how do you take care of a rosemary plant"
 category: "plant-care"
 hero: "/images/how-do-you-take-care-of-a-rosemary-plant.webp"
@@ -10,44 +10,21 @@ updated: "2026-11-24"
 related: ["how-do-you-care-for-a-basil-plant", "how-to-grow-basil-in-pots"]
 ---
 
-You take care of a rosemary plant by giving it as much sun as possible, sharp drainage, and water only when the soil has dried out. Rosemary is a Mediterranean shrub: it evolved on dry, sunny, rocky hillsides, so it wants conditions that would kill most houseplants — bright sun, poor soil, and a light hand on the watering can. The most common way to kill rosemary is to treat it like a thirsty houseplant.
+Rosemary lives two very different lives, and which one yours is living decides almost everything about how you care for it. On a sunny garden wall it becomes a woody shrub that can outlive your interest in gardening, fed by rain and ignored for years. On a kitchen windowsill it is a needy guest that wants your brightest spot, your driest air, and your restraint with the watering can. Same plant. Two sets of rules. Get them mixed up and it dies either way.
 
-Rosemary is a wonderful plant to keep because it is both a herb and an evergreen shrub. Indoors it gives you fresh leaves for cooking all year; outdoors it can grow into a handsome bush that lives for many years. The care differs quite a bit between the two, so this guide covers both.
+The plant comes from dry, rocky Mediterranean hillsides, and it has never quite forgotten that. Sun, poor soil, sharp drainage, and a light hand on water — those are its terms, indoors or out. The fastest way to kill rosemary is to treat it like a thirsty houseplant.
 
-## At a glance
+## Two homes, one shrub
 
-| Need | What rosemary wants |
-|---|---|
-| Light | Full sun — 6–8 hours of direct sun a day |
-| Water | Water when the soil is dry; rosemary tolerates drought far better than wet soil |
-| Soil | Very free-draining, even poor or sandy soil; neutral to slightly alkaline |
-| Pot | A terracotta pot with drainage holes |
-| Temperature | Hardy outdoors in mild climates; keep above −5 °C, or bring inside |
-| Humidity | Low — normal or dry indoor air is fine; no misting |
-| Feeding | Very light — one feed in spring, or none at all |
-| Difficulty | Easy outdoors in sun; moderate indoors |
+Let's start with the split, because it's the spine of everything that follows.
 
-## Light: full sun is not optional
+**Outdoors**, rosemary is easy. It gets full sun for free, rain does most of the watering, and the open air keeps its leaves dry and healthy. Its risks are winter cold and soil that holds water. A sheltered, sunny spot with sharp drainage, and it largely looks after itself.
 
-Rosemary needs full sun — six to eight hours of direct sun a day. Outdoors, the sunniest spot in the garden is the right one. Indoors, that means the sunniest windowsill you have, ideally south-facing. Rosemary in too little light grows leggy, with sparse, weak stems and little scent, and it becomes much more vulnerable to disease.
+**Indoors**, rosemary is a moderate challenge. You control the water and the cold, which is good. But light becomes the limiting factor, and still, warm, humid indoor air is exactly the environment where powdery mildew thrives. Its risks are too little light, still air, and overwatering.
 
-If your rosemary is indoors and stretching towards the window, it needs more light. A grow light can help in winter, but nothing replaces real sun for this plant. Rotate the pot regularly so it grows evenly rather than leaning hard towards the glass.
+Neither life is wrong. The mistake is caring for one as if it were the other — watering the garden plant like a houseplant, or giving the windowsill plant the same neglect the garden one earns.
 
-## Watering: less is more
-
-Rosemary hates wet feet. Water when the top few centimetres of soil are dry, then water thoroughly and let it drain completely. In a pot in summer that may be once a week; in winter, once every two or three weeks. In the ground outdoors, an established rosemary plant often needs no watering at all except in a long drought.
-
-The leaves will tell you when it is thirsty: they look slightly dull and the plant may droop a little. But do not water on a schedule — always check the soil. Overwatering causes the roots to rot, and a rosemary with root rot often looks dry and brown, which tempts people to water it more, making the problem worse. If the soil is wet and the plant looks unwell, the answer is to let it dry out, not to water again.
-
-## Soil and potting
-
-Rosemary wants poor, gritty, free-draining soil. Rich, moisture-retentive compost is the wrong choice. Use a mix of ordinary potting compost with a generous amount of perlite, grit or coarse sand — roughly one part grit to two parts compost — or a cactus mix with a little added compost. The soil should drain within seconds of watering.
-
-Terracotta pots suit rosemary well because they dry out faster than plastic. Always use a pot with drainage holes. Repot every two to three years in spring, going up one size. Rosemary dislikes being disturbed, so handle the root ball gently and do not bury the stem any deeper than it was.
-
-## Indoor vs outdoor care
-
-Rosemary can live happily in both places, but the care is different. Indoors you control the water and the cold, but light is the limiting factor. Outdoors the light is generous, but the plant has to cope with rain, cold, and whatever soil is in the ground. Use the comparison below to see the differences at a glance.
+Use the comparison below to see the two side by side before you decide where yours belongs.
 
 <div class="widget" id="how-do-you-take-care-of-a-rosemary-plant-compare">
   <h3>Indoor vs outdoor rosemary — tap to compare</h3>
@@ -82,49 +59,63 @@ Rosemary can live happily in both places, but the care is different. Indoors you
 })();
 </script>
 
-## Moving rosemary between indoors and outdoors
+## Sun: six hours is the floor, not the goal
 
-Many people keep rosemary outside in summer and bring it in for winter. That works well, but do it gradually in both directions. In spring, put it out for a few hours a day at first, then leave it out overnight once the nights are reliably above 10 °C. A plant moved straight from a windowsill into full sun can scorch. In autumn, bring it in before the first frost, and check the leaves for insects before you do — aphids and whiteflies love to hitch a ride indoors.
+Six to eight hours of direct sun a day — that's the number you'll see everywhere, and it's a minimum. Outdoors, the sunniest spot in the garden is the right one. Indoors, that means the sunniest windowsill you have, ideally south-facing.
 
-## Pruning and harvesting
+What does too little light look like? Leggy stems, sparse leaves, almost no scent. The plant stretches toward the window, and the growth it makes is weak and floppy. It also becomes far more vulnerable to disease — a dim, stuffy rosemary is a mildewed rosemary. A grow light can help in winter, but it is a patch, not a replacement. Rotate the pot regularly so the plant grows evenly instead of leaning hard toward the glass.
 
-Prune rosemary lightly after it flowers, in late spring or early summer, to keep it bushy. Cut the soft green tips, never the old woody stems — rosemary rarely regrows from bare wood, so a hard cut into an old stem leaves a bare patch. Regular light harvesting is itself a form of pruning: snipping sprigs for cooking keeps the plant compact.
+And the scent is a useful diagnostic. Rosemary is most fragrant in full sun, in poor soil, kept on the dry side. If your plant smells of nothing, it's usually too wet, too fed, or too dark.
 
-Harvest in the morning, when the oils are at their strongest, and take no more than about a third of the plant at once. Rosemary dries well — hang small bunches upside down in a dark, airy place — and the dried leaves keep their flavour for months.
+## Watering — the indoor plant drinks, the outdoor one mostly doesn't
 
-## Feeding: barely at all
+This is where the two lives diverge hardest.
 
-Rosemary comes from poor soils and needs almost no feeding. One light feed in spring is plenty, and many growers feed nothing at all. Overfeeding produces soft, leggy growth with less flavour and makes the plant more vulnerable to cold. If you do feed, use a balanced liquid feed at half strength, once, in spring.
+Indoors, in a pot, water when the top few centimetres of soil are dry, then water thoroughly and let it drain completely. In summer that may be once a week; in winter, once every two or three weeks. Never let it sit in water.
 
-## Common mistakes
+Outdoors, in the ground, an established rosemary often needs no watering at all except in a long drought. Rain does the job. Water a new plant until it's established, then step back.
 
-**Overwatering.** The single biggest rosemary killer. Wet soil rots the roots, and a rotting rosemary looks dry, which tempts people to water it more.
+The cruel twist: a rosemary with root rot often looks dry and brown — which tempts people to water it more, which makes the rot worse. If the soil is wet and the plant looks unwell, the answer is to let it dry out, not to water again. Always check the soil before reaching for the can. The leaves will tell you when it's genuinely thirsty — they look slightly dull and the plant may droop a little — but the soil check comes first.
 
-**Rich, wet soil.** Heavy compost holds too much water. Use a gritty, free-draining mix.
+## The soil question, indoors and out
 
-**Too little light indoors.** A rosemary on a dark shelf will go leggy and weak. It needs the sunniest spot you have.
+Rich, moisture-retentive compost is the wrong choice for rosemary in either setting. It wants poor, gritty, free-draining soil.
 
-**Still, humid indoor air.** Rosemary is prone to powdery mildew indoors. Give it air movement and do not mist it.
+In a pot, use ordinary potting compost mixed with a generous amount of perlite, grit, or coarse sand — roughly one part grit to two parts compost — or a cactus mix with a little added compost. The soil should drain within seconds of watering. Terracotta pots suit it because they dry out faster than plastic. Always use a pot with drainage holes.
 
-**Cutting into old wood.** Prune only the soft green growth. Old bare stems do not regrow.
+In the ground, poor, sandy, or stony soil is fine — even preferred. Heavy clay is the enemy: improve it with grit, or grow in a raised bed or a pot instead. Repotting, when it comes up every two or three years in spring, is a gentle job — rosemary dislikes being disturbed, so handle the root ball carefully and don't bury the stem any deeper than it was.
 
-**Leaving it out in a hard frost.** Rosemary is hardy to about −5 °C in a sheltered spot, but a hard frost after a wet winter can kill it. In cold areas, grow it in a pot you can move.
+## Moving it between the two worlds
 
-## Troubleshooting
+Many people keep rosemary outside in summer and bring it in for winter, and that works well — with one rule. Do it gradually, in both directions.
 
-**Brown, dry needles from the bottom up:** usually root rot from overwatering, or the plant has dried out completely. Check the soil — if it is wet, stop watering and improve drainage; if it is bone dry, water thoroughly.
+In spring, put it out for a few hours a day at first, then leave it out overnight once the nights are reliably above 10 °C. A plant moved straight from a windowsill into full sun can scorch. In autumn, bring it in before the first frost, and check the leaves for insects before you do. Aphids and whiteflies love to hitch a ride indoors.
 
-**White powdery coating on leaves:** powdery mildew, from still, humid air. Improve air circulation, remove affected leaves, and move the plant to a sunnier, airier spot.
+Winter is where the two lives split again. Outdoors, rosemary is hardy to about −5 °C in a sheltered spot; in colder areas, grow it in a pot you can move under cover, or protect it with fleece. A hard frost after a wet winter is the combination that kills it. Indoors, keep it in a cool, bright room — around 10–15 °C is ideal — rather than a hot, dry one. A cool bright room beats a warm dark one every time.
 
-**Leggy stems with sparse leaves:** not enough light. Move the plant to full sun and prune the tips to encourage branching.
+## Pruning, harvesting, and the wood you never cut
 
-**Leaves losing their scent:** usually too much water or fertiliser, or too little sun. Rosemary is most fragrant in sun, in poor soil, and kept on the dry side.
+Prune lightly after flowering, in late spring or early summer, to keep the plant bushy. Cut the soft green tips. Never cut into old, bare wood — rosemary rarely regrows from it, and a hard cut into an old stem leaves a bare patch that stays bare.
 
-**No growth in spring:** check for root rot, and whether the plant is potbound. A rosemary that has been in the same pot for years may need fresh gritty mix.
+Regular harvesting is itself a form of pruning. Snipping sprigs for cooking keeps the plant compact. Harvest in the morning, when the oils are at their strongest, and take no more than about a third of the plant at once. Rosemary dries well — hang small bunches upside down in a dark, airy place — and the dried leaves keep their flavour for months.
 
-**Plant died suddenly over winter:** often a combination of wet soil and frost. In cold climates, keep rosemary in a pot under cover in winter, or plant it in the driest, most sheltered spot you have.
+Feeding barely enters the picture. One light feed in spring is plenty, and many growers feed nothing at all. Overfeeding produces soft, leggy growth with less flavour and makes the plant more vulnerable to cold. If you do feed, use a balanced liquid feed at half strength, once, in spring. Then stop.
 
-## Frequently asked questions
+## If it looks unhappy
+
+**Brown, dry needles from the bottom up.** Usually root rot from overwatering, or the plant has dried out completely. Check the soil — wet soil means stop watering and improve drainage; bone dry means water thoroughly.
+
+**White powdery coating on the leaves.** Powdery mildew, from still, humid air. Improve air circulation, remove the affected leaves, and move the plant to a sunnier, airier spot. Don't mist it — rosemary likes dry air and hates wet leaves.
+
+**Leggy stems with sparse leaves.** Not enough light. Move the plant to full sun and prune the tips to encourage branching.
+
+**Leaves losing their scent.** Usually too much water or fertiliser, or too little sun. The fix is sun, poor soil, and a dry hand.
+
+**No growth in spring.** Check for root rot, and whether the plant is potbound. A rosemary that's been in the same pot for years may need fresh gritty mix.
+
+**Plant died suddenly over winter.** Often wet soil plus frost together. In cold climates, keep rosemary in a pot under cover in winter, or plant it in the driest, most sheltered spot you have.
+
+## Questions people ask
 
 ### How often should I water rosemary?
 
@@ -136,7 +127,7 @@ The usual cause is root rot from overwatering, especially if the lower leaves br
 
 ### Can rosemary live indoors all year?
 
-Yes, but it is harder indoors than outdoors. It needs your sunniest windowsill, good air circulation, and careful watering. A cool, bright room in winter (around 10–15 °C) suits it better than a hot, dry one. Many people find rosemary easier in a pot that spends summer outside and winter inside.
+Yes, but it's harder indoors than outdoors. It needs your sunniest windowsill, good air circulation, and careful watering. A cool, bright room in winter (around 10–15 °C) suits it better than a hot, dry one. Many people find rosemary easier in a pot that spends summer outside and winter inside.
 
 ### Should I mist my rosemary plant?
 
@@ -150,18 +141,9 @@ Lightly after flowering, in late spring or early summer. Snip the soft green tip
 
 Outdoors, plant it in a sheltered, sunny spot with sharp drainage, and protect it with fleece in a hard frost. In a pot, move it to a cool, bright, frost-free place. Indoors, keep it in a cool bright room, water sparingly, and give it as much light as you can.
 
-## Conclusion
-
-Rosemary is a plant that asks for sun, sharp drainage, and to be left alone — the opposite of a thirsty houseplant. Give it the brightest spot you have, a gritty mix in a pot that drains, and water only when the soil is dry. Indoors it needs light and air; outdoors it needs sun and drainage. Get those right and a rosemary plant will give you fragrant leaves for cooking for many years, with almost no feeding and very little fuss.
-
-## Related guides
+## Guides that pair with this one
 
 - [How Do You Care for a Basil Plant?](/guides/how-do-you-care-for-a-basil-plant/)
 - [How to Grow Basil in Pots](/guides/how-to-grow-basil-in-pots/)
 
-## Sources and further reading
-
-- Royal Horticultural Society plant guides
-- Missouri Botanical Garden Plant Finder
-- University extension horticulture publications
-- Royal Horticultural Society advice on growing herbs
+Further reading: the Royal Horticultural Society's advice on growing rosemary and other Mediterranean herbs, and the Missouri Botanical Garden's Plant Finder entry for rosemary.

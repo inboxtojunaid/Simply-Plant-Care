@@ -1,6 +1,6 @@
 ---
 title: "How to Take Care of an Ivy Plant"
-description: "How to take care of an ivy plant indoors: light, watering, humidity and the care differences between English ivy and other indoor ivies, plus pruning tips."
+description: "English, Algerian, grape or Swedish — your ivy is not one plant with one rulebook. Compare the four, then water, prune and place each one right."
 keyword: "how to take care of an ivy plant"
 category: "plant-care"
 hero: "/images/how-to-take-care-of-an-ivy-plant.svg"
@@ -10,55 +10,21 @@ updated: "2026-11-24"
 related: ["how-to-care-for-philodendron-plants", "how-do-you-take-care-of-a-spider-plant"]
 ---
 
-Ivy is a classic trailing houseplant: fast-growing, forgiving, and happy to spill from a hanging basket, climb a small trellis, or trail along a shelf. Indoors, the key to a full, leafy ivy is bright indirect light, evenly moist soil, and enough humidity to keep the leaves from crisping at the edges.
+Two of the four plants sold as "ivy" aren't ivy at all.
 
-Most indoor ivy is English ivy, but the name covers several related plants, and they do not all want exactly the same care. The care below fits English ivy first, with the differences for other common indoor ivies explained in the comparison below. The one thing they all share is a dislike of dry, hot air and soil that swings between soaking wet and bone dry.
+Grape ivy is a *Cissus*. Swedish ivy is a *Plectranthus*, a mint relative. Only English and Algerian ivy are true *Hedera*. They look similar enough on a shelf — trailing stems, green leaves, a habit of spilling out of their pots — but they disagree about water, warmth, and light in ways that matter once you bring one home. Water a grape ivy like an English ivy and you'll rot it. Keep a Swedish ivy as cool as an English ivy likes, and it'll sulk.
 
-## At a glance
+So before anything else: work out which one you've got. The rest of this guide follows from that answer.
 
-| Need | What an indoor ivy wants |
-|---|---|
-| Light | Bright, indirect light; some gentle morning sun is fine, harsh midday sun scorches leaves |
-| Water | Keep soil lightly moist; water when the top 2–3 cm is dry, and drain well |
-| Soil | Ordinary houseplant potting mix with perlite; a pot with drainage holes |
-| Humidity | Moderate to high — dry air causes brown leaf edges and invites spider mites |
-| Temperature | Cool to normal room temperatures, roughly 10–24°C; keep away from radiators |
-| Difficulty | Easy in a bright, cool room; harder in hot, dry centrally heated rooms |
+Most indoor ivy is English ivy, and most of the advice below starts there. But the comparison is the point — if your plant is one of the other three, the English rules will steer you wrong in exactly the places that kill plants.
 
-## Light
+## Which ivy is actually on your shelf?
 
-Ivy wants bright light without strong direct sun. A spot near an east-facing window, or a metre or two back from a south- or west-facing window, is ideal. Variegated ivies — the ones with cream or yellow markings — need more light than plain green ones, or their new leaves will come through mostly green.
+English ivy (*Hedera helix*) has lobed leaves, often with cream or yellow variegation, on thin woody stems. It's the classic. Algerian ivy (*Hedera algeriensis*) looks similar but bigger — larger, glossier leaves, thicker stems, and a noticeably faster, more vigorous growth habit. If your ivy seems to grow a foot while you're not looking, it's probably Algerian.
 
-Too little light makes ivy leggy: long bare stems with small, widely spaced leaves. Too much direct sun bleaches and scorches the leaves, leaving dry brown patches. If your ivy is stretching, move it closer to the window; if the leaves are bleaching, move it back a little or add a sheer curtain.
+Grape ivy (*Cissus rhombifolia*) has leaves shaped like grape leaves, in threes, and climbs with tendrils that curl around whatever they touch. Swedish ivy (*Plectranthus verticillatus*) has soft, scalloped, slightly fuzzy leaves and a habit of growing upright before it trails — and if you bruise a leaf, it smells faintly minty. That smell is the giveaway.
 
-## Watering
-
-Ivy likes its soil consistently lightly moist — not soggy, and not allowed to dry out completely.
-
-1. **Check the top 2–3 cm of soil.** If it feels dry, it is time to water.
-2. **Water evenly** until it runs out of the drainage hole.
-3. **Empty the saucer** after 15 minutes.
-4. **Watch the season.** In summer you may water weekly; in winter, growth slows and watering every two weeks may be enough.
-
-The most common watering mistake is letting the soil dry out completely and then drowning it to compensate. That cycle stresses the roots and causes leaves to drop. A regular check is better than a rescue soak.
-
-## Humidity and temperature
-
-Ivy prefers cooler rooms than many houseplants, and it notices dry air. Brown, crispy leaf edges and leaf drop in winter are often caused by a combination of central heating and low humidity rather than by watering.
-
-Help it by grouping it with other plants, standing the pot on a pebble tray filled with water (the pot itself sits above the water, not in it), or moving it to a naturally more humid room such as a bright bathroom. Misting helps briefly but does not raise humidity for long, and wet leaves in still air can encourage disease — airflow and a pebble tray are more useful.
-
-Keep ivy away from radiators, hot-air vents and cold draughts from doors. A cool room around 15–20°C suits it far better than a hot one.
-
-## Soil, pot and feeding
-
-Ordinary houseplant potting mix with a handful of perlite is fine for ivy. The pot needs drainage holes, and a hanging basket or a pot on a high shelf shows off the trailing stems best. Repot in spring when roots fill the pot, usually every one to two years.
-
-Feed with a balanced liquid fertiliser at half strength once a month in spring and summer only. Overfeeding causes weak, leggy growth and can burn the roots.
-
-## Training and pruning
-
-Ivy grows fast, and a little pruning keeps it full rather than stringy. Pinch or cut back the longest stems in spring to encourage branching — each cut usually produces two new shoots just below it. You can train stems around a small hoop or trellis, tuck them into the soil to root and fill a pot, or let them trail. Long bare stems can be cut back hard; ivy regrows readily from the base in the growing season.
+Still unsure? Look at the leaf. Lobed and leathery: English or Algerian. Three-lobed like a grape leaf, with tendrils: grape. Soft, round, scalloped, minty: Swedish. Four different plants, four different care sheets hiding under one shop label.
 
 <div class="widget" id="how-to-take-care-of-an-ivy-plant-types-widget">
 <h3>Ivy type comparison</h3>
@@ -90,73 +56,79 @@ Ivy grows fast, and a little pruning keeps it full rather than stringy. Pinch or
 </script>
 </div>
 
-## Common mistakes
+## English ivy, up close
 
-- **Letting the soil dry out completely.** Ivy drops leaves quickly when it dries out, and a dried-out root ball is hard to rewet evenly.
-- **Keeping it in a hot, dry room.** Central heating plus low humidity is the classic recipe for brown edges and spider mites.
-- **Overwatering in winter.** Growth slows in winter, so the plant uses less water. Soggy winter soil rots roots.
-- **Never pruning.** An unpruned ivy becomes a few long bare stems. Regular pinching keeps it bushy.
-- **Placing variegated ivy in low light.** The cream markings fade and new leaves come through plain green.
+English ivy wants bright light without strong direct sun. A spot near an east-facing window, or a metre or two back from a south- or west-facing window, is ideal. Variegated types — the ones with cream or yellow markings — need more light than plain green ones, or their new leaves come through mostly green and the pattern quietly disappears.
 
-## Troubleshooting
+Too little light makes it leggy: long bare stems with small, widely spaced leaves, like a vine that's given up on being bushy. Too much direct sun bleaches and scorches the leaves, leaving dry brown patches. Stretching? Move it closer to the window. Bleaching? Move it back a little, or hang a sheer curtain between plant and glass.
 
-### Leaves are dropping
+It also likes it cooler than most houseplants — roughly 10–24°C, happiest around 15–20°C. A hot room is its enemy in a way that surprises people who think of ivy as indestructible. Outdoors it's tough. Indoors, in a heated room in January, it's a different story.
 
-Leaf drop usually follows a sudden change — a move, a cold draught, drying out, or a pest problem. Check the soil moisture first, then look for spider mites (fine webbing and speckled leaves). Ivy often recovers well once conditions are steady and the offending stems are pruned back.
+## The other three, and where they disagree
 
-### Brown, crispy leaf edges
+Algerian ivy is English ivy's bigger, thirstier cousin. Same lobed look, larger scale, faster growth, and it wants more of everything in summer — more water, more space, a warmer room. It's the right choice for a large basket or a big trailing display, and the wrong choice for a small shelf where it'll outgrow its spot in a season. Give it room or give it a regular haircut.
 
-Dry air is the usual cause, especially in heated rooms in winter. Improve humidity with a pebble tray or by grouping plants, and move the plant away from radiators. Brown edges can also come from overfeeding, so flush the soil with plain water if you have fed heavily.
+Grape ivy is the forgiving one, in a specific way. It tolerates lower light and drier air better than English ivy, which makes it the best of the four for a dimmer room. But it dislikes overwatering more — let the top soil dry out further between waterings than you would for English ivy, and make sure the pot drains freely. Its tendrils will climb if you give them something to hold; without support it trails, happily enough.
 
-### Sticky leaves and fine webbing
+Swedish ivy is the odd one out. Warmer rooms, more water than English ivy, and a real dislike of cold draughts. It's soft-stemmed where the others are woody, and it responds to pinching better than any of them — nip the growing tips regularly and it branches into a bushy mound instead of a few long strands. Cuttings root so easily in water or moist soil that you'll have spares within weeks, whether you planned to or not.
 
-Spider mites love dry air and ivy. Shower the plant with lukewarm water, wiping the leaves, and repeat weekly. Raising the humidity and improving airflow helps prevent them coming back. Isolate the plant while you treat it.
+## Water and air: the two things ivy argues about
 
-### Leggy stems with few leaves
+All four like their soil lightly moist, but "lightly moist" means slightly different things once you know which plant you have. For English ivy, water when the top 2–3 cm feels dry, soak evenly until water runs out of the drainage hole, empty the saucer after fifteen minutes, and expect roughly weekly watering in summer, every two weeks in winter. Grape ivy wants a drier top layer before you water. Swedish ivy wants to stay a touch damper. Algerian ivy drinks more in summer than the others.
 
-Too little light. Move the ivy to a brighter spot and cut the bare stems back in spring to encourage new branching. The bare sections will not refill on their own.
+The mistake that kills more ivy than any other is the dry-out-then-drown cycle: let the soil dry completely, panic, and flood it to compensate. Roots stressed by drought don't take up a flood well, leaves drop, and the owner floods it again. A regular finger check beats a rescue soak every time.
 
-### Yellow leaves
+Humidity is the second argument, and it's really an argument about heating. Ivy prefers moderate to high humidity, and dry air gives it brown, crispy leaf edges plus an open invitation to spider mites. Winter is the worst season: central heating dries the air, the plant is already growing slowly, and the edges crisp while you're not looking. Grouping plants together helps. A pebble tray — pot standing above the water, never in it — helps more. A bright bathroom, with its naturally humid air, is often the happiest room in the house for an ivy, as long as there's enough light. Misting helps for minutes, not hours, and wet leaves in still air can encourage disease, so don't lean on it.
 
-A few yellow leaves at the base are normal ageing. Many yellow leaves at once usually mean overwatering or waterlogged soil — let the soil dry out, check that the pot drains, and cut back on watering until new growth looks healthy.
+Keep all four away from radiators, hot-air vents, and cold draughts from doors. And in winter, remember growth slows, so water use drops — soggy winter soil rots roots while the plant is barely drinking.
 
-## Frequently asked questions
+## Cutting it back so it fills out
 
-### How often should I water an indoor ivy plant?
+Ivy grows fast, and a little pruning keeps it full rather than stringy. Pinch or cut back the longest stems in spring and each cut usually produces two new shoots just below it — that's how a few long strands become a bushy plant. You can train stems around a small hoop or trellis, tuck them into the soil to root and fill the pot, or just let them trail from a hanging basket, which is one of the best ways to show ivy off. Just remember baskets dry out faster than pots on a shelf, so check the soil more often.
 
-Water when the top 2–3 cm of soil feels dry — roughly weekly in summer and every couple of weeks in winter. Keep the soil lightly moist rather than swinging between dry and soaked.
+Long bare stems can be cut back hard. Ivy regrows readily from the base in the growing season, so don't be timid about it — the bare sections won't refill on their own, and cutting them back is what prompts new growth from lower down. The cuttings root easily in water or moist soil, which is how one plant becomes several without spending anything.
+
+Ordinary houseplant potting mix with a handful of perlite suits all four types, in a pot with drainage holes. Repot in spring when roots fill the pot, usually every one to two years. Feed with a balanced liquid fertiliser at half strength, once a month, spring and summer only — overfeeding makes weak, leggy growth and can burn roots, which is the opposite of what pruning is trying to achieve.
+
+## When the leaves tell on you
+
+Leaves dropping? Usually a sudden change — a move, a cold draught, drying out, or pests. Check the soil moisture first, then look for spider mites: fine webbing and speckled leaves. Ivy often recovers well once conditions are steady and the offending stems are pruned back.
+
+Brown, crispy edges? Dry air, especially in heated rooms in winter. Improve humidity with a pebble tray or by grouping plants, move it away from radiators, and keep the soil lightly moist. Brown edges can also come from overfeeding, so flush the soil with plain water if you've fed heavily.
+
+Sticky leaves and fine webbing? Spider mites love dry air and ivy, in that order. Shower the plant with lukewarm water, wipe the leaves, repeat weekly. Raising the humidity and improving airflow helps keep them from coming back. Isolate the plant while you treat it.
+
+Leggy stems with few leaves? Too little light, almost always. Move it to a brighter spot and cut the bare stems back in spring. Yellow leaves? A few at the base are normal ageing. Many at once usually mean overwatering or waterlogged soil — let it dry out, check that the pot drains, and cut back on watering until new growth looks healthy.
+
+## Quick answers
+
+### How often should I water an indoor ivy?
+
+When the top 2–3 cm of soil feels dry — roughly weekly in summer, every couple of weeks in winter. Keep the soil lightly moist rather than swinging between dry and soaked. Grape ivy likes it a touch drier; Swedish ivy a touch damper.
 
 ### Does ivy need direct sunlight indoors?
 
 No — bright, indirect light is best. A little gentle morning sun is fine, but strong midday sun scorches the leaves. Variegated ivy needs more light than plain green ivy to keep its markings.
 
-### Why are my ivy leaves turning brown and crispy?
+### Why are the leaves turning brown and crispy?
 
 Usually dry air, especially from central heating, sometimes combined with underwatering. Improve humidity with a pebble tray, move the plant away from radiators, and keep the soil lightly moist.
 
-### Can I grow ivy in a hanging basket?
+### Can I grow it in a hanging basket?
 
-Yes — hanging baskets are one of the best ways to grow ivy indoors, since the stems can trail freely. Just remember that baskets dry out faster than pots on a shelf, so check the soil more often.
+Yes — hanging baskets are one of the best ways to grow ivy indoors, since the stems can trail freely. Baskets dry out faster than pots on a shelf, so check the soil more often.
 
-### How do I make my ivy bushier?
+### How do I make it bushier?
 
-Pinch or cut back the growing tips regularly, especially in spring. Each cut encourages branching below it, and the cuttings root easily in water or moist soil if you want more plants.
+Pinch or cut back the growing tips regularly, especially in spring. Each cut encourages branching below it, and the cuttings root easily in water or moist soil.
 
 ### Is ivy safe for pets?
 
 English ivy is toxic to cats and dogs if eaten, so keep it out of reach of pets that chew plants, and wash your hands after handling it if you have sensitive skin.
 
-## Conclusion
-
-Ivy rewards simple, steady care: bright indirect light, soil that stays lightly moist, a cool room and a bit of humidity. Prune it in spring, keep it away from hot dry air, and it will trail happily for years. If you can offer it a bright bathroom or a cool, well-lit room, you have found its favourite place in the house.
-
-## Related guides
+## Keep reading
 
 - [How to Care for Philodendron Plants](/guides/how-to-care-for-philodendron-plants/)
 - [How Do You Take Care of a Spider Plant?](/guides/how-do-you-take-care-of-a-spider-plant/)
 
-## Sources and further reading
-
-- Royal Horticultural Society plant guides
-- Missouri Botanical Garden Plant Finder
-- University extension horticulture publications
+Further reading: Royal Horticultural Society (RHS) ivy growing advice; Missouri Botanical Garden Plant Finder; your local university extension horticulture pages.

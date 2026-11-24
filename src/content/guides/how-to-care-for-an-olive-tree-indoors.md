@@ -1,6 +1,6 @@
 ---
 title: "How to Care for an Olive Tree Indoors"
-description: "How to care for an olive tree indoors: light, watering, pruning and the rotation routine that keeps this Mediterranean tree happy inside all year round."
+description: "Six hours of sun, a terracotta pot and a weekly quarter-turn: the indoor olive routine that keeps a Mediterranean tree alive — and fruit off the agenda."
 keyword: "how to care for an olive tree indoors"
 category: "plant-care"
 hero: "/images/how-to-care-for-an-olive-tree-indoors.webp"
@@ -10,47 +10,30 @@ updated: "2026-11-24"
 related: ["how-to-care-for-a-ficus-tree", "snake-plant-light-needs"]
 ---
 
-An olive tree can live indoors, but it will only be happy if you can give it what it evolved for: a lot of bright light, good air movement, and a distinct change of seasons. Put it in your sunniest window, water it carefully rather than generously, and it can be a striking, long-lived houseplant — just do not expect a big olive harvest from a tree grown in a living room.
+Six hours. That's the number that decides whether an olive tree survives your living room.
 
-The most common reason indoor olive trees fail is light. This is a Mediterranean tree that grows in full sun on dry, rocky hillsides. A spot a few metres from a window, or a north-facing room, is not enough. If you cannot offer at least six hours of strong light a day, an olive tree will drop leaves, grow leggy, and slowly decline.
+Not six hours of vague brightness, not six hours near a window. Six hours of strong, direct sun on the leaves. An olive is a Mediterranean hillside tree — dry soil, rocky ground, wind, and sun that doesn't apologise. Put it three metres from a window in a north-facing room and it will thin out, drop leaves, and slowly give up, no matter how carefully you water it.
+
+So the honest question isn't "can I keep one indoors?" It's "can I give it a sunny window and leave it alone between waterings?" If the answer is yes, it can live with you for years. If the answer is no, pick something that evolved for shade. No hard feelings either way.
 
 ## At a glance
 
-| Need | What an indoor olive tree wants |
+| Need | What it wants indoors |
 |---|---|
-| Light | As much direct sun as possible — 6+ hours a day; a south-facing window is best |
-| Water | Water thoroughly when the top few centimetres of soil are dry; never leave it sitting in water |
-| Soil | Free-draining, slightly alkaline mix — ordinary potting soil with added perlite and grit |
+| Light | 6+ hours of direct sun a day; south-facing window first, west-facing second |
+| Water | Deep soak when the top 3–5 cm of soil is dry; never left standing in water |
+| Soil | Free-draining, slightly alkaline; ordinary potting soil plus perlite and grit |
 | Pot | Terracotta with drainage holes; repot every 2–3 years in spring |
-| Temperature | Cool winters suit it (around 10°C is fine); keep away from radiators and hot draughts |
-| Difficulty | Moderate — light and airflow are the hard parts, not the watering |
+| Temperature | Cool winters suit it, around 10°C; keep it away from radiators |
+| Difficulty | Moderate — light and airflow are the hard parts |
 
-## Light and position
+## Six hours of sun, or it sulks
 
-Light decides almost everything for an indoor olive. A south-facing window is the best indoor spot in the northern hemisphere, giving the longest stretch of direct sun. A west-facing window is the next best, with strong afternoon sun. East-facing windows give gentler morning light, which can work for a small tree but may not be enough on its own in winter. A north-facing window is rarely sufficient.
+Light decides almost everything here. A south-facing window gives the longest stretch of direct sun in the northern hemisphere, which is why it tops the list. West-facing comes next, with strong afternoon sun that most trees handle well. East-facing gives gentle morning light — fine for a small tree in summer, often not enough in winter. North-facing? Rarely enough, full stop.
 
-Place the tree as close to the glass as you can, and keep the window clean. In summer, if you have a balcony, terrace or garden, moving the tree outside for the warm months is the single best thing you can do for it. Bring it back inside before the first frosts, and move it gradually so the change in light does not shock it.
+Get it as close to the glass as you can. Clean the window, too — a grubby pane cuts more light than people realise. And if you have a balcony, terrace, or garden, moving the tree outside for the warm months is the single best thing you can do for it. Bring it back in before the first frosts, and do it gradually: a week in a sheltered spot first, then its usual indoor place, so the light change doesn't shock it.
 
-Air movement matters too: olive trees dislike still, stuffy air, which encourages pests such as scale and spider mites. A room with an opening window suits them far better than a sealed, centrally heated room.
-
-## Watering an indoor olive tree
-
-Olive trees are drought-tolerant, but a potted tree still needs regular watering in the growing season — it just hates wet feet.
-
-1. **Check the soil.** Water when the top 3–5 cm feels dry.
-2. **Water deeply.** Soak until water runs from the drainage holes, so the whole root ball is moistened.
-3. **Drain fully.** Empty the saucer after 15–20 minutes. Standing water is the quickest way to cause root rot.
-4. **Ease off in winter.** Growth slows and light is weaker, so the tree uses far less water. Let the soil dry out more between waterings, but do not let the root ball dry out completely for long stretches.
-
-Overwatering shows up as yellowing leaves that drop, often from the lower branches first. Underwatering shows up as leaves that curl and dry at the edges. The soil check, not a calendar, tells you which problem you have.
-
-## Soil, pot and feeding
-
-Use a free-draining mix: ordinary potting soil with a generous handful of perlite and coarse grit mixed in, which keeps air around the roots. A slightly alkaline soil suits olives, so there is no need for acidic mixes or ericaceous compost.
-
-Terracotta pots are a good match because they breathe and dry out between waterings. Choose a pot with drainage holes and a saucer you can empty. Repot every two to three years in spring, going up just one pot size — a huge pot full of wet soil is a common cause of trouble.
-
-Feed lightly: a balanced liquid fertiliser at half strength once a month from spring to early autumn is enough. Do not feed in winter.
+Rotation matters as much as position. A tree that never turns grows one-sided, leaning hard toward the glass while the far side stays thin. A quarter turn every week or two keeps growth even. The planner below works out what your window and your rotation habit add up to.
 
 <div class="widget" id="how-to-care-for-an-olive-tree-indoors-light-widget">
 <h3>Light and rotation planner</h3>
@@ -95,81 +78,71 @@ Feed lightly: a balanced liquid fertiliser at half strength once a month from sp
 </script>
 </div>
 
-## Pruning and shaping
+Air movement belongs in the same conversation as light. Olives dislike still, stuffy rooms. Stagnant air invites scale and spider mites, and a tree wedged behind curtains in a sealed, centrally heated room will show it. A room with a window that actually opens suits it far better.
 
-Olive trees respond well to pruning, and a light annual prune keeps an indoor tree compact and shapely. The best time is late winter or early spring, just before growth restarts.
+## A tree in a pot, not a tree in the ground
 
-- Remove dead, crossing or very thin branches first.
-- Thin the centre lightly so light and air reach the inner leaves.
-- Shorten overly long shoots to keep the tree in proportion with its pot.
-- Do not remove more than about a third of the canopy in one year.
+Here's the shift that trips people up. Outside, an olive's roots can roam metres through dry, stony soil. Inside, they're trapped in a pot maybe 25 cm wide. Everything — water, air, food — has to pass through that small volume, so the pot and the mix matter more than they would in a garden.
 
-## Winter care
+Watering, then. The tree is drought-tolerant, which tempts people into two opposite mistakes: drowning it, or giving it tiny sips every other day. Neither works. What works is a deep soak, then a wait. Push a finger into the soil. Dry at 3–5 cm down? Water until it runs out of the drainage holes, so the whole root ball gets wet. Then empty the saucer after fifteen or twenty minutes and don't water again until the top dries out once more. Little-and-often watering keeps the surface damp while the deep roots stay dry, which is the worst of both worlds.
 
-Winter is where many indoor olive trees struggle, and the cause is usually the combination of low light and warm, dry indoor air. If you can, give the tree a cool winter rest: a bright, unheated room or cool conservatory where temperatures stay above freezing but below normal room temperature suits it well. Water sparingly during this rest, and do not feed.
+Winter changes the rhythm. Growth slows, light weakens, and the tree drinks far less. Let the soil dry out more between waterings, but don't let the root ball stay bone dry for weeks — that's a different kind of stress, and it shows as leaves curling and drying at the edges. Yellowing leaves that drop from the lower branches first usually mean the opposite problem: too much water, too often.
 
-## Common mistakes
+The mix should drain fast. Ordinary potting soil with a generous handful of perlite and coarse grit does the job, keeping air around the roots. A slightly alkaline soil suits olives, so skip acidic or ericaceous compost — it isn't needed and it won't help. Terracotta is the natural partner here because it breathes and dries between waterings, unlike glazed ceramic or plastic, which hold moisture longer. Whatever you choose, it needs drainage holes and a saucer you actually empty.
 
-- **Putting it in a dark corner.** An olive tree is not a low-light plant. Distance from the window matters as much as direction.
-- **Watering little and often.** Frequent shallow watering keeps the surface wet and the deep roots dry. Water deeply, then wait.
-- **Leaving it in standing water.** A saucer that is never emptied will rot the roots, even in a free-draining mix.
-- **Expecting olives.** Indoor trees rarely fruit, and fruit needs a cold winter period and pollination. Enjoy the tree for its foliage and form.
+Repot every two to three years in spring, going up just one pot size. A huge pot full of wet soil is a classic cause of trouble: more soil than the roots can drink from stays soggy, and soggy soil rots roots. While you're at it, feed lightly — a balanced liquid fertiliser at half strength, once a month, spring to early autumn. Nothing in winter. The tree isn't growing then, and fertiliser in cold, dark months just builds up salts in the soil.
 
-## Troubleshooting
+## Pruning a small tree without ruining it
 
-### Leaves are dropping
+Olives respond well to a light annual prune, and late winter or early spring — just before growth restarts — is the moment. Take out dead, crossing, or very thin branches first, then thin the centre lightly so light and air reach the inner leaves. Shorten any shoot that's throwing the tree out of proportion with its pot. Stop at about a third of the canopy in one year; more than that, and you're asking a slow-growing tree to regrow faster than it can.
 
-Some leaf drop after a move, a change of season or a cold draught is normal — olive trees shed older leaves and can be dramatic about it. If the drop continues, check light first, then watering: soggy soil and too little light are the two usual causes. A tree that drops leaves but keeps firm green shoots usually recovers once conditions settle.
+Pruning isn't just cosmetic. A dense, unpruned crown traps still air in the middle, which is exactly where pests settle. A little thinning each year keeps the whole tree healthier, not just tidier.
 
-### Leaves are yellowing
+## Winter: cool, bright, and barely watered
 
-Yellow leaves on the lower branches often point to overwatering. Yellow leaves with dry, brown edges can point to underwatering or dry heated air. Feel the soil before deciding: wet soil plus yellow leaves means hold off watering and check drainage; dry soil plus yellow leaves means water deeply.
+Winter is where most indoor olives struggle, and it's rarely one thing. It's the combination: low light plus warm, dry indoor air plus a owner who keeps watering like it's July.
 
-### Sticky leaves or tiny insects
+If you can, give it a cool winter rest. A bright, unheated room or a cool conservatory, somewhere that stays above freezing but below normal room temperature — around 10°C is fine — suits it far better than a warm hallway. Water sparingly through the rest, don't feed, and accept that growth will pause. That's normal. It's resting, not dying.
 
-Check the undersides of leaves and the stems for scale insects — small brown bumps — and for spider mites, which leave fine webbing and speckled leaves. Wipe scale off by hand, wash the foliage with a gentle shower, and improve airflow. Isolate the tree while you deal with a pest problem so it does not spread to other plants.
+What it can't handle is a warm, dark winter. Heat without light pushes soft, pale growth that then drops. So if you have to choose between a cool bright room and a warm dim one, take the cool bright room every time.
 
-### Leggy, sparse growth
+## What usually goes wrong
 
-The tree is reaching for more light. Move it closer to your brightest window and prune back the longest shoots in spring. Growth that has already stretched will not fill in on its own.
+Leaves dropping? Some shedding after a move, a change of season, or a cold draught is normal — olives shed older leaves and can be dramatic about it. If the drop keeps going, check light first, then watering. Soggy soil and too little light are the two usual causes, and a tree that drops leaves but keeps firm green shoots usually recovers once conditions settle.
 
-## Frequently asked questions
+Leaves yellowing? Yellow on the lower branches often points to overwatering. Yellow with dry, brown edges can point to underwatering or dry heated air. Feel the soil before deciding — wet soil plus yellow leaves means hold off watering and check the drainage; dry soil plus yellow leaves means water deeply, now.
 
-### Can an olive tree live indoors all year?
+Sticky leaves, or tiny insects? Look under the leaves and along the stems for scale — small brown bumps that don't move — and for spider mites, which leave fine webbing and speckled leaves. Wipe scale off by hand, give the foliage a gentle shower, and improve the airflow. Keep the tree away from your other plants while you deal with it.
 
-Yes, if it gets enough light. A south- or west-facing window with 6+ hours of direct sun is the minimum for a healthy tree. Moving it outdoors for the summer is ideal but not essential if the indoor light is strong.
+Leggy, sparse growth? The tree is reaching for more light, and no amount of feeding will fix that. Move it closer to your brightest window and prune the longest shoots back in spring. Growth that has already stretched won't fill in on its own — you cut it back and let new, compact growth take over.
 
-### How often should I water an indoor olive tree?
+And the question everyone asks: will it fruit? Very rarely indoors. Fruit needs a cold winter period, strong sun, and usually pollination, and a living room supplies maybe one of those three. Enjoy the silvery foliage and the shape. That's what you're actually growing.
 
-Water when the top 3–5 cm of soil is dry, soaking thoroughly and letting the excess drain away. In summer that may be weekly; in winter, much less often. Never let the pot sit in water.
+## Questions people ask
 
-### Why is my indoor olive tree dropping leaves?
+### Can it live indoors all year?
 
-Leaf drop is usually a response to a change — a move, lower light in autumn, a cold draught, or overwatering. Check the soil and the light, keep conditions steady, and give it a few weeks to settle before changing anything else.
+Yes, if the light is strong enough — a south- or west-facing window with 6+ hours of direct sun is the minimum. Moving it outside for summer is ideal but not essential when the indoor light is genuinely strong.
 
-### Will my indoor olive tree produce olives?
+### How often should I water it?
 
-Very rarely. Fruiting needs a cold winter period, strong sun, and usually pollination. Most indoor trees are grown for their silvery foliage and shape, not for fruit.
+When the top 3–5 cm of soil is dry, soaking thoroughly and letting the excess drain away. In summer that may be weekly; in winter, much less often. Never let the pot sit in water.
+
+### Why is it dropping leaves?
+
+Usually a change — a move, lower light in autumn, a cold draught, or overwatering. Check soil and light, keep conditions steady, and give it a few weeks to settle before changing anything else.
 
 ### Do olive trees need a cold winter indoors?
 
-They benefit from a cool winter rest, around 10°C, in a bright spot. A warm, dark winter is harder for them than a cool, bright one, so a cool room is better than a warm hallway.
+They benefit from a cool rest around 10°C in a bright spot. A warm, dark winter is harder for them than a cool, bright one, so a cool room beats a warm hallway.
 
-### When should I repot an indoor olive tree?
+### When should I repot?
 
-Every two to three years in spring, or when roots fill the pot and growth slows. Go up one pot size, use a free-draining mix, and water sparingly for the first few weeks after repotting.
+Every two to three years in spring, or when roots fill the pot and growth slows. Go up one pot size, use a free-draining mix, and water sparingly for the first few weeks afterwards.
 
-## Conclusion
-
-An indoor olive tree is a rewarding plant, but it is not a set-and-forget one. Its needs are simple — strong light, deep but infrequent watering, free-draining soil and fresh air — yet they are non-negotiable. If your brightest window can give it six hours of sun and you can resist the urge to overwater, an olive tree can be a beautiful, slow-growing companion for many years.
-
-## Related guides
+## More guides in this vein
 
 - [How to Care for a Ficus Tree](/guides/how-to-care-for-a-ficus-tree/)
 - [Snake Plant Light Needs Explained](/guides/snake-plant-light-needs/)
 
-## Sources and further reading
-
-- Royal Horticultural Society plant guides
-- Missouri Botanical Garden Plant Finder
-- University extension horticulture publications
+Further reading: Royal Horticultural Society (RHS) olive growing advice; Missouri Botanical Garden Plant Finder; your local university extension horticulture pages.

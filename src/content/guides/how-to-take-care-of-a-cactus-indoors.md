@@ -1,6 +1,6 @@
 ---
 title: "How to Take Care of a Cactus Indoors"
-description: "Learn how to take care of a cactus indoors: the right light, watering rhythm, gritty soil and pot, plus how to stop rot before it starts in any season."
+description: "Desert rules, indoor pot: strong sun, rare deep watering, gritty soil that drains fast. What each desert fact means for light, water, soil and winter rest."
 keyword: "how to take care of a cactus indoors"
 category: "plant-care"
 hero: "/images/how-to-take-care-of-a-cactus-indoors.webp"
@@ -10,47 +10,41 @@ updated: "2026-11-24"
 related: ["how-do-you-take-care-of-succulents", "how-do-you-take-care-of-an-aloe-vera-plant"]
 ---
 
-A cactus is one of the most forgiving houseplants you can own — provided you treat it like a desert plant, not like a leafy tropical one. Give it strong light, a gritty fast-draining soil, a pot with a drainage hole, and water only when the soil is completely dry, and most indoor cacti will thrive for years with very little attention.
+A desert gets less than 25 cm of rain a year. Some deserts get less than 2 cm. The sun is brutal, the soil is mostly rock and sand, and the nights are cold. A cactus evolved for exactly that — and then we bring it into a living room, water it weekly, and wonder why it rots.
 
-The single biggest mistake people make with an indoor cactus is overwatering. Cacti store water in their thick stems, so they can go weeks without a drink. What they cannot survive is sitting in damp soil: their roots rot quickly, the base turns soft and yellow, and by the time the damage shows on the outside it is often too late. If you remember one rule, make it this one — when in doubt, do not water.
+Every care decision for an indoor cactus follows from the desert it came from. Get the desert logic right and the plant asks for almost nothing. Get it wrong in one place — usually water — and the plant dies quietly, from the roots up, while looking fine on the outside.
 
-## At a glance
+## The desert in your living room: what it actually is
 
-| Need | What a cactus wants indoors |
-|---|---|
-| Light | As much direct sun as you can give it — a south- or west-facing windowsill is ideal; at least 4–6 hours of direct sun a day |
-| Water | Soak thoroughly, then let the soil dry out completely before watering again; far less in winter |
-| Soil | Very gritty and fast-draining — cactus mix, or potting soil heavily amended with perlite, pumice or coarse grit |
-| Pot | Terracotta with a drainage hole; slightly snug rather than oversized |
-| Temperature | Warm in the growing season; most cope with normal room temperatures and cooler winters around 10–15°C |
-| Difficulty | Easy, as long as you resist overwatering |
+Your living room is not a desert. It's warm, still, and humid by desert standards, with light that is a fraction of what the plant would get outdoors. That gap matters, because it means you can't copy the desert exactly — you have to translate it.
 
-## Light: the make-or-break factor
+Translation means exaggerating the dry parts and maximising the bright parts. The brightest windowsill you have. The grittiest soil you can mix. The longest gap between waterings you can stand. A cactus indoors needs you to lean into the desert, because your home is already leaning the other way — towards damp, still, dim.
 
-A cactus is a sun plant. Indoors, the brightest spot you have is rarely too bright. A south-facing windowsill is the classic choice, and a west-facing one is a good second. East-facing windows give gentler morning sun, which suits smaller or younger cacti, while a north-facing window is usually not enough on its own — a cactus there will stretch, pale and grow thin, a response called etiolation.
+The plant itself gives you the logic, if you look at it. Thick stem: water storage. Spines: shade and defence, not decoration. Shallow, spreading roots: built to catch a brief rain before it drains away. Your job is to not create the opposite problem — constant moisture — in a pot.
 
-Turn the pot a quarter turn every couple of weeks so it grows evenly instead of leaning toward the glass.
+## Lesson one from the desert: sun is not optional
 
-In winter, keep the cactus on your brightest sill and accept that growth will slow or stop. Do not compensate for low light with extra water — that combination is what causes rot.
+A cactus is a sun plant. Indoors, the brightest spot you have is rarely too bright. A south-facing windowsill is the classic choice, and a west-facing one is a good second. East-facing windows give gentler morning sun, which suits smaller or younger cacti. A north-facing window is usually not enough on its own — a cactus there will stretch, pale and grow thin, a response called etiolation.
 
-## How to water a cactus indoors
+How much sun, exactly? At least four to six hours of direct sun a day. More is better, within reason. If the plant looks bleached or brown on the sun-facing side after a move, that's sunburn, and it means the move was too sudden, not that the sun is too strong. Move it gradually, over a week or so, and it will adjust.
 
-Forget a fixed schedule. The right rhythm depends on pot size, light, temperature and the time of year, so check the soil instead of the calendar.
+Turn the pot a quarter turn every couple of weeks so it grows evenly instead of leaning toward the glass. In winter, keep it on your brightest sill and accept that growth will slow or stop. Don't compensate for low light with extra water. That combination — dim and wet — is what causes rot.
 
-1. **Check first.** Push a finger or a wooden skewer into the soil. If you feel any dampness at all, wait.
-2. **Soak when fully dry.** Water thoroughly until it runs out of the drainage hole. This encourages deep roots and flushes out salts.
-3. **Drain completely.** Empty the saucer or cache pot after 15 minutes. Never let the pot sit in a puddle.
-4. **Wait again.** In spring and summer this might mean watering every two to three weeks; in winter, once a month or even less is often enough.
+## Lesson two: rain comes in bursts, then nothing
 
-Rainwater or tap water left to stand overnight both work well.
+In the desert, rain is rare and heavy. It soaks the ground, then the ground dries out completely, sometimes for months. A cactus is built for that rhythm: soak, then drought. It is not built for a little water every week, which keeps the soil permanently damp and the roots permanently wet.
 
-## Soil, pot and repotting
+So forget a fixed schedule. The right rhythm depends on pot size, light, temperature and the time of year, so check the soil instead of the calendar. Push a finger or a wooden skewer into the soil. If you feel any dampness at all, wait.
 
-Cactus roots need air as much as they need water, which is why ordinary potting soil is a poor choice on its own — it holds moisture for far too long. A commercial cactus and succulent mix is the simplest option, and it works well for most species. If you want to go further, make your own gritty mix (see the comparison below) with roughly equal parts potting soil, perlite or pumice, and coarse grit or sand.
+When the soil is fully dry, all the way through the pot, water thoroughly until it runs out of the drainage hole. This encourages deep roots and flushes out salts. Then drain completely — empty the saucer or cache pot after 15 minutes, and never let the pot sit in a puddle. Then wait again. In spring and summer that might mean watering every two to three weeks; in winter, once a month or even less is often enough. Rainwater or tap water left to stand overnight both work well.
 
-Terracotta pots suit cacti better than plastic or glazed ceramic because the porous clay lets moisture evaporate through the walls, helping the soil dry faster. Whatever material you choose, a drainage hole is non-negotiable. A pot that is only slightly larger than the root ball is better than a big one: excess soil stays wet for longer.
+If you remember one rule, make it this one: when in doubt, do not water. A cactus stores water in its thick stem, so it can go weeks without a drink. What it cannot survive is sitting in damp soil. Its roots rot quickly, the base turns soft and yellow, and by the time the damage shows on the outside it's often too late.
 
-Repot only when the cactus is clearly outgrowing its pot or the soil has broken down — usually every two to three years, in spring. Wear thick gloves or wrap the plant in folded newspaper to handle it safely, and wait a week after repotting before watering, so any damaged roots can heal.
+## Lesson three: the ground drains in minutes
+
+Desert soil is mostly grit, gravel and sand. Water runs through it in minutes. Ordinary potting soil does the opposite — it holds moisture for days — which is why it's a poor choice for a cactus on its own.
+
+A commercial cactus and succulent mix is the simplest option, and it works well for most species. If you want to go further, make your own gritty mix with roughly equal parts potting soil, perlite or pumice, and coarse grit or sand. Water it and watch: if water runs through quickly and the surface dries within a day, the mix is right.
 
 <div class="widget" id="how-to-take-care-of-a-cactus-indoors-soil-widget">
 <h3>Soil drainage comparison</h3>
@@ -79,39 +73,37 @@ Repot only when the cactus is clearly outgrowing its pot or the soil has broken 
 </script>
 </div>
 
-## Feeding and seasonal care
+The pot matters as much as the mix. Terracotta suits cacti better than plastic or glazed ceramic because the porous clay lets moisture evaporate through the walls, helping the soil dry faster. Whatever material you choose, a drainage hole is non-negotiable. A pot only slightly larger than the root ball is better than a big one: excess soil stays wet for longer.
 
-Feed sparingly. A half-strength cactus fertiliser once a month in spring and summer is plenty; stop feeding in autumn and winter when growth pauses.
+Repot only when the cactus is clearly outgrowing its pot or the soil has broken down — usually every two to three years, in spring. Wear thick gloves or wrap the plant in folded newspaper to handle it safely, and wait a week after repotting before watering, so any damaged roots can heal.
 
-In winter, many cacti benefit from a cool, bright rest with very little water — this rest also encourages flowering in some species the following spring.
+## Lesson four: winter is a rest, not a growing season
 
-## Common mistakes
+Desert winters are cool and dry. Many cacti expect that — a cool, bright rest with very little water — and some species need it to flower the following spring. Your home can give them a version of it: keep the plant on its brightest sill, cut watering back to once a month or less, and let the room cool a little if you can. Most cope with normal room temperatures and cooler winters around 10–15°C.
 
-- **Watering on a schedule.** A weekly water is far too much for most indoor cacti in winter, and often too much in summer too. Check the soil every time.
-- **Using a pot without drainage.** Decorative pots without holes are the fastest route to root rot. Use them as an outer cache pot and lift the inner pot out to water.
-- **Keeping it in a dark corner.** Cacti tolerate neglect, not darkness. A cactus on a bookshelf away from the window will stretch and weaken.
-- **Misting.** Cacti do not need humidity and misting can encourage rot in the crown. Dry air suits them fine.
-- **Repotting into a huge pot.** A big pot full of wet soil stays damp far longer than the roots can handle.
+Stop feeding in autumn and winter, when growth pauses. Feed sparingly the rest of the year: a half-strength cactus fertiliser once a month in spring and summer is plenty. More than that just builds up salts in the soil.
 
-## Troubleshooting
+Winter is also when overwatering does its worst damage, because the plant is barely using water at all. A weekly water in January is far too much for most indoor cacti. Check the soil every time.
 
-### My cactus is going soft and yellow at the base
+## Lesson five: spines are not decoration
 
-This is usually root or stem rot from overwatering or poorly draining soil. Stop watering immediately. If the soft area is small, unpot the plant, cut away all soft, dark roots and mushy stem back to healthy green flesh, let the cut dry for several days, then repot into dry gritty mix and wait a week before watering lightly.
+Spines do three jobs in the desert: they shade the stem from harsh sun, they break up airflow so the plant loses less moisture, and they keep animals from eating it. Indoors, they do a fourth job — they tell you when something's wrong, if you look closely.
 
-### My cactus is stretching tall and thin
+White cottony patches in the joints and spines usually mean mealybugs. Remove them with a cotton bud dipped in rubbing alcohol, repeat weekly until they're gone, and isolate the plant from your other houseplants while you treat it.
 
-It needs more light. Move it gradually to your brightest windowsill — a sudden jump into full sun after months in shade can scorch it, so shift it over a week or so. The stretched part will not shrink back, but new growth should come in compact.
+Brown, corky patches are a different story. Some corking at the base of an older cactus is natural ageing. Sudden brown patches higher up can be sunburn after a move into strong sun, or cold damage. Move the plant gradually and keep it away from cold draughts and frosty windows.
 
-### White cottony patches or tiny insects
+And no, don't mist it. Cacti don't need humidity, and misting can encourage rot in the crown. Dry air suits them fine. That's the desert talking, again — dry air is the default, not a problem to fix.
 
-Check for mealybugs, which look like small white cottony clumps in the joints and spines. Remove them with a cotton bud dipped in rubbing alcohol, repeat weekly until they are gone, and isolate the plant from your other houseplants while you treat it.
+## When the desert logic breaks down
 
-### Brown, corky patches on the skin
+A cactus going soft and yellow at the base is usually root or stem rot from overwatering or poorly draining soil. Stop watering immediately. If the soft area is small, unpot the plant, cut away all soft, dark roots and mushy stem back to healthy green flesh, let the cut dry for several days, then repot into dry gritty mix and wait a week before watering lightly.
 
-Some corking at the base of an older cactus is natural ageing. Sudden brown patches higher up can be sunburn after a move into strong sun, or cold damage. Move the plant gradually and keep it away from cold draughts and frosty windows.
+A cactus stretching tall and thin needs more light. Move it gradually to your brightest windowsill — a sudden jump into full sun after months in shade can scorch it, so shift it over a week or so. The stretched part won't shrink back, but new growth should come in compact.
 
-## Frequently asked questions
+A cactus that hasn't grown in a year, but is firm and green, is probably just resting — in winter, or in low light, or both. Give it a brighter spot and a growing season before you worry.
+
+## Questions people ask
 
 ### How often should I water an indoor cactus?
 
@@ -131,23 +123,15 @@ Yellowing at the base combined with softness usually means overwatering and rot.
 
 ### Should I mist my cactus?
 
-No. Cacti are desert plants and prefer dry air. Misting adds moisture where it is not needed and can encourage rot, especially in the crown of the plant.
+No. Cacti are desert plants and prefer dry air. Misting adds moisture where it isn't needed and can encourage rot, especially in the crown of the plant.
 
 ### When should I repot my cactus?
 
 Every two to three years in spring, or when roots are coming out of the drainage hole and growth has stalled. Use dry gritty mix, handle the plant with thick gloves, and wait a week before watering after repotting.
-
-## Conclusion
-
-Taking care of a cactus indoors comes down to three habits: put it in the brightest spot you have, water it only when the soil is bone dry, and keep it in gritty soil in a pot that drains. Get those right and a cactus asks for almost nothing else. It is a plant that rewards restraint.
 
 ## Related guides
 
 - [How Do You Take Care of Succulents?](/guides/how-do-you-take-care-of-succulents/)
 - [How Do You Take Care of an Aloe Vera Plant?](/guides/how-do-you-take-care-of-an-aloe-vera-plant/)
 
-## Sources and further reading
-
-- Royal Horticultural Society plant guides
-- Missouri Botanical Garden Plant Finder
-- University extension horticulture publications
+*Further reading: Royal Horticultural Society plant guides; Missouri Botanical Garden Plant Finder; university extension horticulture publications.*

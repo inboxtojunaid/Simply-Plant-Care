@@ -1,6 +1,6 @@
 ---
 title: "How to Care for Pothos"
-description: "Pothos is one of the easiest trailing houseplants to grow. Learn its light, water, and soil needs, how to keep it bushy, and how to propagate cuttings."
+description: "Pothos forgives almost everything except permanent darkness and a pot that never drains. Answers to the questions owners actually ask, in order."
 keyword: "how to care for pothos"
 category: "plant-care"
 hero: "/images/how-to-care-for-pothos.webp"
@@ -10,28 +10,29 @@ updated: "2026-11-24"
 related: ["how-to-care-for-philodendron-plants", "how-do-you-take-care-of-plants", "indoor-plants-for-beginners"]
 ---
 
-Pothos is the plant people buy when they have killed everything else — and it usually rewards that trust. It tolerates low light, forgives missed waterings, grows fast in good conditions, and trails beautifully from a shelf or hanging pot. It is also one of the easiest plants to propagate, so a single plant can become many.
+Pothos is the plant people buy after killing everything else — and it usually rewards that trust. It tolerates low light, forgives missed waterings, grows fast in good conditions, and trails beautifully from a shelf or a hanging pot. It is also one of the easiest plants to propagate, so a single plant can become many. The rest of this guide answers the questions owners actually ask, in the order they tend to come up.
 
-The basic care is straightforward: bright, indirect light; water when the top few centimetres of soil have dried out; ordinary houseplant soil in a pot with drainage; and a trim now and then to keep it full.
+## Why is pothos so hard to kill?
 
-## At a glance
+It is a climber from tropical forests, where it spends its life scrambling up trees towards the light, rooting wherever a stem touches something damp. That history left it with two useful traits: it tolerates shade, because the forest floor is dim, and it roots from almost any node, because a broken stem in the wild is a new plant, not a dead one. Indoors, that translates into a plant that survives a dark corner, a forgotten watering, and a clumsy repot — and still grows.
 
-| Need | What pothos wants |
-|---|---|
-| Light | Bright, indirect light; tolerates low light but grows slower |
-| Water | When the top 3–5 cm of soil is dry, roughly every 1–2 weeks |
-| Soil | Ordinary houseplant potting mix with good drainage |
-| Pot | Drainage holes; hanging basket, shelf pot, or moss pole all work |
-| Temperature | 18–29°C (65–85°F); keep away from cold draughts |
-| Humidity | Average indoor humidity is fine; appreciates a little extra |
-| Feeding | Light feeding in spring and summer |
-| Difficulty | Easy — a good first trailing plant |
+But "hard to kill" has limits, and they are worth knowing upfront. It cannot survive a pot with no drainage, because its roots rot in standing water like any other houseplant's. It cannot stay in a truly dark room and keep growing. And it will not stay pretty without a little light and an occasional trim. Forgiving is not the same as indestructible.
 
-## Light: the key to full, colourful growth
+## How often should it be watered?
 
-Pothos is famous for surviving in low light, and it genuinely can. But light decides what your plant looks like. In bright, indirect light — near a window but out of harsh direct sun — pothos grows quickly, produces large leaves close together, and keeps its variegation strong. In low light it grows slowly, the leaves stay small and spaced out, and golden or marble varieties gradually revert to plain green.
+When the top 3–5 cm of soil feels dry. Indoors that is roughly every one to two weeks, less in winter, more in a warm bright room in summer. Water thoroughly until it drains from the bottom, then empty the saucer — a pot sitting in water is a pot with rotting roots.
 
-A few hours of gentle morning sun is fine and can even improve variegation. Strong midday sun through glass can scorch the leaves, leaving bleached or brown patches. Try the selector below to see what each light level does to a pothos and what to do about it.
+The signs tell you which side of the line you are on. Underwatering shows up as limp, curling leaves and dry, brown edges, and the plant usually recovers quickly after a good soak. Overwatering is more serious: yellow leaves, soft stems, and eventually root rot. If your pothos is yellowing and the soil is constantly damp, let it dry out and check that the pot drains. Yellow leaves will not turn green again, so remove them.
+
+Small sips are the habit to avoid. A little water every few days keeps the surface damp and the roots dry, which is the worst of both worlds. Soak, then wait. That rhythm suits almost every houseplant, and pothos is no exception.
+
+Cuttings root easily in water, but that does not make water a good permanent home. A plant kept in a jar for months grows more slowly than one in soil, because plain water cannot supply what soil does. Water is for rooting cuttings. Soil is for living in.
+
+## How much light keeps it full and variegated?
+
+Light decides what your plant looks like more than anything else. In bright, indirect light — near a window but out of harsh direct sun — pothos grows quickly, produces large leaves close together on the stem, and keeps its variegation strong. In low light it grows slowly, the leaves stay small and spaced out, and golden or marble varieties gradually revert to plain green. Same plant, same water, completely different result.
+
+A few hours of gentle morning sun is fine and can even improve variegation. Strong midday sun through glass is not: it scorches the leaves, leaving bleached or brown patches that do not heal. Try the selector below to see what each light level does to a pothos and what to do about it.
 
 <div class="widget" id="how-to-care-for-pothos-widget">
   <h3>Pothos light-level selector</h3>
@@ -61,67 +62,39 @@ A few hours of gentle morning sun is fine and can even improve variegation. Stro
 })();
 </script>
 
-## Watering
+## What soil, pot, and support does it want?
 
-Pothos likes its soil to dry out a little between waterings, but not to stay dry for long. The usual rhythm is to water when the top 3–5 cm of soil feels dry — roughly every one to two weeks indoors, less in winter. Water thoroughly until it drains from the bottom, then empty the saucer.
+Ordinary houseplant potting mix suits pothos well. If your mix is very heavy, adding some perlite improves drainage, and drainage is the one thing the pot itself must provide — holes in the bottom, no exceptions.
 
-Underwatering shows up as limp, curling leaves and dry, brown edges. The plant usually recovers quickly after a good soak. Overwatering is more serious: yellow leaves, soft stems, and eventually root rot. If your pothos is yellowing and the soil is constantly damp, let it dry out and check that the pot drains.
-
-Pothos cuttings root easily in water, but a plant kept in water long term grows more slowly than one in soil. Soil is the better long-term home.
-
-## Soil, pots, and support
-
-Ordinary houseplant potting mix suits pothos well. If your mix is very heavy, adding some perlite improves drainage. The pot must have drainage holes; pothos roots rot in standing water just like any other houseplant's.
-
-Pothos is naturally a climber. Left to trail from a shelf, the vines can grow several metres long. Given something to climb — a moss pole, a trellis, or even a wall hook — the leaves grow noticeably larger as the plant climbs, which is how it grows in the wild. A moss pole works well if kept slightly damp so the aerial roots can grip it.
+Pothos is naturally a climber, and how you support it changes how it looks. Left to trail from a shelf, the vines can grow several metres long, with leaves that stay modest in size. Given something to climb — a moss pole, a trellis, even a wall hook — the leaves grow noticeably larger as the plant climbs, which is how it grows in the wild. A moss pole works best if kept slightly damp, so the aerial roots can grip it.
 
 Repot every one to two years in spring, or when roots are circling the drainage holes. Go up just one pot size, and water the plant in well after repotting.
 
-## Pruning and propagation
+## How do you turn one plant into many?
 
-Pothos is one of the easiest plants to prune and propagate, and regular pruning is the secret to a full plant rather than a single long, bare vine. Cut just below a leaf node — the small bump on the stem where a leaf and an aerial root grow — and the stem will branch from the node below the cut.
+Pruning is the secret to a full plant rather than a single long, bare vine, and pothos makes it easy. Cut just below a leaf node — the small bump on the stem where a leaf and an aerial root grow — and the stem will branch from the node below the cut. The more you prune, the bushier it gets, which feels counterintuitive until you see it work.
 
-The cuttings root easily. Place a cutting with at least one node in a jar of water, changing the water weekly, and roots appear within a couple of weeks. Once the roots are a few centimetres long, pot the cutting into soil. Alternatively, push cuttings directly into moist potting mix and keep it lightly damp until they establish. Several cuttings planted together in one pot make a much bushier plant than a single stem.
+The cuttings root just as easily. Place a cutting with at least one node in a jar of water, changing the water weekly, and roots appear within a couple of weeks. Once the roots are a few centimetres long, pot the cutting into soil. Or push cuttings directly into moist potting mix and keep it lightly damp until they establish. Several cuttings planted together in one pot make a much bushier plant than a single stem ever will — and that is the cheapest way to fix a leggy pothos, which brings us to the next question.
 
-## Keeping it bushy, not leggy
+## Why is it leggy, and how do you fix it?
 
-The most common complaint about pothos is that it becomes a long vine with bare stem and a few leaves at the end. This happens when the plant does not get enough light, or when it is never pruned. Move it to a brighter spot, prune the long vines back to a healthy node, and root the cuttings to fill the pot. Pinching the growing tip of each vine also encourages side shoots, which fills the plant out.
+The most common complaint about pothos is the long vine with a bare stem and a few leaves at the end. It happens for two reasons, usually together: not enough light, and never being pruned. The plant stretches towards whatever light there is, and each new leaf comes further from the last.
 
-## Common mistakes
+The fix is three steps, in this order. Move it to a brighter spot. Prune the long vines back to a healthy node, which forces branching. Root the cuttings and plant them back into the same pot to fill it out. Pinching the growing tip of each vine also encourages side shoots. Do all three and a bare vine becomes a full plant within a growing season — the cuttings you took are the free second plant, and the original is bushier than it was before you cut it.
 
-- **Keeping it in a dark corner permanently.** It survives, but the leaves shrink, the vine gets bare, and variegation fades. Bright, indirect light is worth the move.
-- **Watering little and often.** Small sips keep the surface damp and the roots dry. Water thoroughly, then wait until the top soil dries.
-- **Letting it sit in water.** Always empty the saucer after watering.
-- **Never pruning.** Unpruned pothos becomes one long, bare vine. Cut it back and it will branch.
-- **Putting it in harsh midday sun.** Leaves scorch. Morning sun is fine; strong afternoon sun through glass is not.
+## If it looks unhappy
 
-## Troubleshooting
+**Yellow leaves.** A few yellow leaves on an older plant are normal, especially near the base. Lots of yellow leaves at once usually mean overwatering or soil that stays wet. Let the soil dry out and check the drainage.
 
-### Yellow leaves
+**Brown, crispy leaf edges.** Usually underwatering, very low humidity, or a build-up of salts from fertiliser or tap water. Water more consistently, and occasionally flush the soil with plain water. Brown tips can also appear if the plant sits in a cold draught.
 
-A few yellow leaves on an older plant are normal, especially near the base. Lots of yellow leaves at once usually mean overwatering or soil that stays wet. Let the soil dry out and check the drainage. Yellow leaves will not turn green again, so remove them.
+**Small leaves and long bare stems.** A light problem. The plant is stretching towards more light. Move it brighter, prune the bare vines back, and root the cuttings to fill out the pot.
 
-### Brown, crispy leaf edges
+**Leaves losing their variegation.** Variegated pothos needs good light to keep its pattern. In low light, new leaves come through plain green. Move the plant to a brighter spot — new growth will show variegation again, though leaves that have already turned green will not regain their pattern.
 
-Dry, brown edges usually mean underwatering, very low humidity, or a build-up of salts from fertiliser or tap water. Water more consistently, and occasionally flush the soil with plain water. Brown tips can also appear if the plant sits in a cold draught.
+**Wilting even though the soil is wet.** The roots may have rotted and can no longer take up water. Take the plant out of its pot and check: healthy roots are firm and pale, rotted roots are dark and mushy. Cut away the rot, repot into fresh, dry mix, and water sparingly until it recovers.
 
-### Small leaves and long bare stems
-
-This is a light problem. The plant is stretching towards more light. Move it brighter, prune the bare vines back, and root the cuttings to fill out the pot.
-
-### Leaves losing their variegation
-
-Variegated pothos needs good light to keep its pattern. In low light, new leaves come through plain green. Move the plant to a brighter spot — new growth will show variegation again, though leaves that have already turned green will not regain their pattern.
-
-### Wilting even though the soil is wet
-
-If the leaves droop but the soil is damp, the roots may have rotted and can no longer take up water. Take the plant out of its pot and check: healthy roots are firm and pale, rotted roots are dark and mushy. Cut away the rot, repot into fresh, dry mix, and water sparingly until it recovers.
-
-## Frequently asked questions
-
-### How often should I water pothos?
-
-When the top 3–5 cm of soil feels dry, which is usually every one to two weeks indoors. The timing changes with pot size, light, and season, so check the soil rather than following a fixed day. In winter, water less often.
+## Questions people ask
 
 ### Can pothos grow in low light?
 
@@ -143,18 +116,10 @@ Cuttings root happily in water, and a pothos can live in a jar for months. But l
 
 Prune the long vines back to a node, which encourages branching, and plant the cuttings back into the same pot. Give it bright, indirect light, and consider a moss pole — leaves grow larger and the plant looks fuller when it climbs.
 
-## Conclusion
-
-Pothos asks for very little: bright, indirect light, water when the top soil dries, a pot that drains, and an occasional trim. Give it those four things and it will grow fast, trail beautifully, and forgive the odd missed watering. If it starts looking bare or leggy, the answer is almost always more light and a good prune — and the cuttings you take will give you a second plant for free.
-
-## Related guides
+## More on trailing houseplants
 
 - [How to Care for Philodendron Plants](/guides/how-to-care-for-philodendron-plants/)
 - [How Do You Take Care of Plants? Beginner Guide](/guides/how-do-you-take-care-of-plants/)
 - [Indoor Plants for Beginners: 10 Easy Picks](/guides/indoor-plants-for-beginners/)
 
-## Sources and further reading
-
-- Royal Horticultural Society plant guides
-- Missouri Botanical Garden Plant Finder
-- University extension horticulture publications
+Further reading: Royal Horticultural Society plant guides, Missouri Botanical Garden Plant Finder, and university extension horticulture publications.

@@ -1,6 +1,6 @@
 ---
 title: "How to Care for a Chinese Money Plant"
-description: "How to care for a Chinese money plant: light, watering, feeding and how to propagate the pups it makes around its base, and how to keep it upright and full."
+description: "Your pilea makes its own replacements: pups, a weekly turn, and light that stays bright but gentle. Here is the one-plant-to-many routine, start to finish."
 keyword: "how to care for a Chinese money plant"
 category: "plant-care"
 hero: "/images/how-to-care-for-a-chinese-money-plant.webp"
@@ -10,49 +10,21 @@ updated: "2026-11-24"
 related: ["how-do-you-take-care-of-a-spider-plant", "how-to-care-for-pothos"]
 ---
 
-The Chinese money plant, *Pilea peperomioides*, is loved for two things: its perfectly round, coin-shaped leaves on long thin stems, and the tiny baby plants — called pups or offsets — that sprout around its base. With bright indirect light and careful watering it grows fast, looks sculptural, and gives you free plants to share.
+Five centimetres. That's how tall a pup needs to be before you can safely separate it from its parent — five centimetres, a few leaves of its own, and ideally a little root attached. Smaller than that, and it usually doesn't make it. Bigger than that, and you've got a free plant.
 
-Care is straightforward once you know its preferences. It likes bright light without harsh direct sun, soil that dries a little between waterings, and regular turning so it does not lean. It dislikes soggy soil, dark corners and hot radiators in equal measure. Get the light and water right and the rest is easy.
+That one number tells you most of what you need to know about *Pilea peperomioides*. It's a fast, generous grower that multiplies itself. Your job is mostly to keep the parent healthy, turn it regularly, and harvest the babies at the right moment. Get those three things right and the plant does the rest.
 
-## At a glance
+The leaves are the giveaway that it's happy: perfectly round, coin-shaped, held out on long thin stems like little green satellites. When they're small, pale, or the stems stretch long and thin, something in the routine needs adjusting — usually the light.
 
-| Need | What a Chinese money plant wants |
-|---|---|
-| Light | Bright, indirect light; a few hours of gentle morning sun is fine, harsh midday sun scorches leaves |
-| Water | Water when the top 2–3 cm of soil is dry; water thoroughly and drain well |
-| Soil | Light, free-draining potting mix with perlite; a pot with drainage holes |
-| Humidity | Average room humidity is fine; it copes with normal homes |
-| Temperature | Normal room temperatures, roughly 15–25°C; keep away from cold draughts |
-| Difficulty | Easy — a good choice for a first plant, and it multiplies itself |
+## One plant becomes five: the pup cycle
 
-## Light: bright but not harsh
+A healthy, mature pilea doesn't just grow taller. It sends up pups — small copies of itself on short stems, popping out of the soil around the base. One plant can produce a dozen in a good year. That's the whole appeal, really: you buy one, you end up with a shelf full, plus spares for friends.
 
-A Chinese money plant wants a bright spot without strong direct sun. An east-facing windowsill, or a spot a short distance from a south- or west-facing window, is ideal. A few hours of gentle morning sun will not hurt it, but the strong midday sun through a south-facing window can scorch the round leaves, leaving pale or brown patches.
+The cycle has a rhythm. Spring and summer are pup season, when growth is fast and new offsets appear every few weeks. Autumn slows it down. Winter, mostly, it pauses. So if your plant made no pups in January, that's not a failure — it's the season.
 
-Too little light shows up quickly: the stems stretch long and thin, the leaves get smaller, and the plant leans hard toward the window. Rotate the pot a quarter turn every week so the plant grows upright and symmetrical instead of bending toward the light. If the leaves are small and pale even near a window, move it closer or choose a brighter room.
+Removing pups isn't just about getting new plants. A pot crowded with babies competes for water and light, and the parent grows weaker for it. Taking the bigger ones out keeps the parent tidy and vigorous, and gives each pup room to become a proper plant in its own pot. Leave the tiny ones alone until they reach that five-centimetre mark.
 
-## Watering
-
-Pilea likes its soil lightly moist, not wet and not bone dry. Check the top 2–3 cm of soil with your finger: if it feels dry, water; if it still feels damp, wait a few days.
-
-1. **Check the soil** before every watering.
-2. **Water evenly** until it runs out of the drainage hole.
-3. **Empty the saucer** after 15 minutes so the roots are not sitting in water.
-4. **Adjust for the season.** In spring and summer you may water weekly; in winter, growth slows and you may only need to water every two weeks or so.
-
-Overwatering is the most common problem: the lower leaves turn yellow, droop and drop, and the stem can go soft. Underwatering shows up as leaves that curl inwards and feel papery. In both cases, the soil check tells you which one you are dealing with.
-
-## Soil, pot and feeding
-
-Use a light, free-draining mix — ordinary houseplant potting soil with a handful of perlite mixed in works well. The pot must have drainage holes; a pot without them is the fastest way to kill a pilea. Terracotta and ceramic pots both work, as long as water can escape.
-
-Repot in spring when roots are coming out of the drainage hole or the plant has outgrown its pot, usually every one to two years. Go up just one pot size. This is also a good moment to remove pups for propagation (see the steps below).
-
-Feed with a balanced liquid fertiliser at half strength once a month in spring and summer. Do not feed in autumn and winter, and do not overfeed — too much fertiliser can burn the roots and cause brown leaf edges.
-
-## Pups and propagation
-
-A healthy, mature pilea produces pups — small copies of itself on short stems that pop up from the soil around the base. These are the easiest way to propagate the plant, and removing them also keeps the parent tidy.
+Wait. That's the hard part — waiting. A pup with two leaves and no root of its own looks ready long before it is. Give it time.
 
 <div class="widget" id="how-to-care-for-a-chinese-money-plant-prop-widget">
 <h3>Propagating pups, step by step</h3>
@@ -84,75 +56,71 @@ A healthy, mature pilea produces pups — small copies of itself on short stems 
 </script>
 </div>
 
-Pups can also be rooted in water first if you prefer: place the cut pup in a small glass of water, change the water weekly, and pot it up once roots are a few centimetres long. Either method works; soil propagation tends to give a stronger plant faster.
+If you'd rather watch roots form before potting, water works too. Stand the cut pup in a small glass, change the water weekly, and pot it up once the roots are a few centimetres long. Soil propagation tends to give a stronger plant faster, because the roots never have to adjust from water to soil — but both methods work, and the glass is more fun to watch. New growth in the centre, three or four weeks in, is the sign it's rooted. No new growth after six weeks? The pup probably didn't have enough root to start with. Try again with a bigger one next time.
 
-## Common mistakes
+## Light that keeps the coins round
 
-- **Overwatering.** The number one killer. Pilea stems hold some water, and soggy soil rots the roots fast.
-- **Direct midday sun.** The round leaves scorch easily. Bright indirect light is the sweet spot.
-- **Never rotating the pot.** The plant leans toward the window and grows lopsided. A quarter turn a week fixes it.
-- **Leaving all the pups crowded in.** A pot full of pups competes for water and light, and the parent grows weaker. Remove pups once they are big enough.
-- **Using a pot with no drainage.** However pretty the pot, without a hole the roots will sit in water.
+Bright, but not harsh. That's the line. An east-facing windowsill is close to perfect: gentle morning sun, bright light for the rest of the day. A spot a short distance back from a south- or west-facing window works too. What it can't take is strong midday sun straight through the glass — the round leaves scorch, leaving pale or brown patches that don't heal.
 
-## Troubleshooting
+Too little light has its own signature. The stems stretch long and thin, the leaves come through smaller, and the whole plant leans hard toward the window like it's trying to escape. Sound familiar? Move it closer to the light and start turning it.
 
-### Lower leaves are turning yellow and dropping
+Turning is the cheapest habit in pilea care and the one people skip most. A quarter turn every week keeps it upright and symmetrical instead of lopsided. Forget for a month and you'll have a plant that looks like it's doing yoga. It'll recover with regular turning and brighter light, but the bent stems stay bent — new growth is what straightens the silhouette out.
 
-This is usually overwatering, especially if the soil feels damp and the stem is soft. Let the soil dry out, check the drainage, and remove any yellow leaves. Some loss of the oldest lower leaves is normal as the plant grows taller, but several at once points to water.
+## Water: the finger test, not the calendar
 
-### Leaves are curling inwards
+Pilea likes its soil lightly moist. Not wet, not bone dry. Somewhere in between, leaning dry. The only reliable way to know where you are is to check: push a finger into the top 2–3 cm. Dry? Water. Still damp? Wait a few days and check again.
 
-Curling leaves usually mean the plant is thirsty, the air is very dry, or it is too hot. Check the soil first — if it is dry, water thoroughly. If the soil is moist, move the plant away from radiators and direct sun.
+When you do water, water properly. Soak evenly until it runs out of the drainage hole, then empty the saucer after fifteen minutes. A plant left sitting in water rots fast — the stems hold some water themselves, and soggy soil finishes the roots off in days, not weeks.
 
-### Brown edges or spots on the leaves
+How often does that mean in practice? Roughly weekly in spring and summer, maybe every two weeks in winter, when growth slows and the soil stays damp longer. But the calendar is a guess and the finger is a measurement. Trust the measurement.
 
-Brown edges can come from overfeeding, salts building up in the soil, or sun scorch. Flush the soil with plain water occasionally, feed only at half strength, and check that the sun is not hitting the leaves directly at midday.
+Overwatering is the number one killer, and it announces itself clearly: lower leaves turn yellow, droop, and drop, and the stem can go soft at the base. Underwatering looks different — leaves curl inwards and feel papery, like they've been left in the sun too long. In both cases, the soil tells you which one you're dealing with. Wet soil plus yellow leaves: too much water. Dry soil plus curling leaves: too little.
 
-### The plant is leaning badly
+## Potting, feeding, and when to split
 
-It is reaching for the light. Rotate the pot a quarter turn every week and move the plant closer to the window. A leaning stem can be supported with a small stake until new, upright growth takes over.
+The mix should be light and free-draining — ordinary houseplant potting soil with a handful of perlite stirred in. The pot must have drainage holes. This is non-negotiable, however pretty a hole-less pot looks; without an escape route, water sits at the bottom and the roots sit in it.
 
-### White dots on the undersides of leaves
+Repot in spring when roots are coming out of the drainage hole or the plant has clearly outgrown its pot — usually every one to two years. Go up just one pot size. A pot far too big holds wet soil the roots can't reach, which brings you straight back to rot. Repotting is also the easiest moment to remove pups, since the whole root ball is out in the open and you can see where each pup joins the parent stem.
 
-Small white dots on the underside of pilea leaves are usually mineral deposits from the plant's own pores, not pests. They are harmless and can be wiped off. If the dots move, look like insects, or come with webbing, treat for pests and isolate the plant.
+Feeding is light work. A balanced liquid fertiliser at half strength, once a month, spring and summer only. Nothing in autumn and winter. And don't overfeed in the hope of faster growth — too much fertiliser burns roots and shows up as brown leaf edges, which is a miserable trade for a few extra centimetres.
 
-## Frequently asked questions
+One more thing worth knowing: small white dots on the undersides of the leaves are usually mineral deposits from the plant's own pores, not pests. Harmless. Wipe them off if they bother you. If the dots move, look like insects, or come with webbing, that's different — isolate the plant and treat for pests.
 
-### How often should I water a Chinese money plant?
+## If it looks unhappy
 
-Water when the top 2–3 cm of soil feels dry — roughly weekly in spring and summer, less often in winter. Always check the soil rather than watering on a fixed schedule.
+Lower leaves yellowing and dropping, several at once? Usually overwatering, especially if the soil feels damp and the stem is soft. Let the soil dry out, check the drainage, and pull off the yellow leaves. A little loss of the oldest lower leaves is normal as the plant grows taller — it's shedding, not dying — but several at once points to water.
 
-### Why is my Chinese money plant leaning?
+Leaves curling inwards? Thirst, very dry air, or too much heat. Check the soil first. Dry means water thoroughly. Moist means move it away from radiators and direct sun.
 
-It is growing toward the light. Rotate the pot a quarter turn every week and place it in a brighter spot so it does not have to stretch.
+Brown edges or spots? Three usual suspects: overfeeding, salts building up in the soil, or sun scorch. Flush the soil with plain water occasionally, feed only at half strength, and check that midday sun isn't hitting the leaves directly.
+
+Leaning badly? It's reaching for light. A quarter turn a week plus a brighter spot fixes the habit going forward, and a small stake can support a leaning stem until new, upright growth takes over. The lean itself won't straighten — new growth will.
+
+## Asked a lot
+
+### How often should I water it?
+
+When the top 2–3 cm of soil feels dry — roughly weekly in spring and summer, less often in winter. Always check the soil rather than watering on a fixed schedule.
 
 ### When can I separate the pups?
 
 When a pup has several leaves of its own and is at least 5 cm tall. Cut it away with a clean knife, ideally with a little root attached, and pot it into light, damp mix.
 
-### Do Chinese money plants like direct sunlight?
+### Why is it leaning?
+
+It's growing toward the light. Rotate the pot a quarter turn every week and place it in a brighter spot so it doesn't have to stretch.
+
+### Do the leaves like direct sunlight?
 
 Gentle morning sun is fine, but strong midday sun scorches the round leaves. Bright, indirect light is best, such as near an east-facing window.
 
-### Why are the leaves of my pilea turning yellow?
+### Is it safe for pets?
 
-Most often overwatering or old age of the lowest leaves. If several leaves yellow at once and the soil is damp, let it dry out and check the pot drains properly.
+*Pilea peperomioides* is generally considered non-toxic to cats and dogs, which makes it a popular choice for pet-owning households. As with any plant, discourage pets from chewing it.
 
-### Is the Chinese money plant safe for pets?
-
-Pilea peperomioides is generally considered non-toxic to cats and dogs, which makes it a popular choice for pet-owning households. As with any plant, discourage pets from chewing it.
-
-## Conclusion
-
-The Chinese money plant is one of the most rewarding easy houseplants: bright indirect light, watering only when the top of the soil dries, a pot that drains, and a weekly quarter turn. Do that, and it will repay you with fast, sculptural growth — and a steady supply of pups to pot up and pass on to friends.
-
-## Related guides
+## Next up
 
 - [How Do You Take Care of a Spider Plant?](/guides/how-do-you-take-care-of-a-spider-plant/)
 - [How to Care for Pothos](/guides/how-to-care-for-pothos/)
 
-## Sources and further reading
-
-- Royal Horticultural Society plant guides
-- Missouri Botanical Garden Plant Finder
-- University extension horticulture publications
+Further reading: Royal Horticultural Society (RHS) *Pilea peperomioides* growing advice; Missouri Botanical Garden Plant Finder; your local university extension horticulture pages.

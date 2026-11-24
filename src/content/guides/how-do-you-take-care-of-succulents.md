@@ -1,6 +1,6 @@
 ---
 title: "How Do You Take Care of Succulents?"
-description: "Succulents need bright light, very little water, and fast-draining soil. Learn the simple routine that keeps them plump, compact, and rot-free indoors."
+description: "Succulents, cacti and leafy houseplants want opposite things from the same windowsill. Here's how to tell them apart — and keep yours plump and rot-free."
 keyword: "how do you take care of succulents"
 category: "watering"
 hero: "/images/how-do-you-take-care-of-succulents.webp"
@@ -10,38 +10,35 @@ updated: "2026-11-24"
 related: ["how-to-take-care-of-a-cactus-indoors", "how-to-take-care-of-a-snake-plant", "how-do-you-take-care-of-plants"]
 ---
 
-So, how do you take care of succulents? The whole routine can be summed up in one sentence: give them as much light as you can, water them rarely but thoroughly, and never let their roots sit in wet soil. Succulents store water in their leaves, stems, or roots, which is why they survive drought so well — and why overwatering is the thing that kills most of them indoors.
+A succulent holds its water in its leaves. That single fact explains almost everything about how to look after one — and why the watering can that keeps a fern happy will rot a succulent in a fortnight. Bright light, a deep soak followed by a long dry spell, soil that drains in seconds, and a pot with a hole in the bottom. That is the whole routine. The rest of this guide is about why it works, where it differs from the plants sitting next to it on the sill, and what to do when it goes wrong.
 
-If you have killed a succulent before, you are in good company. The usual story is a plant bought in a pretty pot with no drainage, watered a little bit every few days, and slowly turning to mush. The fix is not a secret technique. It is a change of habits: brighter light, a pot that drains, and watering only when the soil is truly dry.
+## Succulents vs cacti vs leafy houseplants
 
-## At a glance
+It helps to see the three groups side by side, because they are often sold together and they want opposite things.
 
-| Need | What succulents want |
-|---|---|
-| Light | As much bright light as possible; several hours of direct sun for most types |
-| Water | Soak fully, then wait until soil is completely dry — often 2–4 weeks indoors |
-| Soil | Very gritty, fast-draining cactus or succulent mix |
-| Pot | Drainage holes essential; terracotta helps soil dry faster |
-| Temperature | 15–27°C (59–80°F); protect from frost |
-| Humidity | Low to average indoor humidity is fine |
-| Feeding | Light feeding in spring and summer only |
-| Difficulty | Easy, once watering habits are right |
+A cactus is a succulent with spines instead of leaves, built for desert sun. It wants even more light than most succulents, even less water, and soil that is almost pure grit. A leafy houseplant — a pothos, a fern, a peace lily — is the reverse: it wants its soil to stay lightly moist, tolerates shade, and will wilt dramatically if you forget it for a fortnight. A succulent sits between the cactus and the leafy plant on light, but on water it is much closer to the cactus. The mistake most people make is treating it like the leafy plant next to it: a little water every few days, ordinary potting soil, a shady shelf. That routine suits the pothos. It kills the echeveria.
 
-## Light: the ingredient most people skip
+The visual tell is the leaves themselves. Thick, fleshy leaves mean stored water, which means the plant can wait. Thin, soft leaves mean the plant drinks constantly and cannot. So when you look at a new plant and wonder how thirsty it is, look at its leaves. Plump ones say "leave me alone for weeks". Thin ones say "water me soon".
 
-Light is where most indoor succulents quietly fail. A succulent on a bookshelf across the room from a window is not getting enough light, even if the room feels bright to you. Without enough light, succulents stretch — stems grow long and pale, leaves spread apart, and the plant loses its compact shape. This stretching is called etiolation, and stretched growth will not shrink back.
+There is one more difference worth knowing. A leafy houseplant will forgive a missed watering with a droop and a recovery. A succulent forgives a missed watering easily too — what it will not forgive is a wet root zone. Rot is the asymmetry here: underwatering a succulent is a slow, visible, fixable problem, while overwatering is fast, hidden, and often fatal. Err on the dry side, every time.
 
-Most succulents want several hours of direct sun a day, ideally from a south- or west-facing window (or an east-facing window as a minimum). A few hours of morning sun plus bright indirect light for the rest of the day is a good target. If your only windows face north, or the plant sits more than a metre from the window, consider a small grow light.
+## Light: what "bright" actually means indoors
 
-One caution: a succulent bought from a shaded shop shelf can sunburn if it is moved straight into harsh midday sun. Give it a week or two of gradually increasing sun, and watch for pale, bleached patches on the leaves.
+Light is where most indoor succulents quietly fail. A plant on a bookshelf across the room from a window is not getting enough light, even if the room feels bright to you. Our eyes adjust to dim rooms; plants do not.
 
-## Watering: soak and dry
+Without enough light, a succulent stretches. Stems grow long and pale, leaves spread apart, the plant loses its compact rosette shape. This stretching is called etiolation, and stretched growth will not shrink back — you can only stop it getting worse and, eventually, behead the plant and start again from the top.
 
-Succulents want the opposite of what most houseplants want. Instead of small, frequent drinks, they want a deep soak followed by a long dry period — the same pattern they evolved for in dry climates.
+Most succulents want several hours of direct sun a day, ideally from a south- or west-facing window, or an east-facing window as a minimum. A few hours of morning sun plus bright indirect light for the rest of the day is a good target. If your only windows face north, or the plant sits more than a metre from the glass, a small grow light is worth considering — a cactus would need it even more, while a leafy plant in the same spot would be perfectly content.
 
-Here is the method: water until it runs freely from the drainage holes, empty the saucer, and then do not water again until the soil is dry all the way through. Indoors that usually means every two to four weeks, but it varies with pot size, light, and season. In winter, when growth slows, many succulents need water only once a month or even less.
+One caution, though. A succulent bought from a shaded shop shelf can sunburn if it goes straight into harsh midday sun. Give it a week or two of gradually increasing sun, and watch for pale, bleached patches on the leaves.
 
-Never water on a fixed schedule, and never give "a little splash" every few days. Small, frequent watering keeps the top of the soil damp while the roots stay dry, or worse, keeps the roots constantly moist without ever flushing the soil. Use the decision guide below before you reach for the watering can.
+## The soak-and-dry rhythm
+
+Succulents want the opposite of what most houseplants want. Instead of small, frequent drinks, they want a deep soak followed by a long dry period — the same pattern they evolved for in dry climates, where rain is rare and heavy.
+
+Here is the method. Water until it runs freely from the drainage holes, empty the saucer, and then do not water again until the soil is dry all the way through. Indoors that usually means every two to four weeks, but it varies with pot size, light, and season. In winter, when growth slows, many succulents need water only once a month or even less.
+
+Never water on a fixed schedule. And never give "a little splash" every few days — that is the leafy-plant habit again, and it is the worst of both worlds for a succulent: the top of the soil stays damp, the roots stay moist, and the soil never gets properly flushed. Use the decision guide below before you reach for the watering can. Three checks, thirty seconds, and it will tell you whether today is a watering day or a waiting day.
 
 <div class="widget" id="how-do-you-take-care-of-succulents-widget">
   <h3>Should I water my succulent today?</h3>
@@ -90,56 +87,37 @@ Never water on a fixed schedule, and never give "a little splash" every few days
 })();
 </script>
 
-## Soil and pots
+## Soil and pots: why grit wins
 
-Ordinary potting soil holds too much moisture for succulents. Use a cactus or succulent mix, or make your own by combining roughly equal parts potting soil, perlite, and coarse grit or pumice. The test is simple: when you water, it should drain through quickly rather than pooling on the surface.
+Ordinary potting soil holds too much moisture for succulents. It was designed for leafy plants that drink constantly, and it stays damp for days after watering. A succulent in that soil sits with wet roots long after the watering can is put away.
 
-Every pot needs a drainage hole. Terracotta helps soil dry faster; glazed ceramic and plastic hold moisture longer. A pot that is only slightly larger than the plant is best — a big pot full of wet soil takes far too long to dry.
+Use a cactus or succulent mix, or make your own from roughly equal parts potting soil, perlite, and coarse grit or pumice. The test is simple: when you water, it should drain through quickly rather than pooling on the surface. If water sits on top for more than a few seconds, the mix is too heavy.
+
+Every pot needs a drainage hole — no exceptions, no matter how pretty the pot. Terracotta helps the soil dry faster because the clay breathes; glazed ceramic and plastic hold moisture longer. And keep the pot only slightly larger than the plant. A big pot full of wet soil takes far too long to dry, which is the same overwatering problem wearing a different disguise.
 
 Repot every one to two years in spring, or when the plant has outgrown its pot. Let the soil dry before repotting, handle the plant gently by its base, and wait a few days after repotting before watering so any small root injuries can heal.
 
-## Temperature, humidity, and feeding
+## Feeding, frost, and the winter slowdown
 
 Most succulents are comfortable in normal indoor temperatures, roughly 15–27°C. What they cannot handle is frost, so keep them away from freezing windowsills in winter and never leave them outside overnight in cold weather unless the type is known to be hardy.
 
-They prefer low to average humidity and do not need misting. Feed lightly in spring and summer with half-strength cactus fertiliser, once a month at most.
+They prefer low to average humidity and do not need misting — another leafy-plant habit to leave behind. Water sitting in a rosette can cause rot, which is why the spray bottle should stay in the cupboard.
 
-## Pruning, propagation, and leaves
+Feed lightly in spring and summer with half-strength cactus fertiliser, once a month at most, and stop in autumn. In winter, growth slows to a near-standstill and the plant needs very little water and no food at all. Watering a succulent in January as if it were June is one of the commonest ways to lose one, and it is the same mistake as watering a cactus in winter or a dormant leafy plant on its summer schedule. Seasons matter.
 
-Many succulents propagate easily from leaves. Gently twist a healthy leaf off the stem, let it dry for a few days until the base has calloused, then lay it on dry succulent soil. Roots and a tiny new plant usually appear within a few weeks. Do not water the leaf until roots have formed.
+## What usually goes wrong
 
-## Common mistakes
+**Leaves turning yellow and mushy at the base.** Overwatering, and the start of root rot. Stop watering immediately, let the soil dry out, and remove any soft, translucent leaves. If the stem is mushy too, the plant may be beyond saving — but healthy leaves or a firm top can often be cut off and re-rooted.
 
-- **Watering little and often.** This is the most common killer. Soak thoroughly, then let the soil dry out completely.
-- **A pot with no drainage.** Water has nowhere to go, and the roots sit wet. Always use drainage holes.
-- **Ordinary potting soil.** It stays wet for too long. Use a gritty succulent mix.
-- **Too little light.** A succulent that stretches, pales, or leans hard towards the window needs more sun, not more water.
-- **Misting the leaves.** Succulents do not need it, and trapped water can cause rot.
-- **Watering in winter as if it were summer.** Growth slows in the cold months, so water far less often.
+**Leaves shrivelling and wrinkling.** The plant is genuinely thirsty, using up the water stored in its leaves. If the soil is completely dry, give it a deep soak. If the soil is wet and the leaves are still wrinkling, the roots may be damaged and unable to absorb water; check them and repot into dry mix if needed.
 
-## Troubleshooting
+**Stretching tall with gaps between leaves.** It is reaching for more light. Move it to a brighter spot gradually, and accept that the stretched growth will not shrink back. You can behead the plant and replant the top once it has adjusted to the brighter light.
 
-### Leaves turning yellow and mushy at the base
+**White, powdery patches or tiny white insects.** White cottony patches are usually mealybugs, a common succulent pest. Dab them off with a cotton bud dipped in rubbing alcohol, repeat weekly until they are gone, and isolate the plant from your others while you treat it.
 
-This is almost always overwatering and the start of root rot. Stop watering immediately, let the soil dry out, and remove any soft, translucent leaves. If the stem is mushy too, the plant may be beyond saving — but healthy leaves or a firm top can often be cut off and re-rooted.
+**Brown, crispy leaf edges.** Sunburn from a sudden move into strong sun, or salt build-up from fertiliser and hard tap water. Move the plant into bright light more gradually, and flush the soil with plain water occasionally to wash out salts.
 
-### Leaves shrivelling and wrinkling
-
-Wrinkled, deflated leaves usually mean the plant is genuinely thirsty — it is using up the water stored in its leaves. If the soil is completely dry, give it a deep soak. If the soil is wet and the leaves are still wrinkling, the roots may be damaged and unable to absorb water; check them and repot into dry mix if needed.
-
-### Plant stretching tall with gaps between leaves
-
-The plant is reaching for more light. Move it to a brighter spot gradually, and accept that the stretched growth will not shrink back. You can behead the plant and replant the top once it has adjusted to the brighter light.
-
-### White, powdery patches or tiny white insects
-
-White cottony patches are usually mealybugs, a common succulent pest. Dab them off with a cotton bud dipped in rubbing alcohol, repeat weekly until they are gone, and isolate the plant from your others while you treat it.
-
-### Brown, crispy leaf edges
-
-This can be sunburn from a sudden move into strong sun, or salt build-up from fertiliser and hard tap water. Move the plant into bright light more gradually, and flush the soil with plain water occasionally to wash out salts.
-
-## Frequently asked questions
+## Questions people ask
 
 ### How often should I water succulents indoors?
 
@@ -161,18 +139,10 @@ No. Spraying wets the leaves and barely moistens the soil, which is the opposite
 
 Jade plants, echeveria, and snake plants are all forgiving choices. Jade is sturdy and slow to complain, echeveria is compact and colourful in good light, and snake plants tolerate more neglect than almost any other houseplant. Start with one, learn its rhythm, and add more once you are confident.
 
-## Conclusion
-
-Succulent care is simple once you stop treating them like ordinary houseplants. Give them the brightest spot you have, gritty soil in a pot that drains, and water that soaks the soil and then stops for weeks. When something goes wrong, the answer is usually more light and less water.
-
-## Related guides
+## Related reading
 
 - [How to Take Care of a Cactus Indoors](/guides/how-to-take-care-of-a-cactus-indoors/)
 - [How to Take Care of a Snake Plant](/guides/how-to-take-care-of-a-snake-plant/)
 - [How Do You Take Care of Plants? Beginner Guide](/guides/how-do-you-take-care-of-plants/)
 
-## Sources and further reading
-
-- Royal Horticultural Society plant guides
-- Missouri Botanical Garden Plant Finder
-- University extension horticulture publications
+Further reading: Royal Horticultural Society plant guides, Missouri Botanical Garden Plant Finder, and university extension horticulture publications.

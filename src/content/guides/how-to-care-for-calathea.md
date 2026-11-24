@@ -1,6 +1,6 @@
 ---
 title: "How to Care for Calathea"
-description: "How to care for calathea indoors: humidity, water type and light — and how to stop the brown leaf edges this plant is famous for, and keep new leaves clean."
+description: "Brown edges on calathea almost always trace back to two things: hard tap water and dry air. Fix those levers first and the new leaves open clean."
 keyword: "how to care for calathea"
 category: "plant-care"
 hero: "/images/how-to-care-for-calathea.webp"
@@ -10,52 +10,33 @@ updated: "2026-11-24"
 related: ["how-do-you-care-for-an-anthurium-plant", "how-do-you-care-for-ferns"]
 ---
 
-Calathea is one of the most beautiful houseplants you can own — large leaves patterned in greens, silver and pink, that fold up at night and open again in the morning. It is also one of the fussiest. Brown, crispy leaf edges are the classic complaint, and they are almost always a sign that the humidity is too low or the water is too harsh, not that you are a bad plant owner.
+Fifty percent. That's the humidity line for calathea — above it, the leaves usually stay clean; below 40%, the edges crisp. Most heated homes in winter sit well below 40%. So before you blame yourself, check the air. The plant isn't being difficult. It's a tropical forest-floor plant living in a centrally heated living room, and it's telling you exactly what it thinks of the conditions.
 
-The good news is that calathea care is predictable once you understand what it wants: warm temperatures, high humidity, soft water, and bright light without direct sun. If your home is dry and your tap water is hard, you will need to make a few adjustments — but the plant will tell you quickly when you get it right, with new leaves that open clean and unmarked.
+The good news: brown edges have a short list of causes, and two of them explain most cases. Water quality and humidity. Fix those two levers and the rest of the routine is straightforward. Ignore them and no amount of careful watering with the wrong water will save the edges.
 
-## At a glance
+The leaves are worth the fuss, by the way. Large, patterned in greens, silver, and pink, folding up at night and opening again in the morning — a movement called nyctinasty, which is normal and a sign of a healthy plant, not a problem. New leaves should open clean and unmarked. When they don't, one of the two levers needs adjusting.
 
-| Need | What calathea wants |
-|---|---|
-| Light | Bright, indirect light; direct sun fades the leaf patterns and scorches leaves |
-| Water | Keep soil lightly moist at all times; never let it dry out completely, and never waterlog it |
-| Water type | Soft water is best — rainwater, distilled or filtered water; hard tap water causes brown edges |
-| Humidity | High — 50% or more if you can manage it; below 40% the leaf edges crisp |
-| Soil | Rich, free-draining potting mix with perlite and a little bark or coir |
-| Temperature | Warm, roughly 18–27°C; hates cold draughts and temperatures below about 15°C |
-| Difficulty | Moderate to tricky — humidity and water quality are the hard parts |
+## Lever one: what's in the water
 
-## Light
+Calathea is unusually sensitive to what's dissolved in its water. Hard tap water — the kind that leaves limescale in a kettle — carries salts and minerals that build up in the leaves and show up as brown edges. Chlorine and fluoride don't help either. Most houseplants shrug this off. Calathea doesn't.
 
-Calathea wants bright light without direct sun. A spot a short distance from an east-facing window, or near a north-facing window, is ideal. Direct sun bleaches the intricate leaf patterns and scorches the leaves, leaving pale or brown patches.
+So what do you water with? Rainwater is ideal, if you can collect it. Distilled water is the reliable shop-bought equivalent. Filtered water is a good middle ground — it removes much of the chlorine and salts that cause the damage. Soft tap water is usually fine; hard tap water is the problem, and if your kettle furs up quickly, your tap water is hard.
 
-Too little light makes the plant grow slowly and the leaf markings fade. Too much light does the opposite damage. If the colours look washed out, move the plant further from the window; if growth is very slow and stems stretch, move it a little closer. The leaves folding up at night and opening in the morning — called nyctinasty — is normal and a sign of a healthy plant, not a problem.
+Leaving hard tap water standing overnight helps a little — some chlorine escapes — but it doesn't remove the dissolved minerals that do most of the damage. It's a partial fix, not a solution. If the edges keep browning despite good humidity, switch the water first and watch the next few leaves. That's the test that settles it.
 
-## Watering: the most important habit
+There's a second water habit that matters just as much: flushing. Salts build up in the soil over months, from water and from fertiliser, and the build-up shows as — yes — brown edges again. Every few weeks, water thoroughly with soft water and let plenty run out of the drainage hole, washing the excess salts through. It's a small habit with an outsized effect.
 
-Calathea likes its soil consistently lightly moist. Unlike a cactus or a snake plant, it does not want to dry out between waterings, and unlike a fern it does not want to sit in soggy soil either.
+And how much water, how often? Keep the soil lightly moist at all times. Check the top 2 cm: water when the surface just starts to feel dry, before the deeper soil dries out. Water evenly until it runs out of the drainage hole, empty the saucer after fifteen minutes — it hates wet feet as much as dry roots — and expect roughly weekly watering in summer, less often in winter. But don't let it dry out completely in any season. A calathea that dries out fully crisps fast, and the damage to those leaves is permanent. They won't heal. New leaves will, though, which is why the fix is always judged on new growth, not old damage.
 
-1. **Check the top 2 cm of soil.** Water when the surface just starts to feel dry, before the deeper soil dries out.
-2. **Water evenly** until it runs out of the drainage hole.
-3. **Empty the saucer** after 15 minutes — calathea hates wet feet as much as dry roots.
-4. **Use soft water.** This matters more for calathea than for most houseplants (see the helper below).
+## Lever two: how damp is the air
 
-In summer you may water weekly; in winter, less often, but do not let the plant dry out completely in any season. If you are going away, water it well before you leave and move it to a more humid spot rather than leaving it to dry out.
+Humidity is the other half of the brown-edges problem, and it's the one most homes fail. Calathea comes from tropical forest floors, where the air is warm and damp. Most homes, especially in winter with central heating, are far drier — often below 40% relative humidity — and the leaf edges crisp in response.
 
-## Humidity
+How do you actually raise it? Grouping plants together helps: several plants in one spot raise the local humidity around each other. A pebble tray — pot standing on pebbles with water in the tray, base above the water, never in it — helps more. A bright bathroom is often the easiest win in the house, since showers raise the humidity naturally, as long as there's enough light for the plant to grow. A humidifier is the most reliable option, especially if you keep a collection of humidity-loving plants; it's the only method that holds a steady level all day rather than spiking and falling.
 
-Humidity is the other half of the brown-edges problem. Calathea comes from tropical forest floors, where the air is warm and damp. Most homes, especially in winter with central heating, are far drier than that — often below 40% relative humidity — and the leaf edges crisp in response.
+Misting? It raises humidity for minutes, not hours. It's a supplement, not a solution — pleasant for the plant, useless as a strategy. Don't lean on it.
 
-Practical ways to raise humidity:
-
-- **Group plants together.** Several plants in one spot raise the local humidity around each other.
-- **Use a pebble tray.** Stand the pot on a tray of pebbles with water in it, keeping the pot base above the water.
-- **Move it to a bright bathroom.** Showers raise the humidity naturally, as long as there is enough light.
-- **Use a humidifier.** For a collection of humidity-loving plants, this is the most reliable option.
-- **Mist lightly if you like**, but know that misting raises humidity for minutes, not hours — it is a supplement, not a solution.
-
-Avoid placing calathea near radiators, hot-air vents and cold draughts.
+A cheap hygrometer, the kind that costs a few pounds and sits on a shelf, settles the argument about whether your room is actually dry. Guesswork is how people end up misting a plant in a room that's already at 55%. Measure it. Above 50% is the target; below 40% is where the damage starts; 40–50% is the grey zone where a pebble tray or grouping plants together usually tips the balance.
 
 <div class="widget" id="how-to-care-for-calathea-humidity-widget">
 <h3>Humidity and water-type helper</h3>
@@ -96,79 +77,61 @@ Avoid placing calathea near radiators, hot-air vents and cold draughts.
 </script>
 </div>
 
-## Soil, pot and feeding
+Try the helper above with your actual water and your actual humidity — the combination matters. Hard water plus dry air is the worst case, and it needs both levers pulled at once. Soft water plus humid air, and brown edges from either cause are unlikely.
 
-Use a rich but free-draining mix: ordinary houseplant potting soil with perlite and a little bark or coir mixed in. The pot must have drainage holes. Repot in spring every one to two years, or when roots fill the pot — go up just one size, and water well after repotting.
+Keep it away from radiators, hot-air vents, and cold draughts while you're at it. It hates cold air and temperatures below about 15°C, and a draughty window in winter can undo a month of good humidity work overnight.
 
-Feed with a balanced liquid fertiliser at half strength once a month in spring and summer only. Overfeeding causes salt build-up, which shows up as — you guessed it — brown leaf edges. If you have fed heavily, flush the soil with soft water and hold off feeding for a while.
+## The rest of the routine: light, soil, and warmth
 
-## Common mistakes
+With the two levers set, the rest is calmer. Light: bright, without direct sun. A spot a short distance from an east-facing window, or near a north-facing window, is ideal. Direct sun bleaches the intricate leaf patterns and scorches the leaves, leaving pale or brown patches. Too little light makes the plant grow slowly and the markings fade — if the colours look washed out, move it further from the window; if growth is very slow and stems stretch, move it a little closer.
 
-- **Using hard tap water.** Calathea is unusually sensitive to the salts and chemicals in hard tap water. If your leaves keep browning despite good humidity, the water is the likeliest cause.
-- **Letting the soil dry out.** A calathea that dries out completely will crisp fast, and the damage to those leaves is permanent.
-- **Putting it in direct sun.** The leaf patterns fade and the leaves scorch. Bright indirect light is the limit.
-- **Keeping it in a cold draught.** Calathea hates cold air and temperatures below about 15°C. Keep it away from draughty windows and doors in winter.
-- **Overfeeding.** More fertiliser does not mean more growth — it means salt build-up and brown edges.
+Soil: rich but free-draining. Ordinary houseplant potting soil with perlite and a little bark or coir mixed in. The pot must have drainage holes. Repot in spring every one to two years, or when roots fill the pot — go up just one size, and water well after repotting.
 
-## Troubleshooting
+Warmth: roughly 18–27°C, steady. Below about 15°C it suffers, and a cold draught does damage out of proportion to its duration — a night beside a draughty window can curl leaves that took a month to grow.
 
-### Brown, crispy leaf edges
+Feeding is where people undo their own good work. A balanced liquid fertiliser at half strength, once a month, spring and summer only. Overfeeding causes salt build-up, which shows up as brown leaf edges — the same symptom as hard water and dry air, which is why overfed plants get misdiagnosed so often. If you've fed heavily, flush the soil with soft water and hold off feeding for a while. More fertiliser does not mean more growth. It means saltier soil.
 
-The signature calathea problem. Work through the causes in order: humidity below 50%, hard tap water, soil drying out, or salt build-up from overfeeding. Use the helper above to identify your combination, fix the most likely cause, and be patient — damaged edges will not heal, but new leaves should open clean.
+## Brown edges, curling, drooping — reading the leaves
 
-### Leaves curling inwards
+Brown, crispy edges are the signature problem, and by now you know the order to work through: humidity below 50%, hard tap water, soil drying out, or salt build-up from overfeeding. Use the helper above to identify your combination, fix the most likely cause, and be patient. Damaged edges will not heal. New leaves should open clean — that's the scoreboard.
 
-Curling usually means the plant is thirsty, the air is too dry, or it is too cold. Check the soil first: if it is dry, water thoroughly with soft water. If the soil is moist, check the temperature and humidity.
+Leaves curling inwards usually mean thirst, air too dry, or cold. Check the soil first: dry means water thoroughly with soft water. Moist means check the temperature and humidity — a curling plant in damp soil is cold or dry-aired, not thirsty.
 
-### Leaves drooping
+Drooping is more ambiguous. It can mean underwatering, cold shock, or overwatering with root damage. Feel the soil: dry soil means water; wet soil with drooping leaves means the roots may be waterlogged — let the soil dry out, check the drainage, and remove any rotted roots when you repot.
 
-Drooping can mean underwatering, cold shock, or overwatering with root damage. Feel the soil: dry soil means water; wet soil with drooping leaves means the roots may be waterlogged — let the soil dry out, check the drainage, and remove any rotted roots when you repot.
+Patterns fading? Too much direct sun, or too little light over a long period. Move it to bright indirect light and give it time — new leaves should show the pattern properly.
 
-### Leaf patterns fading
+Small flies around the soil are fungus gnats, which appear when the top of the soil stays wet. Let the top couple of centimetres dry out between waterings, clear dead leaves from the surface, and ease off the watering. They're annoying rather than dangerous, and they usually clear up once the watering is corrected.
 
-Too much direct sun, or too little light over a long period. Move the plant to bright indirect light and give it time — new leaves should show the pattern properly.
+## Asked about calathea
 
-### Small flies around the soil
+### Why do the leaves get brown edges?
 
-Fungus gnats appear when the top of the soil stays wet. Let the top couple of centimetres dry out between waterings, remove dead leaves from the surface, and avoid overwatering. They are annoying rather than dangerous, and they usually clear up once watering is corrected.
+Usually low humidity, hard tap water, or the soil drying out — often a combination. Use soft water, keep humidity above 50% if you can, and keep the soil lightly moist. Damaged edges won't heal, but new leaves should be clean.
 
-## Frequently asked questions
+### How often should I water it?
 
-### Why do calathea leaves get brown edges?
+When the top 2 cm of soil starts to feel dry, keeping the soil lightly moist at all times. Roughly weekly in summer, less often in winter — but check the soil rather than following a calendar.
 
-Usually low humidity, hard tap water, or the soil drying out — often a combination. Use soft water, keep humidity above 50% if you can, and keep the soil lightly moist. Damaged edges will not heal, but new leaves should be clean.
+### Can I use tap water?
 
-### How often should I water calathea?
+It depends on your tap water. Soft tap water is usually fine, but hard tap water causes brown leaf edges in many homes. If your leaves keep browning, switch to rainwater, distilled, or filtered water and see if new growth improves.
 
-Water when the top 2 cm of soil starts to feel dry, keeping the soil lightly moist at all times. That is roughly weekly in summer and less often in winter — but check the soil rather than following a calendar.
+### Does it need a humidifier?
 
-### Can I use tap water on calathea?
+Not always, but it's the most reliable way to keep humidity above 50% in a heated home. Grouping plants, a pebble tray, or a bright bathroom can also work, especially for one plant.
 
-It depends on your tap water. Soft tap water is usually fine, but hard tap water causes brown leaf edges in many homes. If your leaves keep browning, switch to rainwater, distilled or filtered water and see if new growth improves.
+### Why do the leaves move at night?
 
-### Does calathea need a humidifier?
-
-Not always, but it is the most reliable way to keep humidity above 50% in a heated home. Grouping plants, a pebble tray or a bright bathroom can also work, especially for one plant.
-
-### Why do calathea leaves move at night?
-
-Calathea leaves fold upwards at night and open in the morning. This is normal behaviour, called nyctinasty, and is a sign of a healthy plant responding to light.
+The leaves fold upwards at night and open in the morning. This is normal behaviour, called nyctinasty, and is a sign of a healthy plant responding to light.
 
 ### Is calathea safe for pets?
 
 Calathea is generally considered non-toxic to cats and dogs, which makes it a popular choice for pet-owning households. As with any plant, discourage pets from chewing it.
 
-## Conclusion
-
-Calathea is a plant that rewards attention to two things: humidity and water quality. Give it soft water, keep the soil lightly moist, keep the air humid and warm, and keep it out of direct sun. Get those right and you get one of the most striking foliage plants there is — and new leaves that open without a brown edge in sight.
-
-## Related guides
+## More to read
 
 - [How Do You Care for an Anthurium Plant?](/guides/how-do-you-care-for-an-anthurium-plant/)
 - [How Do You Care for Ferns Indoors?](/guides/how-do-you-care-for-ferns/)
 
-## Sources and further reading
-
-- Royal Horticultural Society plant guides
-- Missouri Botanical Garden Plant Finder
-- University extension horticulture publications
+Further reading: Royal Horticultural Society (RHS) calathea growing advice; Missouri Botanical Garden Plant Finder; your local university extension horticulture pages.

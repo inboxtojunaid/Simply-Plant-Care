@@ -1,6 +1,6 @@
 ---
 title: "How Do You Take Care of a Spider Plant?"
-description: "Learn how to take care of a spider plant: light, watering, soil, and how to fix brown tips, pale leaves, and missing plantlets in this beginner guide."
+description: "From a thumb-sized plantlet to a hanging fountain of striped leaves and babies: the spider plant's life, stage by stage, and how to keep it producing."
 keyword: "how do you take care of a spider plant"
 category: "plant-care"
 hero: "/images/how-do-you-take-care-of-a-spider-plant.webp"
@@ -10,56 +10,51 @@ updated: "2026-11-24"
 related: ["how-do-you-take-care-of-plants", "how-to-care-for-pothos", "how-to-care-for-philodendron-plants"]
 ---
 
-Taking care of a spider plant is mostly about giving it bright indirect light, watering it when the top of the soil dries out, and keeping it away from the chemicals in tap water that turn its leaf tips brown. Do those three things and a spider plant will happily fill a hanging basket or shelf with arching, striped leaves and dangling baby plantlets.
+A spider plant starts life as a tiny rosette dangling from a stem, no bigger than your thumb. Given decent light and a pot that drains, that plantlet becomes a plant, the plant becomes a fountain of arching striped leaves, and within a year or two the fountain starts producing plantlets of its own. That's the whole story, really — one generation handing the next one down on a long, arching stem. Everything in this guide follows that arc.
 
-Spider plants are one of the most forgiving houseplants you can own. They tolerate a missed watering, a dim corner, and a beginner's learning curve far better than most tropical plants. They are also generous: a healthy plant produces small white flowers followed by miniature plantlets you can pot up into new plants. This guide covers the daily routine, the common problems, and how to get those famous spider babies.
+It's also one of the most forgiving houseplants you can own. It tolerates a missed watering, a dim corner, and a beginner's learning curve better than most tropical plants. But forgiving isn't the same as indifferent: a spider plant that never gets enough light will survive for years without ever doing the thing that makes it famous — producing babies.
 
-## At a glance
+## The first pot: light and soil for a young plant
 
-| Need | What a spider plant wants |
-| --- | --- |
-| Light | Bright, indirect light; tolerates some direct morning sun |
-| Water | When the top 2–3 cm of soil feels dry |
-| Soil | Loose, well-draining potting mix |
-| Pot | Drainage holes essential; hanging basket or shelf pot |
-| Temperature | 15–27°C; keep away from radiators and cold draughts |
-| Humidity | Average household humidity is fine |
-| Feeding | Monthly in spring and summer with a balanced liquid feed at half strength |
-| Difficulty | Easy — a classic beginner plant |
+A young spider plant — whether you bought one or potted up a plantlet — wants bright, indirect light. A spot a metre or two from a sunny window, or right beside an east-facing window, is about right. The striped varieties need good light to keep their variegation; in a dim spot the new leaves come through mostly green, and the stripes fade.
 
-## Light: bright but not blazing
+It can cope with a little direct sun, especially gentle morning sun. Strong afternoon sun is another matter — it scorches the leaves, leaving pale, bleached patches. And a dark corner? The plant will survive, but it grows slowly, with long, thin, floppy leaves and no plantlets. If your plant looks stretched and pale, move it closer to the light. If the leaves look washed out or scorched, move it back.
 
-Spider plants grow fastest in bright, indirect light — a spot a metre or two from a sunny window, or right beside an east-facing window. The striped varieties, such as the variegated type with cream-edged leaves, need good light to keep their variegation; in a dim spot the new leaves come through mostly green.
+The soil is uncomplicated: any good-quality, well-draining houseplant potting mix, with a handful of perlite or coarse sand mixed in if your mix feels heavy and stays wet for a long time. The pot must have drainage holes — no exceptions. That's a theme you'll see again.
 
-They can cope with a little direct sun, especially gentle morning sun, but strong afternoon sun scorches the leaves, leaving pale, bleached patches. On the other hand, a spider plant kept in a dark corner will survive but grow slowly, with long, thin, floppy leaves and few or no plantlets. If your plant looks stretched and pale, move it closer to the light. If the leaves look washed out or scorched, move it back.
+## Water, and why the tips go brown
 
-## Watering: the brown-tip connection
+Water when the top few centimetres of soil feel dry. In a warm, bright room that usually means about once a week in spring and summer, and every two weeks or so in winter. Always water thoroughly until a little runs from the drainage holes, then tip away whatever sits in the saucer. Spider plants dislike sitting in water, and soggy soil leads to root rot.
 
-Water a spider plant when the top few centimetres of soil feel dry to the touch. In a warm, bright room that usually means about once a week in spring and summer and every two weeks or so in winter. Always water thoroughly until a little runs from the drainage holes, then tip away any water sitting in the saucer — spider plants dislike sitting in water, and soggy soil leads to root rot.
+Now, brown leaf tips. They are the spider plant's signature complaint, and the cause is usually not what people assume. It's often not underwatering at all — it's the water itself. Spider plants are sensitive to fluoride and dissolved salts in many tap water supplies, and the salts build up in the leaf tips, turning them brown and crispy.
 
-The most common spider plant complaint is brown leaf tips, and the usual culprit is not underwatering but the water itself. Spider plants are sensitive to fluoride and salts found in many tap water supplies, and the salts build up in the leaf tips, turning them brown and crispy. If brown tips keep appearing even though you water regularly, try switching to rainwater, distilled water, or tap water left standing uncovered overnight. Flushing the soil with a generous watering every few months also helps wash excess salts out.
+So if brown tips keep appearing even though you water regularly, change the water, not the schedule. Rainwater, distilled water, or tap water left standing uncovered overnight are all gentler. Flushing the soil with a generous watering every few months helps wash excess salts out. And check your fertiliser too — too much of it leaves the same brown tips, for the same reason. Feed monthly from spring to early autumn with a balanced liquid feed at half the label strength, and stop in late autumn and winter, when growth slows. Too much fertiliser is worse than too little.
 
-## Soil, pot, and repotting
+One more water trap: softened tap water. Water softeners add salts that spider plants are particularly sensitive to. Use rainwater or plain tap water instead.
 
-Any good-quality, well-draining houseplant potting mix suits a spider plant. You can mix in a handful of perlite or coarse sand if your mix feels heavy and stays wet for a long time. The pot must have drainage holes — no exceptions.
+## The plant grows up: repotting, feeding, and the first flowers
 
-Spider plants grow thick, fleshy roots that store water, and they actually flower and produce plantlets best when slightly snug in their pot. Repot only when roots are circling the surface, poking out of the drainage holes, or pushing the plant up out of the pot — usually every one to two years. Move up just one pot size, in spring, and water the plant in well afterwards.
+Spider plants grow thick, fleshy roots that store water — and here's a useful quirk. They flower and produce plantlets best when slightly snug in their pot. A huge pot stays wet too long and delays the babies. So don't rush to repot.
 
-## Feeding
+Repot only when roots are circling the surface, poking out of the drainage holes, or pushing the plant up out of the pot — usually every one to two years. Move up just one pot size, in spring, and water the plant in well afterwards.
 
-Feed monthly from spring to early autumn with a balanced liquid houseplant fertiliser diluted to half the strength on the label. Too much fertiliser is worse than too little: excess salts accumulate in the soil and show up as brown leaf tips and burnt-looking leaf edges. Stop feeding in late autumn and winter, when growth slows.
+As the plant matures, it throws up long, arching stems. At the end of each one, small white flowers appear first, then the miniature plantlets that give the plant its name. That first flowering is the sign the plant has grown up. It needs three things to get there: maturity, bright light, and a slightly snug pot. A very young plant, or one recently repotted into a big pot, may take a season to settle before it starts.
 
-## Propagating the plantlets
+## Plantlets: how to start the next generation
 
-Those dangling miniatures are the easiest propagation project in houseplant keeping. The simplest method is to leave the plantlet attached to the mother plant, set a small pot of moist potting mix beside it, and pin the plantlet down onto the soil surface with a bent paperclip. It roots in two to three weeks, and then you snip the stem connecting it to the mother.
+This is the easiest propagation project in houseplant keeping, and it's where the lifecycle loops back to the start.
 
-Alternatively, snip a plantlet off and place its base in a small glass of water. Roots usually appear within a week or two; pot it up once the roots are a few centimetres long. Plantlets with a small nub of root already visible at their base establish fastest.
+The simplest method is to leave the plantlet attached to the mother plant. Set a small pot of moist potting mix beside it and pin the plantlet down onto the soil surface with a bent paperclip. It roots in two to three weeks. Then snip the stem connecting it to the mother, and you have a new plant.
 
-## Pruning and tidying
+Or snip a plantlet off and stand its base in a small glass of water. Roots usually appear within a week or two; pot it up once they're a few centimetres long. Plantlets with a small nub of root already visible at their base establish fastest.
 
-Spider plants need little pruning. Trim off brown tips with clean scissors, cutting just inside the brown area and following the natural pointed shape of the leaf so the cut is barely noticeable. Remove any fully brown or yellow leaves at the base. If the plant gets too large or the stems get tangled, you can cut back the long stems carrying plantlets — the plant will keep growing from its centre.
+Then the new plant does what its mother did: it grows, it arches, and in time it produces plantlets of its own. One healthy spider plant can, over a few years, become a shelf full of them.
 
-## Interactive: brown-tips symptom checker
+Tidying matters as the plant gets bigger. Trim off brown tips with clean scissors, cutting just inside the brown area and following the natural pointed shape of the leaf so the cut is barely noticeable. Remove any fully brown or yellow leaves at the base. If the plant gets too large or the stems get tangled, cut back the long stems carrying plantlets — the plant keeps growing from its centre.
+
+## When it stalls: no babies, pale leaves, floppy growth
+
+Most spider plant problems trace back to one of the stages above going wrong. The checker below matches symptoms to causes, so you can work out what's stalling yours.
 
 <div class="widget" id="how-do-you-take-care-of-a-spider-plant-checker" style="border:1px solid #d8e2d4;border-radius:12px;padding:20px;background:#f7f9f4;max-width:640px;">
   <h3 style="margin-top:0;">What's wrong with my spider plant?</h3>
@@ -99,25 +94,17 @@ Spider plants need little pruning. Trim off brown tips with clean scissors, cutt
 })();
 </script>
 
-## Common mistakes
+A few of the common ones, in plain terms:
 
-- **Watering on a fixed schedule regardless of the soil.** Check the soil first; a plant in a cool, dim room needs far less water than the same plant in a bright, warm one.
-- **Using softened tap water.** Water softeners add salts that spider plants are particularly sensitive to. Use rainwater or plain tap water instead.
-- **Overfeeding.** A monthly half-strength feed is plenty. Brown tips and crusty soil are classic signs of too much fertiliser.
-- **Repotting into a much bigger pot.** A huge pot stays wet too long and delays plantlets. Go up one size only.
-- **Putting it in a dark corner and expecting plantlets.** The plant will survive, but the dangling babies need good light.
+A plant that looks fine but never flowers is usually too young, too dark, or over-potted. Brighter indirect light and a snugger pot are the fix — and patience. Mature plants in good light usually start producing plantlets in spring and summer.
 
-## Troubleshooting
+Leaves curling inward usually mean underwatering or very dry air. Water thoroughly, and check the soil is actually absorbing water. A very dry root ball can repel water — if that's happened, soak the pot in a bowl of water for twenty minutes.
 
-**Leaves have brown tips but the soil is moist.** This is almost always a water-quality or fertiliser-salt issue rather than thirst. Switch water sources, flush the pot, and trim the tips.
+Brown spots in the middle of leaves are often sun scorch from direct afternoon sun, or cold damage from a draughty window in winter. Move the plant and trim the damaged areas.
 
-**The plant looks fine but never flowers.** Spider plants need maturity, bright light, and a slightly snug pot before they flower and produce plantlets. A very young plant, or one recently repotted into a big pot, may take a season to settle.
+Yellow leaves at the base, one at a time, are usually just old age — pull them off. Several yellowing at once points to overwatering: let the soil dry out more between waterings and check the pot drains freely.
 
-**Leaves are curling inward.** Usually a sign of underwatering or very dry air. Water thoroughly and check that the soil is actually absorbing water — a very dry root ball can repel water, in which case soak the pot in a bowl of water for twenty minutes.
-
-**Brown spots in the middle of leaves.** Often sun scorch from direct afternoon sun, or cold damage from a draughty window in winter. Move the plant and trim the damaged areas.
-
-## Frequently asked questions
+## Asked a lot
 
 ### How often should I water a spider plant?
 
@@ -143,18 +130,10 @@ Yes, if the bathroom has a window. Spider plants enjoy the extra humidity, and a
 
 Spider plants are widely regarded as non-toxic to cats and dogs, which is one reason they are so popular in family homes. Cats do, however, love batting at the dangling plantlets, so a hanging basket keeps the plant — and the babies — out of reach.
 
-## Conclusion
-
-A spider plant asks for very little: bright indirect light, a drink when the soil dries, decent water, and a pot that drains. In return it grows fast, forgives the odd mistake, and hands you free new plants on long, arching stems. Fix the brown tips by changing the water rather than watering more, give it enough light to earn its plantlets, and it will be one of the easiest plants you own.
-
-## Related guides
+## Related guides to keep going
 
 - [How Do You Take Care of Plants? Beginner Guide](/guides/how-do-you-take-care-of-plants/)
 - [How to Care for Pothos](/guides/how-to-care-for-pothos/)
 - [How to Care for Philodendron Plants](/guides/how-to-care-for-philodendron-plants/)
 
-## Sources and further reading
-
-- Royal Horticultural Society plant guides
-- Missouri Botanical Garden Plant Finder
-- University extension horticulture publications
+Further reading: the Royal Horticultural Society's guide to growing spider plants, and the Missouri Botanical Garden's Plant Finder entry for Chlorophytum comosum.
