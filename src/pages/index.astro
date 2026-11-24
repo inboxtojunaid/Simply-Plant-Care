@@ -7,31 +7,37 @@ const featured = [
     slug: "how-to-take-care-of-a-snake-plant",
     title: "How to Take Care of a Snake Plant",
     desc: "The full care guide: light, watering, soil, and the mistakes that actually kill them.",
+    img: "/images/how-to-take-care-of-a-snake-plant.webp",
   },
   {
     slug: "how-to-care-for-pothos",
     title: "How to Care for Pothos",
     desc: "Trailing, forgiving, and fast-growing — how to keep pothos lush instead of leggy.",
+    img: "/images/how-to-care-for-pothos.webp",
   },
   {
     slug: "indoor-plants-for-beginners",
     title: "Indoor Plants for Beginners: 10 Easy Picks",
     desc: "Ten plants that tolerate a beginner's learning curve — and how to choose yours.",
+    img: "/images/indoor-plants-for-beginners.svg",
   },
   {
     slug: "how-do-you-take-care-of-plants",
     title: "How Do You Take Care of Plants? Beginner Guide",
     desc: "The five basics every houseplant needs, explained without jargon.",
+    img: "/images/how-do-you-take-care-of-plants.webp",
   },
   {
     slug: "how-to-water-snake-plants",
     title: "How to Water Snake Plants",
     desc: "How often, how much, and the one habit that causes most snake plant deaths.",
+    img: "/images/how-to-water-snake-plants.webp",
   },
   {
     slug: "how-to-care-for-calathea",
     title: "How to Care for Calathea",
     desc: "Humidity, water type, and light — the three things calathea actually cares about.",
+    img: "/images/how-to-care-for-calathea.webp",
   },
 ];
 
@@ -79,6 +85,7 @@ const jsonLd = [
 >
   <section class="hero">
     <div>
+      <p class="eyebrow">30 practical guides · Free tools · No jargon</p>
       <h1>Houseplants, made simple.</h1>
       <p class="lede">
         Clear, honest indoor plant care guides — how much water, how much
@@ -90,6 +97,7 @@ const jsonLd = [
         <input type="search" id="home-search" name="q" placeholder="Search guides — try “snake plant”" />
         <button class="btn" type="submit">Search</button>
       </form>
+      <p class="hero-note">Every guide is checked against public references from university extension services and botanical gardens.</p>
     </div>
     <img
       src="/images/hero.jpg"
@@ -102,30 +110,37 @@ const jsonLd = [
   </section>
 
   <section class="section" aria-labelledby="featured-heading">
-    <h2 id="featured-heading">Featured guides</h2>
+    <div class="section-head">
+      <p class="eyebrow">Start here</p>
+      <h2 id="featured-heading">Featured guides</h2>
+      <p>The guides readers open most — the ones that answer the questions people actually ask.</p>
+    </div>
     <div class="card-grid">
       {
         featured.map((g) => (
           <article class="card">
+            <img class="card-img" src={g.img} alt="" loading="lazy" />
             <h3>
               <a href={`/guides/${g.slug}/`}>{g.title}</a>
             </h3>
             <p>{g.desc}</p>
+            <a class="card-link" href={`/guides/${g.slug}/`}>Read the guide →</a>
           </article>
         ))
       }
     </div>
   </section>
 
-  <section class="section" aria-labelledby="beginner-heading">
-    <h2 id="beginner-heading">New to houseplants?</h2>
-    <p class="prose">
+  <section class="panel-dark" aria-labelledby="beginner-heading">
+    <p class="eyebrow">New to houseplants?</p>
+    <h2 id="beginner-heading">Start with one forgiving plant.</h2>
+    <p>
       Most plants die from two things: too much water and too little light.
       Start with one forgiving plant, learn its rhythm, and build from there.
       Our beginner guides walk through the basics step by step.
     </p>
     <p>
-      <a class="btn" href="/guides/beginner-plant-care/">Browse beginner guides</a>
+      <a class="btn btn-light" href="/guides/beginner-plant-care/">Browse beginner guides</a>
     </p>
   </section>
 
@@ -140,21 +155,30 @@ const jsonLd = [
   </section>
 
   <section class="section" aria-labelledby="tools-heading">
-    <h2 id="tools-heading">Free tools</h2>
+    <div class="section-head">
+      <p class="eyebrow">Interactive</p>
+      <h2 id="tools-heading">Free tools</h2>
+      <p>Answer a few questions, get a straight answer — no sign-up, nothing saved anywhere but your own browser.</p>
+    </div>
     <div class="card-grid">
       <article class="card">
         <h3><a href="/tools/plant-problem-solver/">Plant Problem Solver</a></h3>
         <p>Answer a few questions about the symptoms and get likely causes and fixes.</p>
+        <a class="card-link" href="/tools/plant-problem-solver/">Diagnose a problem →</a>
       </article>
       <article class="card">
         <h3><a href="/tools/plant-care-checklist/">Plant Care Checklist</a></h3>
         <p>Weekly, monthly, and new-plant routines you can tick off and pick up later.</p>
+        <a class="card-link" href="/tools/plant-care-checklist/">Open the checklist →</a>
       </article>
     </div>
   </section>
 
   <section class="section" aria-labelledby="categories-heading">
-    <h2 id="categories-heading">Browse by topic</h2>
+    <div class="section-head">
+      <p class="eyebrow">Topics</p>
+      <h2 id="categories-heading">Browse by topic</h2>
+    </div>
     <div class="card-grid">
       {
         categories.map((c) => (
@@ -163,6 +187,7 @@ const jsonLd = [
               <a href={c.href}>{c.title}</a>
             </h3>
             <p>{c.desc}</p>
+            <a class="card-link" href={c.href}>Browse →</a>
           </article>
         ))
       }
@@ -172,8 +197,11 @@ const jsonLd = [
   {
     recent.length > 0 && (
       <section class="section" aria-labelledby="recent-heading">
-        <h2 id="recent-heading">Recent guides</h2>
-        <ul>
+        <div class="section-head">
+          <p class="eyebrow">Fresh on the site</p>
+          <h2 id="recent-heading">Recent guides</h2>
+        </div>
+        <ul class="link-list">
           {recent.map((g) => (
             <li>
               <a href={`/guides/${g.id.replace(/\.md$/, "")}/`}>{g.data.title}</a>
@@ -185,7 +213,10 @@ const jsonLd = [
   }
 
   <section class="section" aria-labelledby="about-heading">
-    <h2 id="about-heading">About Simply Plant Care</h2>
+    <div class="section-head">
+      <p class="eyebrow">Why this site exists</p>
+      <h2 id="about-heading">About Simply Plant Care</h2>
+    </div>
     <p class="prose">
       Simply Plant Care exists for one reason: most plant advice is either
       too vague to follow or too technical to enjoy. We write guides the way
