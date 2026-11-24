@@ -1,0 +1,81 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const articles = [
+  {
+    slug: "how-do-you-take-care-of-a-spider-plant",
+    title: "How Do You Take Care of a Spider Plant?",
+    desc: "Brown tips, pale leaves, and drooping — the common spider plant problems and what causes them.",
+  },
+  {
+    slug: "how-to-care-for-a-ficus-tree",
+    title: "How to Care for a Ficus Tree",
+    desc: "Ficus trees drop leaves when anything changes. How to tell stress from a real problem.",
+  },
+  {
+    slug: "how-to-care-for-calathea",
+    title: "How to Care for Calathea",
+    desc: "Crispy edges and curling leaves are usually about water and humidity — how to fix both.",
+  },
+  {
+    slug: "how-to-take-care-of-a-snake-plant",
+    title: "How to Take Care of a Snake Plant",
+    desc: "Mushy leaves and a wobbly base almost always mean too much water. How to check and recover.",
+  },
+];
+---
+
+<BaseLayout
+  title="Plant Problems & Solutions"
+  description="Diagnose common houseplant problems — yellow leaves, brown tips, drooping, leaf drop — and find out what to do next."
+  canonicalPath="/guides/plant-problems-solutions/"
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li aria-current="page">Plant Problems &amp; Solutions</li>
+    </ol>
+  </nav>
+
+  <h1>Plant problems &amp; solutions</h1>
+  <p class="prose">
+    Most plant problems have a short list of usual causes: watering, light,
+    or the pot it sits in. The trick is narrowing it down before you change
+    anything — changing three things at once makes it impossible to know what
+    worked.
+  </p>
+
+  <section class="feature-box" aria-labelledby="solver-heading">
+    <h2 id="solver-heading" style="margin-top:0;">Start with the Problem Solver</h2>
+    <p>
+      The Plant Problem Solver asks a few quick questions about what you can
+      see — the symptom, the soil, the light — and suggests the most likely
+      causes, what to inspect, and what to do next.
+    </p>
+    <p><a class="btn" href="/tools/plant-problem-solver/">Open the Plant Problem Solver</a></p>
+  </section>
+
+  <h2>Guides that cover common symptoms</h2>
+  <div class="card-grid">
+    {
+      articles.map((a) => (
+        <article class="card">
+          <h3>
+            <a href={`/guides/${a.slug}/`}>{a.title}</a>
+          </h3>
+          <p>{a.desc}</p>
+        </article>
+      ))
+    }
+  </div>
+
+  <h2>Before you treat anything</h2>
+  <p class="prose">
+    Check three things first: is the soil wet or dry two fingers down, does
+    the pot have drainage holes, and is the problem on old leaves, new
+    leaves, or all of them? Those three answers rule out half the possible
+    causes on their own. And remember — a tool can suggest possibilities,
+    not a diagnosis. Several problems can cause the same symptom.
+  </p>
+</BaseLayout>

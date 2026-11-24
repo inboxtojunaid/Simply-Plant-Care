@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Botanical illustration of a potted ficus tree with glossy oval leaves">
+  <rect width="1200" height="800" fill="#FAF7F0"/>
+  <circle cx="600" cy="380" r="320" fill="#EAF0E6"/>
+  <path d="M600 640 C 596 520 590 430 600 330" fill="none" stroke="#6B4A2F" stroke-width="16" stroke-linecap="round"/>
+  <path d="M598 460 C 540 420 500 380 480 320" fill="none" stroke="#6B4A2F" stroke-width="9" stroke-linecap="round"/>
+  <path d="M602 430 C 660 390 700 350 720 290" fill="none" stroke="#6B4A2F" stroke-width="9" stroke-linecap="round"/>
+  <path d="M600 380 C 560 340 540 300 540 250" fill="none" stroke="#6B4A2F" stroke-width="7" stroke-linecap="round"/>
+  <path d="M600 360 C 640 320 660 280 660 230" fill="none" stroke="#6B4A2F" stroke-width="7" stroke-linecap="round"/>
+  <g fill="#2E6B3E">
+    <ellipse cx="480" cy="300" rx="70" ry="34" transform="rotate(-35 480 300)"/>
+    <ellipse cx="430" cy="360" rx="62" ry="30" transform="rotate(-15 430 360)"/>
+    <ellipse cx="540" cy="230" rx="66" ry="32" transform="rotate(-40 540 230)"/>
+    <ellipse cx="600" cy="180" rx="70" ry="34" transform="rotate(-5 600 180)"/>
+    <ellipse cx="660" cy="210" rx="66" ry="32" transform="rotate(35 660 210)"/>
+    <ellipse cx="720" cy="270" rx="62" ry="30" transform="rotate(20 720 270)"/>
+    <ellipse cx="760" cy="340" rx="60" ry="28" transform="rotate(35 760 340)"/>
+    <ellipse cx="520" cy="330" rx="60" ry="30" transform="rotate(-20 520 330)"/>
+    <ellipse cx="680" cy="330" rx="60" ry="30" transform="rotate(20 680 330)"/>
+  </g>
+  <g fill="#4C9A5B">
+    <ellipse cx="500" cy="260" rx="48" ry="24" transform="rotate(-30 500 260)"/>
+    <ellipse cx="700" cy="250" rx="48" ry="24" transform="rotate(30 700 250)"/>
+    <ellipse cx="600" cy="290" rx="52" ry="26" transform="rotate(0 600 290)"/>
+    <ellipse cx="560" cy="400" rx="46" ry="22" transform="rotate(-25 560 400)"/>
+    <ellipse cx="650" cy="400" rx="46" ry="22" transform="rotate(25 650 400)"/>
+  </g>
+  <path d="M500 640 h200 l-14 90 a12 12 0 0 1 -12 10 h-148 a12 12 0 0 1 -12 -10z" fill="#1E4D3A"/>
+  <rect x="492" y="626" width="216" height="22" rx="11" fill="#16382A"/>
+  <text x="600" y="770" font-family="Georgia, serif" font-size="28" fill="#1E4D3A" text-anchor="middle">Ficus — Ficus benjamina</text>
+</svg>

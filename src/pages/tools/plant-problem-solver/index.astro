@@ -1,0 +1,646 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Plant Problem Solver"
+  description="Answer a few questions about your plant's symptoms and get the most likely causes, what to check, and what to do next."
+  canonicalPath="/tools/plant-problem-solver/"
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li aria-current="page">Plant Problem Solver</li>
+    </ol>
+  </nav>
+
+  <h1>Plant Problem Solver</h1>
+  <p class="prose">
+    Pick the symptom that best matches your plant, answer a few quick
+    questions, and we will suggest the most likely causes — plus what to
+    inspect and what to do next.
+  </p>
+
+  <div class="disclaimer-box">
+    <strong>Not a diagnosis.</strong> This tool suggests possibilities, not a
+    diagnosis — several problems can cause similar symptoms. Use the results
+    as a starting point for checking your plant, not as a definitive answer.
+  </div>
+
+  <div class="progress-wrap" aria-live="polite">
+    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="solver-progress">
+      <div class="progress-fill" id="solver-progress-fill" style="width: 0%"></div>
+    </div>
+    <p class="progress-label" id="solver-step-label">Step 1 of 3 — Choose a symptom</p>
+  </div>
+
+  <!-- Step 1 -->
+  <section class="tool-step active" id="step-1" aria-labelledby="step-1-heading">
+    <h2 id="step-1-heading">What is happening to your plant?</h2>
+    <div class="symptom-grid" id="symptom-grid" role="group" aria-label="Symptoms"></div>
+  </section>
+
+  <!-- Step 2 -->
+  <section class="tool-step" id="step-2" aria-labelledby="step-2-heading">
+    <h2 id="step-2-heading">A few quick questions</h2>
+    <p id="step-2-intro"></p>
+    <div id="questions"></div>
+    <div class="tool-nav">
+      <button type="button" class="btn btn-secondary" id="back-to-1">Back</button>
+      <button type="button" class="btn" id="to-results">See possible causes</button>
+    </div>
+  </section>
+
+  <!-- Step 3 -->
+  <section class="tool-step" id="step-3" aria-labelledby="step-3-heading">
+    <h2 id="step-3-heading">Most likely causes</h2>
+    <p id="results-intro"></p>
+    <div id="results"></div>
+    <div class="tool-nav">
+      <button type="button" class="btn btn-secondary" id="back-to-2">Back</button>
+      <button type="button" class="btn" id="start-over">Start over</button>
+    </div>
+  </section>
+
+  <script>
+    type Answers = Record<string, string>;
+    type Cause = {
+      title: string;
+      reasoning: string;
+      inspect: string[];
+      actions: string[];
+      avoid: string;
+      score: (a: Answers) => number;
+      articles: { slug: string; title: string }[];
+    };
+    type Symptom = {
+      label: string;
+      intro: string;
+      questions: string[];
+      causes: Cause[];
+    };
+
+    const QUESTIONS: Record<string, { label: string; options: { value: string; label: string }[] }> = {
+      soil: {
+        label: "How does the soil feel about 5 cm (two inches) down?",
+        options: [
+          { value: "wet", label: "Wet or soggy" },
+          { value: "damp", label: "Damp" },
+          { value: "dry", label: "Dry" },
+          { value: "unsure", label: "Not sure" },
+        ],
+      },
+      drainage: {
+        label: "Does the pot have drainage holes?",
+        options: [
+          { value: "yes", label: "Yes" },
+          { value: "no", label: "No" },
+          { value: "unsure", label: "Not sure" },
+        ],
+      },
+      light: {
+        label: "How much light does the plant get?",
+        options: [
+          { value: "direct", label: "Direct sun for several hours" },
+          { value: "bright", label: "Bright, indirect light" },
+          { value: "low", label: "Low light — far from a window" },
+          { value: "unsure", label: "Not sure" },
+        ],
+      },
+      leaves: {
+        label: "Which leaves are affected?",
+        options: [
+          { value: "old", label: "Mostly older, lower leaves" },
+          { value: "new", label: "Mostly new growth" },
+          { value: "all", label: "All over the plant" },
+          { value: "unsure", label: "Not sure" },
+        ],
+      },
+      watering: {
+        label: "How often do you water?",
+        options: [
+          { value: "often", label: "More than once a week" },
+          { value: "weekly", label: "About once a week" },
+          { value: "rarely", label: "Every 3 weeks or less" },
+          { value: "unsure", label: "No fixed routine" },
+        ],
+      },
+    };
+
+    const A = (slug: string, title: string) => ({ slug, title });
+
+    const SOLVER: Record<string, Symptom> = {
+      "yellow-leaves": {
+        label: "Yellow leaves",
+        intro: "Yellow leaves are the most common complaint — and the most ambiguous. Your answers will narrow it down.",
+        questions: ["soil", "drainage", "leaves", "watering"],
+        causes: [
+          {
+            title: "Overwatering / root rot starting",
+            reasoning: "Wet soil plus yellowing — especially on lower leaves — is the classic overwatering pattern. Roots sitting in water cannot take up oxygen, and the leaves yellow as they starve.",
+            inspect: ["Check the soil two inches down — is it still wet days after watering?", "Smell the soil; a sour or rotten smell points to rot.", "Gently check whether the base of the stem feels soft."],
+            actions: ["Stop watering and let the soil dry out before watering again.", "If the pot has no drainage holes, move the plant to one that does.", "Remove fully yellow leaves — they will not turn green again."],
+            avoid: "Do not fertilise a plant that is already struggling — it adds stress, not help.",
+            score: (a) => (a.soil === "wet" ? 3 : 0) + (a.drainage === "no" ? 2 : 0) + (a.watering === "often" ? 2 : 0) + (a.leaves === "old" ? 1 : 0),
+            articles: [A("how-to-take-care-of-a-snake-plant", "How to Take Care of a Snake Plant"), A("how-to-water-snake-plants", "How to Water Snake Plants")],
+          },
+          {
+            title: "Underwatering",
+            reasoning: "Dry soil and yellowing leaves, often starting at the edges, point to the plant not getting enough water to support all its leaves.",
+            inspect: ["Check whether the soil has pulled away from the sides of the pot.", "See if the pot feels unusually light when lifted."],
+            actions: ["Water thoroughly until it runs out of the drainage holes.", "If the soil is bone dry and repels water, soak the pot in a bowl of water for 20–30 minutes."],
+            avoid: "Do not water a little every day — shallow watering keeps the top wet and the roots dry.",
+            score: (a) => (a.soil === "dry" ? 3 : 0) + (a.watering === "rarely" ? 2 : 0),
+            articles: [A("how-do-you-take-care-of-plants", "How Do You Take Care of Plants? Beginner Guide")],
+          },
+          {
+            title: "Natural ageing of old leaves",
+            reasoning: "One or two lower leaves yellowing and dropping now and then is normal — the plant sheds old leaves as it grows. It is only a problem if many leaves yellow at once.",
+            inspect: ["Count how many leaves are affected — one or two old ones is usually fine.", "Check that new growth looks healthy."],
+            actions: ["Remove the yellow leaf at the base.", "Keep caring for the plant as normal."],
+            avoid: "Do not change your watering routine over a single yellowing leaf.",
+            score: (a) => (a.leaves === "old" ? 3 : 0) + (a.soil === "damp" ? 1 : 0),
+            articles: [A("how-do-you-take-care-of-plants", "How Do You Take Care of Plants? Beginner Guide")],
+          },
+          {
+            title: "Not enough light",
+            reasoning: "In low light a plant cannot photosynthesise enough to support all its leaves, so it sheds the oldest ones first — they turn yellow, then drop.",
+            inspect: ["Is the plant far from a window, or in a north-facing room?", "Is new growth pale, small, or stretched towards the light?"],
+            actions: ["Move the plant closer to a bright window (out of harsh direct sun for most plants).", "Rotate it every week or two so all sides get light."],
+            avoid: "Do not move a plant straight into full midday sun — it can scorch.",
+            score: (a) => (a.light === "low" ? 3 : 0),
+            articles: [A("plants-that-grow-in-the-dark", "Plants That Grow in the Dark (Low Light)"), A("snake-plant-light-needs", "Snake Plant Light Needs Explained")],
+          },
+        ],
+      },
+      "brown-tips": {
+        label: "Brown leaf tips",
+        intro: "Brown, crispy leaf tips usually point to water quality, low humidity, or inconsistent watering.",
+        questions: ["soil", "watering", "leaves"],
+        causes: [
+          {
+            title: "Low humidity or dry air",
+            reasoning: "Thin-leaved plants like calathea, ferns, and spider plants crisp at the tips when the air is dry — common in heated rooms in winter.",
+            inspect: ["Are the brown tips dry and papery, rather than soft?", "Is the plant near a radiator or heating vent?"],
+            actions: ["Move the plant away from radiators and draughts.", "Group plants together to raise local humidity, or use a pebble tray under the pot."],
+            avoid: "Misting alone rarely raises humidity for long — it is not a reliable fix on its own.",
+            score: (a) => 2,
+            articles: [A("how-to-care-for-calathea", "How to Care for Calathea"), A("how-do-you-care-for-ferns", "How Do You Care for Ferns Indoors?")],
+          },
+          {
+            title: "Tap water salts and minerals",
+            reasoning: "Fluoride and salts in tap water build up in leaf tips, which brown and crisp. Spider plants are famously sensitive to this.",
+            inspect: ["Are the tips brown while the rest of the leaf is healthy?", "Is there a white crust on the soil surface or pot rim?"],
+            actions: ["Try watering with rainwater, distilled water, or tap water left out overnight.", "Flush the soil occasionally by watering until plenty runs out of the bottom."],
+            avoid: "Do not just trim the brown tips and carry on — the cause will keep browning new growth.",
+            score: (a) => 2,
+            articles: [A("how-do-you-take-care-of-a-spider-plant", "How Do You Take Care of a Spider Plant?"), A("how-to-care-for-calathea", "How to Care for Calathea")],
+          },
+          {
+            title: "Inconsistent watering",
+            reasoning: "Long dry spells followed by a big drink stress leaf tips first — they are the furthest point from the roots.",
+            inspect: ["Does the soil swing between bone dry and soaking wet?", "Are the tips brown on new leaves too?"],
+            actions: ["Water when the top few centimetres of soil are dry, and water evenly.", "Check soil moisture weekly rather than watering on a fixed day."],
+            avoid: "Do not water a little every day — it keeps the surface wet and the roots dry.",
+            score: (a) => (a.watering === "rarely" ? 2 : 0) + (a.soil === "dry" ? 1 : 0),
+            articles: [A("how-do-you-take-care-of-plants", "How Do You Take Care of Plants? Beginner Guide")],
+          },
+        ],
+      },
+      drooping: {
+        label: "Drooping leaves",
+        intro: "Drooping can mean the plant is thirsty — or that its roots are too wet to drink. The soil check tells them apart.",
+        questions: ["soil", "watering", "drainage"],
+        causes: [
+          {
+            title: "Thirsty plant",
+            reasoning: "Dry soil plus drooping leaves is straightforward: the plant has run out of water and cannot hold its leaves up.",
+            inspect: ["Is the soil dry two inches down?", "Does the pot feel light?"],
+            actions: ["Water thoroughly until it drains from the bottom.", "If the soil is very dry, soak the pot in water for 20–30 minutes."],
+            avoid: "Do not water a little at a time — give it a proper soak.",
+            score: (a) => (a.soil === "dry" ? 3 : 0) + (a.watering === "rarely" ? 2 : 0),
+            articles: [A("how-do-you-take-care-of-plants", "How Do You Take Care of Plants? Beginner Guide")],
+          },
+          {
+            title: "Overwatering / root damage",
+            reasoning: "A drooping plant in wet soil is the confusing one: the roots are damaged and cannot take up water, so the plant looks thirsty while drowning.",
+            inspect: ["Is the soil still wet days after watering?", "Does the soil smell sour?", "Are the stems soft at the base?"],
+            actions: ["Stop watering and let the soil dry out.", "If the pot has no drainage, repot into one that does, trimming any black, mushy roots."],
+            avoid: "Do not water a drooping plant without checking the soil first — more water makes this worse.",
+            score: (a) => (a.soil === "wet" ? 3 : 0) + (a.drainage === "no" ? 2 : 0) + (a.watering === "often" ? 2 : 0),
+            articles: [A("how-to-take-care-of-a-snake-plant", "How to Take Care of a Snake Plant"), A("how-to-water-snake-plants", "How to Water Snake Plants")],
+          },
+          {
+            title: "Temperature shock or draught",
+            reasoning: "A sudden cold draught, a move to a new spot, or heat from a radiator can make leaves droop within a day.",
+            inspect: ["Is the plant near a door, an air conditioner, or a radiator?", "Did it recently move?"],
+            actions: ["Move it to a spot with stable temperature, away from draughts and radiators.", "Give it a few days to recover before changing anything else."],
+            avoid: "Do not repot or fertilise a plant that is just shocked — it needs stability, not more change.",
+            score: (a) => 1,
+            articles: [A("how-to-care-for-a-ficus-tree", "How to Care for a Ficus Tree")],
+          },
+        ],
+      },
+      "brown-spots": {
+        label: "Brown spots",
+        intro: "Brown spots on leaves can come from sun, water sitting on leaves, or a fungal or bacterial problem.",
+        questions: ["light", "leaves", "soil"],
+        causes: [
+          {
+            title: "Sun scorch",
+            reasoning: "Direct sun through glass can burn leaves, leaving dry brown patches — usually on the side facing the window.",
+            inspect: ["Are the spots on the sun-facing side?", "Are the patches dry and papery?"],
+            actions: ["Move the plant back from the window or into bright, indirect light.", "Trim badly scorched leaves if you like — they will not heal."],
+            avoid: "Do not move a plant from shade straight into full sun.",
+            score: (a) => (a.light === "direct" ? 3 : 0),
+            articles: [A("snake-plant-light-needs", "Snake Plant Light Needs Explained")],
+          },
+          {
+            title: "Fungal or bacterial leaf spot",
+            reasoning: "Spots with yellow halos that spread, especially in warm, damp conditions, often point to a fungal or bacterial infection.",
+            inspect: ["Are the spots spreading or getting bigger?", "Do they have yellow rings around them?", "Are leaves staying wet for long periods?"],
+            actions: ["Remove affected leaves and dispose of them (not in compost).", "Improve air circulation and avoid wetting the leaves when watering.", "Keep the plant isolated from other plants until it stabilises."],
+            avoid: "Do not mist a plant with leaf spots — wet leaves help the problem spread.",
+            score: (a) => (a.soil === "wet" ? 2 : 0) + (a.leaves === "all" ? 1 : 0),
+            articles: [A("how-do-you-take-care-of-plants", "How Do You Take Care of Plants? Beginner Guide")],
+          },
+          {
+            title: "Water damage on leaves",
+            reasoning: "Cold water or water sitting on leaves can leave brown marks, especially on plants with soft or hairy leaves.",
+            inspect: ["Are the spots where water would sit after watering?", "Do you water from above?"],
+            actions: ["Water at the base of the plant, not over the leaves.", "Water in the morning so any splashes dry during the day."],
+            avoid: "Do not spray the leaves of a plant that already has spots.",
+            score: (a) => 1,
+            articles: [A("how-to-care-for-calathea", "How to Care for Calathea")],
+          },
+        ],
+      },
+      "leaf-curling": {
+        label: "Leaf curling",
+        intro: "Curling leaves are usually the plant trying to reduce water loss — or reacting to pests, light, or temperature.",
+        questions: ["soil", "light", "watering"],
+        causes: [
+          {
+            title: "Underwatering / low humidity",
+            reasoning: "When a plant cannot replace the water its leaves lose, it curls them to reduce the exposed surface. Calathea does this dramatically and quickly.",
+            inspect: ["Is the soil dry?", "Are the leaves also crispy at the edges?", "Is the air in the room dry?"],
+            actions: ["Water thoroughly, then check soil moisture weekly.", "Raise humidity by grouping plants together or using a pebble tray."],
+            avoid: "Do not just mist the leaves — it dries in minutes and does not fix the cause.",
+            score: (a) => (a.soil === "dry" ? 3 : 0) + (a.watering === "rarely" ? 2 : 0),
+            articles: [A("how-to-care-for-calathea", "How to Care for Calathea"), A("how-do-you-care-for-ferns", "How Do You Care for Ferns Indoors?")],
+          },
+          {
+            title: "Too much direct sun or heat",
+            reasoning: "Strong sun or hot air makes leaves curl inward to protect themselves from losing water.",
+            inspect: ["Is the plant in a hot, sunny window?", "Does the curling ease in the evening?"],
+            actions: ["Move the plant to bright, indirect light.", "Keep it away from radiators and hot windowsills."],
+            avoid: "Do not water more to compensate — check the soil first.",
+            score: (a) => (a.light === "direct" ? 3 : 0),
+            articles: [A("snake-plant-light-needs", "Snake Plant Light Needs Explained")],
+          },
+          {
+            title: "Pests",
+            reasoning: "Aphids, thrips, and spider mites feed on leaves and can cause curling, distortion, and sticky residue.",
+            inspect: ["Look closely under leaves and at new growth for tiny insects, webbing, or sticky residue.", "Are new leaves distorted as they unfurl?"],
+            actions: ["Isolate the plant from your other plants.", "Wipe leaves with a damp cloth and rinse the plant with a gentle shower.", "Repeat the check weekly for a few weeks."],
+            avoid: "Do not reach for a chemical spray as a first step — start with wiping and isolating.",
+            score: (a) => 1,
+            articles: [A("how-do-you-take-care-of-plants", "How Do You Take Care of Plants? Beginner Guide")],
+          },
+        ],
+      },
+      "falling-leaves": {
+        label: "Falling leaves",
+        intro: "Some leaf drop is normal, but sudden or heavy drop usually means the plant is stressed by a change.",
+        questions: ["leaves", "light", "soil"],
+        causes: [
+          {
+            title: "Shock from a move or change",
+            reasoning: "Ficus trees are famous for dropping leaves after a move, a change in light, or a draught. The plant is adjusting, not necessarily dying.",
+            inspect: ["Did the plant recently move, or did the seasons change?", "Are the dropped leaves green and healthy-looking?"],
+            actions: ["Put the plant in one bright spot and leave it there.", "Keep watering consistent and wait a few weeks."],
+            avoid: "Do not keep moving it to 'find a better spot' — each move restarts the shock.",
+            score: (a) => (a.leaves === "all" ? 2 : 0),
+            articles: [A("how-to-care-for-a-ficus-tree", "How to Care for a Ficus Tree")],
+          },
+          {
+            title: "Overwatering",
+            reasoning: "Leaves that yellow and drop, especially lower ones, in wet soil point to roots that are struggling.",
+            inspect: ["Is the soil wet days after watering?", "Are the falling leaves yellow or soft?"],
+            actions: ["Let the soil dry out between waterings.", "Check that the pot drains and empty the saucer after watering."],
+            avoid: "Do not fertilise a dropping plant — it adds stress.",
+            score: (a) => (a.soil === "wet" ? 3 : 0),
+            articles: [A("how-to-water-snake-plants", "How to Water Snake Plants")],
+          },
+          {
+            title: "Not enough light",
+            reasoning: "A plant that cannot make enough food sheds leaves it cannot support, starting with the lowest, shadiest ones.",
+            inspect: ["Is the plant far from a window?", "Is the drop mostly lower leaves?"],
+            actions: ["Move it closer to a bright window.", "Rotate it regularly."],
+            avoid: "Do not move it into harsh direct sun all at once.",
+            score: (a) => (a.light === "low" ? 3 : 0) + (a.leaves === "old" ? 1 : 0),
+            articles: [A("plants-that-grow-in-the-dark", "Plants That Grow in the Dark (Low Light)")],
+          },
+        ],
+      },
+      "slow-growth": {
+        label: "Slow growth",
+        intro: "Slow growth is often seasonal or light-related — but it can also mean the plant is rootbound or hungry.",
+        questions: ["light", "watering", "soil"],
+        causes: [
+          {
+            title: "Not enough light",
+            reasoning: "Light is the fuel for growth. A plant in a dim spot grows slowly, with small, pale new leaves — even if everything else is right.",
+            inspect: ["Is the plant far from a window?", "Are new leaves smaller than older ones?"],
+            actions: ["Move it to the brightest suitable spot for its species.", "Clean dusty leaves — dust blocks light."],
+            avoid: "Do not feed a plant that is short of light — fertiliser cannot replace light.",
+            score: (a) => (a.light === "low" ? 3 : 0),
+            articles: [A("snake-plant-light-needs", "Snake Plant Light Needs Explained"), A("plants-that-grow-in-the-dark", "Plants That Grow in the Dark (Low Light)")],
+          },
+          {
+            title: "Winter dormancy",
+            reasoning: "Most houseplants grow little or not at all in autumn and winter. Slow growth in the dark months is usually normal, not a problem.",
+            inspect: ["Is it autumn or winter where you are?", "Does the plant otherwise look healthy?"],
+            actions: ["Water less and do not fertilise until growth resumes in spring.", "Wait — growth usually returns with longer days."],
+            avoid: "Do not repot or feed a dormant plant to force growth.",
+            score: (a) => 1,
+            articles: [A("how-do-you-take-care-of-plants", "How Do You Take Care of Plants? Beginner Guide")],
+          },
+          {
+            title: "Rootbound pot",
+            reasoning: "If roots have filled the pot, there is no room or fresh soil left to support new growth.",
+            inspect: ["Are roots coming out of the drainage holes?", "Does water run straight through the pot?"],
+            actions: ["Repot into a pot one size larger with fresh potting mix.", "Tease out circling roots gently before repotting."],
+            avoid: "Do not jump to a much bigger pot — one size up is enough.",
+            score: (a) => 1,
+            articles: [A("how-to-grow-basil-in-pots", "How to Grow Basil in Pots")],
+          },
+          {
+            title: "Needs feeding (growing season only)",
+            reasoning: "A plant that has been in the same soil for a year or more may have used up the available nutrients.",
+            inspect: ["When was the soil last refreshed?", "Is the plant pale overall with slow growth in spring or summer?"],
+            actions: ["Feed at half the label strength during the growing season, every 4–6 weeks.", "Refresh the top layer of soil if you do not want to repot."],
+            avoid: "Do not feed in winter, and never feed a dry plant — water first.",
+            score: (a) => 1,
+            articles: [A("how-do-you-take-care-of-plants", "How Do You Take Care of Plants? Beginner Guide")],
+          },
+        ],
+      },
+      "soft-stems": {
+        label: "Soft or mushy stems",
+        intro: "Soft, mushy stems are the most urgent symptom here — they usually mean rot, and rot spreads.",
+        questions: ["soil", "drainage", "watering"],
+        causes: [
+          {
+            title: "Root and stem rot from overwatering",
+            reasoning: "Soft, mushy stems in wet soil almost always mean rot. The tissue has died and bacteria are breaking it down — it will not recover on its own.",
+            inspect: ["Is the stem soft and translucent at the base?", "Does the soil smell sour or rotten?", "Are the leaves mushy too?"],
+            actions: ["Stop watering immediately.", "Remove the plant from its pot, trim away all black, mushy roots and stem with clean scissors.", "Repot the healthy remainder in fresh, dry, well-draining mix and do not water for a few days."],
+            avoid: "Do not keep watering and hope it recovers — rot spreads fast in wet soil.",
+            score: (a) => (a.soil === "wet" ? 3 : 0) + (a.drainage === "no" ? 2 : 0) + (a.watering === "often" ? 2 : 0),
+            articles: [A("how-to-take-care-of-a-snake-plant", "How to Take Care of a Snake Plant"), A("how-do-you-take-care-of-succulents", "How Do You Take Care of Succulents?")],
+          },
+          {
+            title: "Cold damage",
+            reasoning: "Tropical plants exposed to cold — a freezing windowsill, a cold draught — can go soft and mushy, sometimes overnight.",
+            inspect: ["Was the plant near a cold window or in a cold room?", "Did the softness appear after a cold night?"],
+            actions: ["Move the plant to a warm, stable spot.", "Trim away fully mushy parts with clean scissors.", "Do not water until the plant shows signs of recovery."],
+            avoid: "Do not put a cold-damaged plant in direct sun to 'warm it up'.",
+            score: (a) => 1,
+            articles: [A("how-do-you-take-care-of-plants", "How Do You Take Care of Plants? Beginner Guide")],
+          },
+        ],
+      },
+      "mold-soil": {
+        label: "Mold on soil",
+        intro: "White or grey fuzz on the soil surface is usually harmless mould feeding on damp organic matter — but it signals soil that stays too wet.",
+        questions: ["soil", "watering", "drainage"],
+        causes: [
+          {
+            title: "Soil staying wet too long",
+            reasoning: "Mould grows on constantly damp soil. It is usually harmless to the plant, but it is a warning that the soil is not drying out.",
+            inspect: ["Is the top of the soil always damp?", "Is there poor air circulation around the plant?"],
+            actions: ["Scrape off the mouldy top layer and replace it with fresh, dry mix.", "Let the soil dry out more between waterings.", "Improve air flow — move the plant where air moves, or open a window nearby."],
+            avoid: "Do not water on a fixed schedule — check the soil first.",
+            score: (a) => (a.soil === "wet" ? 3 : 0) + (a.watering === "often" ? 2 : 0),
+            articles: [A("how-do-you-take-care-of-plants", "How Do You Take Care of Plants? Beginner Guide")],
+          },
+          {
+            title: "Poor drainage / no drainage holes",
+            reasoning: "Without drainage, water pools at the bottom and the soil surface never dries — perfect conditions for mould.",
+            inspect: ["Does the pot have drainage holes?", "Is water sitting in the saucer?"],
+            actions: ["Repot into a pot with drainage holes.", "Always empty the saucer after watering."],
+            avoid: "Do not add more soil on top to hide the mould — fix the drainage.",
+            score: (a) => (a.drainage === "no" ? 3 : 0),
+            articles: [A("how-to-take-care-of-a-cactus-indoors", "How to Take Care of a Cactus Indoors")],
+          },
+        ],
+      },
+      other: {
+        label: "Other visible problems",
+        intro: "If your plant's problem does not fit the other symptoms, these general checks cover the most common causes.",
+        questions: ["soil", "light", "leaves", "watering"],
+        causes: [
+          {
+            title: "Start with the basics: water, light, pot",
+            reasoning: "Most plant problems trace back to one of three things — watering, light, or drainage. Checking these first rules out the majority of causes.",
+            inspect: ["Check soil moisture two inches down.", "Check the pot has drainage holes and the saucer is empty.", "Check how much light the plant actually gets."],
+            actions: ["Fix watering first: water only when the soil needs it.", "Move the plant to suitable light for its species.", "Remove dead or badly damaged leaves."],
+            avoid: "Do not change everything at once — change one thing, then wait a week or two to see the effect.",
+            score: (a) => 2,
+            articles: [A("how-do-you-take-care-of-plants", "How Do You Take Care of Plants? Beginner Guide"), A("indoor-plants-for-beginners", "Indoor Plants for Beginners: 10 Easy Picks")],
+          },
+          {
+            title: "Pests",
+            reasoning: "Tiny insects, webbing, sticky residue, or distorted new growth can all point to pests — check the undersides of leaves closely.",
+            inspect: ["Look under leaves and at new growth with a magnifier or phone camera.", "Check for fine webbing, sticky patches, or tiny moving dots."],
+            actions: ["Isolate the plant from your other plants.", "Wipe the leaves with a damp cloth and rinse the plant gently.", "Check again weekly for a few weeks."],
+            avoid: "Do not spray chemicals as a first step — start with wiping and isolating.",
+            score: (a) => 1,
+            articles: [A("how-do-you-take-care-of-plants", "How Do You Take Care of Plants? Beginner Guide")],
+          },
+          {
+            title: "Seasonal change",
+            reasoning: "Many plants slow down, drop a leaf or two, or look tired in autumn and winter. If the plant is otherwise healthy, it may just be the season.",
+            inspect: ["Is it autumn or winter?", "Is new growth still appearing, even slowly?"],
+            actions: ["Water less and stop feeding until spring.", "Be patient — growth usually returns with longer days."],
+            avoid: "Do not repot or feed a dormant plant.",
+            score: (a) => 1,
+            articles: [A("how-do-you-take-care-of-plants", "How Do You Take Care of Plants? Beginner Guide")],
+          },
+        ],
+      },
+    };
+
+    const SYMPTOM_ORDER = [
+      "yellow-leaves", "brown-tips", "drooping", "brown-spots", "leaf-curling",
+      "falling-leaves", "slow-growth", "soft-stems", "mold-soil", "other",
+    ];
+
+    let currentSymptom = "";
+    let answers: Answers = {};
+
+    const stepLabel = document.getElementById("solver-step-label");
+    const progressFill = document.getElementById("solver-progress-fill");
+    const progressBar = document.getElementById("solver-progress");
+
+    function showStep(n: number) {
+      document.querySelectorAll(".tool-step").forEach((el, i) => {
+        el.classList.toggle("active", i === n - 1);
+      });
+      const pct = n === 1 ? 0 : n === 2 ? 50 : 100;
+      if (progressFill) progressFill.style.width = `${pct}%`;
+      progressBar?.setAttribute("aria-valuenow", String(pct));
+      if (stepLabel) {
+        stepLabel.textContent =
+          n === 1 ? "Step 1 of 3 — Choose a symptom" :
+          n === 2 ? "Step 2 of 3 — Answer a few questions" :
+          "Step 3 of 3 — Possible causes";
+      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Step 1: build symptom buttons
+    const grid = document.getElementById("symptom-grid");
+    SYMPTOM_ORDER.forEach((key) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "symptom-btn";
+      btn.textContent = SOLVER[key].label;
+      btn.setAttribute("aria-pressed", "false");
+      btn.addEventListener("click", () => {
+        grid?.querySelectorAll(".symptom-btn").forEach((b) => b.setAttribute("aria-pressed", "false"));
+        btn.setAttribute("aria-pressed", "true");
+        currentSymptom = key;
+        answers = {};
+        buildQuestions();
+        showStep(2);
+      });
+      grid?.appendChild(btn);
+    });
+
+    function buildQuestions() {
+      const symptom = SOLVER[currentSymptom];
+      const intro = document.getElementById("step-2-intro");
+      if (intro) intro.textContent = symptom.intro;
+      const wrap = document.getElementById("questions");
+      if (!wrap) return;
+      wrap.innerHTML = "";
+      symptom.questions.forEach((qKey) => {
+        const q = QUESTIONS[qKey];
+        const fieldset = document.createElement("fieldset");
+        fieldset.style.border = "0";
+        fieldset.style.padding = "0";
+        fieldset.style.margin = "0 0 1.25rem";
+        const legend = document.createElement("legend");
+        legend.textContent = q.label;
+        legend.style.fontWeight = "600";
+        legend.style.marginBottom = "0.5rem";
+        fieldset.appendChild(legend);
+        const list = document.createElement("div");
+        list.className = "choice-list";
+        q.options.forEach((opt) => {
+          const label = document.createElement("label");
+          const input = document.createElement("input");
+          input.type = "radio";
+          input.name = `q-${qKey}`;
+          input.value = opt.value;
+          input.addEventListener("change", () => {
+            answers[qKey] = opt.value;
+          });
+          const span = document.createElement("span");
+          span.textContent = opt.label;
+          label.appendChild(input);
+          label.appendChild(span);
+          list.appendChild(label);
+        });
+        fieldset.appendChild(list);
+        wrap.appendChild(fieldset);
+      });
+    }
+
+    function renderResults() {
+      const symptom = SOLVER[currentSymptom];
+      const scored = symptom.causes
+        .map((c) => ({ cause: c, score: c.score(answers) }))
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 4);
+      const intro = document.getElementById("results-intro");
+      if (intro) {
+        intro.textContent = `You chose “${symptom.label}”. These are the most likely causes based on your answers — most plausible first. Remember, this is not a diagnosis.`;
+      }
+      const wrap = document.getElementById("results");
+      if (!wrap) return;
+      wrap.innerHTML = "";
+      scored.forEach(({ cause }, i) => {
+        const card = document.createElement("article");
+        card.className = "result-card";
+        const h3 = document.createElement("h3");
+        h3.textContent = `${i + 1}. ${cause.title}`;
+        card.appendChild(h3);
+        const why = document.createElement("p");
+        why.textContent = cause.reasoning;
+        card.appendChild(why);
+
+        const inspectH = document.createElement("h4");
+        inspectH.textContent = "What to inspect";
+        card.appendChild(inspectH);
+        const inspectList = document.createElement("ul");
+        cause.inspect.forEach((t) => {
+          const li = document.createElement("li");
+          li.textContent = t;
+          inspectList.appendChild(li);
+        });
+        card.appendChild(inspectList);
+
+        const actionH = document.createElement("h4");
+        actionH.textContent = "What to do";
+        card.appendChild(actionH);
+        const actionList = document.createElement("ul");
+        cause.actions.forEach((t) => {
+          const li = document.createElement("li");
+          li.textContent = t;
+          actionList.appendChild(li);
+        });
+        card.appendChild(actionList);
+
+        const avoidP = document.createElement("p");
+        const avoidStrong = document.createElement("strong");
+        avoidStrong.textContent = "Avoid: ";
+        avoidP.appendChild(avoidStrong);
+        avoidP.appendChild(document.createTextNode(cause.avoid));
+        card.appendChild(avoidP);
+
+        if (cause.articles.length > 0) {
+          const relH = document.createElement("h4");
+          relH.textContent = "Related guides";
+          card.appendChild(relH);
+          const relList = document.createElement("ul");
+          cause.articles.forEach((art) => {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = `/guides/${art.slug}/`;
+            a.textContent = art.title;
+            li.appendChild(a);
+            relList.appendChild(li);
+          });
+          card.appendChild(relList);
+        }
+        wrap.appendChild(card);
+      });
+    }
+
+    document.getElementById("to-results")?.addEventListener("click", () => {
+      renderResults();
+      showStep(3);
+    });
+    document.getElementById("back-to-1")?.addEventListener("click", () => showStep(1));
+    document.getElementById("back-to-2")?.addEventListener("click", () => showStep(2));
+    document.getElementById("start-over")?.addEventListener("click", () => {
+      currentSymptom = "";
+      answers = {};
+      grid?.querySelectorAll(".symptom-btn").forEach((b) => b.setAttribute("aria-pressed", "false"));
+      showStep(1);
+    });
+  </script>
+</BaseLayout>

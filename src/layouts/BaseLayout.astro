@@ -1,0 +1,162 @@
+---
+import "../styles/global.css";
+
+export interface Props {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+  ogImage?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonicalPath = "/",
+  ogImage = "/images/hero.jpg",
+  jsonLd,
+  noindex = false,
+} = Astro.props;
+
+const canonical = `https://simplyplantcare.com${canonicalPath}`;
+const pageTitle = title === "Simply Plant Care" ? title : `${title} | Simply Plant Care`;
+const navLinks = [
+  { href: "/guides/", label: "Guides" },
+  { href: "/guides/beginner-plant-care/", label: "Beginner" },
+  { href: "/guides/plant-problems-solutions/", label: "Problems" },
+  { href: "/guides/indoor-plant-watering/", label: "Watering" },
+  { href: "/guides/indoor-plant-lighting/", label: "Lighting" },
+  { href: "/guides/soil-pots-drainage/", label: "Soil & Pots" },
+  { href: "/tools/plant-problem-solver/", label: "Tools" },
+];
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Simply Plant Care" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={`https://simplyplantcare.com${ogImage}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`https://simplyplantcare.com${ogImage}`} />
+    {jsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    )}
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="/" aria-label="Simply Plant Care — home">
+          <img src="/images/leaf-mark.svg" alt="" width="34" height="34" />
+          <span>Simply Plant Care</span>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="main-nav"
+          id="nav-toggle"
+        >
+          Menu
+        </button>
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+          <ul>
+            {
+              navLinks.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    aria-current={currentPath === link.href ? "page" : undefined}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <div class="container">
+        <slot />
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <h3>Simply Plant Care</h3>
+            <p>
+              Plain, practical indoor plant care guides — written in clear
+              language, based on general horticultural knowledge, for people
+              who just want their plants to live.
+            </p>
+          </div>
+          <nav aria-label="Footer guides">
+            <h3>Guides</h3>
+            <ul>
+              <li><a href="/guides/">All guides</a></li>
+              <li><a href="/guides/beginner-plant-care/">Beginner plant care</a></li>
+              <li><a href="/guides/plant-problems-solutions/">Plant problems</a></li>
+              <li><a href="/guides/indoor-plant-watering/">Watering</a></li>
+              <li><a href="/guides/indoor-plant-lighting/">Lighting</a></li>
+              <li><a href="/guides/soil-pots-drainage/">Soil &amp; pots</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Footer tools">
+            <h3>Tools</h3>
+            <ul>
+              <li><a href="/tools/plant-problem-solver/">Plant Problem Solver</a></li>
+              <li><a href="/tools/plant-care-checklist/">Plant Care Checklist</a></li>
+              <li><a href="/search/">Search guides</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Footer site">
+            <h3>Site</h3>
+            <ul>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/contact/">Contact</a></li>
+              <li><a href="/privacy-policy/">Privacy Policy</a></li>
+              <li><a href="/terms-and-conditions/">Terms &amp; Conditions</a></li>
+              <li><a href="/disclaimer/">Disclaimer</a></li>
+              <li><a href="/editorial-policy/">Editorial Policy</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p>© {new Date().getFullYear()} Simply Plant Care. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.getElementById("nav-toggle");
+      const nav = document.getElementById("main-nav");
+      if (toggle && nav) {
+        toggle.addEventListener("click", () => {
+          const open = nav.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", String(open));
+          toggle.textContent = open ? "Close" : "Menu";
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,195 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const routines: Record<string, { label: string; tasks: string[] }> = {
+  weekly: {
+    label: "Weekly",
+    tasks: [
+      "Check soil moisture for each plant",
+      "Inspect leaves for yellowing, spots, or pests",
+      "Remove dead or yellow foliage",
+      "Check drainage — empty saucers after watering",
+      "Rotate plants a quarter turn for even light",
+      "Inspect for pests, especially under leaves",
+      "Clean dusty leaves with a damp cloth",
+    ],
+  },
+  monthly: {
+    label: "Monthly",
+    tasks: [
+      "Check whether any plant needs fertiliser (growing season only)",
+      "Check whether any plant is rootbound and needs repotting",
+      "Prune leggy or damaged growth",
+      "Clean pots and saucers",
+      "Check light levels as the seasons change",
+    ],
+  },
+  "new-plant": {
+    label: "New plant",
+    tasks: [
+      "Quarantine the new plant away from your others for two weeks",
+      "Inspect leaves and soil for pests",
+      "Inspect the roots — check for rot or a rootbound pot",
+      "Choose the right pot with drainage holes",
+      "Give the first watering and let it drain fully",
+      "Find the right light spot for this species",
+    ],
+  },
+};
+const routineKeys = Object.keys(routines);
+---
+
+<BaseLayout
+  title="Plant Care Checklist"
+  description="Weekly, monthly, and new-plant care routines you can tick off — your progress is saved on this device so you can pick up where you left off."
+  canonicalPath="/tools/plant-care-checklist/"
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li aria-current="page">Plant Care Checklist</li>
+    </ol>
+  </nav>
+
+  <h1>Plant Care Checklist</h1>
+  <p class="prose">
+    Tick off each task as you do it. Your progress is saved on this device,
+    so you can come back later and pick up where you left off. No reminders
+    or notifications — this is a simple checklist, not an app.
+  </p>
+
+  <div class="tabs" role="tablist" aria-label="Care routines">
+    {
+      routineKeys.map((key, i) => (
+        <button
+          type="button"
+          class="tab-btn"
+          role="tab"
+          id={`tab-${key}`}
+          aria-selected={i === 0 ? "true" : "false"}
+          aria-controls={`panel-${key}`}
+          data-routine={key}
+        >
+          {routines[key].label}
+        </button>
+      ))
+    }
+  </div>
+
+  {
+    routineKeys.map((key, i) => (
+      <div
+        class="routine-panel"
+        role="tabpanel"
+        id={`panel-${key}`}
+        aria-labelledby={`tab-${key}`}
+        data-routine={key}
+        hidden={i !== 0}
+      >
+        <div class="progress-wrap">
+          <div class="progress-bar">
+            <div class="progress-fill" data-progress-fill={key} style="width: 0%"></div>
+          </div>
+          <p class="progress-label" data-progress-label={key}>0 of {routines[key].tasks.length} done — 0%</p>
+        </div>
+        <ul class="task-list">
+          {routines[key].tasks.map((task, j) => (
+            <li>
+              <input type="checkbox" id={`task-${key}-${j}`} data-routine={key} data-task={j} />
+              <label for={`task-${key}-${j}`}>{task}</label>
+            </li>
+          ))}
+        </ul>
+        <button type="button" class="btn btn-secondary" data-reset={key}>
+          Reset {routines[key].label} checklist
+        </button>
+      </div>
+    ))
+  }
+
+  <script>
+    const STORAGE_PREFIX = "spc-checklist-";
+
+    function loadState(routine: string): boolean[] {
+      try {
+        const raw = localStorage.getItem(STORAGE_PREFIX + routine);
+        return raw ? (JSON.parse(raw) as boolean[]) : [];
+      } catch {
+        return [];
+      }
+    }
+
+    function saveState(routine: string, state: boolean[]) {
+      try {
+        localStorage.setItem(STORAGE_PREFIX + routine, JSON.stringify(state));
+      } catch {
+        // storage unavailable; progress just won't persist
+      }
+    }
+
+    function updateProgress(routine: string) {
+      const boxes = document.querySelectorAll<HTMLInputElement>(
+        `input[type="checkbox"][data-routine="${routine}"]`,
+      );
+      const done = [...boxes].filter((b) => b.checked).length;
+      const total = boxes.length;
+      const pct = total === 0 ? 0 : Math.round((done / total) * 100);
+      const fill = document.querySelector<HTMLElement>(`[data-progress-fill="${routine}"]`);
+      const label = document.querySelector(`[data-progress-label="${routine}"]`);
+      if (fill) fill.style.width = `${pct}%`;
+      if (label) label.textContent = `${done} of ${total} done — ${pct}%`;
+      boxes.forEach((box) => {
+        box.closest("li")?.classList.toggle("done", box.checked);
+      });
+    }
+
+    // Restore saved state
+    document.querySelectorAll<HTMLInputElement>('input[type="checkbox"][data-routine]').forEach((box) => {
+      const routine = box.getAttribute("data-routine") || "";
+      const idx = Number(box.getAttribute("data-task") || 0);
+      const state = loadState(routine);
+      box.checked = Boolean(state[idx]);
+      box.addEventListener("change", () => {
+        const s = loadState(routine);
+        s[idx] = box.checked;
+        saveState(routine, s);
+        updateProgress(routine);
+      });
+    });
+    document.querySelectorAll(".routine-panel").forEach((panel) => {
+      updateProgress(panel.getAttribute("data-routine") || "");
+    });
+
+    // Tabs
+    const tabs = document.querySelectorAll<HTMLButtonElement>(".tab-btn");
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const routine = tab.getAttribute("data-routine") || "";
+        tabs.forEach((t) => t.setAttribute("aria-selected", String(t === tab)));
+        document.querySelectorAll(".routine-panel").forEach((panel) => {
+          (panel as HTMLElement).hidden = panel.getAttribute("data-routine") !== routine;
+        });
+      });
+    });
+
+    // Reset buttons
+    document.querySelectorAll<HTMLButtonElement>("[data-reset]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const routine = btn.getAttribute("data-reset") || "";
+        if (window.confirm("Reset this checklist? All ticked tasks will be cleared.")) {
+          try {
+            localStorage.removeItem(STORAGE_PREFIX + routine);
+          } catch {
+            // ignore
+          }
+          document
+            .querySelectorAll<HTMLInputElement>(`input[type="checkbox"][data-routine="${routine}"]`)
+            .forEach((box) => {
+              box.checked = false;
+            });
+          updateProgress(routine);
+        }
+      });
+    });
+  </script>
+</BaseLayout>

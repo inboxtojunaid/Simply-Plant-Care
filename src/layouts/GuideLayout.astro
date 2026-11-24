@@ -1,0 +1,200 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+export interface Props {
+  entry: CollectionEntry<"guides">;
+  headings: { depth: number; slug: string; text: string }[];
+  readingTime: number;
+}
+
+const { entry, headings, readingTime } = Astro.props;
+const { title, description, hero, heroAlt, date, updated, related } = entry.data;
+const slug = entry.id.replace(/\.md$/, "");
+const canonicalPath = `/guides/${slug}/`;
+const fmt = (d: Date) =>
+  d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+
+const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
+
+let relatedGuides: CollectionEntry<"guides">[] = [];
+if (related && related.length > 0) {
+  const all = await getCollection("guides");
+  relatedGuides = related
+    .map((r) => all.find((g) => g.id.replace(/\.md$/, "") === r))
+    .filter((g): g is CollectionEntry<"guides"> => Boolean(g));
+}
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description,
+  image: `https://simplyplantcare.com${hero}`,
+  datePublished: date.toISOString(),
+  dateModified: updated.toISOString(),
+  author: {
+    "@type": "Organization",
+    name: "Simply Plant Care",
+    url: "https://simplyplantcare.com",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Simply Plant Care",
+    url: "https://simplyplantcare.com",
+  },
+  mainEntityOfPage: { "@type": "WebPage", "@id": `https://simplyplantcare.com${canonicalPath}` },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://simplyplantcare.com/" },
+    { "@type": "ListItem", position: 2, name: "Guides", item: "https://simplyplantcare.com/guides/" },
+    { "@type": "ListItem", position: 3, name: title, item: `https://simplyplantcare.com${canonicalPath}` },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalPath={canonicalPath}
+  ogImage={hero}
+  jsonLd={[articleJsonLd, breadcrumbJsonLd]}
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li aria-current="page">{title}</li>
+    </ol>
+  </nav>
+
+  <article>
+    <h1>{title}</h1>
+    <p class="article-meta">
+      Published {fmt(date)}
+      {updated.getTime() !== date.getTime() && <> · Updated {fmt(updated)}</>}
+      {" · "}{readingTime} min read
+    </p>
+
+    <img class="hero-img" src={hero} alt={heroAlt} loading="eager" fetchpriority="high" />
+
+    {
+      toc.length > 0 && (
+        <nav class="toc" aria-label="Table of contents">
+          <h2>On this page</h2>
+          <ul>
+            {toc.map((h) => (
+              <li>
+                <a href={`#${h.slug}`}>{h.text}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )
+    }
+
+    <div class="article-body">
+      <slot />
+    </div>
+
+    <!-- AdSense placement: in-article, add ad code here later -->
+
+    {
+      relatedGuides.length > 0 && (
+        <section class="related-guides" aria-labelledby="related-heading">
+          <h2 id="related-heading">Related guides</h2>
+          <ul>
+            {relatedGuides.map((g) => (
+              <li>
+                <a href={`/guides/${g.id.replace(/\.md$/, "")}/`}>{g.data.title}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    <!-- AdSense placement: after article, add ad code here later -->
+
+    <section
+      class="widget"
+      id="feedback-widget"
+      data-slug={slug}
+      aria-labelledby="feedback-heading"
+    >
+      <h2 id="feedback-heading">Was this guide helpful?</h2>
+      <p>Your answer is saved only on this device, and you can change it any time.</p>
+      <div class="widget-buttons" id="feedback-buttons">
+        <button type="button" class="btn" data-value="yes" aria-pressed="false">
+          Yes, it helped me
+        </button>
+        <button type="button" class="btn btn-secondary" data-value="no" aria-pressed="false">
+          Not really
+        </button>
+      </div>
+      <p class="widget-confirm" id="feedback-confirm" hidden>
+        Thanks — your feedback is saved on this device.
+      </p>
+      <button type="button" class="widget-change" id="feedback-change" hidden>
+        Change my answer
+      </button>
+    </section>
+  </article>
+
+  <script>
+    const widget = document.getElementById("feedback-widget");
+    if (widget) {
+      const slug = widget.getAttribute("data-slug") || "";
+      const key = `spc-feedback-${slug}`;
+      const buttons = widget.querySelectorAll<HTMLButtonElement>("#feedback-buttons button");
+      const confirmEl = document.getElementById("feedback-confirm");
+      const changeBtn = document.getElementById("feedback-change");
+      const buttonsWrap = document.getElementById("feedback-buttons");
+
+      const showSaved = (value: string | null) => {
+        if (value && confirmEl && changeBtn && buttonsWrap) {
+          buttons.forEach((b) =>
+            b.setAttribute("aria-pressed", String(b.getAttribute("data-value") === value)),
+          );
+          buttonsWrap.hidden = true;
+          confirmEl.hidden = false;
+          changeBtn.hidden = false;
+        }
+      };
+
+      const saved = (() => {
+        try {
+          return localStorage.getItem(key);
+        } catch {
+          return null;
+        }
+      })();
+      if (saved === "yes" || saved === "no") showSaved(saved);
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          try {
+            localStorage.setItem(key, btn.getAttribute("data-value") || "");
+          } catch {
+            // storage unavailable; still show the confirmation
+          }
+          showSaved(btn.getAttribute("data-value"));
+        });
+      });
+
+      changeBtn?.addEventListener("click", () => {
+        if (confirmEl && buttonsWrap) {
+          confirmEl.hidden = true;
+          changeBtn.hidden = true;
+          buttonsWrap.hidden = false;
+          buttons.forEach((b) => b.setAttribute("aria-pressed", "false"));
+        }
+      });
+    }
+  </script>
+</BaseLayout>

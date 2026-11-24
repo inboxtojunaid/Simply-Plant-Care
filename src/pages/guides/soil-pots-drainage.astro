@@ -1,0 +1,86 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const articles = [
+  {
+    slug: "how-to-take-care-of-a-cactus-indoors",
+    title: "How to Take Care of a Cactus Indoors",
+    desc: "Cacti need gritty, fast-draining soil — ordinary potting mix holds too much water for them.",
+  },
+  {
+    slug: "how-do-you-take-care-of-succulents",
+    title: "How Do You Take Care of Succulents?",
+    desc: "Succulent soil should dry out quickly between waterings. Here's how to mix and choose it.",
+  },
+  {
+    slug: "how-to-grow-basil-in-pots",
+    title: "How to Grow Basil in Pots",
+    desc: "Pot size, drainage, and soil for basil — and why a pot without holes is a short-lived basil plant.",
+  },
+];
+---
+
+<BaseLayout
+  title="Soil, Pots & Drainage"
+  description="Potting mix, drainage, and choosing the right pot — the foundation most plant problems trace back to."
+  canonicalPath="/guides/soil-pots-drainage/"
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li aria-current="page">Soil, Pots &amp; Drainage</li>
+    </ol>
+  </nav>
+
+  <h1>Soil, pots &amp; drainage</h1>
+  <p class="prose">
+    Roots need air as well as water. Soil that stays wet suffocates them, and
+    that is the root cause — literally — of most overwatering damage. Good
+    drainage is not a nice extra; it is the foundation everything else is
+    built on.
+  </p>
+
+  <h2>Drainage holes are not optional</h2>
+  <p class="prose">
+    Every pot a houseplant lives in should have at least one drainage hole,
+    with a saucer underneath to catch the runoff. A layer of pebbles at the
+    bottom of a pot without holes does not fix the problem — water still
+    pools at the bottom, out of reach of the roots until it is too late.
+    If you love a decorative pot with no holes, use it as a cover pot: keep
+    the plant in a plastic nursery pot with holes inside it, and tip out any
+    water that collects after watering.
+  </p>
+
+  <h2>Matching soil to the plant</h2>
+  <p class="prose">
+    Most houseplants do well in a general-purpose potting mix with some
+    perlite or bark mixed in for air. Succulents and cacti need a much
+    grittier mix — roughly half potting mix, half perlite or coarse sand —
+    so water runs through quickly. Ferns and calathea, by contrast, like a
+    mix that holds a little more moisture. One bag of soil does not suit
+    every plant.
+  </p>
+
+  <h2>When to repot</h2>
+  <p class="prose">
+    Repot when roots are circling the bottom of the pot, water runs straight
+    through without wetting the soil, or growth has stalled in the growing
+    season despite good light and feeding. Move up only one pot size — a pot
+    much larger than the root ball holds wet soil the roots cannot reach,
+    which invites rot.
+  </p>
+
+  <div class="card-grid">
+    {
+      articles.map((a) => (
+        <article class="card">
+          <h3>
+            <a href={`/guides/${a.slug}/`}>{a.title}</a>
+          </h3>
+          <p>{a.desc}</p>
+        </article>
+      ))
+    }
+  </div>
+</BaseLayout>

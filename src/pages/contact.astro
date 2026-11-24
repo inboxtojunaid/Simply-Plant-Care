@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Contact Simply Plant Care"
+  description="Get in touch with Simply Plant Care — corrections, suggestions, or questions about a guide."
+  canonicalPath="/contact/"
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li aria-current="page">Contact</li>
+    </ol>
+  </nav>
+
+  <h1>Contact us</h1>
+  <div class="prose">
+    <p>
+      Questions about a guide, a correction, or a suggestion for a topic we
+      should cover? Send us an email. Fill in the form below and it will
+      open your email app with the message ready to send to
+      <a href="mailto:hello@simplyplantcare.com">hello@simplyplantcare.com</a>.
+      We reply by email.
+    </p>
+    <p class="form-note">
+      This form does not send anything by itself — it composes an email in
+      your own email app. Nothing you type here is stored on this website.
+    </p>
+  </div>
+
+  <form id="contact-form">
+    <label for="contact-name">Your name</label>
+    <input type="text" id="contact-name" name="name" required autocomplete="name" />
+
+    <label for="contact-email">Your email</label>
+    <input type="email" id="contact-email" name="email" required autocomplete="email" />
+
+    <label for="contact-message">Message</label>
+    <textarea id="contact-message" name="message" required></textarea>
+
+    <p style="margin-top: 1.25rem;">
+      <button class="btn" type="submit">Compose email</button>
+    </p>
+  </form>
+
+  <script>
+    const form = document.getElementById("contact-form") as HTMLFormElement | null;
+    form?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = (document.getElementById("contact-name") as HTMLInputElement).value.trim();
+      const email = (document.getElementById("contact-email") as HTMLInputElement).value.trim();
+      const message = (document.getElementById("contact-message") as HTMLTextAreaElement).value.trim();
+      const subject = encodeURIComponent(`Simply Plant Care — message from ${name}`);
+      const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+      window.location.href = `mailto:hello@simplyplantcare.com?subject=${subject}&body=${body}`;
+    });
+  </script>
+</BaseLayout>

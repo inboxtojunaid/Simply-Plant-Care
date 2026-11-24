@@ -1,0 +1,200 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const featured = [
+  {
+    slug: "how-to-take-care-of-a-snake-plant",
+    title: "How to Take Care of a Snake Plant",
+    desc: "The full care guide: light, watering, soil, and the mistakes that actually kill them.",
+  },
+  {
+    slug: "how-to-care-for-pothos",
+    title: "How to Care for Pothos",
+    desc: "Trailing, forgiving, and fast-growing — how to keep pothos lush instead of leggy.",
+  },
+  {
+    slug: "indoor-plants-for-beginners",
+    title: "Indoor Plants for Beginners: 10 Easy Picks",
+    desc: "Ten plants that tolerate a beginner's learning curve — and how to choose yours.",
+  },
+  {
+    slug: "how-do-you-take-care-of-plants",
+    title: "How Do You Take Care of Plants? Beginner Guide",
+    desc: "The five basics every houseplant needs, explained without jargon.",
+  },
+  {
+    slug: "how-to-water-snake-plants",
+    title: "How to Water Snake Plants",
+    desc: "How often, how much, and the one habit that causes most snake plant deaths.",
+  },
+  {
+    slug: "how-to-care-for-calathea",
+    title: "How to Care for Calathea",
+    desc: "Humidity, water type, and light — the three things calathea actually cares about.",
+  },
+];
+
+const categories = [
+  { href: "/guides/beginner-plant-care/", title: "Beginner Plant Care", desc: "Start here if you have never kept a plant alive." },
+  { href: "/guides/plant-problems-solutions/", title: "Plant Problems", desc: "Yellow leaves, brown tips, drooping — find the cause." },
+  { href: "/guides/indoor-plant-watering/", title: "Watering", desc: "How often, how much, and when to hold back." },
+  { href: "/guides/indoor-plant-lighting/", title: "Lighting", desc: "Low light, bright light, and what your window really gives." },
+  { href: "/guides/soil-pots-drainage/", title: "Soil & Pots", desc: "Drainage, potting mix, and choosing the right pot." },
+];
+
+const allGuides = await getCollection("guides");
+const recent = [...allGuides]
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 6);
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Simply Plant Care",
+    url: "https://simplyplantcare.com",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://simplyplantcare.com/search/?q={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Simply Plant Care",
+    url: "https://simplyplantcare.com",
+    logo: "https://simplyplantcare.com/images/leaf-mark.svg",
+  },
+];
+---
+
+<BaseLayout
+  title="Simply Plant Care"
+  description="Plain, practical indoor plant care guides — watering, light, soil, and fixing common problems, explained without jargon."
+  canonicalPath="/"
+  ogImage="/images/hero.jpg"
+  jsonLd={jsonLd}
+>
+  <section class="hero">
+    <div>
+      <h1>Houseplants, made simple.</h1>
+      <p class="lede">
+        Clear, honest indoor plant care guides — how much water, how much
+        light, and what to do when something goes wrong. No jargon, no
+        guesswork.
+      </p>
+      <form class="search-box" action="/search/" method="get" role="search">
+        <label for="home-search" class="sr-only" style="position:absolute;left:-9999px;">Search guides</label>
+        <input type="search" id="home-search" name="q" placeholder="Search guides — try “snake plant”" />
+        <button class="btn" type="submit">Search</button>
+      </form>
+    </div>
+    <img
+      src="/images/hero.jpg"
+      alt="A snake plant, a pothos, and a fern in pots on a wooden shelf in warm daylight"
+      width="1200"
+      height="675"
+      loading="eager"
+      fetchpriority="high"
+    />
+  </section>
+
+  <section class="section" aria-labelledby="featured-heading">
+    <h2 id="featured-heading">Featured guides</h2>
+    <div class="card-grid">
+      {
+        featured.map((g) => (
+          <article class="card">
+            <h3>
+              <a href={`/guides/${g.slug}/`}>{g.title}</a>
+            </h3>
+            <p>{g.desc}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="beginner-heading">
+    <h2 id="beginner-heading">New to houseplants?</h2>
+    <p class="prose">
+      Most plants die from two things: too much water and too little light.
+      Start with one forgiving plant, learn its rhythm, and build from there.
+      Our beginner guides walk through the basics step by step.
+    </p>
+    <p>
+      <a class="btn" href="/guides/beginner-plant-care/">Browse beginner guides</a>
+    </p>
+  </section>
+
+  <section class="feature-box" aria-labelledby="solver-heading">
+    <h2 id="solver-heading" style="margin-top:0;">Something wrong with your plant?</h2>
+    <p>
+      Yellow leaves, brown tips, drooping stems — the Plant Problem Solver
+      asks a few quick questions and suggests the most likely causes, what to
+      check, and what to do next.
+    </p>
+    <p><a class="btn" href="/tools/plant-problem-solver/">Open the Plant Problem Solver</a></p>
+  </section>
+
+  <section class="section" aria-labelledby="tools-heading">
+    <h2 id="tools-heading">Free tools</h2>
+    <div class="card-grid">
+      <article class="card">
+        <h3><a href="/tools/plant-problem-solver/">Plant Problem Solver</a></h3>
+        <p>Answer a few questions about the symptoms and get likely causes and fixes.</p>
+      </article>
+      <article class="card">
+        <h3><a href="/tools/plant-care-checklist/">Plant Care Checklist</a></h3>
+        <p>Weekly, monthly, and new-plant routines you can tick off and pick up later.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="categories-heading">
+    <h2 id="categories-heading">Browse by topic</h2>
+    <div class="card-grid">
+      {
+        categories.map((c) => (
+          <article class="card">
+            <h3>
+              <a href={c.href}>{c.title}</a>
+            </h3>
+            <p>{c.desc}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  {
+    recent.length > 0 && (
+      <section class="section" aria-labelledby="recent-heading">
+        <h2 id="recent-heading">Recent guides</h2>
+        <ul>
+          {recent.map((g) => (
+            <li>
+              <a href={`/guides/${g.id.replace(/\.md$/, "")}/`}>{g.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  <section class="section" aria-labelledby="about-heading">
+    <h2 id="about-heading">About Simply Plant Care</h2>
+    <p class="prose">
+      Simply Plant Care exists for one reason: most plant advice is either
+      too vague to follow or too technical to enjoy. We write guides the way
+      a knowledgeable friend would explain things — what the plant needs,
+      why it needs it, and what to do when it goes wrong. Every guide is
+      based on general horticultural knowledge and checked against public
+      references from university extension services and botanical gardens.
+      Read more on our <a href="/about/">About page</a> and our
+      <a href="/editorial-policy/">Editorial Policy</a>.
+    </p>
+  </section>
+</BaseLayout>

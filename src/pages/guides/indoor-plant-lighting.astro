@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const articles = [
+  {
+    slug: "snake-plant-low-light",
+    title: "Snake Plant Low Light: Will It Thrive?",
+    desc: "Snake plants survive low light — but surviving and thriving are different things.",
+  },
+  {
+    slug: "zz-plant-low-light",
+    title: "ZZ Plant Low Light: What to Expect",
+    desc: "The ZZ plant is famous for low-light tolerance. Here's what it actually does in a dark corner.",
+  },
+  {
+    slug: "snake-plant-light-needs",
+    title: "Snake Plant Light Needs Explained",
+    desc: "Direct, indirect, low light — what each means for a snake plant, and where to put yours.",
+  },
+  {
+    slug: "plants-that-grow-in-the-dark",
+    title: "Plants That Grow in the Dark (Low Light)",
+    desc: "No plant grows in true darkness, but these cope with very little light better than most.",
+  },
+];
+---
+
+<BaseLayout
+  title="Indoor Plant Lighting"
+  description="How much light indoor plants really need — low light, bright indirect light, and where to place plants in your home."
+  canonicalPath="/guides/indoor-plant-lighting/"
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li aria-current="page">Indoor Plant Lighting</li>
+    </ol>
+  </nav>
+
+  <h1>Indoor plant lighting</h1>
+  <p class="prose">
+    Light is food for a plant. Too little and growth stalls, leaves pale,
+    and the plant slowly weakens. Too much direct sun and leaves scorch.
+    Most houseplants do best in bright, indirect light — near a window, but
+    out of the harsh midday sun.
+  </p>
+
+  <h2>What "low light" really means</h2>
+  <p class="prose">
+    "Low light" on a plant label means the plant tolerates a dim spot — not
+    that it prefers one. A plant in low light grows slowly and drinks less
+    water, so it is easier to overwater there. No plant grows in true
+    darkness; even the toughest low-light plants need some daylight to
+    photosynthesise. A north-facing window or a spot a few metres from a
+    bright window counts as low light. A windowless bathroom does not.
+  </p>
+
+  <div class="card-grid">
+    {
+      articles.map((a) => (
+        <article class="card">
+          <h3>
+            <a href={`/guides/${a.slug}/`}>{a.title}</a>
+          </h3>
+          <p>{a.desc}</p>
+        </article>
+      ))
+    }
+  </div>
+</BaseLayout>

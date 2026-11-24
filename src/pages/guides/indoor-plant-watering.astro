@@ -1,0 +1,70 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const articles = [
+  {
+    slug: "how-to-water-snake-plants",
+    title: "How to Water Snake Plants",
+    desc: "How often, how much, and the one habit that causes most snake plant deaths.",
+  },
+  {
+    slug: "how-do-you-take-care-of-succulents",
+    title: "How Do You Take Care of Succulents?",
+    desc: "Succulents store water in their leaves — so the watering rules are the opposite of most houseplants.",
+  },
+  {
+    slug: "how-to-take-care-of-a-cactus-indoors",
+    title: "How to Take Care of a Cactus Indoors",
+    desc: "Cacti want bright light, gritty soil, and far less water than you think.",
+  },
+  {
+    slug: "how-do-you-take-care-of-an-aloe-vera-plant",
+    title: "How Do You Take Care of an Aloe Vera Plant?",
+    desc: "Aloe is a succulent with soft, water-filled leaves — overwatering shows up fast.",
+  },
+];
+---
+
+<BaseLayout
+  title="Indoor Plant Watering"
+  description="How to water indoor plants properly — how often, how much, and how to tell when a plant actually needs water."
+  canonicalPath="/guides/indoor-plant-watering/"
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li aria-current="page">Indoor Plant Watering</li>
+    </ol>
+  </nav>
+
+  <h1>Indoor plant watering</h1>
+  <p class="prose">
+    Overwatering kills more houseplants than underwatering. The rule that
+    matters most is simple: check the soil before you water. Push a finger
+    about 5 cm (two inches) into the mix. If it feels damp, wait. If it feels
+    dry, water thoroughly until it runs out of the drainage holes — then empty
+    the saucer so the plant is not sitting in water.
+  </p>
+
+  <h2>The finger test beats a schedule</h2>
+  <p class="prose">
+    "Water every Sunday" sounds tidy, but plants do not drink on a calendar.
+    Light, temperature, pot size, and the season all change how fast soil
+    dries. In winter most houseplants need far less water than in summer. A
+    weekly check with your finger is more reliable than any fixed schedule.
+  </p>
+
+  <div class="card-grid">
+    {
+      articles.map((a) => (
+        <article class="card">
+          <h3>
+            <a href={`/guides/${a.slug}/`}>{a.title}</a>
+          </h3>
+          <p>{a.desc}</p>
+        </article>
+      ))
+    }
+  </div>
+</BaseLayout>

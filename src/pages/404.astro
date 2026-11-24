@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const popular = [
+  { slug: "how-to-take-care-of-a-snake-plant", title: "How to Take Care of a Snake Plant" },
+  { slug: "how-do-you-take-care-of-plants", title: "How Do You Take Care of Plants? Beginner Guide" },
+  { slug: "indoor-plants-for-beginners", title: "Indoor Plants for Beginners: 10 Easy Picks" },
+  { slug: "how-to-care-for-pothos", title: "How to Care for Pothos" },
+  { slug: "how-to-water-snake-plants", title: "How to Water Snake Plants" },
+];
+---
+
+<BaseLayout
+  title="Page Not Found"
+  description="The page you were looking for doesn't exist on Simply Plant Care."
+  canonicalPath="/404/"
+  noindex
+>
+  <div class="error-page">
+    <h1>That page doesn't exist</h1>
+    <p class="prose" style="margin: 0 auto;">
+      The link may be out of date, or the page may have moved. Try searching
+      for the guide you wanted, or start from one of our most popular guides.
+    </p>
+    <form class="search-box" action="/search/" method="get" role="search" style="margin: 1.5rem auto;">
+      <label for="notfound-search" style="position:absolute;left:-9999px;">Search guides</label>
+      <input type="search" id="notfound-search" name="q" placeholder="Search guides" />
+      <button class="btn" type="submit">Search</button>
+    </form>
+    <h2>Popular guides</h2>
+    <ul style="list-style:none; padding:0;">
+      {
+        popular.map((g) => (
+          <li>
+            <a href={`/guides/${g.slug}/`}>{g.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <p><a href="/">Back to the homepage</a></p>
+  </div>
+</BaseLayout>

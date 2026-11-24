@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Illustration of three beginner-friendly houseplants in pots on a shelf">
+<rect width="1200" height="800" fill="#FAF7F0"/>
+<rect x="80" y="560" width="1040" height="24" rx="6" fill="#C9B18C"/>
+<rect x="120" y="584" width="1040" height="10" rx="5" fill="#B39B74"/>
+<circle cx="600" cy="180" r="120" fill="#E8EFE6"/>
+<!-- Snake plant -->
+<g>
+<path d="M250 560 L250 420 L290 430 L285 560 Z" fill="#2E6B4F"/>
+<path d="M290 560 L300 380 L340 400 L335 560 Z" fill="#3E8A63"/>
+<path d="M335 560 L350 430 L390 440 L385 560 Z" fill="#245741"/>
+<path d="M210 560 L225 450 L260 460 L255 560 Z" fill="#4A9A6E"/>
+<rect x="190" y="560" width="220" height="110" rx="12" fill="#C96F4A"/>
+<rect x="190" y="560" width="220" height="22" rx="11" fill="#B85E3C"/>
+</g>
+<!-- Pothos trailing -->
+<g>
+<path d="M560 560 C540 480 620 470 600 400 C590 360 640 350 660 390 C680 430 630 450 650 500" fill="none" stroke="#3E8A63" stroke-width="10" stroke-linecap="round"/>
+<ellipse cx="600" cy="400" rx="34" ry="24" fill="#2E6B4F" transform="rotate(-20 600 400)"/>
+<ellipse cx="655" cy="455" rx="34" ry="24" fill="#4A9A6E" transform="rotate(25 655 455)"/>
+<ellipse cx="575" cy="500" rx="30" ry="22" fill="#3E8A63" transform="rotate(-15 575 500)"/>
+<rect x="540" y="560" width="180" height="110" rx="12" fill="#8AA899"/>
+<rect x="540" y="560" width="180" height="22" rx="11" fill="#74998A"/>
+</g>
+<!-- ZZ plant -->
+<g>
+<path d="M830 560 L850 380 L870 560 Z" fill="#2E6B4F"/>
+<path d="M880 560 L900 360 L920 560 Z" fill="#3E8A63"/>
+<ellipse cx="845" cy="420" rx="42" ry="18" fill="#245741" transform="rotate(-30 845 420)"/>
+<ellipse cx="905" cy="400" rx="42" ry="18" fill="#4A9A6E" transform="rotate(30 905 400)"/>
+<ellipse cx="860" cy="470" rx="40" ry="17" fill="#3E8A63" transform="rotate(-25 860 470)"/>
+<ellipse cx="915" cy="460" rx="40" ry="17" fill="#2E6B4F" transform="rotate(25 915 460)"/>
+<rect x="810" y="560" width="180" height="110" rx="12" fill="#1E4D3A"/>
+<rect x="810" y="560" width="180" height="22" rx="11" fill="#173D2E"/>
+</g>
+<text x="600" y="740" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#1E4D3A">Beginner-friendly plants, side by side</text>
+</svg>

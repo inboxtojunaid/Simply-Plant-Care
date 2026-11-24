@@ -1,0 +1,75 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const articles = [
+  {
+    slug: "how-do-you-take-care-of-plants",
+    title: "How Do You Take Care of Plants? Beginner Guide",
+    desc: "The five basics every houseplant needs — light, water, soil, pot, and a little patience — explained without jargon.",
+  },
+  {
+    slug: "snake-plant-for-beginners",
+    title: "Snake Plant for Beginners",
+    desc: "Why the snake plant is the classic first houseplant, and how to keep your first one alive.",
+  },
+  {
+    slug: "indoor-plants-for-beginners",
+    title: "Indoor Plants for Beginners: 10 Easy Picks",
+    desc: "Ten plants that tolerate a beginner's learning curve, with light and watering needs for each.",
+  },
+];
+---
+
+<BaseLayout
+  title="Beginner Plant Care"
+  description="Start here if you've never kept a plant alive — the basics of light, watering, and choosing your first houseplants."
+  canonicalPath="/guides/beginner-plant-care/"
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li aria-current="page">Beginner Plant Care</li>
+    </ol>
+  </nav>
+
+  <h1>Beginner plant care</h1>
+  <p class="prose">
+    If you have never kept a plant alive, start here. The guides in this
+    section assume no prior knowledge: they explain what a plant needs, in
+    plain language, and in the order you actually need it. The short version
+    is this — give the plant enough light, water it only when the soil needs
+    it, and put it in a pot that drains. Everything else is refinement.
+  </p>
+
+  <h2>Start with one forgiving plant</h2>
+  <p class="prose">
+    A snake plant or a pothos is a good first plant because both tolerate
+    imperfect watering and a range of light. Buy one plant, learn its rhythm
+    for a month, and only then add a second. Ten plants at once means ten
+    different watering schedules to learn — and that is how beginners get
+    overwhelmed.
+  </p>
+
+  <div class="card-grid">
+    {
+      articles.map((a) => (
+        <article class="card">
+          <h3>
+            <a href={`/guides/${a.slug}/`}>{a.title}</a>
+          </h3>
+          <p>{a.desc}</p>
+        </article>
+      ))
+    }
+  </div>
+
+  <p>
+    Also useful: <a href="/guides/plants-that-grow-in-the-dark/">Plants That Grow in the Dark (Low Light)</a> — if your home
+    does not get much sun, these are the plants to start with.
+  </p>
+  <p>
+    Not sure what is wrong with a plant you already own? Try the
+    <a href="/tools/plant-problem-solver/">Plant Problem Solver</a>.
+  </p>
+</BaseLayout>

@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="About Simply Plant Care"
+  description="What Simply Plant Care is, who it helps, and how its guides are researched."
+  canonicalPath="/about/"
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li aria-current="page">About</li>
+    </ol>
+  </nav>
+
+  <h1>About Simply Plant Care</h1>
+  <div class="prose">
+    <p>
+      Simply Plant Care is a small website about one thing: keeping
+      houseplants alive. It was started because most plant advice falls into
+      two unhelpful camps — vague ("water when needed") or technical enough
+      to need a botany degree. We try to sit in the middle: clear, practical
+      instructions a beginner can follow, with enough of the "why" to help
+      you make your own decisions later.
+    </p>
+    <h2>Who it is for</h2>
+    <p>
+      People who have just bought their first plant, people who have killed
+      a few and want to know why, and anyone who wants a straight answer to
+      a specific question — how often to water a snake plant, whether a ZZ
+      plant really copes with low light, or what to do about brown leaf tips.
+    </p>
+    <h2>How the content is researched</h2>
+    <p>
+      Every guide is written from general horticultural knowledge and
+      checked against public references from university extension services
+      and botanical gardens. We do not copy content from other websites. When
+      a topic is genuinely debated — for example, whether misting helps
+      humidity — we say so rather than pretending there is one settled
+      answer.
+    </p>
+    <h2>What this site is not</h2>
+    <p>
+      We are not a nursery, we do not sell plants, and we are not a
+      substitute for professional advice. Our guides cover common houseplants
+      and common problems; unusual or valuable plants may need specialist
+      care. If you have a question or think a guide is wrong, please
+      <a href="/contact/">contact us</a> — corrections are welcome.
+    </p>
+  </div>
+</BaseLayout>

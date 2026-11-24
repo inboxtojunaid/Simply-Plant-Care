@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Illustration of basil plants growing in terracotta pots">
+  <rect width="1200" height="800" fill="#FAF7F0"/>
+  <circle cx="600" cy="400" r="330" fill="#EDF3EA"/>
+  <ellipse cx="600" cy="690" rx="420" ry="46" fill="#E3EAD9"/>
+  <!-- back pot -->
+  <g>
+    <path d="M500 560 L700 560 L680 700 Q600 716 520 700 Z" fill="#C96F4A"/>
+    <rect x="488" y="536" width="224" height="34" rx="8" fill="#B85E3C"/>
+    <ellipse cx="600" cy="548" rx="98" ry="14" fill="#4A3728"/>
+  </g>
+  <!-- basil plant in back pot -->
+  <g stroke="#2F6B3A" stroke-width="7" fill="none" stroke-linecap="round">
+    <path d="M600 548 C600 470 596 420 600 360"/>
+    <path d="M600 480 C560 460 540 430 536 396"/>
+    <path d="M600 470 C640 450 660 420 664 388"/>
+    <path d="M600 420 C570 400 556 372 556 344"/>
+    <path d="M600 410 C630 392 644 366 644 338"/>
+  </g>
+  <g fill="#3E7D44">
+    <ellipse cx="600" cy="330" rx="34" ry="52" transform="rotate(0 600 330)"/>
+    <ellipse cx="540" cy="380" rx="30" ry="46" transform="rotate(-32 540 380)"/>
+    <ellipse cx="662" cy="372" rx="30" ry="46" transform="rotate(32 662 372)"/>
+    <ellipse cx="556" cy="330" rx="26" ry="40" transform="rotate(-18 556 330)"/>
+    <ellipse cx="644" cy="324" rx="26" ry="40" transform="rotate(18 644 324)"/>
+  </g>
+  <g fill="#57A05C">
+    <ellipse cx="600" cy="318" rx="20" ry="34"/>
+    <ellipse cx="540" cy="372" rx="18" ry="30" transform="rotate(-32 540 372)"/>
+    <ellipse cx="662" cy="364" rx="18" ry="30" transform="rotate(32 662 364)"/>
+  </g>
+  <!-- front-left pot -->
+  <g>
+    <path d="M250 620 L410 620 L396 730 Q330 744 264 730 Z" fill="#C96F4A"/>
+    <rect x="240" y="600" width="180" height="28" rx="8" fill="#B85E3C"/>
+    <ellipse cx="330" cy="610" rx="76" ry="11" fill="#4A3728"/>
+  </g>
+  <g stroke="#2F6B3A" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M330 610 C330 550 328 510 330 470"/>
+    <path d="M330 560 C300 544 286 520 284 494"/>
+    <path d="M330 552 C360 536 374 512 376 488"/>
+  </g>
+  <g fill="#3E7D44">
+    <ellipse cx="330" cy="448" rx="28" ry="42"/>
+    <ellipse cx="288" cy="482" rx="24" ry="36" transform="rotate(-30 288 482)"/>
+    <ellipse cx="374" cy="476" rx="24" ry="36" transform="rotate(30 374 476)"/>
+  </g>
+  <!-- front-right pot -->
+  <g>
+    <path d="M790 620 L950 620 L936 730 Q870 744 804 730 Z" fill="#C96F4A"/>
+    <rect x="780" y="600" width="180" height="28" rx="8" fill="#B85E3C"/>
+    <ellipse cx="870" cy="610" rx="76" ry="11" fill="#4A3728"/>
+  </g>
+  <g stroke="#2F6B3A" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M870 610 C870 556 868 520 870 486"/>
+    <path d="M870 566 C842 550 828 528 826 504"/>
+    <path d="M870 558 C898 542 912 520 914 496"/>
+  </g>
+  <g fill="#57A05C">
+    <ellipse cx="870" cy="464" rx="28" ry="42"/>
+    <ellipse cx="828" cy="492" rx="24" ry="36" transform="rotate(-30 828 492)"/>
+    <ellipse cx="912" cy="486" rx="24" ry="36" transform="rotate(30 912 486)"/>
+  </g>
+  <!-- small seedling markers -->
+  <g fill="#8AA899">
+    <circle cx="470" cy="180" r="6"/><circle cx="730" cy="170" r="6"/><circle cx="250" cy="260" r="5"/><circle cx="950" cy="250" r="5"/>
+  </g>
+  <g stroke="#8AA899" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M470 200 C470 220 470 235 470 250"/><path d="M730 190 C730 210 730 225 730 240"/>
+  </g>
+</svg>
