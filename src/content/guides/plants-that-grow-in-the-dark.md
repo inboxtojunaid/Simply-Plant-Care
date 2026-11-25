@@ -6,9 +6,13 @@ category: "lighting"
 hero: "/images/plants-that-grow-in-the-dark.svg"
 heroAlt: "Original illustration of shade-tolerant plants — snake plant, ZZ plant and pothos — in a dim room with soft window light"
 date: "2026-11-24"
-updated: "2026-11-24"
+updated: "2026-11-26"
 related: ["snake-plant-low-light", "zz-plant-low-light", "snake-plant-light-needs"]
 ---
+
+<div class="scope-box">
+<p><strong>What this guide covers:</strong> A ranked comparison of eight plants that cope with very low light — what each one tolerates, and what it gives up in growth and colour. It is a comparison, not a deep care guide for one plant. For a deep dive, see <a href="/guides/zz-plant-low-light/">ZZ Plant Low Light</a> or <a href="/guides/snake-plant-low-light/">Snake Plant Low Light</a>.</p>
+</div>
 
 Hold your hand 30 cm above a sheet of white paper at midday, where the plant would sit. If you see a faint, fuzzy shadow, that's low light. A clear, sharp shadow is bright light. No shadow at all is essentially no light — and no plant will live there, however tough the label says it is.
 
