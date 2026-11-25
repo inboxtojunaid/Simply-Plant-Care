@@ -6,9 +6,13 @@ category: "lighting"
 hero: "/images/zz-plant-low-light.webp"
 heroAlt: "A ZZ plant with glossy dark green leaves in a white pot in a softly lit office corner"
 date: "2026-11-24"
-updated: "2026-11-24"
+updated: "2026-11-26"
 related: ["plants-that-grow-in-the-dark", "snake-plant-low-light", "indoor-plants-for-beginners"]
 ---
+
+<div class="scope-box">
+<p><strong>What this guide covers:</strong> ZZ plant in low light only — what to expect, how rarely to water in a dim room, and how it differs from a snake plant in the same spot. It is not a general ZZ plant care guide, and it does not cover bright light. For a ranked comparison of low-light plants, see <a href="/guides/plants-that-grow-in-the-dark/">Plants That Grow in the Dark</a>.</p>
+</div>
 
 Six weeks. That is roughly how long a ZZ plant in a dim room can go without a drink and still look exactly the same as the day you bought it.
 
