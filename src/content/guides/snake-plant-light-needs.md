@@ -6,9 +6,13 @@ category: "lighting"
 hero: "/images/snake-plant-light-needs.webp"
 heroAlt: "A tall snake plant in a pot beside a large bright window with sheer curtains and soft sunlight"
 date: "2026-11-24"
-updated: "2026-11-24"
+updated: "2026-11-26"
 related: ["how-to-take-care-of-a-snake-plant", "snake-plant-low-light", "plants-that-grow-in-the-dark"]
 ---
+
+<div class="scope-box">
+<p><strong>What this guide covers:</strong> Light only — window by window (north, east, south, west), bright to dim, plus scorch signs. It covers every light level, not just low light. For low light only, see <a href="/guides/snake-plant-low-light/">Snake Plant Low Light: Will It Thrive?</a>. For the full routine, see <a href="/guides/how-to-take-care-of-a-snake-plant/">How to Take Care of a Snake Plant</a>.</p>
+</div>
 
 A snake plant can sit in a dim hallway for a year and still be alive in month twelve. It just won't have grown much. That's the whole puzzle in one sentence: this is a plant that survives almost anywhere and thrives in only some of those places, and the difference between surviving and thriving is almost entirely where you put it relative to a window.
 
