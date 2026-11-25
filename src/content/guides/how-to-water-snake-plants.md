@@ -6,9 +6,13 @@ category: "watering"
 hero: "/images/how-to-water-snake-plants.webp"
 heroAlt: "A snake plant in a terracotta pot being watered gently with a small watering can"
 date: "2026-11-24"
-updated: "2026-11-24"
+updated: "2026-11-26"
 related: ["how-to-take-care-of-a-snake-plant", "snake-plant-low-light", "snake-plant-light-needs"]
 ---
+
+<div class="scope-box">
+<p><strong>What this guide covers:</strong> Watering only — how often, how much, seasonal shifts, and an estimator for your starting gap. This guide does not cover light, soil, repotting, or feeding. For the full routine, see <a href="/guides/how-to-take-care-of-a-snake-plant/">How to Take Care of a Snake Plant</a>.</p>
+</div>
 
 Two to six weeks. That is how often a snake plant needs water indoors. Not weekly. Not twice a week. Two to six weeks, depending on light, pot size, season, and soil.
 
