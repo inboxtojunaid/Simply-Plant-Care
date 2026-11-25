@@ -1,0 +1,81 @@
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Zeeshan Farooq",
+  jobTitle: "Plants Researcher",
+  url: "https://simplyplantcare.com/author/zeeshan-farooq/",
+  sameAs: ["https://www.pinterest.com/simplyplantcare/"],
+  worksFor: {
+    "@type": "Organization",
+    name: "Simply Plant Care",
+    url: "https://simplyplantcare.com",
+  },
+};
+---
+
+<BaseLayout
+  title="Zeeshan Farooq — Plants Researcher"
+  description="Zeeshan Farooq is a plants researcher and the author of the Simply Plant Care guides. He writes and reviews every guide on this site."
+  canonicalPath="/author/zeeshan-farooq/"
+  jsonLd={jsonLd}
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about/">About</a></li>
+      <li aria-current="page">Zeeshan Farooq</li>
+    </ol>
+  </nav>
+
+  <h1>Zeeshan Farooq</h1>
+  <p class="article-meta">Plants Researcher · Author, Simply Plant Care</p>
+  <div class="prose">
+    <p>
+      Zeeshan Farooq is a plants researcher and the author of every guide on
+      Simply Plant Care. He researches indoor plant care — watering, light,
+      soil, and the common problems that kill houseplants — and turns that
+      research into plain, practical guides a beginner can actually follow.
+    </p>
+    <h2>How he works</h2>
+    <p>
+      Every guide is written from general horticultural knowledge and
+      checked against public references from university extension services
+      and botanical gardens. He does not copy content from other websites,
+      and he does not invent statistics, studies, or quotes. Where a topic
+      is genuinely debated — for example, whether misting raises humidity
+      meaningfully — he says so instead of presenting one view as settled
+      fact.
+    </p>
+    <h2>What he writes about</h2>
+    <p>
+      Watering and light first, because those two things kill most
+      houseplants. Then soil and pots, feeding, and fixing specific
+      problems: yellow leaves, brown tips, drooping stems, and plants that
+      have stopped growing. If a guide is wrong, he corrects it — see our
+      <a href="/editorial-policy/">Editorial Policy</a>.
+    </p>
+    <h2>Contact</h2>
+    <p>
+      Questions about a guide, a correction, or a topic to cover?
+      <a href="/contact/">Contact us</a> or email
+      <a href="mailto:hello@simplyplantcare.com">hello@simplyplantcare.com</a>.
+    </p>
+    <h2>Follow Simply Plant Care</h2>
+    <p>
+      <a
+        class="social-link"
+        href="https://www.pinterest.com/simplyplantcare/"
+        target="_blank"
+        rel="me noopener"
+      >
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="#E60023"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12.017 24c6.627 0 11.986-5.365 11.986-12.013C24.003 5.367 18.644.001 12.017.001z"/></svg>
+        Pinterest — Simply Plant Care
+      </a>
+    </p>
+    <p>
+      <a href="/guides/">Browse all guides by Zeeshan Farooq →</a>
+    </p>
+  </div>
+</BaseLayout>
