@@ -72,6 +72,13 @@ const jsonLd = [
     name: "Simply Plant Care",
     url: "https://simplyplantcare.com",
     logo: "https://simplyplantcare.com/images/leaf-mark.svg",
+    sameAs: ["https://www.pinterest.com/simplyplantcare/"],
+    founder: {
+      "@type": "Person",
+      name: "Zeeshan Farooq",
+      jobTitle: "Plants Researcher",
+      url: "https://simplyplantcare.com/author/zeeshan-farooq/",
+    },
   },
 ];
 ---
@@ -221,10 +228,12 @@ const jsonLd = [
       too vague to follow or too technical to enjoy. We write guides the way
       a knowledgeable friend would explain things — what the plant needs,
       why it needs it, and what to do when it goes wrong. Every guide is
+      written by <a href="/author/zeeshan-farooq/">Zeeshan Farooq, Plants Researcher</a>,
       based on general horticultural knowledge and checked against public
       references from university extension services and botanical gardens.
       Read more on our <a href="/about/">About page</a> and our
-      <a href="/editorial-policy/">Editorial Policy</a>.
+      <a href="/editorial-policy/">Editorial Policy</a>. Follow us on
+      <a href="https://www.pinterest.com/simplyplantcare/" target="_blank" rel="me noopener">Pinterest</a>.
     </p>
   </section>
 </BaseLayout>
