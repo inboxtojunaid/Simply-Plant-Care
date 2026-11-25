@@ -231,6 +231,23 @@ tbody tr:nth-child(even) td { background: #f6f2e8; }
 .related-guides ul { list-style: none; padding: 0; }
 .related-guides li { margin-bottom: 0.5rem; }
 
+/* Author box, social links, scope callout */
+.author-box {
+  background: var(--surface); border: 1px solid var(--border); border-left: 5px solid var(--primary);
+  border-radius: var(--radius); padding: 1.25rem 1.4rem; margin: 2.5rem 0 0; max-width: var(--measure);
+}
+.author-box h2 { margin-top: 0; font-size: 1.15rem; }
+.author-box p { margin: 0 0 0.6rem; }
+.author-box p:last-child { margin-bottom: 0; }
+.social-link { display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700; }
+.social-link svg { flex-shrink: 0; }
+.scope-box {
+  background: var(--sage-light); border: 1px solid var(--sage); border-radius: var(--radius);
+  padding: 1rem 1.25rem; margin: 1.25rem 0; max-width: var(--measure);
+}
+.scope-box p { margin: 0; }
+.scope-box strong { color: var(--primary); }
+
 /* Feedback widget (Feature D) */
 .widget {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
