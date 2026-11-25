@@ -6,15 +6,29 @@ category: "plant-care"
 hero: "/images/how-to-take-care-of-a-snake-plant.webp"
 heroAlt: "A healthy snake plant with tall upright green and yellow leaves in a terracotta pot beside a bright window"
 date: "2026-11-24"
-updated: "2026-11-24"
+updated: "2026-11-26"
 related: ["how-to-water-snake-plants", "snake-plant-light-needs", "snake-plant-low-light", "snake-plant-for-beginners"]
 ---
+
+<div class="scope-box">
+<p><strong>What this guide covers:</strong> This is the complete snake plant routine — water, light, soil, pot, feeding, and repotting, and the mistakes that kill them. It is the one guide to read if you want everything in one place. If you only need one topic, use <a href="/guides/how-to-water-snake-plants/">watering only</a>, <a href="/guides/snake-plant-light-needs/">light needs</a>, <a href="/guides/snake-plant-low-light/">low light only</a>, or <a href="/guides/snake-plant-for-beginners/">the first 30 days for beginners</a> instead.</p>
+</div>
 
 A snake plant can go six weeks without water and look exactly the same. That is the whole appeal, and also the whole trap. People hear "hard to kill", buy one, and then kill it with kindness — a little water every weekend, a pretty pot with no holes, a bigger pot "so it has room to grow". The plant rots quietly, and by the time the leaves flop, the roots are gone.
 
 **The verdict, in three lines: water only when the soil is dry all the way through. Give it bright, indirect light and a pot that drains. Do nothing else, and do it less often than you think.**
 
 That is genuinely most of it. The rest of this guide starts with the mistakes, because avoiding them matters more than any clever technique, and then sets out the routine that keeps one healthy for years.
+
+## Which snake plant guide do you need?
+
+| If you want… | Read this guide |
+| --- | --- |
+| The complete routine — water, light, soil, feeding, repotting | This guide |
+| Watering only — intervals, amounts, seasons | [How to Water Snake Plants](/guides/how-to-water-snake-plants/) |
+| Light only — window by window, north to south | [Snake Plant Light Needs Explained](/guides/snake-plant-light-needs/) |
+| Low light only — will it thrive in a dim corner? | [Snake Plant Low Light: Will It Thrive?](/guides/snake-plant-low-light/) |
+| Your first month, day by day | [Snake Plant for Beginners](/guides/snake-plant-for-beginners/) |
 
 ## The mistakes that kill snake plants
 
