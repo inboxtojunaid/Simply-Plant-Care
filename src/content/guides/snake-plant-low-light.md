@@ -6,9 +6,13 @@ category: "lighting"
 hero: "/images/snake-plant-low-light.webp"
 heroAlt: "A snake plant in a ceramic pot in a dim corner of a room, away from the window"
 date: "2026-11-24"
-updated: "2026-11-24"
+updated: "2026-11-26"
 related: ["how-to-take-care-of-a-snake-plant", "snake-plant-light-needs", "plants-that-grow-in-the-dark"]
 ---
+
+<div class="scope-box">
+<p><strong>What this guide covers:</strong> Low light only — will a snake plant thrive in a dim corner, how to test your spot, and how to fix it. It does not cover bright-light placement or the full watering, soil, and repotting routine. For light in every direction, see <a href="/guides/snake-plant-light-needs/">Snake Plant Light Needs Explained</a>.</p>
+</div>
 
 No. A snake plant will not thrive in low light. It will survive — for months, sometimes years — and that is precisely the problem. The plant looks the same for so long that the dim corner seems fine, while underneath, growth has stopped, colour is fading, and the soil is staying wet long enough to invite rot. Low light does not kill a snake plant quickly. It weakens it slowly, and then something small finishes it.
 
