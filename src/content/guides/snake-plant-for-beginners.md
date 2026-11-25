@@ -6,9 +6,13 @@ category: "beginner"
 hero: "/images/snake-plant-for-beginners.webp"
 heroAlt: "A small healthy snake plant in a white pot on a sunny windowsill in a beginner's living room"
 date: "2026-11-24"
-updated: "2026-11-24"
+updated: "2026-11-26"
 related: ["how-to-take-care-of-a-snake-plant", "indoor-plants-for-beginners", "how-do-you-take-care-of-plants"]
 ---
+
+<div class="scope-box">
+<p><strong>What this guide covers:</strong> The first 30 days only — choosing a healthy plant, a draining pot, and what to do (and not do) day by day in your first month. After month one, switch to the <a href="/guides/how-to-take-care-of-a-snake-plant/">complete snake plant routine</a>. This is not a full care guide.</p>
+</div>
 
 A snake plant can go six weeks without water and barely notice. It tolerates low light, dry air, and a missed month of attention, and it still looks sculptural sitting in a corner.
 
