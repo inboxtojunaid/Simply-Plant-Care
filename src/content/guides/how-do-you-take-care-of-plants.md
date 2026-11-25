@@ -6,9 +6,13 @@ category: "beginner"
 hero: "/images/how-do-you-take-care-of-plants.webp"
 heroAlt: "A sunny windowsill with several healthy houseplants in terracotta and ceramic pots beside a watering can"
 date: "2026-11-24"
-updated: "2026-11-24"
+updated: "2026-11-26"
 related: ["indoor-plants-for-beginners", "snake-plant-for-beginners", "how-do-you-take-care-of-succulents"]
 ---
+
+<div class="scope-box">
+<p><strong>What this guide covers:</strong> A week-by-week routine for any beginner houseplant — the five basics (light, water, soil, pot, patience) for a busy life. It is a general routine, not a guide to one plant. For choosing your first plant, see <a href="/guides/indoor-plants-for-beginners/">Indoor Plants for Beginners: 10 Easy Picks</a>.</p>
+</div>
 
 Two mistakes kill most beginner houseplants. Too much water. Too little light.
 
