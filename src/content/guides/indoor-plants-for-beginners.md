@@ -6,9 +6,13 @@ category: "beginner"
 hero: "/images/indoor-plants-for-beginners.svg"
 heroAlt: "Original illustration of three beginner-friendly houseplants — snake plant, pothos and ZZ plant — in pots on a shelf"
 date: "2026-11-24"
-updated: "2026-11-24"
+updated: "2026-11-26"
 related: ["how-do-you-take-care-of-plants", "snake-plant-for-beginners", "how-to-care-for-pothos", "how-to-take-care-of-a-snake-plant"]
 ---
+
+<div class="scope-box">
+<p><strong>What this guide covers:</strong> Choosing among ten easy plants — a picker to match a plant to your light and watering habits. It helps you choose; it does not give the full care routine for one plant. For a week-by-week routine for any beginner plant, see <a href="/guides/how-do-you-take-care-of-plants/">How Do You Take Care of Plants?</a>. For the first month with a snake plant, see <a href="/guides/snake-plant-for-beginners/">Snake Plant for Beginners</a>.</p>
+</div>
 
 The plant that dies in your home probably isn't a bad plant. It's a mismatch. A weekly-watering plant in the home of someone who travels, a bright-light plant in a north-facing flat — no amount of goodwill fixes that pairing, and the label saying "easy" doesn't help.
 
