@@ -1,0 +1,538 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { PLANTS } from "../../../data/plants";
+
+const plantsJson = JSON.stringify(PLANTS);
+const grasses = PLANTS.filter((p) => p.category === "grass");
+---
+
+<BaseLayout
+  title="Yard Fertilizer Calculator"
+  description="Work out how much lawn fertilizer your yard needs — bags, nitrogen per 1,000 sq ft and cost — from your lawn size and the bag in your hand today."
+  canonicalPath="/tools/yard-fertilizer-calculator/"
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li aria-current="page">Yard Fertilizer Calculator</li>
+    </ol>
+  </nav>
+
+  <section class="calc-hero">
+    <p class="calc-eyebrow">Free tool · No sign-up · Instant result</p>
+    <h1>Yard Fertilizer Calculator</h1>
+    <p class="calc-lede">
+      A lawn fertilizer calculator that turns your yard size and the bag in
+      your hand into a shopping list — how many bags, how much product, and
+      how much nitrogen actually lands on each 1,000 sq ft.
+    </p>
+    <p class="calc-note">
+      All prices below are example figures, not market data. Change any
+      default to match the bag you are holding — the calculator simply does
+      the maths on the numbers you enter.
+    </p>
+  </section>
+
+  <div class="calc-layout">
+    <form class="calc-card" id="yard-fert-form" aria-label="Yard fertilizer calculator">
+      <section class="calc-step" aria-labelledby="step-area">
+        <p class="calc-step-label"><span class="calc-step-num">1</span> How big is the lawn?</p>
+        <h2 id="step-area">Lawn area</h2>
+        <label for="lawn-length">Length (feet)</label>
+        <div class="money-input"><input type="number" id="lawn-length" name="lawn-length" value="100" min="0" step="1" /></div>
+        <label for="lawn-width">Width (feet)</label>
+        <div class="money-input"><input type="number" id="lawn-width" name="lawn-width" value="50" min="0" step="1" /></div>
+        <label for="lawn-total" id="lawn-total-label">Total area (sq ft)</label>
+        <div class="money-input"><input type="number" id="lawn-total" name="lawn-total" value="5000" min="0" step="1" /></div>
+        <p class="form-note">Length × width fills in the total for you. Editing the total overrides it — handy for odd-shaped yards you measured in sections.</p>
+        <div class="size-grid" role="radiogroup" aria-label="Area unit">
+          <label class="size-card selected">
+            <input type="radio" name="area-unit" value="sqft" checked />
+            <span class="size-name">Square feet</span>
+            <span class="size-desc">Total shown in sq ft</span>
+          </label>
+          <label class="size-card">
+            <input type="radio" name="area-unit" value="sqm" />
+            <span class="size-name">Square metres</span>
+            <span class="size-desc">Total shown in sq m</span>
+          </label>
+        </div>
+        <p class="form-note">1 sq m = 10.764 sq ft. The calculator always works in sq ft behind the scenes.</p>
+      </section>
+
+      <section class="calc-step" aria-labelledby="step-grass">
+        <p class="calc-step-label"><span class="calc-step-num">2</span> What grass is it?</p>
+        <h2 id="step-grass">Grass type</h2>
+        <label for="grass-type">Grass type</label>
+        <select id="grass-type" name="grass-type">
+          {grasses.map((g) => (
+            <option value={g.slug} data-low={g.nPer1000 ? g.nPer1000[0] : ""} data-high={g.nPer1000 ? g.nPer1000[1] : ""}>
+              {g.name} — {g.nPer1000 ? `${g.nPer1000[0]}–${g.nPer1000[1]} lb N per 1,000 sq ft a year` : ""}
+            </option>
+          ))}
+        </select>
+        <p class="form-note" id="grass-note"></p>
+      </section>
+
+      <section class="calc-step" aria-labelledby="step-bag">
+        <p class="calc-step-label"><span class="calc-step-num">3</span> What is on the bag?</p>
+        <h2 id="step-bag">Fertilizer bag (N-P-K)</h2>
+        <label for="npk-n">Nitrogen (N) %</label>
+        <div class="money-input"><input type="number" id="npk-n" name="npk-n" value="24" min="0" max="100" step="1" /></div>
+        <label for="npk-p">Phosphate (P₂O₅) %</label>
+        <div class="money-input"><input type="number" id="npk-p" name="npk-p" value="0" min="0" max="100" step="1" /></div>
+        <label for="npk-k">Potash (K₂O) %</label>
+        <div class="money-input"><input type="number" id="npk-k" name="npk-k" value="6" min="0" max="100" step="1" /></div>
+        <p class="form-note">The three numbers on the front of the bag, in order. For a grass fertilizer amount calculator, nitrogen is the one that sets the rate.</p>
+        <label for="bag-weight">Bag weight (lb)</label>
+        <div class="money-input"><input type="number" id="bag-weight" name="bag-weight" value="40" min="0" step="1" /></div>
+        <label for="bag-coverage">Coverage per bag (sq ft) — optional</label>
+        <div class="money-input"><input type="number" id="bag-coverage" name="bag-coverage" value="" min="0" step="1" placeholder="e.g. 15000" /></div>
+        <p class="form-note">Leave this blank and the calculator works from the 1 lb nitrogen target instead. Fill it in if the bag prints a coverage figure and you want to check what that coverage really applies.</p>
+        <label for="bag-price">Price per bag (USD) — optional</label>
+        <div class="money-input"><span>$</span><input type="number" id="bag-price" name="bag-price" value="25" min="0" step="1" /></div>
+        <p>
+          <button type="button" class="btn" id="calculate-btn">Calculate my fertilizer</button>
+        </p>
+      </section>
+    </form>
+
+    <aside class="calc-result" id="result" aria-live="polite">
+      <p class="calc-result-label">Your fertilizer plan</p>
+      <p class="calc-total" id="result-bags">1 bag</p>
+      <p class="calc-per-tree"><span id="result-bags-exact">0.52 bags</span> exact — buy whole bags</p>
+      <div class="breakdown-bar" aria-hidden="true">
+        <span class="breakdown-seg seg-trees" id="bar-n" style="width: 50%"></span><span class="breakdown-seg seg-labour" id="bar-n-rest" style="width: 50%"></span>
+      </div>
+      <ul class="breakdown-list">
+        <li><span class="breakdown-dot dot-trees"></span> Lawn area <strong id="result-area">5,000 sq ft</strong></li>
+        <li><span class="breakdown-dot dot-labour"></span> Product needed <strong id="result-product">20.8 lb</strong></li>
+        <li><span class="breakdown-dot dot-extras"></span> Nitrogen per 1,000 sq ft <strong id="result-n">1.00 lb N</strong></li>
+        <li><span class="breakdown-dot dot-trees"></span> Total cost <strong id="result-cost">$25</strong></li>
+      </ul>
+      <p class="calc-result-note" id="result-target">
+        Target: 1 lb of nitrogen per 1,000 sq ft per single application.
+      </p>
+      <p class="calc-result-note" id="result-warning"></p>
+      <p class="calc-result-links">
+        <a href="/tools/fertility-rate-calculator/">Check the application rate →</a>
+        <a href="/tools/plant-care-checklist/">Plant care checklist →</a>
+      </p>
+    </aside>
+  </div>
+
+  <script type="application/json" id="plant-data" set:html={plantsJson} />
+
+  <h2>Start with a tape measure, not a bag</h2>
+  <p>
+    Most people guess their lawn size, and most guesses are wrong in the
+    generous direction. A yard that feels like 10,000 sq ft often measures
+    closer to 6,000 once the house, driveway and beds come out of it — and
+    that gap is exactly how you end up buying twice the fertilizer you need.
+    So before you work out how much fertilizer for your lawn, walk it with a
+    tape measure and break it into rectangles. Measure the front lawn as one
+    rectangle, the back as another, and any side strips on their own. Length
+    times width gives you each section, and adding the sections together
+    gives you a total you can trust. Leave the house footprint, the patio and
+    the planting beds out of it. They are not lawn, and fertilizing them is
+    just feeding weeds and washing nutrients into places they do no good.
+  </p>
+  <p>
+    Odd shapes are no excuse for guessing. A lawn that narrows at one end
+    can be split into a big rectangle and a small triangle, and a rough
+    triangle is still far closer than a shrug. Pace it out if you have no
+    tape — a normal adult stride is roughly three feet, so count your steps
+    along each edge and multiply by three. It will not be survey-grade, but
+    it will be close enough that the bag count comes out right. Write the
+    number down somewhere you will find it again, because you will need the
+    same figure every time you feed, overseed or top-dress. The calculator
+    above lets you type length and width in feet, or just type the total
+    straight in, and switch the total between square feet and square metres
+    if that is how your tape reads.
+  </p>
+
+  <h2>The three numbers on the bag are doing different jobs</h2>
+  <p>
+    Every bag of lawn fertilizer carries three numbers on the front, like
+    24-0-6 or 10-10-10. They are percentages by weight, in the order
+    nitrogen, phosphate and potash — N, P and K. A 40 lb bag of 24-0-6 holds
+    about 9.6 lb of actual nitrogen, no phosphate at all, and about 2.4 lb
+    of potash. The rest is filler and carrier material that helps the
+    granules spread evenly. This matters because a bag is not a dose. Two
+    bags that weigh the same can carry wildly different amounts of nitrogen,
+    and it is the nitrogen that decides how much of the bag your lawn
+    actually gets. That is why a fertilizer coverage calculator that only
+    divides area by the coverage printed on the bag can mislead you: the
+    printed coverage assumes a rate the bag maker chose, and that rate may
+    not match what your grass needs.
+  </p>
+  <p>
+    Read the back of the bag too, before you trust the front. The label
+    tells you whether it is a quick-release or slow-release formula, whether
+    it needs watering in, and what spreader setting to start with. Slow
+    release feeds over weeks and is kinder to the grass; quick release greens
+    things up fast and washes away fast if you overdo it. Neither is wrong.
+    They just behave differently at the same rate, and the label is the only
+    place that difference is spelled out for the exact product you bought.
+  </p>
+
+  <h2>Nitrogen is the number that decides how much to put down</h2>
+  <p>
+    Lawns are hungry for nitrogen above all else. It is the nutrient that
+    drives leaf growth and green colour, and it is also the one grass burns
+    through fastest, because every mowing takes nitrogen away in the
+    clippings. Phosphate and potash matter — roots, flowering and toughness
+    all lean on them — but most established lawns already have enough
+    phosphate in the soil, which is why so many lawn fertilizers read
+    something-0-something. A soil test is the honest way to find out whether
+    your lawn actually needs more phosphorus or potassium, rather than
+    buying it blind in every bag. If you have never tested your soil, that
+    is the single most useful thing you can do before your next feed.
+  </p>
+  <p>
+    The maths itself is simple once you see it. To put down 1 lb of nitrogen
+    per 1,000 sq ft, you need 1 divided by the nitrogen percentage as a
+    decimal. With a 24% bag that is 1 ÷ 0.24, or about 4.17 lb of product
+    per 1,000 sq ft. With a 10% bag it is 10 lb of product for the same
+    nitrogen. Same lawn, same nitrogen, more than twice the bag weight.
+    That is the whole trick this lawn fertilizer calculator is doing: it
+    converts the percentage on your bag into pounds of product, then scales
+    that by your lawn size and divides by the bag weight to get a bag count.
+    If your bag prints a coverage figure, the calculator can work backwards
+    from that instead, and show you what nitrogen rate that coverage really
+    delivers — which is sometimes a surprise.
+  </p>
+
+  <h2>The 1 lb rule, and what going over it actually does</h2>
+  <p>
+    The standard single application for a lawn is 1 lb of nitrogen per
+    1,000 sq ft. Not per bag, not per year — per application, per 1,000 sq
+    ft. Your grass type sets the yearly total, which the dropdown above
+    shows: a hungry Bermuda or St. Augustine lawn wants roughly 2–4 lb per
+    1,000 sq ft across the whole year, while a low-input Buffalo grass lawn
+    is happy with 0–1 lb for the entire year. At 1 lb per application, that
+    yearly range tells you roughly how many feeds to plan — two to four for
+    the hungry types, one or none for Buffalo grass. Spreading the yearly
+    total across several smaller feeds beats dumping it in one go, every
+    time.
+  </p>
+  <p>
+    Going over 1 lb in one application does not make the lawn greener. It
+    makes it stressed. Too much nitrogen in one hit can scorch leaf blades,
+    leaving brown patches that look like drought, and it pushes soft, lush
+    growth that disease loves and that wilts fast in heat. The extra
+    nitrogen does not wait around for the grass to catch up, either — it
+    washes through the soil with the next rain or watering, and ends up
+    feeding algae in drains and waterways instead of your lawn. Under-feeding
+    is the gentler mistake. A lawn getting well under 0.5 lb per application
+    will just look pale and thin, and grow slowly. It will not be damaged.
+    That is why the calculator flags both directions: over 1 lb gets a
+    warning, well under 0.5 lb gets a note that you are probably feeding
+    too lightly to see much change.
+  </p>
+
+  <h2>Warm-season and cool-season lawns don't want feeding at the same time</h2>
+  <p>
+    Timing matters as much as amount, and it runs in opposite directions
+    depending on your grass. Warm-season grasses like Bermuda, Zoysia and
+    St. Augustine grow hard in summer heat and sleep through winter. They
+    want feeding while they are actively growing, through the warm months,
+    and nothing once they go dormant. Cool-season grasses like Kentucky
+    bluegrass, tall fescue and perennial ryegrass do their best growing in
+    the cooler shoulders of the year — spring and autumn — and sulk through
+    summer heat. Their main feeding time is autumn, when they are building
+    roots for winter, with a lighter feed in spring. Feeding a cool-season
+    lawn heavily in midsummer is asking for burnt, disease-prone grass.
+    Feeding any lawn while it is dormant or drought-stressed is worse than
+    not feeding it at all: the grass cannot take the nutrients up, so the
+    fertilizer just sits there, or washes away, and can scorch what little
+    green is left. If your lawn is brown from drought, water it back to
+    health first and feed later.
+  </p>
+
+  <h2>Getting it spread evenly matters as much as the amount</h2>
+  <p>
+    A perfect rate means nothing if half the lawn gets double and the other
+    half gets none. That striped look — dark green bands next to pale ones —
+    is almost always a spreading problem, not a fertilizer problem. A
+    broadcast spreader throws granules in a wide arc, so walk in straight,
+    slightly overlapping passes, the way you would mow. Close the hopper
+    when you turn at the end of a run, or you will dump a pile in one spot.
+    Set the spreader to the setting on the bag as a starting point, then
+    check: if you run out of product halfway across the lawn, the setting
+    was too high; if you finish with half the bag left, it was too low.
+    Sweep any granules off paths and driveways back onto the lawn before you
+    water, because granules on concrete wash straight into the drain.
+    A drop spreader is more precise along edges, but slower, and the same
+    overlap rule applies. Whichever spreader you use, wear gloves, and wash
+    your hands when you are done.
+  </p>
+
+  <h2>Water it in — and the days to leave it alone</h2>
+  <p>
+    Water the lawn after spreading granular fertilizer, unless the label on
+    your bag says otherwise. A light watering washes the granules off the
+    leaf blades and down to the soil, which is where they need to be, and
+    it starts dissolving them so the roots can take the nutrients up.
+    Granules left sitting on dry blades in hot sun are the classic cause of
+    fertilizer burn. How much water is enough? Enough to wet the lawn
+    properly, not a flood. If rain is forecast within a day or so, that can
+    do the job for you, but a heavy downpour right after spreading can wash
+    fresh fertilizer away before it soaks in, so a gentle watering you
+    control is the safer bet. After that, give the lawn a day or two before
+    mowing, so the granules have time to settle in and you are not picking
+    them up in the mower. And keep children and pets off the lawn until it
+    has been watered in and dried — the label will say how long, and it is
+    worth following.
+  </p>
+
+  <h2>Mistakes most people only make once</h2>
+  <p>
+    The most common mistake is buying by the bag instead of by the lawn.
+    Someone with a 3,000 sq ft yard buys the bag that covers 15,000 sq ft
+    because it was on offer, then spreads the whole thing because the bag
+    is open. That is five times the rate their lawn needed, and the brown
+    patches a week later are the receipt. The second mistake is feeding a
+    lawn that is already struggling — brown from drought, or thin from shade
+    — and expecting fertilizer to fix it. Fertilizer feeds healthy grass; it
+    does not revive stressed grass, fix compacted soil, or make up for two
+    hours of sunlight. The third is skipping the soil test year after year
+    while adding phosphate the soil never needed. And the fourth is the
+    simplest: not writing the lawn size down. Measure once, save the number,
+    and every future feed gets easier. If the lawn is only one part of your
+    garden, the same habit helps indoors too — our
+    <a href="/guides/how-do-you-take-care-of-plants/">beginner plant care guide</a>
+    covers feeding houseplants little and often, and if you grow herbs in
+    pots, <a href="/guides/how-to-grow-basil-in-pots/">growing basil in pots</a>
+    shows how a heavy feeder behaves in a container. For a lawn with bare
+    patches or strange spots, the
+    <a href="/tools/plant-problem-solver/">plant problem solver</a> can help
+    narrow down what is going on, and the
+    <a href="/tools/plant-care-checklist/">plant care checklist</a> keeps
+    the routine jobs in one place. If you are also costing out new planting
+    around the yard, the
+    <a href="/tools/tree-planting-cost-calculator/">tree planting cost calculator</a>
+    works the same way — measure first, then price it.
+  </p>
+
+  <h2>Frequently asked questions</h2>
+
+  <h3>How many bags of fertilizer do I need for 5,000 sq ft?</h3>
+  <p>
+    Work it from the nitrogen, not the bag. Say you have a 24-0-6 bag that
+    weighs 40 lb. To put down 1 lb of nitrogen per 1,000 sq ft you need
+    1 ÷ 0.24 = about 4.17 lb of product per 1,000 sq ft. For 5,000 sq ft
+    that is about 20.8 lb of product, which is 20.8 ÷ 40 = 0.52 bags — so
+    one bag, with roughly half left over. Do not spread the whole bag just
+    because you bought it: the full 40 lb over 5,000 sq ft would apply
+    about 1.92 lb of nitrogen per 1,000 sq ft, nearly double the standard
+    rate. Use about half the bag, seal the rest dry, and it will keep for
+    the next feed.
+  </p>
+
+  <h3>Can I put down too much fertilizer?</h3>
+  <p>
+    Yes, and it is the most damaging mistake in lawn feeding. More than
+    1 lb of nitrogen per 1,000 sq ft in a single application can scorch
+    leaf blades, leaving brown patches, and pushes soft growth that disease
+    and heat hit hardest. The surplus washes away with rain or watering
+    instead of feeding the lawn. If you have already over-applied, water
+    deeply to dilute it and do not feed again until the lawn recovers.
+    Splitting the yearly total into several smaller feeds is always safer
+    than one heavy dose.
+  </p>
+
+  <h3>Should I fertilize before or after mowing?</h3>
+  <p>
+    Mow first, then fertilize, and leave a day or two before the next mow.
+    Mowing first takes the long growth off so granules reach the soil
+    instead of sitting on tall blades, and waiting after spreading gives
+    the fertilizer time to wash in. Mowing right after spreading can pick
+    granules up in the mower and throw them off the lawn. Leave the
+    clippings where they fall if you can — they return a little nitrogen to
+    the soil as they break down.
+  </p>
+
+  <h3>Do I need a different fertilizer for a shady lawn?</h3>
+  <p>
+    Shade changes how much fertilizer a lawn needs, not necessarily which
+    bag to buy. Grass in shade grows more slowly, so it uses less nitrogen,
+    and a full rate there can push weak, leggy growth that thins out
+    further. Feed shaded areas at a lighter rate — or skip them in a feed
+    round — and put your effort into the real problem, which is usually
+    light, not food. No fertilizer makes up for a lawn that gets two hours
+    of sun a day. If the shaded patch keeps thinning, a soil test and a
+    look at the light it gets will tell you more than another bag will.
+  </p>
+
+  <script>
+    const PLANTS = JSON.parse(document.getElementById("plant-data").textContent);
+    const SQM_TO_SQFT = 10.764;
+
+    function num(id) {
+      const el = document.getElementById(id);
+      const v = el ? Number(el.value) : 0;
+      return Number.isFinite(v) ? v : 0;
+    }
+    function fmt(n, d) {
+      return n.toLocaleString("en-US", { maximumFractionDigits: d === undefined ? 1 : d, minimumFractionDigits: d === undefined ? 0 : d });
+    }
+    function money(n) {
+      return "$" + Math.round(n).toLocaleString("en-US");
+    }
+    function areaUnit() {
+      const r = document.querySelector('input[name="area-unit"]:checked');
+      return r ? r.value : "sqft";
+    }
+    function getAreaSqFt() {
+      const totalEl = document.getElementById("lawn-total");
+      const v = Number(totalEl.value);
+      if (Number.isFinite(v) && v > 0) {
+        return areaUnit() === "sqm" ? v * SQM_TO_SQFT : v;
+      }
+      return 0;
+    }
+    function renderTotal(areaSqFt) {
+      const totalEl = document.getElementById("lawn-total");
+      totalEl.value = areaUnit() === "sqm"
+        ? String(Math.round((areaSqFt / SQM_TO_SQFT) * 10) / 10)
+        : String(Math.round(areaSqFt));
+      document.getElementById("lawn-total-label").textContent =
+        areaUnit() === "sqm" ? "Total area (sq m)" : "Total area (sq ft)";
+    }
+
+    function calculate() {
+      const length = num("lawn-length");
+      const width = num("lawn-width");
+      let areaSqFt = getAreaSqFt();
+      const nPct = num("npk-n");
+      const bagWeight = num("bag-weight");
+      const coverage = num("bag-coverage");
+      const price = num("bag-price");
+
+      const grassSel = document.getElementById("grass-type");
+      const opt = grassSel ? grassSel.options[grassSel.selectedIndex] : null;
+      const low = opt ? Number(opt.getAttribute("data-low")) : NaN;
+      const high = opt ? Number(opt.getAttribute("data-high")) : NaN;
+      const grassNote = document.getElementById("grass-note");
+      if (grassNote) {
+        if (Number.isFinite(low) && Number.isFinite(high)) {
+          grassNote.textContent = low === 0
+            ? "Annual need: " + low + "–" + high + " lb N per 1,000 sq ft — at 1 lb per application, this grass may need no feeding at all in a year."
+            : "Annual need: " + low + "–" + high + " lb N per 1,000 sq ft — at 1 lb per application, that is roughly " + low + "–" + high + " feeds a year.";
+        } else {
+          grassNote.textContent = "";
+        }
+      }
+
+      const areaEl = document.getElementById("result-area");
+      const prodEl = document.getElementById("result-product");
+      const nEl = document.getElementById("result-n");
+      const costEl = document.getElementById("result-cost");
+      const bagsEl = document.getElementById("result-bags");
+      const exactEl = document.getElementById("result-bags-exact");
+      const warnEl = document.getElementById("result-warning");
+      const barEl = document.getElementById("bar-n");
+      const barRestEl = document.getElementById("bar-n-rest");
+
+      if (areaSqFt <= 0 || nPct <= 0 || bagWeight <= 0) {
+        bagsEl.textContent = "—";
+        exactEl.textContent = "Enter a lawn size, a nitrogen % above 0, and a bag weight";
+        areaEl.textContent = areaSqFt > 0 ? fmt(areaSqFt, 0) + " sq ft" : "—";
+        prodEl.textContent = "—";
+        nEl.textContent = nPct <= 0 ? "Bag has 0% nitrogen" : "—";
+        costEl.textContent = "—";
+        warnEl.textContent = nPct <= 0
+          ? "This bag contains no nitrogen, so it cannot feed a lawn by the nitrogen rate. Check the N number on the bag."
+          : "";
+        if (barEl) barEl.style.width = "0%";
+        if (barRestEl) barRestEl.style.width = "100%";
+        return;
+      }
+
+      const productPer1000 = 100 / nPct; // lb of product for 1 lb N per 1,000 sq ft
+      let bagsExact, productNeeded, nPer1000, basisNote;
+      if (coverage > 0) {
+        bagsExact = areaSqFt / coverage;
+        productNeeded = bagsExact * bagWeight;
+        nPer1000 = (productNeeded * (nPct / 100) / areaSqFt) * 1000;
+        basisNote = "Based on the bag's printed coverage of " + fmt(coverage, 0) + " sq ft per bag.";
+      } else {
+        productNeeded = (areaSqFt / 1000) * productPer1000;
+        bagsExact = productNeeded / bagWeight;
+        nPer1000 = 1;
+        basisNote = "Based on the target of 1 lb N per 1,000 sq ft (" + fmt(productPer1000, 2) + " lb of this product per 1,000 sq ft).";
+      }
+      const bagsUp = Math.ceil(bagsExact);
+      const wholeBagN = (bagsUp * bagWeight * (nPct / 100) / areaSqFt) * 1000;
+
+      bagsEl.textContent = bagsUp + (bagsUp === 1 ? " bag" : " bags");
+      exactEl.textContent = fmt(bagsExact, 2) + " bags exact — buy whole bags";
+      areaEl.textContent = fmt(areaSqFt, 0) + " sq ft (" + fmt(areaSqFt / SQM_TO_SQFT, 1) + " sq m)";
+      prodEl.textContent = fmt(productNeeded, 1) + " lb (" + fmt(bagsUp * bagWeight, 1) + " lb in " + bagsUp + " whole bag" + (bagsUp === 1 ? "" : "s") + ")";
+      nEl.textContent = fmt(nPer1000, 2) + " lb N";
+      costEl.textContent = money(bagsUp * price);
+
+      let warn = "";
+      if (nPer1000 > 1) {
+        warn = "⚠ Over-application warning: this works out to " + fmt(nPer1000, 2) + " lb N per 1,000 sq ft in one go — above the 1 lb standard. Use less product per pass, or spread it in two lighter passes.";
+      } else if (nPer1000 < 0.5) {
+        warn = "Note: " + fmt(nPer1000, 2) + " lb N per 1,000 sq ft is well under the 1 lb standard — a light feed. Expect a gentle result, not a big green-up.";
+      } else {
+        warn = "Within the standard range — " + fmt(nPer1000, 2) + " lb N per 1,000 sq ft is at or under the 1 lb per-application target.";
+      }
+      if (bagsExact < bagsUp && wholeBagN > 1 && coverage <= 0) {
+        warn += " If you spread all " + bagsUp + " whole bag" + (bagsUp === 1 ? "" : "s") + " instead of the exact " + fmt(productNeeded, 1) + " lb, you would apply about " + fmt(wholeBagN, 2) + " lb N per 1,000 sq ft — save the rest for next time.";
+      }
+      warnEl.textContent = warn;
+      document.getElementById("result-target").textContent = "Target: 1 lb of nitrogen per 1,000 sq ft per single application. " + basisNote;
+
+      const pct = Math.max(0, Math.min(100, (nPer1000 / 2) * 100));
+      if (barEl) barEl.style.width = pct + "%";
+      if (barRestEl) barRestEl.style.width = (100 - pct) + "%";
+    }
+
+    function markSelected(groupName) {
+      document.querySelectorAll('input[name="' + groupName + '"]').forEach(function (radio) {
+        const card = radio.closest(".size-card");
+        if (card) card.classList.toggle("selected", radio.checked);
+      });
+    }
+
+    const form = document.getElementById("yard-fert-form");
+    const lengthEl = document.getElementById("lawn-length");
+    const widthEl = document.getElementById("lawn-width");
+    const totalEl = document.getElementById("lawn-total");
+    let lastAreaUnit = "sqft"; // unit the total field is currently displayed in
+
+    function syncFromDimensions() {
+      const l = num("lawn-length");
+      const w = num("lawn-width");
+      if (l > 0 && w > 0) renderTotal(l * w);
+      calculate();
+    }
+    lengthEl.addEventListener("input", syncFromDimensions);
+    widthEl.addEventListener("input", syncFromDimensions);
+    totalEl.addEventListener("input", calculate);
+    document.querySelectorAll('input[name="area-unit"]').forEach(function (radio) {
+      radio.addEventListener("change", function () {
+        markSelected("area-unit");
+        // Convert the displayed total from the OLD unit before re-rendering.
+        const displayed = Number(totalEl.value);
+        const areaSqFt = Number.isFinite(displayed) && displayed > 0
+          ? (lastAreaUnit === "sqm" ? displayed * SQM_TO_SQFT : displayed)
+          : getAreaSqFt();
+        lastAreaUnit = areaUnit();
+        renderTotal(areaSqFt);
+        calculate();
+      });
+    });
+    document.getElementById("grass-type").addEventListener("change", calculate);
+    form.addEventListener("input", calculate);
+    form.addEventListener("change", calculate);
+    document.getElementById("calculate-btn").addEventListener("click", calculate);
+    markSelected("area-unit");
+    calculate();
+  </script>
+</BaseLayout>
