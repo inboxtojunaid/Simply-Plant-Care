@@ -213,3 +213,48 @@ Three jobs, all local only — nothing pushed to GitHub (the user commits via th
 ### Still unfinished
 - Article hero image `public/images/how-to-calculate-your-most-fertile-days.webp` does NOT exist — generate it before or right after committing, or the guide page will show a broken hero image.
 - Nothing pushed to GitHub — commit is handled separately.
+
+## Update 2026-11-28 — Design consistency: shared searchable dropdown + consistent inputs + tool disclaimers (5 fertilizer/pot tools)
+
+Local only, nothing pushed. `npm run build` PASS — 56 pages, 0 errors.
+
+### The shared combobox pattern (reuse for future tools)
+- **Script:** `public/js/combobox.js` (plain JS, no dependencies, IIFE). **CSS:** `.combobox*` classes in `src/styles/global.css`.
+- **Wiring (per select, nothing else):** add `data-combobox` + `data-placeholder` (empty-state/button text) + `data-search` (panel search placeholder) to the `<select>`, and add `<script is:inline src="/js/combobox.js"></script>` just before the page's inline script. (Astro requires `is:inline` for a `public/` script — without it the build fails.)
+- **How it works:** the original `<select>` stays in the DOM, visually hidden via `.combobox-hidden-select` (clip technique, not `display:none`), and stays the source of truth. combobox.js wraps it in `.combobox` and builds a button field (current selection + chevron, ellipsis + `title` for long labels) and a panel with a search input on top and a scrollable option list (`role="listbox"`, `max-height: 16rem`, works for 2-option unit lists and the 154-plant list alike). Optgroups render as group headings. Picking an option sets `select.value` and dispatches a bubbling `change` event, so all existing calculation listeners fire unchanged — no calculation code was touched.
+- **Keeping in sync:** the combo re-reads the select whenever the panel opens, on the select's own `change` event, and via a `MutationObserver` (childList/subtree) for page JS that repopulates options. Page scripts that populate a select also call `window.SPCCombobox.refreshAll()` after populating (belt and braces). API: `window.SPCCombobox = { init, initAll, refresh, refreshAll, closeAll }`. Auto-inits on `DOMContentLoaded` (after the pages' module scripts have populated their selects) or immediately if the DOM is already parsed.
+- **Keyboard / a11y:** button opens with Enter (native click) / Space / Down / Up; search filters live; Up/Down/Home/End move the active option; Enter picks it; Escape closes (focus back on the button); click-outside closes; opening one combo closes any other. `aria-haspopup="listbox"`, `aria-expanded`, `aria-controls`, `aria-activedescendant`, `role="option"` + `aria-selected` on options.
+- **Style:** 1px `var(--border)`, 10px radius, white background, primary-green focus ring (`0 0 0 3px rgba(30,77,58,.18)`); selected option highlighted `#eef4ef` + primary text/border.
+
+### Consistent inputs
+- `.field-input` (new shared class): standalone text/number/date inputs — 1px `var(--border)`, 10px radius, white background, `0.7rem 0.8rem` padding, 1.05rem bold, `max-width: 14rem`. Used for the fertilization-days date input and liquid's dose/water amounts.
+- `.money-input` wrappers (all plain-number inputs on yard, fertility-rate and pot-size, plus the money ones with the `$` span) were kept as-is — their wrapper already gives the identical border/radius/background — and gained the same primary-green ring via `:focus-within` (inner input's gold `:focus-visible` outline suppressed).
+- Radio option-cards (liquid strength, fertilization-days hemisphere, pot-shape) unchanged. Buttons unchanged (`.btn`).
+
+### Segmented pill toggles
+- The two-option unit switches (yard area unit sqft/sqm, fertility-rate rate unit lb/kg) changed wrapping classes only: `.size-grid` → `.segmented`, `.size-card` → `.seg-option`. Same radio inputs (name/value/checked), description span hidden by CSS, checked pill fills primary green with white text. Page `markSelected()` updated to `closest(".size-card, .seg-option")` so the `.selected` class still toggles. Unit conversion behaviour unchanged (verified: yard 5,000 sq ft → 464.5 sq m, still 1.00 lb N; fertility-rate 10 lb → 4.88 kg, still 1.00 lb N).
+
+### What changed per page
+- **Yard fertilizer:** grass-type → combo (8 grasses). Area-unit radios → segmented pills. Numbers already in `.money-input` wrappers (no `$` except bag-price) — focus ring only.
+- **Liquid fertilizer:** plant-select → combo (154 plants, grouped); the separate `#plant-search` box DELETED (combo's in-panel search replaces it) — its `searchInput` const + listener removed from the page script, `buildOptions` otherwise untouched. dose-unit + water-unit → combos (3 and 2 options). dose-amount + water-amount: bare `.stepper` wrapper (no buttons) replaced by `.field-input` on the input itself. Strength cards unchanged.
+- **Fertilization days:** plant-select → combo; `#plant-search` box DELETED the same way. `#last-feed` date input → `.field-input`. Hemisphere cards unchanged.
+- **Fertility rate:** plant-type → combo (154 plants, flat list, `data-*` attributes untouched on the options — the verdict/note logic reads them from the select). Rate-unit radios → segmented pills. NPK/rate/area numbers already in `.money-input` wrappers.
+- **Plant pot size:** plant-select → combo (155 options incl. the "No specific plant" blank option); `#plant-search` text box DELETED the same way (`fillSelect` otherwise untouched). Diameter/height numbers already in `.money-input` wrappers. Pot-shape cards unchanged.
+- **Tree planting cost:** NO `<select>` on the page (verified) — left alone except the new disclaimer below. No combo added.
+- `src/data/plants.ts` untouched. No calculation logic, result panels, prose, FAQs, titles or descriptions changed anywhere.
+
+### Tool disclaimers (new `.tool-disclaimer`, small muted text, `grid-column: 2` so it sits directly under the result panel; `grid-column: 1` under 900px)
+- Yard: "Estimate only, not a quote or professional advice. Check your product label and local rules, and don’t exceed recommended nitrogen rates — over-applying can burn grass."
+- Liquid: "Always follow your product’s label first — these are example dilutions. Too strong a mix can burn roots, so when in doubt, mix weaker."
+- Fertilization days: "A guide, not a schedule set in stone — adjust for your climate, season and how your plant is actually growing."
+- Fertility rate: "Estimates from the N-P-K on the label. A soil test is the only way to know what your soil actually needs, and over-application can harm plants and lawns."
+- Pot size: "General guidance — mature sizes vary by variety and growing conditions, so treat it as a starting point."
+- Tree planting cost: "Estimate only — example prices, not a quote; real costs vary by nursery, region and site conditions." (The result panel already said "An estimate only"; this is the matching small-print line under it.)
+
+### Verification (jsdom harness in /tmp/spc-test, runs the real shipped page JS + combobox.js from built dist; NOT a live browser)
+- Baseline recorded BEFORE editing (same harness): yard 1 bag / 0.52 exact / 5,000 sq ft (464.5 sq m) / 20.8 lb (40.0 lb in 1 whole bag) / 1.00 lb N / $25; liquid Monstera + 1 gal = 2.5 ml (≈ 0.5 tsp), Half strength, every 2 weeks; fert-days Pothos = "in 14 days", next Fri 11 Dec 2026, 5 dates; fert-rate 10-10-10 @ 10 lb = 1.00 lb N, 50.0 lb product, 5.00 lb N total; pot-size 6 in → 8 in, 7.2 in deep, 2.5 L current / 3.4 L extra / 5.9 L total; tree $320–$480 ($64–$96/tree).
+- AFTER: every one of those numbers identical — zero calculation changes. Visible (non-hidden) `<select>` count: 0 on all 5 pages (was yard 1, liquid 3, fert-days 1, fert-rate 1, pot-size 1); combos present: yard 1, liquid 3, fert-days 1, fert-rate 1, pot-size 1, tree 0; every combo has its search input inside its panel.
+- Combo interaction tested live in jsdom: liquid search "snake" → 2 options, click picks Snake Plant (result updates); keyboard open → type "basil" → ArrowDown → Enter picks Basil (every 2 weeks); dose-unit combo pick tbsp-gal → 1.5 tsp (7.4 ml); pot-size search "monstera deliciosa" → 1 option, pick → 14 in mature-pot verdict; fert-rate search "bermuda" → pick Bermuda Grass, note + WITHIN-range verdict correct; yard search "buffalo" → pick Buffalo Grass, note "Annual need: 0–1 lb N…", still 1.00 lb N / 1 bag. Escape closes the panel; click-outside closes it; `aria-expanded` toggles. Initial button labels correct on all pages (e.g. yard "Bermuda Grass — 2–4 lb N per 1,000 sq ft a year", pot-size "No specific plant — just use my pot size").
+- Harness note: Astro bundles each page's inline script as a module (own scope in a real browser). The harness evals them manually, so the page bundle and the nav/cookie script are each IIFE-wrapped in the harness — without that, the nav script's minified single-letter function names (`r`, `s`) overwrite the fertility-rate bundle's `fmt`/`num` in the shared eval scope and the kg toggle reads "area lb N". That is a harness artifact only: it reproduces with combobox.js NOT loaded, and in a real browser the two scripts are separate modules. Do not "fix" it in the page code.
+- NOT tested in a live browser: visual rendering of the combo panel, segmented pills and disclaimer placement, and touch/keyboard behaviour in a real browser — recommend a quick live pass in Chrome after deploy (parent agent can do this).
+- Nothing pushed to GitHub — commit is handled separately.
