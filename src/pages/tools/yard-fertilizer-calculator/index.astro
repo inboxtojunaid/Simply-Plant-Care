@@ -46,13 +46,13 @@ const grasses = PLANTS.filter((p) => p.category === "grass");
         <label for="lawn-total" id="lawn-total-label">Total area (sq ft)</label>
         <div class="money-input"><input type="number" id="lawn-total" name="lawn-total" value="5000" min="0" step="1" /></div>
         <p class="form-note">Length × width fills in the total for you. Editing the total overrides it — handy for odd-shaped yards you measured in sections.</p>
-        <div class="size-grid" role="radiogroup" aria-label="Area unit">
-          <label class="size-card selected">
+        <div class="segmented" role="radiogroup" aria-label="Area unit">
+          <label class="seg-option selected">
             <input type="radio" name="area-unit" value="sqft" checked />
             <span class="size-name">Square feet</span>
             <span class="size-desc">Total shown in sq ft</span>
           </label>
-          <label class="size-card">
+          <label class="seg-option">
             <input type="radio" name="area-unit" value="sqm" />
             <span class="size-name">Square metres</span>
             <span class="size-desc">Total shown in sq m</span>
@@ -65,7 +65,7 @@ const grasses = PLANTS.filter((p) => p.category === "grass");
         <p class="calc-step-label"><span class="calc-step-num">2</span> What grass is it?</p>
         <h2 id="step-grass">Grass type</h2>
         <label for="grass-type">Grass type</label>
-        <select id="grass-type" name="grass-type">
+        <select id="grass-type" name="grass-type" data-combobox data-placeholder="Choose a grass type" data-search="Search grasses…">
           {grasses.map((g) => (
             <option value={g.slug} data-low={g.nPer1000 ? g.nPer1000[0] : ""} data-high={g.nPer1000 ? g.nPer1000[1] : ""}>
               {g.name} — {g.nPer1000 ? `${g.nPer1000[0]}–${g.nPer1000[1]} lb N per 1,000 sq ft a year` : ""}
@@ -120,6 +120,8 @@ const grasses = PLANTS.filter((p) => p.category === "grass");
         <a href="/tools/plant-care-checklist/">Plant care checklist →</a>
       </p>
     </aside>
+
+    <p class="tool-disclaimer">Estimate only, not a quote or professional advice. Check your product label and local rules, and don’t exceed recommended nitrogen rates — over-applying can burn grass.</p>
   </div>
 
   <script type="application/json" id="plant-data" set:html={plantsJson} />
@@ -366,6 +368,7 @@ const grasses = PLANTS.filter((p) => p.category === "grass");
     look at the light it gets will tell you more than another bag will.
   </p>
 
+  <script is:inline src="/js/combobox.js"></script>
   <script>
     const PLANTS = JSON.parse(document.getElementById("plant-data").textContent);
     const SQM_TO_SQFT = 10.764;
@@ -495,7 +498,7 @@ const grasses = PLANTS.filter((p) => p.category === "grass");
 
     function markSelected(groupName) {
       document.querySelectorAll('input[name="' + groupName + '"]').forEach(function (radio) {
-        const card = radio.closest(".size-card");
+        const card = radio.closest(".size-card, .seg-option");
         if (card) card.classList.toggle("selected", radio.checked);
       });
     }
