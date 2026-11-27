@@ -179,3 +179,37 @@ Three jobs, all local only — nothing pushed to GitHub (the user commits via th
 - Christmas cactus hero image `public/images/how-to-care-for-a-christmas-cactus-plant.webp` does not exist — generate it before or right after committing, or the guide page will show a broken hero image.
 - Calculator default prices are example figures only — the user can (and should) adjust them to match real nursery quotes.
 - Nothing pushed to GitHub — push is handled separately by the user in their own browser.
+
+## Update 2026-11-28 — Fertilizer tools (5) + fertile-days article
+
+### Shared plant database (new)
+- `src/data/plants.ts`: 154 plants (72 houseplants, 15 herbs, 30 vegetables, 15 fruit, 15 flowers/shrubs, 8 lawn grasses). Each entry: name, slug, category, feeder level (light/moderate/heavy), feed frequency in weeks during the growing season, dilution (quarter/half/full), recommended mature pot diameter in inches, one-line care note; grasses also carry an annual nitrogen range (lb N per 1,000 sq ft). Feeder levels and frequencies are general, widely published guidance — no precise per-plant NPK prescriptions invented. Tool pages import it and embed it as JSON in the page; the plant selectors are populated client-side.
+
+### New tool pages (all follow the tree-planting calculator template: dark-green hero, two-column layout, sticky dark result panel, live calculation)
+- `src/pages/tools/yard-fertilizer-calculator/index.astro` — Yard Fertilizer Calculator. Inputs: lawn length × width or total sq ft (sq ft/sq m toggle), grass selector (8 grasses with annual N ranges), N-P-K, bag weight, optional coverage and price per bag. Outputs: bags needed (whole + exact), product weight, nitrogen per 1,000 sq ft, total cost, over-application warning above 1 lb N/1,000 sq ft, under-feeding note below 0.5 lb. Prose 1,922 words, 8 unique H2s, 4 FAQs.
+- `src/pages/tools/liquid-fertilizer-calculator/index.astro` — Liquid Fertilizer Calculator. Inputs: searchable plant selector (all 154 plants; sets dilution + frequency), label dose (tsp/tbsp per gallon or ml per litre), strength cards (quarter/half/full), water volume (gallons/litres). Outputs: concentrate in ml and tsp/tbsp, strength used, feed frequency, next-feed date. Prose 1,590 words, 5 unique H2s, 4 FAQs.
+- `src/pages/tools/fertilization-days-calculator/index.astro` — Fertilization Days Calculator. Inputs: searchable plant selector, last-fertilized date, hemisphere (northern Mar–Sep / southern Sep–Mar). Outputs: days-until-next-feed countdown, next 5 feed dates with in/out-of-season marks. Prose 1,622 words, 5 unique H2s, 4 FAQs.
+- `src/pages/tools/fertility-rate-calculator/index.astro` — Fertility Rate Calculator (fertilizer application rate, not human fertility). Inputs: N-P-K, application rate (lb/1,000 sq ft or kg/100 sq m), area, plant/lawn selector. Outputs: actual N, P2O5, K2O per 1,000 sq ft, under/within/over verdict vs the 1 lb N standard for grasses, total product and total N for the area. Prose 1,668 words, 7 unique H2s, 4 FAQs.
+- `src/pages/tools/plant-pot-size-calculator/index.astro` — Plant Pot Size Calculator. Inputs: searchable plant selector, current pot diameter, optional plant height, pot shape (standard/tall/wide). Outputs: recommended next pot diameter (current + 2 in, or the plant's mature pot if larger), depth, soil volume in litres + gallons (cylinder maths), three-way repotting verdict, top-heavy warning. Prose 1,654 words, 6 unique H2s, 4 FAQs.
+
+### New article
+- `src/content/guides/how-to-calculate-your-most-fertile-days.md` — "How to Calculate Your Plants' Most Fertile Days (When to Fertilize)". Plant angle throughout (opening paragraph says plainly this is the plant version of the phrase; no human-fertility content). 3,106 words, unique H2s, widget: month picker + feeder-level buttons showing in-season/shoulder/off-season feeding windows (northern hemisphere). 5 FAQs, related guides, further-reading line in the usual style.
+
+### Site wiring
+- `src/pages/index.astro`: one card per new tool added to the homepage "Free tools" section (now 8 tools).
+- `src/layouts/BaseLayout.astro`: all 5 new tools added to the footer Tools nav.
+
+### Research grounding (no invented figures)
+- Standard lawn feeding: 1 lb nitrogen per 1,000 sq ft per single application (university extension guidance); annual N ranges per grass from the same sources. Liquid: general all-purpose fertilizer at half or quarter label strength indoors; 1 tsp/gal → half 1/2 tsp, quarter 1/4 tsp; 1 gal = 3.785 L, 1 tsp ≈ 4.93 ml. Repotting: 1–2 inches larger in diameter. Feeding: every 2–4 weeks in the growing season, taper/stop in winter.
+
+### QA (run 2026-11-28, coordinator-verified)
+- Build: `npm run build` PASS — 56 pages, 0 errors (clean rebuild after `rm -rf dist`; one earlier stale-dist ENOENT on the author page, unrelated to the new pages).
+- Sitemap: 55 URLs, all 6 new URLs present.
+- Descriptions: 145–160 chars each (yard 145, liquid 145, fertilization days 148, fertility rate 153, pot size 160, article 150).
+- Alt text: 95 imgs in dist, 0 missing/empty alt.
+- Banned phrases (furthermore/moreover/additionally/in conclusion): none in any new file; no "Conclusion"/"Sources" H2s.
+- One slug fix applied by the coordinator: the article's related link used `how-to-take-care-of-a-christmas-cactus-plant`, which does not exist — corrected to `how-do-you-care-for-a-christmas-cactus-plant` in frontmatter and Related list.
+
+### Still unfinished
+- Article hero image `public/images/how-to-calculate-your-most-fertile-days.webp` does NOT exist — generate it before or right after committing, or the guide page will show a broken hero image.
+- Nothing pushed to GitHub — commit is handled separately.
