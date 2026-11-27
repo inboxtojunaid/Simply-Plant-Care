@@ -1,0 +1,469 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { PLANTS } from "../../../data/plants";
+const plantsJson = JSON.stringify(PLANTS);
+---
+
+<BaseLayout
+  title="Plant Pot Size Calculator"
+  description="Find the right pot for your plant — pick it from 150+ plants or enter your pot size, and get the next pot diameter, depth and soil volume in litres and gallons."
+  canonicalPath="/tools/plant-pot-size-calculator/"
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li aria-current="page">Plant Pot Size Calculator</li>
+    </ol>
+  </nav>
+
+  <section class="calc-hero">
+    <p class="calc-eyebrow">Free tool · No sign-up · Instant result</p>
+    <h1>Plant Pot Size Calculator</h1>
+    <p class="calc-lede">
+      What size pot for my plant? Pick your plant from the list or type in
+      your current pot, and get the next pot diameter, the depth, and how
+      much soil you will need to fill it.
+    </p>
+    <p class="calc-note">
+      This is a repotting pot size calculator, not a rule book. It follows
+      the usual 1–2 inch step-up rule and the plant pot volume maths for a
+      cylinder, and it works from the numbers you enter — your plant and
+      your pot may want something slightly different.
+    </p>
+  </section>
+
+  <script type="application/json" id="plant-data" set:html={plantsJson} />
+
+  <div class="calc-layout">
+    <form class="calc-card" id="pot-size-form" aria-label="Plant pot size calculator">
+      <section class="calc-step" aria-labelledby="step-plant">
+        <p class="calc-step-label"><span class="calc-step-num">1</span> Which plant?</p>
+        <h2 id="step-plant">Pick your plant</h2>
+        <label for="plant-search">Search 150+ plants</label>
+        <input type="text" id="plant-search" name="plant-search" placeholder="Start typing — snake plant, basil, tomato…" autocomplete="off" />
+        <label for="plant-select">Plant</label>
+        <select id="plant-select" name="plant-select"></select>
+        <p class="form-note" id="plant-note">No plant picked yet — the calculator will just step up from your current pot size.</p>
+        <p class="form-note" id="plant-mature"></p>
+      </section>
+
+      <section class="calc-step" aria-labelledby="step-pot">
+        <p class="calc-step-label"><span class="calc-step-num">2</span> Your pot now</p>
+        <h2 id="step-pot">Current pot size</h2>
+        <label for="current-diameter">Current pot diameter (inches)</label>
+        <div class="money-input"><input type="number" id="current-diameter" name="current-diameter" value="6" min="2" max="36" step="0.5" /></div>
+        <p class="form-note">Measure across the top, inside rim to inside rim. Most nursery pots are sold by this number.</p>
+        <label for="plant-height">Plant height (inches, optional)</label>
+        <div class="money-input"><input type="number" id="plant-height" name="plant-height" min="1" max="240" step="1" placeholder="Leave blank if unsure" /></div>
+        <p class="form-note">Height helps the calculator warn you if the plant is getting top-heavy for its pot.</p>
+      </section>
+
+      <section class="calc-step" aria-labelledby="step-shape">
+        <p class="calc-step-label"><span class="calc-step-num">3</span> What shape?</p>
+        <h2 id="step-shape">New pot shape</h2>
+        <div class="size-grid" role="radiogroup" aria-label="Pot shape">
+          <label class="size-card selected">
+            <input type="radio" name="pot-shape" value="standard" checked />
+            <span class="size-name">Standard</span>
+            <span class="size-desc">About as deep as it is wide</span>
+            <span class="size-price">Depth × 0.9</span>
+          </label>
+          <label class="size-card">
+            <input type="radio" name="pot-shape" value="tall" />
+            <span class="size-name">Tall</span>
+            <span class="size-desc">Deep pot for tap roots and tall plants</span>
+            <span class="size-price">Depth × 1.2</span>
+          </label>
+          <label class="size-card">
+            <input type="radio" name="pot-shape" value="wide" />
+            <span class="size-name">Wide &amp; shallow</span>
+            <span class="size-desc">Low bowl for succulents and spreaders</span>
+            <span class="size-price">Depth × 0.6</span>
+          </label>
+        </div>
+        <p class="form-note">Shape changes the depth the calculator uses, and depth changes the soil volume.</p>
+        <p>
+          <button type="button" class="btn" id="calculate-btn">Calculate my pot size</button>
+        </p>
+      </section>
+    </form>
+
+    <aside class="calc-result" id="result" aria-live="polite">
+      <p class="calc-result-label">Your next pot</p>
+      <p class="calc-total" id="result-diameter">8 in</p>
+      <p class="calc-per-tree">about <span id="result-depth">7.2 in</span> deep</p>
+      <div class="breakdown-bar" aria-hidden="true">
+        <span class="breakdown-seg seg-trees" id="bar-current" style="width: 60%"></span><span class="breakdown-seg seg-labour" id="bar-extra" style="width: 40%"></span><span class="breakdown-seg seg-extras" id="bar-none" style="width: 0%"></span>
+      </div>
+      <ul class="breakdown-list">
+        <li><span class="breakdown-dot dot-trees"></span> Soil in your current pot <strong id="result-current-volume">—</strong></li>
+        <li><span class="breakdown-dot dot-labour"></span> Extra soil to buy <strong id="result-extra-volume">—</strong></li>
+        <li><span class="breakdown-dot dot-extras"></span> Total soil in the new pot <strong id="result-total-volume">—</strong></li>
+      </ul>
+      <p class="calc-result-note" id="result-verdict">
+        Size up by one pot — from 6 in to 8 in.
+      </p>
+      <p class="calc-result-links">
+        <a href="/tools/plant-care-checklist/">Aftercare checklist →</a>
+        <a href="/tools/tree-planting-cost-calculator/">Tree planting costs →</a>
+      </p>
+    </aside>
+  </div>
+
+  <h2>Your plant lives in its pot, not just on top of it</h2>
+  <p>
+    People choose a pot the way they choose a picture frame — by how it
+    looks on the shelf. The plant sees it differently. The pot is its whole
+    world: the soil in there holds its water, its food, and the air its
+    roots breathe. Get the size wrong and everything else you do — the
+    watering, the feeding, the sunny spot — has to fight uphill.
+  </p>
+  <p>
+    Too small, and the roots run out of room. They circle the inside of the
+    pot, pack tight, and stop taking up water properly. The plant dries out
+    a day after watering, growth stalls, and the whole thing starts leaning
+    because there is not enough weight at the bottom. Too big, and you get
+    the opposite problem, which is sneakier: a lot of soil with no roots in
+    it yet stays wet for days after watering, and wet, airless soil is
+    where roots rot. A pot size for plants calculator exists because the
+    right answer sits in a narrow band between those two mistakes.
+  </p>
+  <p>
+    That band is also why repotting feels so uncertain. Pots are sold in
+    inches that jump by two at a time — 4, 6, 8, 10 — and the plant never
+    tells you which jump it wants. The short version is that it almost
+    always wants the next one up, and this page shows you what that next
+    one holds.
+  </p>
+
+  <h2>The two-inch rule, and why jumping ahead backfires</h2>
+  <p>
+    The standard repotting rule is simple: go 1–2 inches (2.5–5 cm) larger
+    in diameter than the current pot. Smaller plants usually need only 1
+    inch more. That is it. One step, not three.
+  </p>
+  <p>
+    It feels cautious, and that is the point. Roots grow into new soil
+    gradually, from the edges of the old root ball outward. Give them a
+    thin ring of fresh soil and they colonise it in weeks, drinking it dry
+    between waterings the way they should. Drop the same plant into a pot
+    four inches wider and most of that new soil sits untouched, holding
+    water the roots never reach. The top dries, so you water again, and the
+    bottom stays soggy. A month later the leaves yellow and the stem feels
+    soft at the base, and the cause is invisible because it happened
+    underground.
+  </p>
+  <p>
+    There is one honest exception. If you pick your plant above and its
+    recommended mature pot is bigger than one step up — a monstera heading
+    for a 14-inch pot, say, while it still sits in a 6-inch one — going
+    straight to the mature size can make sense, because that is the pot it
+    will live in for years and you are not guessing. The calculator flags
+    that case and tells you why. For everything else, one step at a time
+    wins.
+  </p>
+  <p>
+    Depth matters as much as width. A tall, narrow pot holds a deep column
+    of soil that dries from the top down, which suits plants with tap roots
+    or a tall, top-heavy habit. A wide, shallow bowl dries more evenly and
+    suits <a href="/guides/how-do-you-take-care-of-succulents/">succulents</a>
+    and spreaders that root shallow. That is why the shape choice above
+    changes the depth — and the soil volume — rather than just being a
+    style preference.
+  </p>
+
+  <h2>Is it rootbound? A quick check before you reach for a bigger pot</h2>
+  <p>
+    A plant can look unhappy for a dozen reasons, and repotting fixes only
+    one of them. Before you buy a new pot, run through the signs that
+    usually mean the roots really have run out of room. You do not need all
+    of them — two or three together is a fair signal, and one on its own
+    might mean something else entirely.
+  </p>
+  <p>
+    Roots coming out of the drainage holes are the clearest sign. A single
+    pale tip poking through is not an emergency, but a mat of roots
+    underneath the pot is. Lift the plant out of its pot if you can — if
+    the roots are circling the root ball in tight rings, or the soil has
+    almost disappeared behind a wall of roots, it has outgrown its home.
+    Water running straight through the pot the moment you pour it in is
+    another clue: there is so little soil left that nothing holds the
+    water. So is a pot that dries out much faster than it used to, even
+    though your watering has not changed.
+  </p>
+  <p>
+    Slowed growth in the growing season counts too, though it is the
+    weakest sign on its own — light, food, and temperature all affect
+    growth as well. And a plant that keeps tipping over may just be
+    top-heavy for a light pot, which a heavier pot or a wider base can fix
+    without going much bigger. This is a checklist, not a diagnosis: if
+    the plant is drooping and the soil is wet, check the roots for rot
+    before you assume it needs more room, and our
+    <a href="/tools/plant-problem-solver/">plant problem solver</a> can
+    help you sort drooping from thirst from overwatering.
+  </p>
+
+  <h2>Measuring a pot without guessing</h2>
+  <p>
+    Pots are measured by diameter across the top, inside rim to inside
+    rim — not around the outside, and not across the base, which is
+    narrower on most tapered pots. Lay a ruler or tape across the opening
+    and read the inside width. If the rim flares outward, measure below
+    the flare, where the soil actually sits.
+  </p>
+  <p>
+    That inside number is what the calculator wants, and it is what
+    nurseries mean when they sell a "6-inch pot". Two pots can both be
+    sold as 6-inch and hold different amounts of soil, because one is
+    tall and one is squat — another reason the shape choice matters. When
+    you shop, take the old pot with you, or write its inside diameter on
+    your phone. Eyeballing it in the shop is how people come home with a
+    pot two sizes too big and a plant that spends the summer sulking in
+    wet soil.
+  </p>
+  <p>
+    Height is worth a quick measure too, if only to check the balance. A
+    plant three times taller than its pot is wide has a lot of leverage on
+    a small base, and a gust from an open window or a cat brushing past
+    can topple it. A wider, heavier pot — terracotta rather than thin
+    plastic — often solves that better than a taller one.
+  </p>
+
+  <h2>How much soil will the new pot actually need?</h2>
+  <p>
+    Soil is the part people forget to buy, and then they end up potting
+    with half a bag and a root ball sitting proud of the rim. The maths is
+    straightforward once you treat the pot as a cylinder: volume equals pi
+    times radius squared times height, with the radius being half the
+    diameter. A plant pot volume calculator just runs that sum and converts
+    it — 1 litre equals 61 cubic inches, and 1 US gallon equals 3.785
+    litres — so the result panel above shows litres and US gallons side by
+    side.
+  </p>
+  <p>
+    Two things make the real number smaller than the raw maths. First,
+    the root ball itself takes up space, so the fresh soil you need is the
+    new pot's volume minus the old pot's volume — which is why the result
+    shows "extra soil to buy" rather than only the total. Second, you
+    should leave about an inch of space below the rim so water does not
+    spill over the edge when you water. Buy a little more than the
+    calculator says if you are potting several plants at once, since a
+    bag always seems to run out one pot early.
+  </p>
+  <p>
+    Drainage holes are not optional, whatever the pot looks like. A pot
+    with no holes turns every watering into a guess, and the guess is
+    usually wrong. If you fall in love with a hole-less decorative pot,
+    use it as a cover pot: keep the plant in a plain nursery pot with
+    holes inside it, and tip the water out of the cover pot after
+    watering. The roots stay dry between waterings and the pretty pot
+    stays pretty.
+  </p>
+
+  <h2>Repot, or just refresh the soil?</h2>
+  <p>
+    Not every tired plant needs a bigger pot. Soil wears out: the organic
+    matter breaks down, it compacts, it holds less air, and salts from
+    fertiliser and tap water build up. A plant that is already at its
+    recommended mature size — the calculator will tell you when yours is —
+    usually wants fresh soil in the same pot, not a bigger one. Slide it
+    out, shake off the loose old mix, trim any dead roots, and refill
+    with fresh mix around the same root ball.
+  </p>
+  <p>
+    Timing helps. Repot in spring or early summer for most tropical
+    houseplants, when growth is starting and the plant can colonise the
+    new soil quickly. Urgent root problems should not wait for the
+    calendar — a plant sitting in a solid mat of circling roots, or one
+    whose roots are rotting in wet soil, is better moved now than left to
+    struggle until spring. Our guide on
+    <a href="/guides/how-do-you-take-care-of-plants/">how to take care of plants</a>
+    covers the seasonal rhythm in more detail, and if you grow herbs,
+    <a href="/guides/how-to-grow-basil-in-pots/">growing basil in pots</a>
+    shows how the same one-step rule works for a fast-growing plant that
+    outgrows its pot in a single season.
+  </p>
+  <p>
+    After repotting, water thoroughly, let it drain, and give the plant a
+    week or two before feeding — never fertilise a newly repotted plant,
+    since the fresh soil already holds nutrients and damaged roots are
+    easily burnt. Then put it back where it was happy and leave it alone.
+    Repotting is a disturbance, and plants recover from disturbance with
+    time and steady conditions, not with extra attention. If you are
+    planting outdoors rather than repotting indoors, the
+    <a href="/tools/tree-planting-cost-calculator/">tree planting cost calculator</a>
+    works the same way: example figures you can change, and a total that
+    follows your numbers. And once the plant is settled, the
+    <a href="/tools/plant-care-checklist/">plant care checklist</a> keeps
+    the watering and feeding routine on track week by week.
+  </p>
+
+  <h2>Frequently asked questions</h2>
+
+  <h3>What happens if the pot is too big?</h3>
+  <p>
+    The extra soil stays wet because there are not enough roots to drink
+    it dry. Wet, airless soil is where root rot starts: leaves yellow,
+    growth stalls, and the stem can go soft at the base. If you have
+    already potted into a pot that is much too big, the fix is to move the
+    plant back down a size, or to water much less often and make sure the
+    pot drains freely, until the roots catch up.
+  </p>
+
+  <h3>How do I know my plant is rootbound?</h3>
+  <p>
+    Look for roots coming out of the drainage holes, roots circling the
+    root ball when you slide the plant out, water running straight through
+    the pot, or the pot drying out much faster than it used to. Slowed
+    growth in the growing season and a plant that keeps tipping over are
+    weaker signs that support the others. One sign on its own may mean
+    something else, so check two or three before deciding.
+  </p>
+
+  <h3>When is the best time to repot?</h3>
+  <p>
+    Spring or early summer for most tropical houseplants, when growth is
+    starting and the plant can fill the new soil quickly. Urgent root
+    problems should not wait — a plant with circling roots or rot is
+    better moved now than left until spring. Avoid repotting in the middle
+    of winter, when most houseplants are resting and recover slowly.
+  </p>
+
+  <h3>Does my pot need drainage holes?</h3>
+  <p>
+    Yes. Without holes, water collects at the bottom, the soil stays
+    soggy, and roots rot. If your favourite pot has no holes, use it as a
+    cover pot with a plain nursery pot inside it, and always tip out the
+    water that collects in the cover pot after watering.
+  </p>
+
+  <script>
+    const PLANTS = JSON.parse(document.getElementById("plant-data").textContent);
+
+    const searchInput = document.getElementById("plant-search");
+    const plantSelect = document.getElementById("plant-select");
+    const plantNote = document.getElementById("plant-note");
+    const plantMature = document.getElementById("plant-mature");
+    const SHAPE_DEPTH = { standard: 0.9, tall: 1.2, wide: 0.6 };
+    const SHAPE_LABEL = { standard: "Standard", tall: "Tall", wide: "Wide & shallow" };
+
+    let selectedPlant = null;
+
+    function fillSelect(filter) {
+      const query = (filter || "").trim().toLowerCase();
+      const previous = plantSelect.value;
+      plantSelect.innerHTML = "";
+      const none = document.createElement("option");
+      none.value = "";
+      none.textContent = "No specific plant — just use my pot size";
+      plantSelect.appendChild(none);
+      PLANTS.forEach(function (plant) {
+        if (query && plant.name.toLowerCase().indexOf(query) === -1) return;
+        const option = document.createElement("option");
+        option.value = plant.slug;
+        option.textContent = plant.name;
+        plantSelect.appendChild(option);
+      });
+      if (previous) plantSelect.value = previous;
+    }
+
+    function formatVolume(litres) {
+      const gallons = litres / 3.785;
+      return litres.toFixed(1) + " L (" + gallons.toFixed(2) + " gal)";
+    }
+    function cylinderLitres(diameter, depth) {
+      const radius = diameter / 2;
+      const cubicInches = Math.PI * radius * radius * depth;
+      return cubicInches / 61;
+    }
+    function setBar(id, share) {
+      const el = document.getElementById(id);
+      if (el) el.style.width = (share > 0 ? Math.max(share, 4) : 0) + "%";
+    }
+
+    function calculate() {
+      let current = Number(document.getElementById("current-diameter").value);
+      if (!Number.isFinite(current) || current < 2) current = 2;
+      if (current > 36) current = 36;
+
+      const shapeRadio = document.querySelector('input[name="pot-shape"]:checked');
+      const shape = shapeRadio ? shapeRadio.value : "standard";
+      const depthFactor = SHAPE_DEPTH[shape] || 0.9;
+
+      const heightInput = document.getElementById("plant-height").value;
+      const height = heightInput === "" ? null : Number(heightInput);
+
+      const stepUp = current + 2;
+      const mature = selectedPlant && selectedPlant.potInches > 0 ? selectedPlant.potInches : null;
+
+      let recommended = stepUp;
+      let verdict = "Size up by one pot — from " + current + " in to " + stepUp + " in.";
+      if (mature !== null && mature > stepUp) {
+        recommended = mature;
+        verdict = "Your plant's recommended mature pot is " + mature + " in — larger than one step up, so go straight to " + mature + " in.";
+      } else if (mature !== null && mature <= current) {
+        recommended = current;
+        verdict = "Already at mature size — your plant's recommended mature pot is " + mature + " in, so refresh the soil instead of sizing up.";
+      }
+
+      const depth = recommended * depthFactor;
+      const currentVolume = cylinderLitres(current, current * depthFactor);
+      const totalVolume = cylinderLitres(recommended, depth);
+      const extraVolume = Math.max(totalVolume - currentVolume, 0);
+
+      document.getElementById("result-diameter").textContent = recommended + " in";
+      document.getElementById("result-depth").textContent = depth.toFixed(1) + " in deep (" + SHAPE_LABEL[shape] + ")";
+      document.getElementById("result-current-volume").textContent = formatVolume(currentVolume);
+      document.getElementById("result-extra-volume").textContent = formatVolume(extraVolume);
+      document.getElementById("result-total-volume").textContent = formatVolume(totalVolume);
+
+      if (totalVolume > 0) {
+        setBar("bar-current", (currentVolume / totalVolume) * 100);
+        setBar("bar-extra", (extraVolume / totalVolume) * 100);
+        setBar("bar-none", 0);
+      }
+
+      let verdictText = verdict;
+      if (height !== null && Number.isFinite(height) && height > 0 && height > recommended * 3) {
+        verdictText += " Your plant is tall for this pot — a heavier, wider pot will help stop it tipping over.";
+      }
+      document.getElementById("result-verdict").textContent = verdictText;
+    }
+
+    function markSelected(groupName) {
+      document.querySelectorAll('input[name="' + groupName + '"]').forEach(function (radio) {
+        const card = radio.closest(".size-card");
+        if (card) card.classList.toggle("selected", radio.checked);
+      });
+    }
+
+    function onPlantChange() {
+      const slug = plantSelect.value;
+      selectedPlant = slug ? PLANTS.find(function (p) { return p.slug === slug; }) || null : null;
+      if (!selectedPlant) {
+        plantNote.textContent = "No plant picked yet — the calculator will just step up from your current pot size.";
+        plantMature.textContent = "";
+      } else if (selectedPlant.potInches > 0) {
+        plantNote.textContent = selectedPlant.note;
+        plantMature.textContent = "Recommended mature pot: " + selectedPlant.potInches + " in.";
+      } else {
+        plantNote.textContent = selectedPlant.note + " This is a lawn grass, so it grows in the ground rather than a pot — there is no mature pot size to work from.";
+        plantMature.textContent = "";
+      }
+      calculate();
+    }
+
+    fillSelect("");
+    searchInput.addEventListener("input", function () { fillSelect(searchInput.value); });
+    plantSelect.addEventListener("change", onPlantChange);
+    document.querySelectorAll('input[name="pot-shape"]').forEach(function (radio) {
+      radio.addEventListener("change", function () { markSelected("pot-shape"); calculate(); });
+    });
+    document.getElementById("pot-size-form").addEventListener("input", calculate);
+    document.getElementById("pot-size-form").addEventListener("change", calculate);
+    document.getElementById("calculate-btn").addEventListener("click", calculate);
+    markSelected("pot-shape");
+    calculate();
+  </script>
+</BaseLayout>
