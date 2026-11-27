@@ -1,0 +1,283 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Tree Planting Cost Calculator"
+  description="Estimate tree planting costs per tree and in total — trees, planting labour and extras — using example prices you can change to match your nursery quote."
+  canonicalPath="/tools/tree-planting-cost-calculator/"
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li aria-current="page">Tree Planting Cost Calculator</li>
+    </ol>
+  </nav>
+
+  <h1>Tree Planting Cost Calculator</h1>
+  <p class="prose">
+    Work out roughly what planting trees will cost before you buy. This
+    calculator adds up the trees themselves, the planting labour, and common
+    extras such as staking, mulch and watering — then gives you a total range
+    rather than a single figure, because real prices vary a lot. It is an
+    estimate only, not a quote. If you are new to keeping plants alive after
+    planting, our <a href="/guides/beginner-plant-care/">beginner plant care guide</a>
+    covers watering and settling in, and the
+    <a href="/tools/plant-care-checklist/">plant care checklist</a> helps you
+    keep on top of aftercare week by week.
+  </p>
+
+  <div class="feature-box">
+    <p>
+      <strong>All prices below are example figures, not market data.</strong>
+      Every default price is a starting guess you can change to match a real
+      nursery or gardener quote — the calculator simply does the maths on the
+      numbers you enter.
+    </p>
+  </div>
+
+  <form class="widget" id="tree-cost-form" aria-label="Tree planting cost calculator">
+    <h2>Your planting plan</h2>
+
+    <label for="tree-count">Number of trees</label>
+    <input type="number" id="tree-count" name="tree-count" value="1" min="1" max="100" step="1" />
+
+    <label for="tree-size">Tree size</label>
+    <select id="tree-size" name="tree-size">
+      <option value="seedling">Seedling — example $15 per tree</option>
+      <option value="sapling">Sapling — example $45 per tree</option>
+      <option value="mature">Mature tree — example $180 per tree</option>
+      <option value="large">Large specimen — example $450 per tree</option>
+    </select>
+
+    <label for="price-per-tree">
+      Price per tree (USD) — example figure, change it to match your quote
+    </label>
+    <input type="number" id="price-per-tree" name="price-per-tree" value="15" min="0" step="1" />
+
+    <fieldset>
+      <legend>Planting labour</legend>
+      <div class="choice-list">
+        <label>
+          <input type="radio" name="labour" value="diy" checked />
+          Do it yourself — $0 per tree
+        </label>
+        <label>
+          <input type="radio" name="labour" value="gardener" />
+          Hire a gardener — example $40 per tree
+        </label>
+        <label>
+          <input type="radio" name="labour" value="tree-service" />
+          Hire a tree service — example $120 per tree
+        </label>
+      </div>
+    </fieldset>
+
+    <label for="labour-per-tree">
+      Labour cost per tree (USD) — example figure, change it to match your quote
+    </label>
+    <input type="number" id="labour-per-tree" name="labour-per-tree" value="0" min="0" step="1" />
+    <p class="form-note">
+      Picking a labour option above fills in its example cost — you can still
+      edit the amount yourself.
+    </p>
+
+    <fieldset>
+      <legend>Extras (cost per tree — all example figures you can change)</legend>
+      <div class="choice-list">
+        <label>
+          <input type="checkbox" id="extra-staking" checked />
+          Staking kit — $
+          <input type="number" id="cost-staking" value="25" min="0" step="1" aria-label="Staking kit cost per tree in USD" />
+          per tree
+        </label>
+        <label>
+          <input type="checkbox" id="extra-mulch" checked />
+          Mulch — $
+          <input type="number" id="cost-mulch" value="10" min="0" step="1" aria-label="Mulch cost per tree in USD" />
+          per tree
+        </label>
+        <label>
+          <input type="checkbox" id="extra-soil" />
+          Soil amendment — $
+          <input type="number" id="cost-soil" value="15" min="0" step="1" aria-label="Soil amendment cost per tree in USD" />
+          per tree
+        </label>
+        <label>
+          <input type="checkbox" id="extra-watering" />
+          First-year watering — $
+          <input type="number" id="cost-watering" value="20" min="0" step="1" aria-label="First-year watering cost per tree in USD" />
+          per tree
+        </label>
+      </div>
+    </fieldset>
+
+    <p>
+      <button type="button" class="btn" id="calculate-btn">Calculate estimate</button>
+    </p>
+  </form>
+
+  <div class="result-card" id="result" aria-live="polite" hidden>
+    <h2>Your estimate</h2>
+    <table>
+      <tbody>
+        <tr>
+          <th scope="row">Trees subtotal</th>
+          <td id="result-trees">$0</td>
+        </tr>
+        <tr>
+          <th scope="row">Labour subtotal</th>
+          <td id="result-labour">$0</td>
+        </tr>
+        <tr>
+          <th scope="row">Extras subtotal</th>
+          <td id="result-extras">$0</td>
+        </tr>
+        <tr>
+          <th scope="row">Estimated total range</th>
+          <td id="result-total">$0 – $0</td>
+        </tr>
+        <tr>
+          <th scope="row">Cost per tree (range)</th>
+          <td id="result-per-tree">$0 – $0</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      This is an estimate only. Real prices vary by nursery, region, season
+      and site conditions.
+    </p>
+  </div>
+
+  <h2>Frequently asked questions</h2>
+
+  <h3>Why does the calculator give a range instead of one total?</h3>
+  <p>
+    Tree prices are not fixed. The same size of tree can cost very different
+    amounts depending on the nursery, the species, the season and how easy
+    your site is to work on. The range is your mid-point total plus or minus
+    20%, so you can budget for the likely spread instead of a single number
+    that looks more precise than it really is.
+  </p>
+
+  <h3>What usually costs the most — the tree or the planting?</h3>
+  <p>
+    It depends on size. For seedlings and saplings the tree itself is usually
+    cheap and the extras can add up to more than the tree. For mature trees
+    and large specimens the tree itself is normally the biggest cost, and
+    hiring a tree service to plant it can come close behind. Change the
+    example prices to your own quotes and the breakdown above will show
+    which part dominates for your job.
+  </p>
+
+  <h3>Is it cheaper to plant trees yourself?</h3>
+  <p>
+    Usually yes, on labour — doing it yourself costs $0 in this calculator.
+    But large or mature trees are heavy, need the right hole size and
+    staking, and a badly planted tree may not survive, which costs more in
+    the long run. For seedlings and saplings, DIY is a reasonable way to save
+    money; for large specimens, paying a tree service is often worth it.
+  </p>
+
+  <h3>Does this estimate include aftercare?</h3>
+  <p>
+    Only the first-year watering extra, if you tick it. It does not include
+    ongoing watering beyond the first year, feeding, pruning, or replacing a
+    tree that does not survive. After planting, regular checks matter more
+    than anything — see our
+    <a href="/tools/plant-care-checklist/">plant care checklist</a> for a
+    simple weekly and monthly routine.
+  </p>
+
+  <script>
+    const SIZE_PRICES = {
+      seedling: 15,
+      sapling: 45,
+      mature: 180,
+      large: 450,
+    };
+    const LABOUR_PRICES = {
+      diy: 0,
+      gardener: 40,
+      "tree-service": 120,
+    };
+    const EXTRAS = [
+      { box: "extra-staking", cost: "cost-staking" },
+      { box: "extra-mulch", cost: "cost-mulch" },
+      { box: "extra-soil", cost: "cost-soil" },
+      { box: "extra-watering", cost: "cost-watering" },
+    ];
+
+    function getNumber(id) {
+      const el = document.getElementById(id);
+      const value = el ? Number(el.value) : 0;
+      return Number.isFinite(value) && value > 0 ? value : 0;
+    }
+
+    function formatMoney(amount) {
+      return "$" + Math.round(amount).toLocaleString("en-US");
+    }
+
+    function calculate() {
+      const countInput = document.getElementById("tree-count");
+      let count = countInput ? Math.round(Number(countInput.value)) : 1;
+      if (!Number.isFinite(count) || count < 1) count = 1;
+      if (count > 100) count = 100;
+
+      const pricePerTree = getNumber("price-per-tree");
+      const labourPerTree = getNumber("labour-per-tree");
+
+      let extrasPerTree = 0;
+      EXTRAS.forEach(function (extra) {
+        const box = document.getElementById(extra.box);
+        if (box && box.checked) {
+          extrasPerTree += getNumber(extra.cost);
+        }
+      });
+
+      const treesSubtotal = count * pricePerTree;
+      const labourSubtotal = count * labourPerTree;
+      const extrasSubtotal = count * extrasPerTree;
+      const midTotal = treesSubtotal + labourSubtotal + extrasSubtotal;
+      const lowTotal = midTotal * 0.8;
+      const highTotal = midTotal * 1.2;
+
+      document.getElementById("result-trees").textContent = formatMoney(treesSubtotal);
+      document.getElementById("result-labour").textContent = formatMoney(labourSubtotal);
+      document.getElementById("result-extras").textContent = formatMoney(extrasSubtotal);
+      document.getElementById("result-total").textContent =
+        formatMoney(lowTotal) + " – " + formatMoney(highTotal);
+      document.getElementById("result-per-tree").textContent =
+        formatMoney(lowTotal / count) + " – " + formatMoney(highTotal / count);
+      document.getElementById("result").hidden = false;
+    }
+
+    // Size choice fills in its example price per tree (still editable).
+    document.getElementById("tree-size").addEventListener("change", function (event) {
+      const size = event.target.value;
+      const priceInput = document.getElementById("price-per-tree");
+      if (priceInput && SIZE_PRICES[size] !== undefined) {
+        priceInput.value = String(SIZE_PRICES[size]);
+      }
+      calculate();
+    });
+
+    // Labour choice fills in its example labour cost per tree (still editable).
+    document.querySelectorAll('input[name="labour"]').forEach(function (radio) {
+      radio.addEventListener("change", function (event) {
+        const labourInput = document.getElementById("labour-per-tree");
+        const choice = event.target.value;
+        if (labourInput && LABOUR_PRICES[choice] !== undefined) {
+          labourInput.value = String(LABOUR_PRICES[choice]);
+        }
+        calculate();
+      });
+    });
+
+    // Live recalculation on any input change.
+    document.getElementById("tree-cost-form").addEventListener("input", calculate);
+    document.getElementById("tree-cost-form").addEventListener("change", calculate);
+    document.getElementById("calculate-btn").addEventListener("click", calculate);
+  </script>
+</BaseLayout>
