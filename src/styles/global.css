@@ -311,6 +311,22 @@ form textarea { min-height: 9rem; resize: vertical; }
 .task-list label { font-weight: 400; margin: 0; cursor: pointer; }
 .task-list li.done label { text-decoration: line-through; color: var(--ink-soft); }
 
+/* Cookie consent — small, bottom-right, never a full-screen overlay */
+.cookie-notice {
+  position: fixed; right: 1rem; bottom: 1rem; z-index: 60;
+  max-width: 21rem; background: var(--surface); color: var(--ink);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 0.9rem 1rem; font-size: 0.88rem; line-height: 1.45;
+}
+.cookie-notice p { margin: 0 0 0.7rem; }
+.cookie-buttons { display: flex; gap: 0.5rem; }
+.cookie-btn { padding: 0.45rem 0.95rem; font-size: 0.9rem; }
+.footer-cookie-btn {
+  background: none; border: 0; padding: 0; color: inherit; font: inherit;
+  text-decoration: underline; cursor: pointer;
+}
+.footer-cookie-btn:hover { color: #fff; }
+
 /* 404 */
 .error-page { text-align: center; padding: 3rem 0; }
 .error-page h1 { font-size: 3rem; }
@@ -319,6 +335,7 @@ form textarea { min-height: 9rem; resize: vertical; }
   h1 { font-size: 1.9rem; }
   .hero { grid-template-columns: 1fr; gap: 1.25rem; }
   .hero h1 { font-size: 2rem; }
+  .cookie-notice { left: 0.75rem; right: 0.75rem; bottom: 0.75rem; max-width: none; }
   .nav-toggle { display: block; }
   .main-nav { display: none; width: 100%; margin-left: 0; }
   .main-nav.open { display: block; }
