@@ -1,0 +1,480 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { PLANTS } from "../../../data/plants";
+const plantsJson = JSON.stringify(PLANTS);
+---
+
+<BaseLayout
+  title="Fertilization Days Calculator"
+  description="Plan your plant feeding days — pick a plant and your last feed date, and get your next five fertilizing dates plus a days-until-next-feed countdown."
+  canonicalPath="/tools/fertilization-days-calculator/"
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li aria-current="page">Fertilization Days Calculator</li>
+    </ol>
+  </nav>
+
+  <section class="calc-hero">
+    <p class="calc-eyebrow">Free tool · No sign-up · Instant result</p>
+    <h1>Fertilization Days Calculator</h1>
+    <p class="calc-lede">
+      Pick your plant and the date you last fed it, and the calculator works
+      out your next five feeding days — plus a countdown to the next one, and
+      whether each date falls inside the growing season.
+    </p>
+    <p class="calc-note">
+      Feeding dates below are general guidance based on typical feeder levels,
+      not a prescription. Light, temperature and your plant's own growth all
+      shift the real timing — treat the dates as a plan, not a deadline.
+    </p>
+  </section>
+
+  <div class="calc-layout">
+    <form class="calc-card" id="feed-days-form" aria-label="Fertilization days calculator">
+      <section class="calc-step" aria-labelledby="step-plant">
+        <p class="calc-step-label"><span class="calc-step-num">1</span> Which plant?</p>
+        <h2 id="step-plant">Your plant</h2>
+        <label for="plant-search">Search plants</label>
+        <input type="search" id="plant-search" placeholder="Type a plant name, e.g. monstera" aria-label="Search plants" autocomplete="off" />
+        <p class="form-note">Start typing to narrow the list, then pick your plant below.</p>
+        <label for="plant-select">Plant</label>
+        <select id="plant-select" aria-label="Choose your plant"></select>
+        <p class="form-note" id="plant-note"></p>
+      </section>
+
+      <section class="calc-step" aria-labelledby="step-last">
+        <p class="calc-step-label"><span class="calc-step-num">2</span> When did you last feed?</p>
+        <h2 id="step-last">Last fertilized date</h2>
+        <label for="last-feed">Last feed date</label>
+        <input type="date" id="last-feed" aria-label="Last fertilized date" />
+        <p class="form-note">Leave it blank to use today. If you fed two weeks ago, pick that date and the countdown will catch up.</p>
+      </section>
+
+      <section class="calc-step" aria-labelledby="step-hemisphere">
+        <p class="calc-step-label"><span class="calc-step-num">3</span> Where are you?</p>
+        <h2 id="step-hemisphere">Hemisphere</h2>
+        <div class="size-grid" role="radiogroup" aria-label="Hemisphere">
+          <label class="size-card selected">
+            <input type="radio" name="hemisphere" value="northern" checked />
+            <span class="size-name">Northern</span>
+            <span class="size-desc">Growing season runs March to September</span>
+            <span class="size-price">Mar – Sep</span>
+          </label>
+          <label class="size-card">
+            <input type="radio" name="hemisphere" value="southern" />
+            <span class="size-name">Southern</span>
+            <span class="size-desc">Growing season runs September to March</span>
+            <span class="size-price">Sep – Mar</span>
+          </label>
+        </div>
+        <p class="form-note">The seasons flip south of the equator, and so do your feeding dates.</p>
+        <p>
+          <button type="button" class="btn" id="calculate-btn">Plan my feeding days</button>
+        </p>
+      </section>
+    </form>
+
+    <aside class="calc-result" id="result" aria-live="polite">
+      <p class="calc-result-label">Next feed</p>
+      <p class="calc-total" id="result-countdown">—</p>
+      <p class="calc-per-tree"><span id="result-next-date">—</span> · <span id="result-frequency">—</span></p>
+      <ul class="breakdown-list" id="result-dates">
+        <li><span class="breakdown-dot dot-trees"></span> Feed 1 <strong>—</strong></li>
+        <li><span class="breakdown-dot dot-labour"></span> Feed 2 <strong>—</strong></li>
+        <li><span class="breakdown-dot dot-extras"></span> Feed 3 <strong>—</strong></li>
+        <li><span class="breakdown-dot dot-trees"></span> Feed 4 <strong>—</strong></li>
+        <li><span class="breakdown-dot dot-labour"></span> Feed 5 <strong>—</strong></li>
+      </ul>
+      <p class="calc-result-note" id="result-season-note">
+        Feeding season runs March–September in the northern hemisphere.
+        Feeds after that are skipped — the list still shows them so you can plan.
+      </p>
+      <p class="calc-result-links">
+        <a href="/tools/liquid-fertilizer-calculator/">Work out how much to mix →</a>
+        <a href="/tools/plant-care-checklist/">Add feeds to your checklist →</a>
+      </p>
+    </aside>
+  </div>
+
+  <h2>Plants don't eat by the calendar — they eat by the season</h2>
+  <p>
+    A plant fertilizing schedule calculator starts with a date, but the date
+    is not really the point. The point is the season behind it. Plants feed
+    when they grow, and they grow when light, warmth and water line up. In
+    the northern hemisphere that stretch runs roughly March to September:
+    days lengthen, rooms warm up, and a monstera that sat still all winter
+    suddenly pushes out a leaf a fortnight. In the southern hemisphere the
+    same stretch runs September to March, flipped with the sun. Feed a plant
+    on a neat two-week schedule through the dark months and you are feeding
+    a plant that isn't eating — the salts just sit in the soil until spring.
+  </p>
+  <p>
+    That is why a fertilizer calendar is better thought of as a window than a
+    timetable. Inside the window, a heavy feeder wants food every two weeks
+    and a light feeder wants it monthly or less. Outside the window, most
+    houseplants want nothing at all, or at most a very weak feed once in a
+    while if they are still visibly growing under strong indoor light. The
+    calculator above respects that: it shows your next five feeding days, and
+    marks each one in-season or out-of-season, so a date in November doesn't
+    trick you into feeding a plant that has gone quiet for winter.
+  </p>
+  <p>
+    The seasons matter outdoors too, but there the light does the work for
+    you. Indoors, a plant near a bright south-facing window may keep growing
+    well into October, while the same plant in a dark hallway stops in August.
+    Your room is its climate. So use the dates as a starting plan, then
+    adjust by what the plant is doing — which is where the next section comes
+    in.
+  </p>
+
+  <h2>The signs that say "feed me now"</h2>
+  <p>
+    Long before a date on a calendar, a plant tells you it is hungry. New
+    leaves come out smaller than the last ones, or paler, or slower. A plant
+    that used to grow a new leaf every couple of weeks goes a month without
+    one. Older leaves yellow from the bottom up and drop, one at a time, as
+    the plant pulls nutrients out of them to feed the new growth at the top.
+    Flowering plants stop flowering, or their buds drop before they open.
+    None of these signs on their own proves the plant needs feeding — pale
+    leaves can mean too little light, and yellowing can mean too much water —
+    but when a plant is growing actively, in good light, with steady watering,
+    and still looks washed out, a feed is the most likely missing piece.
+  </p>
+  <p>
+    Learning to read those signs matters more than hitting an exact date,
+    because dates slip. A cold snap by a draughty window slows growth for a
+    fortnight. A plant moved to a brighter spot suddenly grows twice as fast
+    and uses its food twice as quickly. A newly repotted plant doesn't need
+    feeding at all for a month, because fresh potting mix already contains
+    nutrients. A plant recovering from a pest attack or a bad move should be
+    left alone until it is growing again. A when to fertilize plants calculator
+    can give you the rhythm — every two, three, four or eight
+    weeks depending on the plant — but your eyes give you the timing. If the
+    plant is pushing out healthy growth and the date is near, feed it. If it
+    is sitting still and the date has arrived, wait a week and look again.
+  </p>
+  <p>
+    Feeder level is the shorthand that ties it together. Heavy feeders —
+    monstera, tomatoes, roses, lawn grasses, citrus — grow fast and eat
+    often, usually every two weeks in season. Moderate feeders — pothos,
+    peace lilies, most herbs and vegetables — are happy monthly. Light
+    feeders — snake plants, ZZ plants, succulents, rosemary, cacti — need
+    feeding every couple of months at most, and some barely need it at all.
+    Pick your plant in the calculator and it will show you which group it
+    falls into, along with the gap between feeds that suits it.
+  </p>
+
+  <h2>Building a fertilizer calendar that fits your life</h2>
+  <p>
+    The feeding schedule that actually works is the one you will keep. A
+    complicated plan that needs a spreadsheet and three reminders will be
+    abandoned by May. A simple one — first Saturday of the month for the
+    monthly plants, every other Saturday for the hungry ones — will still be
+    running in September. So start by sorting your plants into two or three
+    groups by frequency, not by species. Everything that eats every two weeks
+    goes on one rhythm, everything monthly on another, and the light feeders
+    get a date every couple of months or whenever you remember them.
+  </p>
+  <p>
+    Then anchor the dates to something you already do. Feed on watering day,
+    so the two habits travel together. Water with plain water first, then
+    feed — dry soil and fertilizer solution is how roots get burned, and a
+    quick plain-water pass means the feed arrives in already-moist soil.
+    Keep the bottle and the measuring spoon next to the watering can, not
+    buried in a cupboard, so the whole job takes minutes. And write the date
+    down. A pencil note on the pot, a line in a notebook, a phone reminder —
+    anything beats trying to remember whether you fed the monstera last week
+    or last month. Our
+    <a href="/tools/plant-care-checklist/">plant care checklist</a> gives you
+    a simple weekly and monthly routine to hang feeding dates on, and if you
+    want to know exactly how much to mix once the day arrives, the
+    <a href="/tools/liquid-fertilizer-calculator/">liquid fertilizer calculator</a>
+    works it out from your bottle's label in ml and teaspoons.
+  </p>
+  <p>
+    One more thing worth building into the calendar: a flush. Once every
+    couple of months, water a plant with plain water until it runs freely out
+    of the drainage holes. That washes out the salts that build up from
+    regular feeding, and it is often the fix when leaf tips start browning
+    for no obvious reason. Put it on the calendar the same way you put the
+    feeds on — it is part of feeding, not separate from it.
+  </p>
+
+  <h2>When you miss a feed — or feed twice by accident</h2>
+  <p>
+    Life gets in the way of feeding days. You go on holiday, you forget, the
+    weekend fills up, and suddenly the monstera is a fortnight overdue. The
+    good news is that a missed feed is almost never a problem. Plants do not
+    run on empty overnight; a feed a week or two late is simply a feed a week
+    or two late. Feed at the normal strength on the next date and carry on.
+    Don't try to catch up by doubling the dose or feeding twice in one week —
+    that is how a harmless delay turns into burned roots.
+  </p>
+  <p>
+    Feeding twice by accident is the one worth taking seriously. If you
+    realize you fed the same plant two days running, or you mixed the dose
+    twice as strong as you meant to, flush the pot with plain water straight
+    away: water until it runs out of the bottom, let it drain, and do it once
+    more. Then leave the plant alone on plain water for a few weeks before
+    feeding again, at a weaker strength than usual. Watch the leaf edges over
+    the next fortnight — brown, crisp margins are the sign that salts did
+    some damage, and while the browned parts won't heal, new growth will come
+    through clean once the soil is flushed. If you are not sure what you're
+    looking at, the
+    <a href="/tools/plant-problem-solver/">plant problem solver</a> can help
+    you work out whether it is a feeding problem or something else.
+  </p>
+  <p>
+    The same calm applies to the start of the season. If your feeding days calculator
+    says the next feed is due in March but the plant is still
+    sitting still in a cold room, wait. If it says the season ends in
+    September but your plant is still pushing out new leaves in a bright,
+    warm room in October, one more weak feed won't hurt. The calendar is a
+    guide, and the plant is the boss.
+  </p>
+
+  <h2>The winter pause, and why it matters</h2>
+  <p>
+    The most useful thing a fertilizer calendar can do is tell you when to
+    stop. In autumn, as days shorten and rooms cool, most houseplants slow
+    down or stop growing altogether. They are not being lazy — they are
+    responding to light, the same way they do outdoors. Feeding a plant that
+    has stopped growing is like putting dinner in front of someone who is
+    asleep. The food sits there, the salts build up, and by spring the soil
+    is worse than if you had done nothing.
+  </p>
+  <p>
+    So when the season ends, taper off rather than stopping overnight. Space
+    the last feeds further apart through early autumn, then stop. Give plain
+    water through winter, and flush the pots once so they go into the cold
+    months clean. The exception is plants that genuinely keep growing through
+    winter — a plant under strong grow lights, or in a warm bright room, may
+    never really pause, and a very weak feed once a month is fine for those.
+    But for most plants in most homes, winter is a rest, and the rest is part
+    of the care. If you are new to this and want the broader picture — light,
+    water, soil, and how feeding fits into all of it — our guide on
+    <a href="/guides/how-do-you-take-care-of-plants/">how to take care of plants</a>
+    covers the basics, and the succulent guide on
+    <a href="/guides/how-do-you-take-care-of-succulents/">how to take care of succulents</a>
+    explains why slow growers need so little food. Outdoors, the rhythm is
+    different again: the
+    <a href="/tools/tree-planting-cost-calculator/">tree planting cost calculator</a>
+    can help you plan the other end of the job, what it costs to get trees
+    into the ground in the first place.
+  </p>
+
+  <h2>Frequently asked questions</h2>
+
+  <h3>How often should I fertilize houseplants?</h3>
+  <p>
+    Most houseplants need feeding every 2 to 4 weeks in the growing season,
+    roughly March to September in the northern hemisphere. Heavy feeders such
+    as monstera and tomatoes do best every two weeks; moderate feeders such
+    as pothos and peace lilies are happy monthly; light feeders such as snake
+    plants, ZZ plants and succulents need feeding every couple of months at
+    most. Stop or taper off in autumn and winter, when most plants slow down
+    or stop growing.
+  </p>
+
+  <h3>What if I miss a feeding day?</h3>
+  <p>
+    Nothing bad happens. A feed a week or two late is simply late — feed at
+    the normal strength on the next date and carry on. Don't double the dose
+    or feed twice in one week to catch up; that risks burning the roots. If
+    you miss a whole month in the growing season, just restart the normal
+    schedule. The calculator above will re-plan your next five dates from
+    whatever date you last fed.
+  </p>
+
+  <h3>Should I fertilize in winter?</h3>
+  <p>
+    Usually not. Most houseplants slow down or stop growing in winter as
+    light levels fall, and feeding a plant that isn't growing only builds up
+    salts in the soil. Taper off in autumn and stop for winter, giving plain
+    water only. The exception is a plant that is still actively growing under
+    strong light or grow lights — a very weak feed once a month is fine for
+    those. In the southern hemisphere, winter falls in the middle of the
+    year, so the pause runs roughly June to August instead.
+  </p>
+
+  <h3>Can I feed different plants on the same day?</h3>
+  <p>
+    Yes — and it is the simplest way to keep a routine. Group your plants by
+    how often they eat rather than by species: the every-two-weeks plants on
+    one day, the monthly plants on another, and the light feeders whenever
+    their turn comes. Just remember that the dose differs: a monstera at half
+    strength and a calathea at quarter strength should not get the same mix,
+    so mix a separate batch for the sensitive plants, or feed them with a
+    weaker dilution from the same watering can by adding more water.
+  </p>
+
+  <script type="application/json" id="plant-data" set:html={plantsJson} />
+  <script>
+    const PLANTS = JSON.parse(document.getElementById("plant-data").textContent);
+    const DAY_MS = 24 * 60 * 60 * 1000;
+
+    const searchInput = document.getElementById("plant-search");
+    const select = document.getElementById("plant-select");
+    const noteEl = document.getElementById("plant-note");
+    const lastFeedInput = document.getElementById("last-feed");
+    const seasonNoteEl = document.getElementById("result-season-note");
+
+    function categoryLabel(cat) {
+      return cat.charAt(0).toUpperCase() + cat.slice(1);
+    }
+
+    function buildOptions(filter) {
+      const q = (filter || "").trim().toLowerCase();
+      const current = select.value;
+      select.innerHTML = "";
+      const groups = {};
+      PLANTS.forEach(function (p) {
+        if (q && p.name.toLowerCase().indexOf(q) === -1) return;
+        if (!groups[p.category]) groups[p.category] = [];
+        groups[p.category].push(p);
+      });
+      Object.keys(groups).forEach(function (cat) {
+        const group = document.createElement("optgroup");
+        group.label = categoryLabel(cat) + "s";
+        groups[cat].forEach(function (p) {
+          const opt = document.createElement("option");
+          opt.value = p.slug;
+          opt.textContent = p.name + " — " + categoryLabel(p.category) + ", " + p.feeder + " feeder";
+          group.appendChild(opt);
+        });
+        select.appendChild(group);
+      });
+      if (select.options.length === 0) {
+        const opt = document.createElement("option");
+        opt.value = "";
+        opt.textContent = "No plants match that search";
+        select.appendChild(opt);
+      }
+      if (current) {
+        const match = Array.prototype.find.call(select.options, function (o) { return o.value === current; });
+        if (match) select.value = current;
+      }
+    }
+
+    function findPlant(slug) {
+      return PLANTS.find(function (p) { return p.slug === slug; });
+    }
+
+    function formatDate(date) {
+      return date.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", year: "numeric" });
+    }
+
+    function parseDateInput(value) {
+      if (!value) return null;
+      const parts = value.split("-");
+      if (parts.length !== 3) return null;
+      const d = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
+      return isNaN(d.getTime()) ? null : d;
+    }
+
+    function toInputValue(date) {
+      const y = date.getFullYear();
+      const m = String(date.getMonth() + 1).padStart(2, "0");
+      const d = String(date.getDate()).padStart(2, "0");
+      return y + "-" + m + "-" + d;
+    }
+
+    function startOfDay(date) {
+      return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    }
+
+    // Northern season: March (2) to September (8). Southern: September (8) to March (2).
+    function inSeason(date, hemisphere) {
+      const m = date.getMonth();
+      if (hemisphere === "northern") return m >= 2 && m <= 8;
+      return m >= 8 || m <= 2;
+    }
+
+    function markSelected(groupName) {
+      document.querySelectorAll('input[name="' + groupName + '"]').forEach(function (radio) {
+        const card = radio.closest(".size-card");
+        if (card) card.classList.toggle("selected", radio.checked);
+      });
+    }
+
+    function onPlantChange() {
+      const plant = findPlant(select.value);
+      if (!plant) return;
+      noteEl.textContent = plant.note + " " + plant.feeder.charAt(0).toUpperCase() + plant.feeder.slice(1) + " feeder — feed every " + plant.feedWeeks + " weeks in the growing season.";
+      calculate();
+    }
+
+    function calculate() {
+      const plant = findPlant(select.value);
+      if (!plant) return;
+      const hemisphereRadio = document.querySelector('input[name="hemisphere"]:checked');
+      const hemisphere = hemisphereRadio ? hemisphereRadio.value : "northern";
+
+      const lastFeed = parseDateInput(lastFeedInput.value) || startOfDay(new Date());
+      const today = startOfDay(new Date());
+      const gapDays = plant.feedWeeks * 7;
+
+      const nextFeed = new Date(lastFeed.getTime() + gapDays * DAY_MS);
+      const diffDays = Math.round((nextFeed.getTime() - today.getTime()) / DAY_MS);
+      let countdown;
+      if (diffDays === 0) countdown = "Today";
+      else if (diffDays === 1) countdown = "Tomorrow";
+      else if (diffDays > 1) countdown = "in " + diffDays + " days";
+      else if (diffDays === -1) countdown = "Overdue by 1 day";
+      else countdown = "Overdue by " + Math.abs(diffDays) + " days";
+
+      document.getElementById("result-countdown").textContent = countdown;
+      document.getElementById("result-next-date").textContent = formatDate(nextFeed);
+      document.getElementById("result-frequency").textContent = "feed every " + plant.feedWeeks + " weeks";
+
+      const list = document.getElementById("result-dates");
+      list.innerHTML = "";
+      const dots = ["dot-trees", "dot-labour", "dot-extras", "dot-trees", "dot-labour"];
+      for (let i = 1; i <= 5; i++) {
+        const date = new Date(lastFeed.getTime() + gapDays * i * DAY_MS);
+        const li = document.createElement("li");
+        const dot = document.createElement("span");
+        dot.className = "breakdown-dot " + dots[i - 1];
+        li.appendChild(dot);
+        li.appendChild(document.createTextNode("Feed " + i + " "));
+        const strong = document.createElement("strong");
+        strong.textContent = formatDate(date) + (inSeason(date, hemisphere) ? " · in season" : " · out of season");
+        li.appendChild(strong);
+        list.appendChild(li);
+      }
+
+      seasonNoteEl.textContent = hemisphere === "northern"
+        ? "Feeding season runs March–September in the northern hemisphere. Feeds after that are skipped — the list still shows them so you can plan."
+        : "Feeding season runs September–March in the southern hemisphere. Feeds after that are skipped — the list still shows them so you can plan.";
+    }
+
+    // Default last feed: two weeks ago.
+    const defaultLast = new Date();
+    defaultLast.setDate(defaultLast.getDate() - 14);
+    lastFeedInput.value = toInputValue(defaultLast);
+
+    buildOptions("");
+    select.value = "pothos";
+    onPlantChange();
+
+    searchInput.addEventListener("input", function () {
+      buildOptions(searchInput.value);
+      onPlantChange();
+    });
+    select.addEventListener("change", onPlantChange);
+    document.querySelectorAll('input[name="hemisphere"]').forEach(function (radio) {
+      radio.addEventListener("change", function () {
+        markSelected("hemisphere");
+        calculate();
+      });
+    });
+    document.getElementById("feed-days-form").addEventListener("input", calculate);
+    document.getElementById("feed-days-form").addEventListener("change", calculate);
+    document.getElementById("calculate-btn").addEventListener("click", calculate);
+    markSelected("hemisphere");
+    calculate();
+  </script>
+</BaseLayout>
