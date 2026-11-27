@@ -40,10 +40,8 @@ const plantsJson = JSON.stringify(PLANTS);
       <section class="calc-step" aria-labelledby="step-plant">
         <p class="calc-step-label"><span class="calc-step-num">1</span> Which plant?</p>
         <h2 id="step-plant">Pick your plant</h2>
-        <label for="plant-search">Search 150+ plants</label>
-        <input type="text" id="plant-search" name="plant-search" placeholder="Start typing — snake plant, basil, tomato…" autocomplete="off" />
         <label for="plant-select">Plant</label>
-        <select id="plant-select" name="plant-select"></select>
+        <select id="plant-select" name="plant-select" data-combobox data-placeholder="Choose a plant" data-search="Search plants…"></select>
         <p class="form-note" id="plant-note">No plant picked yet — the calculator will just step up from your current pot size.</p>
         <p class="form-note" id="plant-mature"></p>
       </section>
@@ -109,6 +107,8 @@ const plantsJson = JSON.stringify(PLANTS);
         <a href="/tools/tree-planting-cost-calculator/">Tree planting costs →</a>
       </p>
     </aside>
+
+    <p class="tool-disclaimer">General guidance — mature sizes vary by variety and growing conditions, so treat it as a starting point.</p>
   </div>
 
   <h2>Your plant lives in its pot, not just on top of it</h2>
@@ -338,10 +338,10 @@ const plantsJson = JSON.stringify(PLANTS);
     water that collects in the cover pot after watering.
   </p>
 
+  <script is:inline src="/js/combobox.js"></script>
   <script>
     const PLANTS = JSON.parse(document.getElementById("plant-data").textContent);
 
-    const searchInput = document.getElementById("plant-search");
     const plantSelect = document.getElementById("plant-select");
     const plantNote = document.getElementById("plant-note");
     const plantMature = document.getElementById("plant-mature");
@@ -455,7 +455,7 @@ const plantsJson = JSON.stringify(PLANTS);
     }
 
     fillSelect("");
-    searchInput.addEventListener("input", function () { fillSelect(searchInput.value); });
+    if (window.SPCCombobox) window.SPCCombobox.refreshAll();
     plantSelect.addEventListener("change", onPlantChange);
     document.querySelectorAll('input[name="pot-shape"]').forEach(function (radio) {
       radio.addEventListener("change", function () { markSelected("pot-shape"); calculate(); });
