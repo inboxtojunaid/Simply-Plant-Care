@@ -37,11 +37,8 @@ const plantsJson = JSON.stringify(PLANTS);
       <section class="calc-step" aria-labelledby="step-plant">
         <p class="calc-step-label"><span class="calc-step-num">1</span> Which plant?</p>
         <h2 id="step-plant">Your plant</h2>
-        <label for="plant-search">Search plants</label>
-        <input type="search" id="plant-search" placeholder="Type a plant name, e.g. monstera" aria-label="Search plants" autocomplete="off" />
-        <p class="form-note">Start typing to narrow the list, then pick your plant below.</p>
         <label for="plant-select">Plant</label>
-        <select id="plant-select" aria-label="Choose your plant"></select>
+        <select id="plant-select" aria-label="Choose your plant" data-combobox data-placeholder="Choose a plant" data-search="Search plants…"></select>
         <p class="form-note" id="plant-note"></p>
       </section>
 
@@ -49,7 +46,7 @@ const plantsJson = JSON.stringify(PLANTS);
         <p class="calc-step-label"><span class="calc-step-num">2</span> When did you last feed?</p>
         <h2 id="step-last">Last fertilized date</h2>
         <label for="last-feed">Last feed date</label>
-        <input type="date" id="last-feed" aria-label="Last fertilized date" />
+        <input type="date" id="last-feed" aria-label="Last fertilized date" class="field-input" />
         <p class="form-note">Leave it blank to use today. If you fed two weeks ago, pick that date and the countdown will catch up.</p>
       </section>
 
@@ -97,6 +94,8 @@ const plantsJson = JSON.stringify(PLANTS);
         <a href="/tools/plant-care-checklist/">Add feeds to your checklist →</a>
       </p>
     </aside>
+
+    <p class="tool-disclaimer">A guide, not a schedule set in stone — adjust for your climate, season and how your plant is actually growing.</p>
   </div>
 
   <h2>Plants don't eat by the calendar — they eat by the season</h2>
@@ -312,11 +311,11 @@ const plantsJson = JSON.stringify(PLANTS);
   </p>
 
   <script type="application/json" id="plant-data" set:html={plantsJson} />
+  <script is:inline src="/js/combobox.js"></script>
   <script>
     const PLANTS = JSON.parse(document.getElementById("plant-data").textContent);
     const DAY_MS = 24 * 60 * 60 * 1000;
 
-    const searchInput = document.getElementById("plant-search");
     const select = document.getElementById("plant-select");
     const noteEl = document.getElementById("plant-note");
     const lastFeedInput = document.getElementById("last-feed");
@@ -459,11 +458,8 @@ const plantsJson = JSON.stringify(PLANTS);
     buildOptions("");
     select.value = "pothos";
     onPlantChange();
+    if (window.SPCCombobox) window.SPCCombobox.refreshAll();
 
-    searchInput.addEventListener("input", function () {
-      buildOptions(searchInput.value);
-      onPlantChange();
-    });
     select.addEventListener("change", onPlantChange);
     document.querySelectorAll('input[name="hemisphere"]').forEach(function (radio) {
       radio.addEventListener("change", function () {
