@@ -53,13 +53,13 @@ const plantsJson = JSON.stringify(PLANTS);
         <h2 id="step-rate">Application rate</h2>
         <label for="app-rate" id="app-rate-label">Rate (lb of product per 1,000 sq ft)</label>
         <div class="money-input"><input type="number" id="app-rate" name="app-rate" value="10" min="0" step="0.5" /></div>
-        <div class="size-grid" role="radiogroup" aria-label="Rate unit">
-          <label class="size-card selected">
+        <div class="segmented" role="radiogroup" aria-label="Rate unit">
+          <label class="seg-option selected">
             <input type="radio" name="rate-unit" value="lb" checked />
             <span class="size-name">lb per 1,000 sq ft</span>
             <span class="size-desc">Pounds of product</span>
           </label>
-          <label class="size-card">
+          <label class="seg-option">
             <input type="radio" name="rate-unit" value="kg" />
             <span class="size-name">kg per 100 sq m</span>
             <span class="size-desc">Kilograms of product</span>
@@ -75,7 +75,7 @@ const plantsJson = JSON.stringify(PLANTS);
         <p class="calc-step-label"><span class="calc-step-num">3</span> What are you feeding?</p>
         <h2 id="step-plant">Plant or lawn type</h2>
         <label for="plant-type">Plant or lawn type</label>
-        <select id="plant-type" name="plant-type">
+        <select id="plant-type" name="plant-type" data-combobox data-placeholder="Choose a plant or lawn type" data-search="Search plants…">
           {PLANTS.map((p) => (
             <option
               value={p.slug}
@@ -120,6 +120,8 @@ const plantsJson = JSON.stringify(PLANTS);
         <a href="/tools/plant-care-checklist/">Plant care checklist →</a>
       </p>
     </aside>
+
+    <p class="tool-disclaimer">Estimates from the N-P-K on the label. A soil test is the only way to know what your soil actually needs, and over-application can harm plants and lawns.</p>
   </div>
 
   <script type="application/json" id="plant-data" set:html={plantsJson} />
@@ -351,6 +353,7 @@ const plantsJson = JSON.stringify(PLANTS);
     and always follow the feed bottle's own dilution instructions.
   </p>
 
+  <script is:inline src="/js/combobox.js"></script>
   <script>
     const PLANTS = JSON.parse(document.getElementById("plant-data").textContent);
     const KG_PER_100SQM_PER_LB = 0.4882; // 1 lb per 1,000 sq ft ≈ 0.488 kg per 100 sq m
@@ -441,7 +444,7 @@ const plantsJson = JSON.stringify(PLANTS);
 
     function markSelected(groupName) {
       document.querySelectorAll('input[name="' + groupName + '"]').forEach(function (radio) {
-        const card = radio.closest(".size-card");
+        const card = radio.closest(".size-card, .seg-option");
         if (card) card.classList.toggle("selected", radio.checked);
       });
     }
