@@ -435,3 +435,105 @@ form textarea { min-height: 9rem; resize: vertical; }
   .calc-card { padding: 1.25rem; }
   .calc-total { font-size: 2rem; }
 }
+
+/* ---- Shared searchable dropdown (combobox) — see public/js/combobox.js ----
+   One pattern for every select on the fertilizer / pot-size tools. The
+   original <select> stays in the DOM (visually hidden, still the source of
+   truth); the button + panel below are built around it by combobox.js. */
+.combobox { position: relative; width: 100%; }
+.combobox-hidden-select {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: 0;
+  border: 0; opacity: 0; pointer-events: none; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+.combobox-btn {
+  display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+  width: 100%; padding: 0.7rem 0.8rem; font-size: 1.05rem; font-weight: 600;
+  font-family: var(--sans); color: var(--ink); background: #fff;
+  border: 1px solid var(--border); border-radius: 10px; cursor: pointer; text-align: left;
+}
+.combobox-btn:hover { border-color: var(--sage); }
+.combobox-value { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; flex: 1; }
+.combobox-chevron { color: var(--primary); font-size: 0.85rem; flex-shrink: 0; transition: transform 0.15s ease; }
+.combobox.open .combobox-chevron { transform: rotate(180deg); }
+.combobox-panel {
+  position: absolute; top: calc(100% + 4px); left: 0; right: 0; z-index: 30;
+  background: #fff; border: 1px solid var(--border); border-radius: 10px;
+  box-shadow: var(--shadow); padding: 0.5rem;
+}
+.combobox-panel[hidden] { display: none; }
+.combobox-search {
+  width: 100%; padding: 0.6rem 0.8rem; margin-bottom: 0.5rem; font-size: 1rem;
+  font-family: var(--sans); color: var(--ink); background: #fff;
+  border: 1px solid var(--border); border-radius: 10px;
+}
+.combobox-list { list-style: none; margin: 0; padding: 0; max-height: 16rem; overflow-y: auto; }
+.combobox-option { padding: 0.6rem 0.8rem; border-radius: 8px; cursor: pointer; font-size: 1rem; line-height: 1.4; }
+.combobox-option:hover, .combobox-option.is-active { background: var(--sage-light); }
+.combobox-option[aria-selected="true"] {
+  background: #eef4ef; color: var(--primary); font-weight: 700;
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+.combobox-group {
+  padding: 0.6rem 0.8rem 0.25rem; font-size: 0.8rem; font-weight: 800;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--primary);
+}
+.combobox-empty { padding: 0.6rem 0.8rem; color: var(--ink-soft); font-size: 0.95rem; }
+
+/* ---- Consistent field inputs (tools) ----
+   Every text / number / date input on the tools shares this treatment:
+   1px var(--border), 10px radius, white background, same padding / font.
+   .money-input wrappers (money + plain numbers alike) already provide the
+   same look via their wrapper, so they keep their wrapper; .field-input is
+   the standalone equivalent for inputs without a wrapper (date, dose and
+   water amounts). Focus is one shared primary-green ring everywhere. */
+.field-input {
+  width: 100%; max-width: 14rem; padding: 0.7rem 0.8rem; font-size: 1.05rem;
+  font-weight: 700; font-family: var(--sans); color: var(--ink); background: #fff;
+  border: 1px solid var(--border); border-radius: 10px;
+}
+.field-input::placeholder { font-weight: 400; color: var(--ink-soft); }
+.field-input:focus, .combobox-btn:focus-visible, .combobox-search:focus {
+  outline: none; border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(30, 77, 58, 0.18);
+}
+.money-input:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(30, 77, 58, 0.18);
+}
+.money-input input:focus-visible { outline: none; }
+
+/* ---- Segmented pill toggle (unit switches) ----
+   For the two-option unit switches (yard area unit, fertility-rate unit):
+   the same radio inputs as before, only the wrapping classes change from
+   .size-grid / .size-card to .segmented / .seg-option. The description span
+   is hidden; the checked pill fills primary green. markSelected() in the
+   page scripts toggles .selected on .seg-option the same way it did on
+   .size-card. */
+.segmented {
+  display: inline-flex; flex-wrap: wrap; gap: 0.25rem; padding: 0.25rem;
+  background: #fff; border: 1px solid var(--border); border-radius: 999px;
+  margin-bottom: 1rem; max-width: 100%;
+}
+.segmented .seg-option {
+  display: inline-flex; align-items: center; margin: 0 !important;
+  padding: 0.55rem 1.1rem; border-radius: 999px; cursor: pointer;
+  font-weight: 600; color: var(--ink-soft); background: transparent;
+}
+.segmented .seg-option .size-name { font-size: 1rem; font-weight: 700; color: inherit; }
+.segmented .seg-option .size-desc { display: none; }
+.segmented .seg-option input[type="radio"] { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.segmented .seg-option.selected, .segmented .seg-option:has(input:checked) {
+  background: var(--primary); color: #fff;
+}
+.segmented .seg-option.selected .size-name, .segmented .seg-option:has(input:checked) .size-name { color: #fff; }
+.segmented .seg-option:has(input:focus-visible) {
+  outline: none; box-shadow: 0 0 0 3px rgba(30, 77, 58, 0.18);
+}
+
+/* ---- Tool disclaimer (small print under the result panel) ---- */
+.calc-layout > .tool-disclaimer { grid-column: 2; margin: 0; }
+.tool-disclaimer { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.5; }
+@media (max-width: 900px) {
+  .calc-layout > .tool-disclaimer { grid-column: 1; }
+}
