@@ -37,11 +37,8 @@ const plantsJson = JSON.stringify(PLANTS);
       <section class="calc-step" aria-labelledby="step-plant">
         <p class="calc-step-label"><span class="calc-step-num">1</span> Which plant?</p>
         <h2 id="step-plant">Your plant</h2>
-        <label for="plant-search">Search plants</label>
-        <input type="search" id="plant-search" placeholder="Type a plant name, e.g. monstera" aria-label="Search plants" autocomplete="off" />
-        <p class="form-note">Start typing to narrow the list, then pick your plant below.</p>
         <label for="plant-select">Plant</label>
-        <select id="plant-select" aria-label="Choose your plant"></select>
+        <select id="plant-select" aria-label="Choose your plant" data-combobox data-placeholder="Choose a plant" data-search="Search plants…"></select>
         <p class="form-note" id="plant-note"></p>
       </section>
 
@@ -49,12 +46,10 @@ const plantsJson = JSON.stringify(PLANTS);
         <p class="calc-step-label"><span class="calc-step-num">2</span> What's on the label?</p>
         <h2 id="step-dose">Label dose</h2>
         <label for="dose-amount">Dose per unit of water</label>
-        <div class="stepper">
-          <input type="number" id="dose-amount" name="dose-amount" value="1" min="0.1" max="100" step="0.1" aria-label="Label dose amount" />
-        </div>
+        <input type="number" id="dose-amount" name="dose-amount" value="1" min="0.1" max="100" step="0.1" aria-label="Label dose amount" class="field-input" />
         <p class="form-note">Copy the number straight off your bottle.</p>
         <label for="dose-unit">Label unit</label>
-        <select id="dose-unit" aria-label="Label dose unit">
+        <select id="dose-unit" aria-label="Label dose unit" data-combobox data-placeholder="Choose a unit" data-search="Search…">
           <option value="tsp-gal" selected>teaspoons per gallon</option>
           <option value="tbsp-gal">tablespoons per gallon</option>
           <option value="ml-litre">ml per litre</option>
@@ -92,12 +87,10 @@ const plantsJson = JSON.stringify(PLANTS);
         <p class="calc-step-label"><span class="calc-step-num">4</span> How much water?</p>
         <h2 id="step-water">Water volume</h2>
         <label for="water-amount">Water</label>
-        <div class="stepper">
-          <input type="number" id="water-amount" name="water-amount" value="1" min="0.1" max="100" step="0.1" aria-label="Water volume" />
-        </div>
+        <input type="number" id="water-amount" name="water-amount" value="1" min="0.1" max="100" step="0.1" aria-label="Water volume" class="field-input" />
         <p class="form-note">The amount of water you're mixing the feed into.</p>
         <label for="water-unit">Water unit</label>
-        <select id="water-unit" aria-label="Water volume unit">
+        <select id="water-unit" aria-label="Water volume unit" data-combobox data-placeholder="Choose a unit" data-search="Search…">
           <option value="gallons" selected>gallons</option>
           <option value="litres">litres</option>
         </select>
@@ -128,6 +121,8 @@ const plantsJson = JSON.stringify(PLANTS);
         <a href="/tools/plant-problem-solver/">Something wrong after feeding? →</a>
       </p>
     </aside>
+
+    <p class="tool-disclaimer">Always follow your product’s label first — these are example dilutions. Too strong a mix can burn roots, so when in doubt, mix weaker.</p>
   </div>
 
   <h2>The label wasn't written for your living room</h2>
@@ -348,6 +343,7 @@ const plantsJson = JSON.stringify(PLANTS);
   </p>
 
   <script type="application/json" id="plant-data" set:html={plantsJson} />
+  <script is:inline src="/js/combobox.js"></script>
   <script>
     const PLANTS = JSON.parse(document.getElementById("plant-data").textContent);
     const TSP_ML = 4.93;
@@ -356,7 +352,6 @@ const plantsJson = JSON.stringify(PLANTS);
     const STRENGTH_FACTOR = { quarter: 0.25, half: 0.5, full: 1 };
     const STRENGTH_LABEL = { quarter: "Quarter strength", half: "Half strength", full: "Full strength" };
 
-    const searchInput = document.getElementById("plant-search");
     const select = document.getElementById("plant-select");
     const noteEl = document.getElementById("plant-note");
 
@@ -482,11 +477,8 @@ const plantsJson = JSON.stringify(PLANTS);
     buildOptions("");
     select.value = "pothos";
     onPlantChange();
+    if (window.SPCCombobox) window.SPCCombobox.refreshAll();
 
-    searchInput.addEventListener("input", function () {
-      buildOptions(searchInput.value);
-      onPlantChange();
-    });
     select.addEventListener("change", onPlantChange);
     document.querySelectorAll('input[name="strength"]').forEach(function (radio) {
       radio.addEventListener("change", function () {
