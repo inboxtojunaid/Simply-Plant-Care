@@ -15,140 +15,157 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
     </ol>
   </nav>
 
-  <h1>Tree Planting Cost Calculator</h1>
+  <section class="calc-hero">
+    <p class="calc-eyebrow">Free tool · No sign-up · Instant result</p>
+    <h1>Tree Planting Cost Calculator</h1>
+    <p class="calc-lede">
+      Work out roughly what planting trees will cost before you buy — trees,
+      labour and extras, added up live as you change the numbers.
+    </p>
+    <p class="calc-note">
+      All prices below are example figures, not market data. Every default is
+      a starting guess you can change to match a real nursery or gardener
+      quote — the calculator simply does the maths on the numbers you enter.
+    </p>
+  </section>
+
+  <div class="calc-layout">
+    <form class="calc-card" id="tree-cost-form" aria-label="Tree planting cost calculator">
+      <section class="calc-step" aria-labelledby="step-count">
+        <p class="calc-step-label"><span class="calc-step-num">1</span> How many trees?</p>
+        <h2 id="step-count">Number of trees</h2>
+        <div class="stepper">
+          <button type="button" class="stepper-btn" id="count-minus" aria-label="One fewer tree">−</button>
+          <input type="number" id="tree-count" name="tree-count" value="5" min="1" max="100" step="1" aria-label="Number of trees" />
+          <button type="button" class="stepper-btn" id="count-plus" aria-label="One more tree">+</button>
+        </div>
+        <input type="range" id="tree-count-range" min="1" max="100" value="5" step="1" aria-label="Number of trees slider" />
+        <p class="form-note">1 to 100 trees. Drag the slider or tap + / −.</p>
+      </section>
+
+      <section class="calc-step" aria-labelledby="step-size">
+        <p class="calc-step-label"><span class="calc-step-num">2</span> What size?</p>
+        <h2 id="step-size">Tree size</h2>
+        <div class="size-grid" role="radiogroup" aria-label="Tree size">
+          <label class="size-card">
+            <input type="radio" name="tree-size" value="seedling" />
+            <span class="size-name">Seedling</span>
+            <span class="size-desc">Young, small, easy to plant by hand</span>
+            <span class="size-price">$15 <span>/ tree</span></span>
+          </label>
+          <label class="size-card selected">
+            <input type="radio" name="tree-size" value="sapling" checked />
+            <span class="size-name">Sapling</span>
+            <span class="size-desc">A few feet tall, needs a good hole</span>
+            <span class="size-price">$45 <span>/ tree</span></span>
+          </label>
+          <label class="size-card">
+            <input type="radio" name="tree-size" value="mature" />
+            <span class="size-name">Mature tree</span>
+            <span class="size-desc">Established tree, heavy to handle</span>
+            <span class="size-price">$180 <span>/ tree</span></span>
+          </label>
+          <label class="size-card">
+            <input type="radio" name="tree-size" value="large" />
+            <span class="size-name">Large specimen</span>
+            <span class="size-desc">Big, instant-impact tree</span>
+            <span class="size-price">$450 <span>/ tree</span></span>
+          </label>
+        </div>
+        <label for="price-per-tree">Price per tree (USD)</label>
+        <div class="money-input"><span>$</span><input type="number" id="price-per-tree" name="price-per-tree" value="45" min="0" step="1" /></div>
+        <p class="form-note">Picking a size fills in its example price — you can still edit it.</p>
+      </section>
+
+      <section class="calc-step" aria-labelledby="step-labour">
+        <p class="calc-step-label"><span class="calc-step-num">3</span> Who plants them?</p>
+        <h2 id="step-labour">Planting labour</h2>
+        <div class="size-grid labour-grid" role="radiogroup" aria-label="Planting labour">
+          <label class="size-card selected">
+            <input type="radio" name="labour" value="diy" checked />
+            <span class="size-name">Do it yourself</span>
+            <span class="size-desc">Your time, your tools</span>
+            <span class="size-price">$0 <span>/ tree</span></span>
+          </label>
+          <label class="size-card">
+            <input type="radio" name="labour" value="gardener" />
+            <span class="size-name">Hire a gardener</span>
+            <span class="size-desc">A local gardener plants them</span>
+            <span class="size-price">$40 <span>/ tree</span></span>
+          </label>
+          <label class="size-card">
+            <input type="radio" name="labour" value="tree-service" />
+            <span class="size-name">Tree service</span>
+            <span class="size-desc">Pros with equipment, for big trees</span>
+            <span class="size-price">$120 <span>/ tree</span></span>
+          </label>
+        </div>
+        <label for="labour-per-tree">Labour cost per tree (USD)</label>
+        <div class="money-input"><span>$</span><input type="number" id="labour-per-tree" name="labour-per-tree" value="0" min="0" step="1" /></div>
+        <p class="form-note">Picking a labour option fills in its example cost — you can still edit it.</p>
+      </section>
+
+      <section class="calc-step" aria-labelledby="step-extras">
+        <p class="calc-step-label"><span class="calc-step-num">4</span> Add the extras</p>
+        <h2 id="step-extras">Extras <span class="calc-step-sub">— cost per tree</span></h2>
+        <div class="extra-list">
+          <label class="extra-row">
+            <input type="checkbox" id="extra-staking" checked />
+            <span class="extra-text"><span class="extra-name">Staking kit</span><span class="extra-desc">Stakes + ties to hold the tree upright</span></span>
+            <span class="money-input money-input-sm"><span>$</span><input type="number" id="cost-staking" value="25" min="0" step="1" aria-label="Staking kit cost per tree in USD" /></span>
+          </label>
+          <label class="extra-row">
+            <input type="checkbox" id="extra-mulch" checked />
+            <span class="extra-text"><span class="extra-name">Mulch</span><span class="extra-desc">Keeps soil moist, weeds down</span></span>
+            <span class="money-input money-input-sm"><span>$</span><input type="number" id="cost-mulch" value="10" min="0" step="1" aria-label="Mulch cost per tree in USD" /></span>
+          </label>
+          <label class="extra-row">
+            <input type="checkbox" id="extra-soil" />
+            <span class="extra-text"><span class="extra-name">Soil amendment</span><span class="extra-desc">Compost or soil improver in the hole</span></span>
+            <span class="money-input money-input-sm"><span>$</span><input type="number" id="cost-soil" value="15" min="0" step="1" aria-label="Soil amendment cost per tree in USD" /></span>
+          </label>
+          <label class="extra-row">
+            <input type="checkbox" id="extra-watering" />
+            <span class="extra-text"><span class="extra-name">First-year watering</span><span class="extra-desc">Watering through the first dry season</span></span>
+            <span class="money-input money-input-sm"><span>$</span><input type="number" id="cost-watering" value="20" min="0" step="1" aria-label="First-year watering cost per tree in USD" /></span>
+          </label>
+        </div>
+        <p>
+          <button type="button" class="btn" id="calculate-btn">Calculate my estimate</button>
+        </p>
+      </section>
+    </form>
+
+    <aside class="calc-result" id="result" aria-live="polite">
+      <p class="calc-result-label">Your estimate</p>
+      <p class="calc-total" id="result-total">$0 – $0</p>
+      <p class="calc-per-tree"><span id="result-per-tree">$0 – $0</span> per tree</p>
+      <div class="breakdown-bar" aria-hidden="true">
+        <span class="breakdown-seg seg-trees" id="bar-trees" style="width: 34%"></span><span class="breakdown-seg seg-labour" id="bar-labour" style="width: 33%"></span><span class="breakdown-seg seg-extras" id="bar-extras" style="width: 33%"></span>
+      </div>
+      <ul class="breakdown-list">
+        <li><span class="breakdown-dot dot-trees"></span> Trees <strong id="result-trees">$0</strong></li>
+        <li><span class="breakdown-dot dot-labour"></span> Labour <strong id="result-labour">$0</strong></li>
+        <li><span class="breakdown-dot dot-extras"></span> Extras <strong id="result-extras">$0</strong></li>
+      </ul>
+      <p class="calc-result-note">
+        An estimate only — a range, not a quote. Real prices vary by nursery,
+        region, season and site conditions.
+      </p>
+      <p class="calc-result-links">
+        <a href="/tools/plant-care-checklist/">Aftercare checklist →</a>
+        <a href="/guides/beginner-plant-care/">Beginner plant care →</a>
+      </p>
+    </aside>
+  </div>
+
   <p class="prose">
-    Work out roughly what planting trees will cost before you buy. This
-    calculator adds up the trees themselves, the planting labour, and common
-    extras such as staking, mulch and watering — then gives you a total range
-    rather than a single figure, because real prices vary a lot. It is an
-    estimate only, not a quote. If you are new to keeping plants alive after
-    planting, our <a href="/guides/beginner-plant-care/">beginner plant care guide</a>
+    If you are new to keeping plants alive after planting, our
+    <a href="/guides/beginner-plant-care/">beginner plant care guide</a>
     covers watering and settling in, and the
     <a href="/tools/plant-care-checklist/">plant care checklist</a> helps you
     keep on top of aftercare week by week.
   </p>
-
-  <div class="feature-box">
-    <p>
-      <strong>All prices below are example figures, not market data.</strong>
-      Every default price is a starting guess you can change to match a real
-      nursery or gardener quote — the calculator simply does the maths on the
-      numbers you enter.
-    </p>
-  </div>
-
-  <form class="widget" id="tree-cost-form" aria-label="Tree planting cost calculator">
-    <h2>Your planting plan</h2>
-
-    <label for="tree-count">Number of trees</label>
-    <input type="number" id="tree-count" name="tree-count" value="1" min="1" max="100" step="1" />
-
-    <label for="tree-size">Tree size</label>
-    <select id="tree-size" name="tree-size">
-      <option value="seedling">Seedling — example $15 per tree</option>
-      <option value="sapling">Sapling — example $45 per tree</option>
-      <option value="mature">Mature tree — example $180 per tree</option>
-      <option value="large">Large specimen — example $450 per tree</option>
-    </select>
-
-    <label for="price-per-tree">
-      Price per tree (USD) — example figure, change it to match your quote
-    </label>
-    <input type="number" id="price-per-tree" name="price-per-tree" value="15" min="0" step="1" />
-
-    <fieldset>
-      <legend>Planting labour</legend>
-      <div class="choice-list">
-        <label>
-          <input type="radio" name="labour" value="diy" checked />
-          Do it yourself — $0 per tree
-        </label>
-        <label>
-          <input type="radio" name="labour" value="gardener" />
-          Hire a gardener — example $40 per tree
-        </label>
-        <label>
-          <input type="radio" name="labour" value="tree-service" />
-          Hire a tree service — example $120 per tree
-        </label>
-      </div>
-    </fieldset>
-
-    <label for="labour-per-tree">
-      Labour cost per tree (USD) — example figure, change it to match your quote
-    </label>
-    <input type="number" id="labour-per-tree" name="labour-per-tree" value="0" min="0" step="1" />
-    <p class="form-note">
-      Picking a labour option above fills in its example cost — you can still
-      edit the amount yourself.
-    </p>
-
-    <fieldset>
-      <legend>Extras (cost per tree — all example figures you can change)</legend>
-      <div class="choice-list">
-        <label>
-          <input type="checkbox" id="extra-staking" checked />
-          Staking kit — $
-          <input type="number" id="cost-staking" value="25" min="0" step="1" aria-label="Staking kit cost per tree in USD" />
-          per tree
-        </label>
-        <label>
-          <input type="checkbox" id="extra-mulch" checked />
-          Mulch — $
-          <input type="number" id="cost-mulch" value="10" min="0" step="1" aria-label="Mulch cost per tree in USD" />
-          per tree
-        </label>
-        <label>
-          <input type="checkbox" id="extra-soil" />
-          Soil amendment — $
-          <input type="number" id="cost-soil" value="15" min="0" step="1" aria-label="Soil amendment cost per tree in USD" />
-          per tree
-        </label>
-        <label>
-          <input type="checkbox" id="extra-watering" />
-          First-year watering — $
-          <input type="number" id="cost-watering" value="20" min="0" step="1" aria-label="First-year watering cost per tree in USD" />
-          per tree
-        </label>
-      </div>
-    </fieldset>
-
-    <p>
-      <button type="button" class="btn" id="calculate-btn">Calculate estimate</button>
-    </p>
-  </form>
-
-  <div class="result-card" id="result" aria-live="polite" hidden>
-    <h2>Your estimate</h2>
-    <table>
-      <tbody>
-        <tr>
-          <th scope="row">Trees subtotal</th>
-          <td id="result-trees">$0</td>
-        </tr>
-        <tr>
-          <th scope="row">Labour subtotal</th>
-          <td id="result-labour">$0</td>
-        </tr>
-        <tr>
-          <th scope="row">Extras subtotal</th>
-          <td id="result-extras">$0</td>
-        </tr>
-        <tr>
-          <th scope="row">Estimated total range</th>
-          <td id="result-total">$0 – $0</td>
-        </tr>
-        <tr>
-          <th scope="row">Cost per tree (range)</th>
-          <td id="result-per-tree">$0 – $0</td>
-        </tr>
-      </tbody>
-    </table>
-    <p>
-      This is an estimate only. Real prices vary by nursery, region, season
-      and site conditions.
-    </p>
-  </div>
 
   <h2>Frequently asked questions</h2>
 
@@ -191,17 +208,8 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
   </p>
 
   <script>
-    const SIZE_PRICES = {
-      seedling: 15,
-      sapling: 45,
-      mature: 180,
-      large: 450,
-    };
-    const LABOUR_PRICES = {
-      diy: 0,
-      gardener: 40,
-      "tree-service": 120,
-    };
+    const SIZE_PRICES = { seedling: 15, sapling: 45, mature: 180, large: 450 };
+    const LABOUR_PRICES = { diy: 0, gardener: 40, "tree-service": 120 };
     const EXTRAS = [
       { box: "extra-staking", cost: "cost-staking" },
       { box: "extra-mulch", cost: "cost-mulch" },
@@ -214,9 +222,12 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
       const value = el ? Number(el.value) : 0;
       return Number.isFinite(value) && value > 0 ? value : 0;
     }
-
     function formatMoney(amount) {
       return "$" + Math.round(amount).toLocaleString("en-US");
+    }
+    function setBar(id, share) {
+      const el = document.getElementById(id);
+      if (el) el.style.width = (share > 0 ? Math.max(share, 4) : 0) + "%";
     }
 
     function calculate() {
@@ -225,15 +236,15 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
       if (!Number.isFinite(count) || count < 1) count = 1;
       if (count > 100) count = 100;
 
+      const sizeRadio = document.querySelector('input[name="tree-size"]:checked');
+      const size = sizeRadio ? sizeRadio.value : "sapling";
       const pricePerTree = getNumber("price-per-tree");
       const labourPerTree = getNumber("labour-per-tree");
 
       let extrasPerTree = 0;
       EXTRAS.forEach(function (extra) {
         const box = document.getElementById(extra.box);
-        if (box && box.checked) {
-          extrasPerTree += getNumber(extra.cost);
-        }
+        if (box && box.checked) extrasPerTree += getNumber(extra.cost);
       });
 
       const treesSubtotal = count * pricePerTree;
@@ -250,34 +261,68 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
         formatMoney(lowTotal) + " – " + formatMoney(highTotal);
       document.getElementById("result-per-tree").textContent =
         formatMoney(lowTotal / count) + " – " + formatMoney(highTotal / count);
-      document.getElementById("result").hidden = false;
+      if (midTotal > 0) {
+        setBar("bar-trees", (treesSubtotal / midTotal) * 100);
+        setBar("bar-labour", (labourSubtotal / midTotal) * 100);
+        setBar("bar-extras", (extrasSubtotal / midTotal) * 100);
+      } else {
+        setBar("bar-trees", 34); setBar("bar-labour", 33); setBar("bar-extras", 33);
+      }
+      return size;
     }
 
-    // Size choice fills in its example price per tree (still editable).
-    document.getElementById("tree-size").addEventListener("change", function (event) {
-      const size = event.target.value;
-      const priceInput = document.getElementById("price-per-tree");
-      if (priceInput && SIZE_PRICES[size] !== undefined) {
-        priceInput.value = String(SIZE_PRICES[size]);
-      }
-      calculate();
-    });
+    function markSelected(groupName) {
+      document.querySelectorAll('input[name="' + groupName + '"]').forEach(function (radio) {
+        const card = radio.closest(".size-card");
+        if (card) card.classList.toggle("selected", radio.checked);
+      });
+    }
 
-    // Labour choice fills in its example labour cost per tree (still editable).
-    document.querySelectorAll('input[name="labour"]').forEach(function (radio) {
+    // Size cards fill in the example price per tree (still editable).
+    document.querySelectorAll('input[name="tree-size"]').forEach(function (radio) {
       radio.addEventListener("change", function (event) {
-        const labourInput = document.getElementById("labour-per-tree");
-        const choice = event.target.value;
-        if (labourInput && LABOUR_PRICES[choice] !== undefined) {
-          labourInput.value = String(LABOUR_PRICES[choice]);
+        const priceInput = document.getElementById("price-per-tree");
+        if (priceInput && SIZE_PRICES[event.target.value] !== undefined) {
+          priceInput.value = String(SIZE_PRICES[event.target.value]);
         }
+        markSelected("tree-size");
         calculate();
       });
     });
+
+    // Labour cards fill in the example labour cost per tree (still editable).
+    document.querySelectorAll('input[name="labour"]').forEach(function (radio) {
+      radio.addEventListener("change", function (event) {
+        const labourInput = document.getElementById("labour-per-tree");
+        if (labourInput && LABOUR_PRICES[event.target.value] !== undefined) {
+          labourInput.value = String(LABOUR_PRICES[event.target.value]);
+        }
+        markSelected("labour");
+        calculate();
+      });
+    });
+
+    // Tree count: stepper buttons + slider stay in sync with the number input.
+    const countInput = document.getElementById("tree-count");
+    const countRange = document.getElementById("tree-count-range");
+    function setCount(value) {
+      let n = Math.round(Number(value));
+      if (!Number.isFinite(n)) n = 1;
+      n = Math.max(1, Math.min(100, n));
+      countInput.value = String(n);
+      countRange.value = String(n);
+      calculate();
+    }
+    document.getElementById("count-minus").addEventListener("click", function () { setCount(Number(countInput.value) - 1); });
+    document.getElementById("count-plus").addEventListener("click", function () { setCount(Number(countInput.value) + 1); });
+    countRange.addEventListener("input", function () { setCount(countRange.value); });
 
     // Live recalculation on any input change.
     document.getElementById("tree-cost-form").addEventListener("input", calculate);
     document.getElementById("tree-cost-form").addEventListener("change", calculate);
     document.getElementById("calculate-btn").addEventListener("click", calculate);
+    markSelected("tree-size");
+    markSelected("labour");
+    calculate();
   </script>
 </BaseLayout>
