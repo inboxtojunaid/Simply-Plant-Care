@@ -1,0 +1,474 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { PLANTS } from "../../../data/plants";
+
+const plantsJson = JSON.stringify(PLANTS);
+---
+
+<BaseLayout
+  title="Fertility Rate Calculator"
+  description="Check your fertilizer application rate — the actual N, P and K you put down per 1,000 sq ft — against what your lawn or plants need before you spread it."
+  canonicalPath="/tools/fertility-rate-calculator/"
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li aria-current="page">Fertility Rate Calculator</li>
+    </ol>
+  </nav>
+
+  <section class="calc-hero">
+    <p class="calc-eyebrow">Free tool · No sign-up · Instant result</p>
+    <h1>Fertility Rate Calculator</h1>
+    <p class="calc-lede">
+      A fertilizer rate calculator that shows what your spread rate really
+      puts down — the actual nitrogen, phosphate and potash per 1,000 sq ft —
+      so you can check it against what your lawn or plants need before you
+      spread a single handful.
+    </p>
+    <p class="calc-note">
+      This is about fertilizer application rates for lawns and plants. The
+      numbers below are example figures you can change; the maths works on
+      whatever you type in.
+    </p>
+  </section>
+
+  <div class="calc-layout">
+    <form class="calc-card" id="fert-rate-form" aria-label="Fertility rate calculator">
+      <section class="calc-step" aria-labelledby="step-npk">
+        <p class="calc-step-label"><span class="calc-step-num">1</span> What is on the bag?</p>
+        <h2 id="step-npk">Fertilizer analysis (N-P-K)</h2>
+        <label for="npk-n">Nitrogen (N) %</label>
+        <div class="money-input"><input type="number" id="npk-n" name="npk-n" value="10" min="0" max="100" step="1" /></div>
+        <label for="npk-p">Phosphate (P₂O₅) %</label>
+        <div class="money-input"><input type="number" id="npk-p" name="npk-p" value="10" min="0" max="100" step="1" /></div>
+        <label for="npk-k">Potash (K₂O) %</label>
+        <div class="money-input"><input type="number" id="npk-k" name="npk-k" value="10" min="0" max="100" step="1" /></div>
+        <p class="form-note">The three numbers on the front of the bag, in order. 10-10-10 means 10% of each by weight.</p>
+      </section>
+
+      <section class="calc-step" aria-labelledby="step-rate">
+        <p class="calc-step-label"><span class="calc-step-num">2</span> How much are you putting down?</p>
+        <h2 id="step-rate">Application rate</h2>
+        <label for="app-rate" id="app-rate-label">Rate (lb of product per 1,000 sq ft)</label>
+        <div class="money-input"><input type="number" id="app-rate" name="app-rate" value="10" min="0" step="0.5" /></div>
+        <div class="size-grid" role="radiogroup" aria-label="Rate unit">
+          <label class="size-card selected">
+            <input type="radio" name="rate-unit" value="lb" checked />
+            <span class="size-name">lb per 1,000 sq ft</span>
+            <span class="size-desc">Pounds of product</span>
+          </label>
+          <label class="size-card">
+            <input type="radio" name="rate-unit" value="kg" />
+            <span class="size-name">kg per 100 sq m</span>
+            <span class="size-desc">Kilograms of product</span>
+          </label>
+        </div>
+        <p class="form-note">1 lb of product per 1,000 sq ft is about 0.49 kg per 100 sq m. Switch units and the rate converts for you.</p>
+        <label for="area">Area to cover (sq ft)</label>
+        <div class="money-input"><input type="number" id="area" name="area" value="5000" min="0" step="1" /></div>
+        <p class="form-note">Your total lawn or bed area. The calculator scales the rate up to the whole area below.</p>
+      </section>
+
+      <section class="calc-step" aria-labelledby="step-plant">
+        <p class="calc-step-label"><span class="calc-step-num">3</span> What are you feeding?</p>
+        <h2 id="step-plant">Plant or lawn type</h2>
+        <label for="plant-type">Plant or lawn type</label>
+        <select id="plant-type" name="plant-type">
+          {PLANTS.map((p) => (
+            <option
+              value={p.slug}
+              data-category={p.category}
+              data-feeder={p.feeder}
+              data-weeks={p.feedWeeks}
+              data-dilution={p.dilution}
+              data-low={p.nPer1000 ? p.nPer1000[0] : ""}
+              data-high={p.nPer1000 ? p.nPer1000[1] : ""}
+            >
+              {p.name} ({p.category})
+            </option>
+          ))}
+        </select>
+        <p class="form-note" id="plant-note"></p>
+        <p>
+          <button type="button" class="btn" id="calculate-btn">Check my rate</button>
+        </p>
+      </section>
+    </form>
+
+    <aside class="calc-result" id="result" aria-live="polite">
+      <p class="calc-result-label">What this rate applies</p>
+      <p class="calc-total" id="result-n">1.00 lb N</p>
+      <p class="calc-per-tree"><span id="result-n-sub">per 1,000 sq ft, per application</span></p>
+      <div class="breakdown-bar" aria-hidden="true">
+        <span class="breakdown-seg seg-trees" id="bar-n" style="width: 50%"></span><span class="breakdown-seg seg-labour" id="bar-n-rest" style="width: 50%"></span>
+      </div>
+      <ul class="breakdown-list">
+        <li><span class="breakdown-dot dot-trees"></span> Nitrogen (N) <strong id="result-n2">1.00 lb / 1,000 sq ft</strong></li>
+        <li><span class="breakdown-dot dot-labour"></span> Phosphate (P₂O₅) <strong id="result-p">1.00 lb / 1,000 sq ft</strong></li>
+        <li><span class="breakdown-dot dot-extras"></span> Potash (K₂O) <strong id="result-k">1.00 lb / 1,000 sq ft</strong></li>
+        <li><span class="breakdown-dot dot-trees"></span> Product for the whole area <strong id="result-product">50 lb</strong></li>
+        <li><span class="breakdown-dot dot-labour"></span> Total nitrogen, whole area <strong id="result-total-n">5.00 lb N</strong></li>
+      </ul>
+      <p class="calc-result-note" id="result-verdict">
+        Verdict: within the standard range — 1 lb N per 1,000 sq ft per application.
+      </p>
+      <p class="calc-result-note" id="result-context"></p>
+      <p class="calc-result-links">
+        <a href="/tools/yard-fertilizer-calculator/">Work out how many bags →</a>
+        <a href="/tools/plant-care-checklist/">Plant care checklist →</a>
+      </p>
+    </aside>
+  </div>
+
+  <script type="application/json" id="plant-data" set:html={plantsJson} />
+
+  <h2>One bag, one rate, two very different lawns</h2>
+  <p>
+    Take a bag of 10-10-10 and two neighbours. The first spreads it at 10 lb
+    of product per 1,000 sq ft. The second spreads the same bag at 5 lb per
+    1,000 sq ft, because the bag is nearly empty and they want it to go
+    further. Same bag, same lawn size, completely different feeds. The first
+    neighbour puts down 1 lb of nitrogen per 1,000 sq ft — right on the
+    standard single application. The second puts down half a pound, a light
+    feed that will green things up a little and fade fast. Nothing about the
+    bag changed. Only the rate changed, and the rate is what decides the
+    result. That is the whole point of a fertilizer rate calculator: the bag
+    tells you what is in the product, but only the rate tells you what your
+    lawn actually receives.
+  </p>
+  <p>
+    This is also why "how much fertilizer for my lawn" is the wrong question
+    on its own. A bag count without a rate is just a shopping list. The
+    question that matters is how much nitrogen, phosphate and potash lands
+    on each 1,000 sq ft, and whether that matches what is growing there.
+    Type your bag's three numbers and your rate into the tool above and it
+    will do that check for you, then scale it up to your whole area so you
+    can see the total product and total nitrogen involved — not just the
+    per-1,000-sq-ft figure.
+  </p>
+
+  <h2>What the three numbers actually feed</h2>
+  <p>
+    The NPK numbers are percentages by weight, always in the same order:
+    nitrogen, phosphate, potash. Nitrogen drives leafy green growth, which
+    is why lawn fertilizers lean heavily on it — a lawn is almost all leaf,
+    and every mowing carries nitrogen away in the clippings. Phosphorus
+    supports roots, flowering and fruiting, and young plants establishing
+    themselves. Potassium helps with toughness: drought tolerance, cold
+    tolerance, and standing up to disease and wear. A balanced 10-10-10
+    gives equal weight to all three, which suits a general-purpose feed but
+    is more phosphorus than most established lawns need. A 24-0-6 is a lawn
+    feed through and through — heavy on nitrogen, no phosphate, a little
+    potash for toughness. Neither is better in the abstract. They are built
+    for different jobs, and the rate you spread them at decides how much of
+    each nutrient actually arrives.
+  </p>
+  <p>
+    One habit worth building is reading the analysis as a recipe, not a
+    ranking. A higher first number does not mean a better fertilizer. It
+    means a more concentrated nitrogen source, so you need less product to
+    reach the same nitrogen rate — and it is easier to overshoot with it.
+    A lower-numbered bag is more forgiving: you spread more product, the
+    granules distribute more evenly, and a small measuring error matters
+    less. Beginners often do better with the weaker bag, spread carefully,
+    than with the strongest bag on the shelf.
+  </p>
+
+  <h2>The maths is just rate times percentage</h2>
+  <p>
+    There is no mystery to an NPK application rate once you see the shape
+    of it. Take your rate in pounds of product per 1,000 sq ft and multiply
+    it by the percentage as a decimal. That is the nutrient applied per
+    1,000 sq ft. At 10 lb of 10-10-10 per 1,000 sq ft, the maths is 10 ×
+    0.10 = 1 lb of nitrogen, 1 lb of phosphate and 1 lb of potash, each per
+    1,000 sq ft. At the same rate with a 24-0-6 bag, it is 10 × 0.24 = 2.4 lb
+    of nitrogen — more than double the standard single application, from
+    the same 10 lb of product. The bag changed, the rate stayed put, and
+    the nitrogen more than doubled. That is how easy it is to over-apply
+    by accident when you switch products without re-doing the maths.
+  </p>
+  <p>
+    Scaling up to the whole area is the same idea in reverse. Multiply the
+    per-1,000-sq-ft rate by your area in thousands of square feet. A 5,000
+    sq ft lawn at 10 lb per 1,000 sq ft needs 50 lb of product in total —
+    and at 10% nitrogen, that is 5 lb of actual nitrogen spread across the
+    whole lawn in one pass. Seeing the total matters, because "1 lb per
+    1,000 sq ft" sounds small until you realise it means 5 lb of nitrogen
+    on an average yard, and double that on a big one. If your rate is in
+    kilograms per 100 square metres instead, the tool converts it for you:
+    1 lb per 1,000 sq ft works out to about 0.49 kg per 100 sq m, so a rate
+    of 5 kg per 100 sq m is roughly 10 lb per 1,000 sq ft.
+  </p>
+
+  <h2>Reading a soil test without a chemistry degree</h2>
+  <p>
+    A soil test is the honest starting point for any rate decision, and it
+    is less intimidating than it looks. You send off a sample, and back
+    comes a page of numbers — usually pH, and levels for phosphorus,
+    potassium and sometimes nitrogen, each marked low, medium or high, with
+    a recommendation. The recommendation is the part to follow. If
+    phosphorus comes back high, your lawn does not need a bag with a big
+    middle number, however balanced it looks on the shelf. If potassium
+    comes back low, a bag with a higher third number earns its place. If
+    the pH is well off, no rate of fertilizer will fix what the soil
+    chemistry is blocking, and the test will usually say so in plain words.
+  </p>
+  <p>
+    The other thing a soil test gives you is a reason to stop guessing
+    about the yearly total. Grasses differ a lot in what they want across
+    a year — the tool above shows each grass's annual nitrogen range when
+    you pick it, from as little as 0–1 lb per 1,000 sq ft a year for
+    Buffalo grass up to 2–4 lb for Bermuda and St. Augustine. A soil test
+    plus that annual range tells you how many feeds to plan and how strong
+    each one should be. Without it, you are choosing a rate by habit, and
+    habits formed around one bag rarely survive switching to another.
+  </p>
+
+  <h2>When the rate matters most — and when it barely matters</h2>
+  <p>
+    Rate matters most in three situations. The first is a new lawn, or one
+    you are trying to thicken up: too little nitrogen and it stays thin,
+    too much and the young grass burns. The second is switching products.
+    Moving from a 10-10-10 to a 24-0-6 at the same spreader setting more
+    than doubles the nitrogen, and that is the single most common cause of
+    accidental over-application. The third is a lawn under stress — heat,
+    drought, or disease pressure. A stressed lawn cannot use a full rate,
+    and a heavy feed on top of stress is how brown patches happen. In all
+    three cases, checking the rate before you spread is worth more than
+    any bag on the shelf.
+  </p>
+  <p>
+    Rate matters least when the amounts are tiny and the plant is forgiving
+    — a light liquid feed on established houseplants, for instance, where
+    the dilution on the bottle does most of the work. Even then, the same
+    principle holds: the strength of the mix and how often you apply it
+    together make the rate. Potted plants are fed by dilution, not by
+    spread rate, so a per-1,000-sq-ft figure means nothing for them — what
+    matters is the feeder level and the dilution strength, which the tool
+    shows for each plant you pick. If you keep herbs in pots, our guide to
+    <a href="/guides/how-to-grow-basil-in-pots/">growing basil in pots</a>
+    shows how a heavy feeder behaves in a container, and the
+    <a href="/guides/how-do-you-take-care-of-plants/">beginner plant care guide</a>
+    covers feeding houseplants little and often.
+  </p>
+
+  <h2>Granular and liquid aren't the same kind of rate</h2>
+  <p>
+    Granular fertilizer is rated by weight of product per area — pounds
+    per 1,000 sq ft, as this tool uses. You weigh it, or you trust the
+    spreader setting, and the granules sit on the soil releasing nutrients
+    over days or weeks. Liquid fertilizer is rated by dilution: so many
+    millilitres per litre of water, applied until the leaves or soil are
+    wet. The two rates are not interchangeable, and converting between them
+    takes the product's own label, not a rule of thumb. What they share is
+    the idea that concentration times amount equals dose. A weak liquid
+    applied often can deliver the same total nitrogen as a strong granular
+    applied once — and for many plants, the little-and-often version is
+    safer, because there is never a big spike for the roots to deal with.
+    Whichever form you use, water granular fertilizer in after spreading
+    unless the label says otherwise, and never fertilize a dormant or
+    drought-stressed lawn. A lawn that is brown from lack of water needs
+    water first, and feeding later, once it is growing again.
+  </p>
+
+  <h2>Too much, too little: what each looks like</h2>
+  <p>
+    Over-application has a look, and it shows up fast — usually within a
+    few days. Leaf blades scorch at the tips or in patches, the grass turns
+    brown as if drought-hit, and the lawn looks worse than before you fed
+    it. Heavy nitrogen also pushes soft, fast growth that wilts in heat and
+    invites disease, and the surplus washes away with rain, feeding algae
+    downstream instead of your lawn. The fix is water — deep watering to
+    dilute what is in the soil — and patience: do not feed again until the
+    lawn has recovered. Under-application is quieter. The lawn stays pale
+    and thin, growth is slow, and weeds move into the gaps where grass
+    should be thick. It is not damage, just hunger, and the fix is a proper
+    feed at the standard rate. When in doubt between the two, choose the
+    lighter rate. A pale lawn recovers with the next feed; a burnt one
+    takes weeks. If your lawn has bare patches or spots you cannot explain,
+    the <a href="/tools/plant-problem-solver/">plant problem solver</a> can
+    help narrow down what is going on, the
+    <a href="/tools/plant-care-checklist/">plant care checklist</a> keeps
+    the routine in one place, and if you are costing out new planting to
+    fill the gaps, the
+    <a href="/tools/tree-planting-cost-calculator/">tree planting cost calculator</a>
+    works from the same measure-first habit. And if you want to check the
+    other direction — starting from your lawn size and bag to find how many
+    bags to buy — the
+    <a href="/tools/yard-fertilizer-calculator/">yard fertilizer calculator</a>
+    does that sum.
+  </p>
+
+  <h2>Frequently asked questions</h2>
+
+  <h3>What does 10-10-10 mean?</h3>
+  <p>
+    It means the bag is 10% nitrogen, 10% phosphate and 10% potash by
+    weight, in that order. A 40 lb bag of 10-10-10 holds 4 lb of each
+    nutrient. Spread at 10 lb of product per 1,000 sq ft, it puts down 1 lb
+    of each nutrient per 1,000 sq ft. The numbers are percentages, not
+    amounts — the amount your lawn gets depends on the rate you spread at,
+    which is why the same bag can be a light feed or a heavy one.
+  </p>
+
+  <h3>How much nitrogen is too much in one go?</h3>
+  <p>
+    For a lawn, more than 1 lb of nitrogen per 1,000 sq ft in a single
+    application is too much. Above that, leaf burn becomes likely, the
+    grass pushes soft growth that struggles in heat, and the extra nitrogen
+    washes away instead of feeding the lawn. The yearly total for a grass
+    type is higher — up to 2–4 lb per 1,000 sq ft a year for hungry grasses
+    like Bermuda — but that total should be split across several feeds, not
+    delivered in one heavy pass. If your calculation comes out over 1 lb,
+    lower the rate or split the feed into two lighter passes a few weeks
+    apart.
+  </p>
+
+  <h3>Does the rate change if I switch bags?</h3>
+  <p>
+    The rate you want stays the same — about 1 lb of nitrogen per 1,000 sq
+    ft per application for a lawn — but the product rate changes, because
+    the nitrogen percentage changed. With a 10% bag you need 10 lb of
+    product per 1,000 sq ft to hit 1 lb of nitrogen. With a 24% bag you
+    need only about 4.17 lb. If you keep the same spreader setting after
+    switching to a stronger bag, you will over-apply without realising it.
+    Re-run the numbers for every new bag, even if it looks similar to the
+    last one.
+  </p>
+
+  <h3>Can I use this rate for potted plants?</h3>
+  <p>
+    No — not directly. A per-1,000-sq-ft spread rate only makes sense for
+    lawns and beds spread with granular product. Potted plants are fed by
+    dilution: a weak liquid feed mixed in water, applied every few weeks
+    in the growing season. How weak and how often depends on the plant — a
+    light feeder like a snake plant wants a quarter-strength feed every
+    eight weeks or so, while a heavy feeder like a monstera wants a
+    half-strength feed every two weeks. Pick a plant in the tool above and
+    it shows its feeder level and feeding frequency as a starting point,
+    and always follow the feed bottle's own dilution instructions.
+  </p>
+
+  <script>
+    const PLANTS = JSON.parse(document.getElementById("plant-data").textContent);
+    const KG_PER_100SQM_PER_LB = 0.4882; // 1 lb per 1,000 sq ft ≈ 0.488 kg per 100 sq m
+
+    function num(id) {
+      const el = document.getElementById(id);
+      const v = el ? Number(el.value) : 0;
+      return Number.isFinite(v) ? v : 0;
+    }
+    function fmt(n, d) {
+      return n.toLocaleString("en-US", { maximumFractionDigits: d === undefined ? 2 : d, minimumFractionDigits: d === undefined ? 2 : d });
+    }
+    function rateUnit() {
+      const r = document.querySelector('input[name="rate-unit"]:checked');
+      return r ? r.value : "lb";
+    }
+    function getRateLb() {
+      const v = num("app-rate");
+      return rateUnit() === "kg" ? v / KG_PER_100SQM_PER_LB : v;
+    }
+
+    function calculate() {
+      const nPct = num("npk-n");
+      const pPct = num("npk-p");
+      const kPct = num("npk-k");
+      const rateLb = getRateLb();
+      const area = num("area");
+
+      const sel = document.getElementById("plant-type");
+      const opt = sel ? sel.options[sel.selectedIndex] : null;
+      const category = opt ? opt.getAttribute("data-category") : "";
+      const feeder = opt ? opt.getAttribute("data-feeder") : "";
+      const weeks = opt ? opt.getAttribute("data-weeks") : "";
+      const dilution = opt ? opt.getAttribute("data-dilution") : "";
+      const low = opt ? Number(opt.getAttribute("data-low")) : NaN;
+      const high = opt ? Number(opt.getAttribute("data-high")) : NaN;
+
+      const noteEl = document.getElementById("plant-note");
+      if (noteEl && opt) {
+        if (category === "grass" && Number.isFinite(low) && Number.isFinite(high)) {
+          noteEl.textContent = opt.textContent.split(" (")[0] + " needs " + low + "–" + high + " lb N per 1,000 sq ft across the whole year. Compare the nitrogen per application below with the 1 lb standard.";
+        } else {
+          noteEl.textContent = opt.textContent.split(" (")[0] + " is a " + feeder + " feeder — feed about every " + weeks + " weeks in the growing season at " + dilution + " strength. Potted plants are fed by dilution, not by spread rate.";
+        }
+      }
+
+      const nPer = rateLb * (nPct / 100);
+      const pPer = rateLb * (pPct / 100);
+      const kPer = rateLb * (kPct / 100);
+      const productTotal = rateLb * (area / 1000);
+      const totalN = nPer * (area / 1000);
+
+      document.getElementById("result-n").textContent = fmt(nPer) + " lb N";
+      document.getElementById("result-n-sub").textContent = "per 1,000 sq ft, per application";
+      document.getElementById("result-n2").textContent = fmt(nPer) + " lb / 1,000 sq ft";
+      document.getElementById("result-p").textContent = fmt(pPer) + " lb / 1,000 sq ft";
+      document.getElementById("result-k").textContent = fmt(kPer) + " lb / 1,000 sq ft";
+      document.getElementById("result-product").textContent = fmt(productTotal, 1) + " lb";
+      document.getElementById("result-total-n").textContent = fmt(totalN) + " lb N";
+
+      const verdictEl = document.getElementById("result-verdict");
+      const ctxEl = document.getElementById("result-context");
+      if (category === "grass") {
+        if (nPer > 1) {
+          verdictEl.textContent = "⚠ Verdict: OVER the recommended range — " + fmt(nPer) + " lb N per 1,000 sq ft in one go is above the 1 lb standard. Lower the rate or split the feed into two lighter passes.";
+        } else if (nPer < 0.5) {
+          verdictEl.textContent = "Verdict: UNDER the usual range — " + fmt(nPer) + " lb N per 1,000 sq ft is a light feed. Expect a gentle result; a lawn that is pale and thin may need a fuller rate.";
+        } else {
+          verdictEl.textContent = "Verdict: WITHIN the recommended range — " + fmt(nPer) + " lb N per 1,000 sq ft per application sits at or under the 1 lb standard.";
+        }
+        if (Number.isFinite(low) && Number.isFinite(high) && nPer > 0) {
+          const feeds = Math.ceil(low / nPer) + "–" + Math.ceil(high / nPer);
+          ctxEl.textContent = "At this rate, the yearly " + low + "–" + high + " lb N need works out to roughly " + feeds + " applications a year. Remember: water granular fertilizer in unless the label says otherwise, and never fertilize a dormant or drought-stressed lawn.";
+        } else {
+          ctxEl.textContent = "";
+        }
+      } else {
+        verdictEl.textContent = "Note: this is a " + feeder + " feeder, fed by dilution (" + dilution + " strength, about every " + weeks + " weeks in season) — a spread rate in lb per 1,000 sq ft does not apply to potted plants. The N, P and K figures above show what the rate would put down on a lawn or bed.";
+        ctxEl.textContent = "For pots, follow the feed bottle's dilution instructions and the plant's feeding frequency, not this spread rate.";
+      }
+
+      const pct = Math.max(0, Math.min(100, (nPer / 2) * 100));
+      const barEl = document.getElementById("bar-n");
+      const barRestEl = document.getElementById("bar-n-rest");
+      if (barEl) barEl.style.width = pct + "%";
+      if (barRestEl) barRestEl.style.width = (100 - pct) + "%";
+    }
+
+    function markSelected(groupName) {
+      document.querySelectorAll('input[name="' + groupName + '"]').forEach(function (radio) {
+        const card = radio.closest(".size-card");
+        if (card) card.classList.toggle("selected", radio.checked);
+      });
+    }
+
+    const form = document.getElementById("fert-rate-form");
+    const rateEl = document.getElementById("app-rate");
+    let lastRateUnit = "lb"; // unit the rate field is currently displayed in
+    document.querySelectorAll('input[name="rate-unit"]').forEach(function (radio) {
+      radio.addEventListener("change", function () {
+        markSelected("rate-unit");
+        // Convert the displayed rate from the OLD unit before re-rendering.
+        const displayed = num("app-rate");
+        const currentLb = lastRateUnit === "kg" ? displayed / KG_PER_100SQM_PER_LB : displayed;
+        lastRateUnit = rateUnit();
+        rateEl.value = rateUnit() === "kg"
+          ? String(Math.round(currentLb * KG_PER_100SQM_PER_LB * 100) / 100)
+          : String(Math.round(currentLb * 100) / 100);
+        document.getElementById("app-rate-label").textContent =
+          rateUnit() === "kg" ? "Rate (kg of product per 100 sq m)" : "Rate (lb of product per 1,000 sq ft)";
+        calculate();
+      });
+    });
+    document.getElementById("plant-type").addEventListener("change", calculate);
+    form.addEventListener("input", calculate);
+    form.addEventListener("change", calculate);
+    document.getElementById("calculate-btn").addEventListener("click", calculate);
+    markSelected("rate-unit");
+    calculate();
+  </script>
+</BaseLayout>
