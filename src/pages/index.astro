@@ -8,36 +8,42 @@ const featured = [
     title: "How to Take Care of a Snake Plant",
     desc: "The full care guide: light, watering, soil, and the mistakes that actually kill them.",
     img: "/images/how-to-take-care-of-a-snake-plant.webp",
+    alt: "A healthy snake plant with tall upright green and yellow leaves in a terracotta pot beside a bright window",
   },
   {
     slug: "how-to-care-for-pothos",
     title: "How to Care for Pothos",
     desc: "Trailing, forgiving, and fast-growing — how to keep pothos lush instead of leggy.",
     img: "/images/how-to-care-for-pothos.webp",
+    alt: "A lush golden pothos with trailing variegated leaves cascading from a hanging pot in a bright living room",
   },
   {
     slug: "indoor-plants-for-beginners",
     title: "Indoor Plants for Beginners: 10 Easy Picks",
     desc: "Ten plants that tolerate a beginner's learning curve — and how to choose yours.",
     img: "/images/indoor-plants-for-beginners.svg",
+    alt: "Original illustration of three beginner-friendly houseplants — snake plant, pothos and ZZ plant — in pots on a shelf",
   },
   {
     slug: "how-do-you-take-care-of-plants",
     title: "How Do You Take Care of Plants? Beginner Guide",
     desc: "The five basics every houseplant needs, explained without jargon.",
     img: "/images/how-do-you-take-care-of-plants.webp",
+    alt: "A sunny windowsill with several healthy houseplants in terracotta and ceramic pots beside a watering can",
   },
   {
     slug: "how-to-water-snake-plants",
     title: "How to Water Snake Plants",
     desc: "How often, how much, and the one habit that causes most snake plant deaths.",
     img: "/images/how-to-water-snake-plants.webp",
+    alt: "A snake plant in a terracotta pot being watered gently with a small watering can",
   },
   {
     slug: "how-to-care-for-calathea",
     title: "How to Care for Calathea",
     desc: "Humidity, water type, and light — the three things calathea actually cares about.",
     img: "/images/how-to-care-for-calathea.webp",
+    alt: "A lush calathea plant with large patterned green leaves with pink stripes in a ceramic pot",
   },
 ];
 
@@ -125,7 +131,7 @@ const jsonLd = [
       {
         featured.map((g) => (
           <article class="card">
-            <img class="card-img" src={g.img} alt="" loading="lazy" />
+            <img class="card-img" src={g.img} alt={g.alt} loading="lazy" />
             <h3>
               <a href={`/guides/${g.slug}/`}>{g.title}</a>
             </h3>
@@ -176,6 +182,11 @@ const jsonLd = [
         <h3><a href="/tools/plant-care-checklist/">Plant Care Checklist</a></h3>
         <p>Weekly, monthly, and new-plant routines you can tick off and pick up later.</p>
         <a class="card-link" href="/tools/plant-care-checklist/">Open the checklist →</a>
+      </article>
+      <article class="card">
+        <h3><a href="/tools/tree-planting-cost-calculator/">Tree Planting Cost Calculator</a></h3>
+        <p>Estimate what planting trees will cost — trees, labour, and extras — with a clear price range.</p>
+        <a class="card-link" href="/tools/tree-planting-cost-calculator/">Estimate the cost →</a>
       </article>
     </div>
   </section>
