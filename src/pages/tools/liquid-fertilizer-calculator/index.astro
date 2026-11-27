@@ -1,0 +1,503 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { PLANTS } from "../../../data/plants";
+const plantsJson = JSON.stringify(PLANTS);
+---
+
+<BaseLayout
+  title="Liquid Fertilizer Calculator"
+  description="Work out exactly how much liquid fertilizer to mix — pick your plant, enter your bottle's label dose and water, and get teaspoons, ml and timing."
+  canonicalPath="/tools/liquid-fertilizer-calculator/"
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li aria-current="page">Liquid Fertilizer Calculator</li>
+    </ol>
+  </nav>
+
+  <section class="calc-hero">
+    <p class="calc-eyebrow">Free tool · No sign-up · Instant result</p>
+    <h1>Liquid Fertilizer Calculator</h1>
+    <p class="calc-lede">
+      Pick your plant, copy the dose off your bottle's label, and tell us how
+      much water you're mixing — the calculator works out the exact amount of
+      concentrate to add, in ml and in teaspoons.
+    </p>
+    <p class="calc-note">
+      All figures here are example figures based on general houseplant
+      guidance, not a prescription for your bottle. Always read your own
+      product's label, and never mix stronger than it says.
+    </p>
+  </section>
+
+  <div class="calc-layout">
+    <form class="calc-card" id="fert-form" aria-label="Liquid fertilizer calculator">
+      <section class="calc-step" aria-labelledby="step-plant">
+        <p class="calc-step-label"><span class="calc-step-num">1</span> Which plant?</p>
+        <h2 id="step-plant">Your plant</h2>
+        <label for="plant-search">Search plants</label>
+        <input type="search" id="plant-search" placeholder="Type a plant name, e.g. monstera" aria-label="Search plants" autocomplete="off" />
+        <p class="form-note">Start typing to narrow the list, then pick your plant below.</p>
+        <label for="plant-select">Plant</label>
+        <select id="plant-select" aria-label="Choose your plant"></select>
+        <p class="form-note" id="plant-note"></p>
+      </section>
+
+      <section class="calc-step" aria-labelledby="step-dose">
+        <p class="calc-step-label"><span class="calc-step-num">2</span> What's on the label?</p>
+        <h2 id="step-dose">Label dose</h2>
+        <label for="dose-amount">Dose per unit of water</label>
+        <div class="stepper">
+          <input type="number" id="dose-amount" name="dose-amount" value="1" min="0.1" max="100" step="0.1" aria-label="Label dose amount" />
+        </div>
+        <p class="form-note">Copy the number straight off your bottle.</p>
+        <label for="dose-unit">Label unit</label>
+        <select id="dose-unit" aria-label="Label dose unit">
+          <option value="tsp-gal" selected>teaspoons per gallon</option>
+          <option value="tbsp-gal">tablespoons per gallon</option>
+          <option value="ml-litre">ml per litre</option>
+        </select>
+        <p class="form-note">Most bottles say something like "1 tsp per gallon" or "5 ml per litre".</p>
+      </section>
+
+      <section class="calc-step" aria-labelledby="step-strength">
+        <p class="calc-step-label"><span class="calc-step-num">3</span> How strong?</p>
+        <h2 id="step-strength">Strength</h2>
+        <div class="size-grid" role="radiogroup" aria-label="Dilution strength">
+          <label class="size-card">
+            <input type="radio" name="strength" value="quarter" />
+            <span class="size-name">Quarter</span>
+            <span class="size-desc">A quarter of the label dose — for sensitive plants</span>
+            <span class="size-price">¼ strength</span>
+          </label>
+          <label class="size-card selected">
+            <input type="radio" name="strength" value="half" checked />
+            <span class="size-name">Half</span>
+            <span class="size-desc">Half the label dose — the usual houseplant default</span>
+            <span class="size-price">½ strength</span>
+          </label>
+          <label class="size-card">
+            <input type="radio" name="strength" value="full" />
+            <span class="size-name">Full</span>
+            <span class="size-desc">The full label dose — only for hungry, fast growers</span>
+            <span class="size-price">Full strength</span>
+          </label>
+        </div>
+        <p class="form-note">Picking a plant above fills in its recommended strength — you can still change it.</p>
+      </section>
+
+      <section class="calc-step" aria-labelledby="step-water">
+        <p class="calc-step-label"><span class="calc-step-num">4</span> How much water?</p>
+        <h2 id="step-water">Water volume</h2>
+        <label for="water-amount">Water</label>
+        <div class="stepper">
+          <input type="number" id="water-amount" name="water-amount" value="1" min="0.1" max="100" step="0.1" aria-label="Water volume" />
+        </div>
+        <p class="form-note">The amount of water you're mixing the feed into.</p>
+        <label for="water-unit">Water unit</label>
+        <select id="water-unit" aria-label="Water volume unit">
+          <option value="gallons" selected>gallons</option>
+          <option value="litres">litres</option>
+        </select>
+        <p class="form-note">1 US gallon is 3.785 litres.</p>
+        <p>
+          <button type="button" class="btn" id="calculate-btn">Calculate my mix</button>
+        </p>
+      </section>
+    </form>
+
+    <aside class="calc-result" id="result" aria-live="polite">
+      <p class="calc-result-label">Your mix</p>
+      <p class="calc-total" id="result-amount">—</p>
+      <p class="calc-per-tree">of concentrate in <span id="result-water">1 gallon</span> of water</p>
+      <ul class="breakdown-list">
+        <li><span class="breakdown-dot dot-trees"></span> Plant <strong id="result-plant">—</strong></li>
+        <li><span class="breakdown-dot dot-labour"></span> Strength <strong id="result-strength">—</strong></li>
+        <li><span class="breakdown-dot dot-extras"></span> Feed every <strong id="result-frequency">—</strong></li>
+        <li><span class="breakdown-dot dot-trees"></span> Next feed <strong id="result-next">—</strong></li>
+      </ul>
+      <p class="calc-result-note">
+        Never mix stronger than the label says. If your plant is dry,
+        stressed, dormant, or newly repotted, skip the feed and water with
+        plain water instead.
+      </p>
+      <p class="calc-result-links">
+        <a href="/tools/fertilization-days-calculator/">Plan your feeding days →</a>
+        <a href="/tools/plant-problem-solver/">Something wrong after feeding? →</a>
+      </p>
+    </aside>
+  </div>
+
+  <h2>The label wasn't written for your living room</h2>
+  <p>
+    Here's the awkward truth about liquid fertilizer: the dose printed on the
+    bottle was almost certainly written for plants growing outside, in beds
+    and borders, under open sky. Those plants grow fast, drink hard, and sit
+    in soil that drains away excess salts every time it rains. Your monstera
+    on the bookshelf lives a very different life. It grows slower, in a small
+    pot, in the same soil for months at a time, with no rain to wash anything
+    through. The full label dose that a tomato in a garden bed would shrug off
+    can scorch the roots of a houseplant in a week.
+  </p>
+  <p>
+    That is why most indoor growers treat the label as a ceiling, not a
+    target. A good liquid fertiliser dilution calculator does the same thing:
+    it starts from the dose your bottle recommends, then waters it down to a
+    strength your indoor plant can actually use. For most houseplants that
+    means half strength. For the fussy ones — ferns, calathea, prayer plants,
+    African violets, seedlings — it means quarter strength. Products made
+    specifically for houseplants are the one exception: their labels already
+    assume an indoor plant in a pot, so the label rate is usually fine as it
+    stands.
+  </p>
+  <p>
+    None of this means fertilizer is dangerous or that you should be scared
+    of it. It just means the numbers need translating. A bottle that says "1
+    teaspoon per gallon" is talking about a gallon of water for a plant that
+    is probably growing much faster than yours. Cut that dose in half and you
+    are still giving your plant plenty — you are simply matching the feed to
+    the speed it actually grows at.
+  </p>
+
+  <h2>How the dilution maths actually works</h2>
+  <p>
+    A fertilizer mixing calculator only has to do two things: convert the
+    label dose into a per-litre figure, then scale it to the water you are
+    actually using. Say your bottle says 1 teaspoon per gallon and you want
+    half strength in 1 gallon of water. Half of 1 teaspoon is half a
+    teaspoon, which is about 2.5 ml. That is your answer — simple when the
+    numbers line up. But they rarely line up neatly. Maybe the bottle says 1
+    tablespoon per gallon: half of that is 1.5 teaspoons, or about 7.4 ml.
+    Maybe it says 5 ml per litre and you want quarter strength in 2 litres:
+    a quarter of 5 ml is 1.25 ml per litre, times 2 litres, which comes to
+    2.5 ml of concentrate in total.
+  </p>
+  <p>
+    The conversions underneath are worth knowing, because bottles mix their
+    units freely. One US gallon holds 3.785 litres. One teaspoon is about
+    4.93 ml, and one tablespoon is three teaspoons, about 14.79 ml. So to
+    turn a per-gallon dose into a per-litre dose you divide by 3.785, and to
+    turn millilitres into teaspoons you divide by 4.93. The calculator above
+    does all of that for you, and shows the answer in both ml and teaspoons
+    or tablespoons, whichever is easier to measure with what you have in the
+    kitchen drawer.
+  </p>
+  <p>
+    Measuring matters more than it looks. A kitchen teaspoon is not always a
+    measuring teaspoon, and a careless splash from the bottle can easily
+    double a dose meant to be half strength. If your bottle has a measuring
+    cap, use it. If it doesn't, a cheap set of measuring spoons or a small
+    syringe from a pharmacy will pay for itself the first time it stops you
+    burning a plant you like. When the dose works out to something tiny —
+    1.25 ml, say — a syringe is genuinely the right tool, not overkill.
+  </p>
+
+  <h2>Half strength is the safe default — quarter is for the fussy ones</h2>
+  <p>
+    If you only remember one rule from this page, make it this one: half
+    strength, most plants, most of the time. A general all-purpose fertilizer
+    mixed at half the label rate suits the broad middle of the houseplant
+    world — pothos, monstera, philodendron, spider plants, rubber plants,
+    and most of the leafy growers that fill a living room. They get a steady
+    supply of nutrients without the salt build-up that comes from feeding at
+    full strength month after month.
+  </p>
+  <p>
+    Quarter strength is for plants that tell you, in one way or another,
+    that they are sensitive. Ferns and calathea brown at the leaf edges when
+    salts build up. African violets and prayer plants sulk after a feed that
+    a pothos wouldn't notice. Seedlings and cuttings that have only just
+    rooted have almost no root system to cope with a strong solution. Succulents
+    and cacti grow slowly by nature and need very little — a weak feed a few
+    times a year is plenty, and they will not thank you for more. If you are
+    ever unsure which camp your plant falls into, pick it in the calculator
+    above: the recommendation comes from its feeding profile, and it errs on
+    the gentle side.
+  </p>
+  <p>
+    Full strength has a place, but it is a narrow one. Fast, hungry growers
+    in bright light — a big monstera pushing out a new leaf every couple of
+    weeks, a tomato or pepper in a large pot, a lawn grass — can use the full
+    label dose during the growing season. Even then, full strength only works
+    when the plant is actively growing, well watered, and in a pot big enough
+    to dilute the salts. A plant sitting still in a dark corner in January
+    should not get full strength, or any strength at all.
+  </p>
+
+  <h2>Mixing it properly takes two minutes</h2>
+  <p>
+    How much liquid fertilizer per gallon of water is only half the job —
+    the other half is how you mix and apply it. Always start with plain
+    water in your watering can, add the concentrate, and stir. Never pour
+    concentrate into an empty can and top it up afterwards; it mixes less
+    evenly than you think. Mix only what you plan to use that day. A diluted
+    feed sitting in a can for a week loses strength, grows things you don't
+    want, and is easy to forget about and use twice.
+  </p>
+  <p>
+    Water the soil with plain water first, then feed. This is the single most
+    useful habit in this whole guide. Dry soil plus fertilizer solution is
+    how roots get burned: the salts sit against dry root tips at full
+    concentration instead of spreading through damp soil. A quick plain-water
+    pass first means the feed arrives diluted by soil that is already moist,
+    and the roots take it up gently. It also matters which plants you skip.
+    Never feed a plant that is dry and wilting, stressed by a recent move, in
+    the middle of winter dormancy, or freshly repotted into new soil — fresh
+    potting mix already contains nutrients, and a new feed on top is too much
+    at once.
+  </p>
+  <p>
+    Every now and then, flush the pot. Once every couple of months, water
+    with plain water until it runs freely out of the drainage holes, and let
+    it drain properly. That washes out the salts that slowly accumulate from
+    regular feeding, and it is the reason brown leaf tips often clear up after
+    a good flush. If your tap water is very hard, rainwater or distilled water
+    for the occasional flush works even better. And if you want a routine to
+    hang all of this on, our
+    <a href="/tools/plant-care-checklist/">plant care checklist</a> turns
+    watering, feeding and flushing into a simple weekly habit.
+  </p>
+
+  <h2>Reading your plant after feeding</h2>
+  <p>
+    A dilute fertilizer calculator gives you a number, but your plant gives
+    you the verdict. In the week or two after a feed, look for new growth
+    that is a healthy green and a normal size for the plant. Leaves that come
+    out pale, small, or slow despite regular feeding may mean the plant needs
+    more light rather than more food — fertilizer cannot fix a light problem,
+    and adding more of it only adds salts to the soil. That is a common trap:
+    a plant that looks hungry is often just dark.
+  </p>
+  <p>
+    Overfeeding has its own look, and it is worth learning. Leaf edges turn
+    brown and crisp, especially on older leaves. A white crust appears on the
+    soil surface or around the drainage holes. Growth stalls even though you
+    are feeding regularly, or new leaves come out distorted. If you see that,
+    stop feeding, flush the pot with plain water, and give the plant a few
+    weeks of plain water only before you feed again — at quarter strength
+    next time. Our
+    <a href="/tools/plant-problem-solver/">plant problem solver</a> can help
+    you check whether what you're seeing is a feeding problem or something
+    else entirely.
+  </p>
+  <p>
+    Underfeeding is quieter. Growth slows, older leaves yellow and drop one
+    by one, and a plant that used to flower stops bothering. It is rarely
+    urgent, and it is easy to fix: feed at half strength on schedule for a
+    month and see if the plant picks up. The balance most growers settle into
+    is simple — feed weakly, feed regularly in the growing season, and let
+    the plant's leaves tell you whether the dose is right. If you grow
+    succulents, the same rules apply at a slower pace: our guide on
+    <a href="/guides/how-do-you-take-care-of-succulents/">how to take care of succulents</a>
+    covers their lighter feeding needs, and the general
+    <a href="/guides/how-do-you-take-care-of-plants/">how to take care of plants</a>
+    guide covers the watering and light basics that feeding depends on. And
+    once you have your dose worked out, the
+    <a href="/tools/fertilization-days-calculator/">fertilization days calculator</a>
+    will keep track of when the next feed is due, so you don't have to. For
+    a rough sense of the cost of the other end of plant care — buying and
+    planting trees outdoors — the
+    <a href="/tools/tree-planting-cost-calculator/">tree planting cost calculator</a>
+    works out trees, labour and extras with example figures you can change.
+  </p>
+
+  <h2>Frequently asked questions</h2>
+
+  <h3>How much liquid fertilizer per gallon of water?</h3>
+  <p>
+    Start from your bottle's label, then halve it for most houseplants. If
+    the label says 1 teaspoon per gallon, use 1/2 teaspoon per gallon at half
+    strength, or 1/4 teaspoon at quarter strength. If it says 1 tablespoon
+    per gallon, half strength is 1.5 teaspoons per gallon. If it says 5 ml
+    per litre, half strength is 2.5 ml per litre and quarter strength is 1.25
+    ml per litre. Use the calculator above to work out the exact amount for
+    the water volume you are mixing.
+  </p>
+
+  <h3>Can I use liquid fertilizer every time I water?</h3>
+  <p>
+    For most houseplants, no — that is too often, and salts build up in the
+    pot. Feed every 2 to 4 weeks in the growing season, roughly March to
+    September in the northern hemisphere, and give plain water in between.
+    Light feeders such as snake plants and succulents need feeding monthly or
+    less. A very weak feed at every watering can work for some fast growers
+    in bright light, but for most indoor plants the safer rhythm is a proper
+    feed every few weeks and plain water the rest of the time.
+  </p>
+
+  <h3>Can I mix liquid fertilizer stronger than the label to make plants grow faster?</h3>
+  <p>
+    No. More fertilizer does not mean faster growth — it means saltier soil,
+    burned roots, and brown leaf edges. Plants can only use nutrients as fast
+    as light, water and temperature allow them to grow, and any extra just
+    sits in the pot. If a plant is growing slowly, check its light first.
+    Never go stronger than the label, and for most houseplants half the label
+    dose is already plenty.
+  </p>
+
+  <h3>Should I feed a plant I just bought or just repotted?</h3>
+  <p>
+    Wait. A plant you just brought home is adjusting to new light, new air
+    and a new spot — give it two or three weeks to settle before feeding. A
+    plant you just repotted is sitting in fresh potting mix that already
+    contains nutrients, so wait at least a month before its first feed. In
+    both cases, water with plain water only until the plant is growing
+    steadily again, then start at half strength.
+  </p>
+
+  <script type="application/json" id="plant-data" set:html={plantsJson} />
+  <script>
+    const PLANTS = JSON.parse(document.getElementById("plant-data").textContent);
+    const TSP_ML = 4.93;
+    const TBSP_ML = 14.79;
+    const GALLON_LITRES = 3.785;
+    const STRENGTH_FACTOR = { quarter: 0.25, half: 0.5, full: 1 };
+    const STRENGTH_LABEL = { quarter: "Quarter strength", half: "Half strength", full: "Full strength" };
+
+    const searchInput = document.getElementById("plant-search");
+    const select = document.getElementById("plant-select");
+    const noteEl = document.getElementById("plant-note");
+
+    function categoryLabel(cat) {
+      return cat.charAt(0).toUpperCase() + cat.slice(1);
+    }
+
+    function buildOptions(filter) {
+      const q = (filter || "").trim().toLowerCase();
+      const current = select.value;
+      select.innerHTML = "";
+      const groups = {};
+      PLANTS.forEach(function (p) {
+        if (q && p.name.toLowerCase().indexOf(q) === -1) return;
+        if (!groups[p.category]) groups[p.category] = [];
+        groups[p.category].push(p);
+      });
+      Object.keys(groups).forEach(function (cat) {
+        const group = document.createElement("optgroup");
+        group.label = categoryLabel(cat) + "s";
+        groups[cat].forEach(function (p) {
+          const opt = document.createElement("option");
+          opt.value = p.slug;
+          opt.textContent = p.name + " — " + categoryLabel(p.category) + ", " + p.feeder + " feeder";
+          group.appendChild(opt);
+        });
+        select.appendChild(group);
+      });
+      if (select.options.length === 0) {
+        const opt = document.createElement("option");
+        opt.value = "";
+        opt.textContent = "No plants match that search";
+        select.appendChild(opt);
+      }
+      if (current) {
+        const match = Array.prototype.find.call(select.options, function (o) { return o.value === current; });
+        if (match) select.value = current;
+      }
+    }
+
+    function findPlant(slug) {
+      return PLANTS.find(function (p) { return p.slug === slug; });
+    }
+
+    function formatDate(date) {
+      return date.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", year: "numeric" });
+    }
+
+    function formatAmount(ml) {
+      const roundedMl = Math.round(ml * 10) / 10;
+      if (ml >= TBSP_ML) {
+        const tbsp = Math.round((ml / TBSP_ML) * 100) / 100;
+        return tbsp + " tbsp (" + roundedMl + " ml)";
+      }
+      if (ml >= TSP_ML) {
+        const tsp = Math.round((ml / TSP_ML) * 100) / 100;
+        return tsp + " tsp (" + roundedMl + " ml)";
+      }
+      const tsp = Math.round((ml / TSP_ML) * 100) / 100;
+      return roundedMl + " ml (≈ " + tsp + " tsp)";
+    }
+
+    function getNumber(id, fallback) {
+      const el = document.getElementById(id);
+      const value = el ? Number(el.value) : NaN;
+      return Number.isFinite(value) && value > 0 ? value : fallback;
+    }
+
+    function markSelected(groupName) {
+      document.querySelectorAll('input[name="' + groupName + '"]').forEach(function (radio) {
+        const card = radio.closest(".size-card");
+        if (card) card.classList.toggle("selected", radio.checked);
+      });
+    }
+
+    function onPlantChange() {
+      const plant = findPlant(select.value);
+      if (!plant) return;
+      noteEl.textContent = plant.note + " Recommended: " + plant.dilution + " strength, feed every " + plant.feedWeeks + " weeks in the growing season.";
+      const radio = document.querySelector('input[name="strength"][value="' + plant.dilution + '"]');
+      if (radio) {
+        radio.checked = true;
+        markSelected("strength");
+      }
+      calculate();
+    }
+
+    function calculate() {
+      const plant = findPlant(select.value);
+      const doseAmount = getNumber("dose-amount", 1);
+      const doseUnit = document.getElementById("dose-unit").value;
+      const strengthRadio = document.querySelector('input[name="strength"]:checked');
+      const strength = strengthRadio ? strengthRadio.value : "half";
+      const waterAmount = getNumber("water-amount", 1);
+      const waterUnit = document.getElementById("water-unit").value;
+
+      // Label dose -> ml of concentrate per litre of water.
+      let mlPerLitre;
+      if (doseUnit === "tsp-gal") mlPerLitre = (doseAmount * TSP_ML) / GALLON_LITRES;
+      else if (doseUnit === "tbsp-gal") mlPerLitre = (doseAmount * TBSP_ML) / GALLON_LITRES;
+      else mlPerLitre = doseAmount;
+
+      const waterLitres = waterUnit === "gallons" ? waterAmount * GALLON_LITRES : waterAmount;
+      const totalMl = mlPerLitre * STRENGTH_FACTOR[strength] * waterLitres;
+
+      document.getElementById("result-amount").textContent = formatAmount(totalMl);
+      document.getElementById("result-water").textContent =
+        waterAmount + " " + (waterUnit === "gallons" ? (waterAmount === 1 ? "gallon" : "gallons") : (waterAmount === 1 ? "litre" : "litres"));
+      document.getElementById("result-strength").textContent = STRENGTH_LABEL[strength];
+      if (plant) {
+        document.getElementById("result-plant").textContent = plant.name;
+        document.getElementById("result-frequency").textContent = "every " + plant.feedWeeks + " weeks";
+        const next = new Date();
+        next.setDate(next.getDate() + plant.feedWeeks * 7);
+        document.getElementById("result-next").textContent = formatDate(next);
+      } else {
+        document.getElementById("result-plant").textContent = "—";
+        document.getElementById("result-frequency").textContent = "—";
+        document.getElementById("result-next").textContent = "—";
+      }
+    }
+
+    buildOptions("");
+    select.value = "pothos";
+    onPlantChange();
+
+    searchInput.addEventListener("input", function () {
+      buildOptions(searchInput.value);
+      onPlantChange();
+    });
+    select.addEventListener("change", onPlantChange);
+    document.querySelectorAll('input[name="strength"]').forEach(function (radio) {
+      radio.addEventListener("change", function () {
+        markSelected("strength");
+        calculate();
+      });
+    });
+    document.getElementById("fert-form").addEventListener("input", calculate);
+    document.getElementById("fert-form").addEventListener("change", calculate);
+    document.getElementById("calculate-btn").addEventListener("click", calculate);
+    markSelected("strength");
+    calculate();
+  </script>
+</BaseLayout>
