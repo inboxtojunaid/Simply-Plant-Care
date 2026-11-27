@@ -39,7 +39,7 @@ const currentPath = Astro.url.pathname;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="google-site-verification" content="RYTYU3BcZF4RdulK6_7bU28vMwjUASFPx1KkBnH9xgE" />
-  <meta name="p:domain_verify" content="690eeef0746447281ee12b58d16df8d2" />
+    <meta name="p:domain_verify" content="690eeef0746447281ee12b58d16df8d2" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex" />}
@@ -64,7 +64,7 @@ const currentPath = Astro.url.pathname;
     <header class="site-header">
       <div class="header-inner">
         <a class="brand" href="/" aria-label="Simply Plant Care — home">
-          <img src="/images/leaf-mark.svg" alt="" width="34" height="34" />
+          <img src="/images/leaf-mark.svg" alt="Simply Plant Care leaf logo" width="34" height="34" />
           <span>Simply Plant Care</span>
         </a>
         <button
@@ -144,6 +144,7 @@ const currentPath = Astro.url.pathname;
             <ul>
               <li><a href="/tools/plant-problem-solver/">Plant Problem Solver</a></li>
               <li><a href="/tools/plant-care-checklist/">Plant Care Checklist</a></li>
+              <li><a href="/tools/tree-planting-cost-calculator/">Tree Planting Cost Calculator</a></li>
               <li><a href="/search/">Search guides</a></li>
             </ul>
           </nav>
@@ -162,9 +163,22 @@ const currentPath = Astro.url.pathname;
         </div>
         <div class="footer-bottom">
           <p>© {new Date().getFullYear()} Simply Plant Care. All rights reserved.</p>
+          <p><button type="button" class="footer-cookie-btn" id="cookie-settings">Cookie settings</button></p>
         </div>
       </div>
     </footer>
+
+    <div class="cookie-notice" id="cookie-notice" role="dialog" aria-label="Cookie consent" hidden>
+      <p>
+        We only use cookies to remember your choice here. We set no tracking
+        or advertising cookies ourselves.
+        <a href="/privacy-policy/">Privacy Policy</a>
+      </p>
+      <div class="cookie-buttons">
+        <button type="button" class="btn cookie-btn" id="cookie-accept">Accept</button>
+        <button type="button" class="btn btn-secondary cookie-btn" id="cookie-decline">Decline</button>
+      </div>
+    </div>
 
     <script>
       const toggle = document.getElementById("nav-toggle");
@@ -176,6 +190,33 @@ const currentPath = Astro.url.pathname;
           toggle.textContent = open ? "Close" : "Menu";
         });
       }
+
+      // Cookie consent: stores only the visitor's Accept/Decline choice
+      // in localStorage. No cookie is set by this site itself.
+      const COOKIE_KEY = "spc-cookie-choice";
+      const notice = document.getElementById("cookie-notice");
+      function getCookieChoice() {
+        try { return localStorage.getItem(COOKIE_KEY); } catch { return null; }
+      }
+      function setCookieChoice(value) {
+        try { localStorage.setItem(COOKIE_KEY, value); } catch {
+          // storage unavailable; the notice just won't persist
+        }
+      }
+      function showCookieNotice() { if (notice) notice.hidden = false; }
+      function hideCookieNotice() { if (notice) notice.hidden = true; }
+      if (notice && !getCookieChoice()) showCookieNotice();
+      const acceptBtn = document.getElementById("cookie-accept");
+      const declineBtn = document.getElementById("cookie-decline");
+      if (acceptBtn) acceptBtn.addEventListener("click", () => { setCookieChoice("accepted"); hideCookieNotice(); });
+      if (declineBtn) declineBtn.addEventListener("click", () => { setCookieChoice("declined"); hideCookieNotice(); });
+      const settingsBtn = document.getElementById("cookie-settings");
+      if (settingsBtn) settingsBtn.addEventListener("click", () => {
+        try { localStorage.removeItem(COOKIE_KEY); } catch {
+          // ignore
+        }
+        showCookieNotice();
+      });
     </script>
   </body>
 </html>
